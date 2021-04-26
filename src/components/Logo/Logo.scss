@@ -1,0 +1,10 @@
+.logo {
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    margin-right: 12.5px;
+  }
+}
