@@ -1,7 +1,8 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
+const LiveReloadPlugin = require('webpack-livereload-plugin');
+
 const fs = require('fs');
 const paths = require('./paths');
 
@@ -22,6 +23,9 @@ module.exports = {
 
   // Customize the webpack build process
   plugins: [
+    new LiveReloadPlugin({
+      appendScriptTag: true
+    }),
     // Removes/cleans build folders and unused assets when rebuilding
     new CleanWebpackPlugin(),
 
