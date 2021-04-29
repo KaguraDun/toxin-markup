@@ -1,2 +1,14 @@
 @import '~normalize-scss/sass/normalize';
 @include normalize();
+@import './_constants';
+@import './_mixins';
+@import './fonts/_fonts.scss';
+/* pages */
+@import './pages/headers-and-footers.scss';
+
+/* all components auto import in index.js */
+
+.container {
+  margin: 0 auto;
+  width: 1160px;
+}
