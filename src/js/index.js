@@ -5,3 +5,4 @@ function importAll(r) {
 }
 
 importAll(require.context('../components/', true, /\.js|.scss$/));
+importAll(require.context('../pug-mixins/', true, /\.js|.scss$/));

@@ -1,0 +1,9 @@
+mixin button(properties)
+  - var classTemplate = "button--";
+  - var styles = ['button'];
+  - if (properties.style) styles.push(classTemplate + properties.style);
+  - if (properties.size) styles.push(classTemplate + properties.size);
+  if properties.href
+    a(class=`${styles.join(" ")}`, href=`${properties.href}`)= `${properties.text || ""}`
+  else
+    button(class=`${styles.join(" ")}`, disabled=`${properties.disabled || false}`)= `${properties.text || ""}`
