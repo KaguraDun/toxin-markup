@@ -1,3 +1,8 @@
-header(class='header')
-  include ../Logo/Logo.pug
-  include ../Header-nav/Header-nav.pug
+header.header
+  .header__left-col
+    include ../Logo/Logo.pug
+  .header__right-col
+    include ../Header-nav/Header-nav.pug
+    include ../../pug-mixins/Button/Button.pug
+    +button({href:'/login', text:'войти'})
+    +button({href:'/register', text:'зарегистрироваться', style:'filled'})

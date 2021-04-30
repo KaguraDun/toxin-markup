@@ -1,10 +1,13 @@
 .logo {
+  display: flex;
+
   &__link {
     display: flex;
     align-items: center;
   }
 
   &__icon {
+    display: block;
     margin-right: 12.5px;
   }
 }

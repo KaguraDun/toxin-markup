@@ -1,9 +1,6 @@
 @import '../../styles/constants.scss';
 
 .header-nav {
-  display: flex;
-  align-items: center;
-
   &__list {
     display: flex;
     align-items: center;
@@ -11,24 +8,29 @@
   }
 
   &__item {
-    font-family: Montserrat, Arial, sans-serif;
-    font-style: normal;
+    color: $dark50;
     font-weight: normal;
     font-size: 14px;
+    font-family: Montserrat, Arial, sans-serif;
+    font-style: normal;
     line-height: 17px;
-    color: $dark50;
+    cursor: pointer;
 
     &:not(:last-child) {
       margin-right: 20px;
     }
 
+    &--selected {
+      color: $dark75;
+      font-weight: bold;
+    }
+
     &--expanded {
       &::after {
-        font-family: 'Material Icons';
-        content: 'expand_more';
         font-size: 24px;
-        line-height: 20px;
-        vertical-align: middle
+        font-family: 'Material Icons';
+        vertical-align: middle;
+        content: 'expand_more';
       }
     }
   }
