@@ -1,3 +1,6 @@
+@import '../../styles/_constants.scss';
+@import '../../styles/_mixins.scss';
+
 .header {
   display: flex;
   align-items: center;
@@ -11,5 +14,20 @@
     & > *:not(:last-child) {
       margin-right: 20px;
     }
+  }
+
+  &__vertical-line {
+    &:after {
+      content: '|';
+      width: 1px;
+      height: 30px;
+      color: $dark10;
+    }
+  }
+
+  &__username {
+    @include font-montserrat(14px, 17px);
+    color: $dark50;
+    cursor: pointer;
   }
 }

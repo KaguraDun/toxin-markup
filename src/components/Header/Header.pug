@@ -1,8 +1,13 @@
+block vars
 header.header
   .header__left-col
     include ../Logo/Logo.pug
   .header__right-col
     include ../Header-nav/Header-nav.pug
     include ../../pug-mixins/Button/Button.pug
-    +button({href:'/login', text:'войти'})
-    +button({href:'/register', text:'зарегистрироваться', style:'filled'})
+    if isLogged
+      .header__vertical-line
+      .header__username='Юлий Цезарь'
+    else
+      +button({href:'/login', text:'войти'})
+      +button({href:'/register', text:'зарегистрироваться', style:'filled'})
