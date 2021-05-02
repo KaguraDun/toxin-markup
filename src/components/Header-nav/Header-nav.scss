@@ -1,4 +1,5 @@
-@import '../../styles/constants.scss';
+@import '../../styles/_constants.scss';
+@import '../../styles/_mixins.scss';
 
 .header-nav {
   &__list {
@@ -9,12 +10,8 @@
 
   &__item {
     color: $dark50;
-    font-weight: normal;
-    font-size: 14px;
-    font-family: Montserrat, Arial, sans-serif;
-    font-style: normal;
-    line-height: 17px;
     cursor: pointer;
+    @include font-montserrat(14px, 17px);
 
     &:not(:last-child) {
       margin-right: 20px;

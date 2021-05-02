@@ -18,16 +18,16 @@
 
   &__vertical-line {
     &:after {
-      content: '|';
       width: 1px;
       height: 30px;
       color: $dark10;
+      content: '|';
     }
   }
 
   &__username {
-    @include font-montserrat(14px, 17px);
     color: $dark50;
     cursor: pointer;
+    @include font-montserrat(14px, 17px);
   }
 }
