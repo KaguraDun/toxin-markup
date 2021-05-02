@@ -1,3 +1,10 @@
-.headers-and-footers__header-first {
-  margin-top: 140px;
+body{
+  background: $gray;
+}
+
+.headers-and-footers {
+  &__header-first {
+    margin: 140px 0 40px;
+  }
+
 }

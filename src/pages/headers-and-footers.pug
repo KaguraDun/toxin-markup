@@ -5,4 +5,8 @@ block vars
 block content
   .container
     .headers-and-footers__header-first
+      -var isLogged = false;
+      include ../components/Header/Header.pug
+    .headers-and-footers__header-second
+      -var isLogged = true;
       include ../components/Header/Header.pug
