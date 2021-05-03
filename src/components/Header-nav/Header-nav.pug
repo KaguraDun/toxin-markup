@@ -1,7 +1,12 @@
 nav.header-nav
   ul.header-nav__list
-    li.header-nav__item.header-nav__item--selected О нас
-    li.header-nav__item.header-nav__item--expanded Услуги
-    li.header-nav__item Вакансии
-    li.header-nav__item Новости
-    li.header-nav__item.header-nav__item--expanded Соглашения
+    li.header-nav__item.header-nav__item--selected
+      a.header-nav__item-link(href='#')= "О нас"
+    li.header-nav__item.header-nav__item--expanded
+      a.header-nav__item-link(href='#')= "Услуги"
+    li.header-nav__item
+      a.header-nav__item-link(href='#')= "Вакансии"
+    li.header-nav__item
+      a.header-nav__item-link(href='#')= "Новости"
+    li.header-nav__item.header-nav__item--expanded
+      a.header-nav__item-link(href='#')= "Соглашения"
