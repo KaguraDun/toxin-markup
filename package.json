@@ -51,7 +51,6 @@
     "webpack-merge": "^5.3.0"
   },
   "dependencies": {
-    "normalize-scss": "^7.0.1",
     "pug": "^3.0.2"
   }
 }
