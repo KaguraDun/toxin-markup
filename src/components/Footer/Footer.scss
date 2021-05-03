@@ -1,0 +1,22 @@
+@import '../../styles/_constants.scss';
+@import '../../styles/_mixins.scss';
+
+.footer {
+  background-color: $main-bg-color;
+
+  & > .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
+    color: $dark75;
+    @include font-montserrat(14px, 24px);
+  }
+}
