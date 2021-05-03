@@ -10,6 +10,8 @@
 /* all components auto import in index.js */
 
 .container {
-  width: 1160px;
+  max-width: 1160px;
+  height: inherit;
   margin: 0 auto;
+  padding: 0 20px;
 }

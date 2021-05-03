@@ -2,10 +2,14 @@
 @import '../../styles/_mixins.scss';
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   height: 70px;
+  background-color: $main-bg-color;
+
+  & > .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   &__right-col {
     display: flex;

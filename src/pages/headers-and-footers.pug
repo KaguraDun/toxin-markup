@@ -3,10 +3,11 @@ block vars
   - var title = "Headers and footers";
 
 block content
-  .container
-    .headers-and-footers__header-first
-      - var isLogged = false;
-      include ../components/Header/Header.pug
-    .headers-and-footers__header-second
-      - var isLogged = true;
-      include ../components/Header/Header.pug
+  .headers-and-footers__header-first
+    - var isLogged = false;
+    include ../components/Header/Header.pug
+  .headers-and-footers__header-second
+    - var isLogged = true;
+    include ../components/Header/Header.pug
+  .headers-and-footers__footer
+    include ../components/Footer/Footer.pug
