@@ -1,0 +1,18 @@
+@import '../../styles/_mixins.scss';
+
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70px;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    list-style-type: none;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}
