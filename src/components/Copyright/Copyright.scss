@@ -1,0 +1,9 @@
+@import '../../styles/_constants.scss';
+@import '../../styles/_mixins.scss';
+
+.copyright {
+  &__text {
+    color: $dark75;
+    @include font-montserrat(14px, 17px);
+  }
+}
