@@ -1,40 +1,45 @@
 footer.footer
-  .container
-    .footer__column
-      include ../Logo/Logo.pug
-      p.footer__text= "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
-    .footer__column
-      ul.footer__item-list
-        li.footer__item-heading= "Навигация"
-        li.footer__nav-item
-          a.footer__item-link(href='#')= "О нас"
-        li.footer__nav-item
-          a.footer__item-link(href='#')= "Новости"
-        li.footer__nav-item
-          a.footer__item-link(href='#')= "Служба Поддержки"
-        li.footer__nav-item
-          a.footer__item-link(href='#')= "Услуги"
-    .footer__column
-      ul.footer__item-list
-        li.footer__item-heading= "О нас"
-        li.footer__nav-item
-          a.footer__item-link(href='#')= "О сервисе"
-        li.footer__nav-item
-          a.footer__item-link(href='#')= "Наша команда"
-        li.footer__nav-item
-          a.footer__item-link(href='#')= "Вакансии"
-        li.footer__nav-item
-          a.footer__item-link(href='#')= "Инвесторы"
-    .footer__column
-      ul.footer__item-list
-        li.footer__item-heading= "Служба поддержки"
-        li.footer__nav-item
-          a.footer__item-link(href='#')= "Соглашения"
-        li.footer__nav-item
-          a.footer__item-link(href='#')= "Сообщества"
-        li.footer__nav-item
-          a.footer__item-link(href='#')= "Связь с нами"
-    .footer__column
-      .footer__item-heading= "Подписка"
-      p.footer__text= "Получайте специальные предложения и новости сервиса"
-      input.input(type='email', placeholder='email')
+  .footer__widgets
+    .container
+      .footer__column
+        include ../Logo/Logo.pug
+        p.footer__text= "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+      .footer__column
+        ul.footer__item-list
+          li.footer__item-heading= "Навигация"
+          li.footer__item
+            a.footer__item-link(href='/mock-address.html')= "О нас"
+          li.footer__item
+            a.footer__item-link(href='/mock-address.html')= "Новости"
+          li.footer__item
+            a.footer__item-link(href='/mock-address.html')= "Служба Поддержки"
+          li.footer__item
+            a.footer__item-link(href='/mock-address.html')= "Услуги"
+      .footer__column
+        ul.footer__item-list
+          li.footer__item-heading= "О нас"
+          li.footer__item
+            a.footer__item-link(href='/mock-address.html')= "О сервисе"
+          li.footer__item
+            a.footer__item-link(href='/mock-address.html')= "Наша команда"
+          li.footer__item
+            a.footer__item-link(href='/mock-address.html')= "Вакансии"
+          li.footer__item
+            a.footer__item-link(href='/mock-address.html')= "Инвесторы"
+      .footer__column
+        ul.footer__item-list
+          li.footer__item-heading= "Служба поддержки"
+          li.footer__item
+            a.footer__item-link(href='/mock-address.html')= "Соглашения"
+          li.footer__item
+            a.footer__item-link(href='/mock-address.html')= "Сообщества"
+          li.footer__item
+            a.footer__item-link(href='/mock-address.html')= "Связь с нами"
+      .footer__column
+        .footer__item-heading= "Подписка"
+        p.footer__text= "Получайте специальные предложения и новости сервиса"
+        input.input(type='email', placeholder='email')
+  .footer__copyright
+    .container
+      include ../Copyright/Copyright.pug
+      include ../Socials/Socials.pug
