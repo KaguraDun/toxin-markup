@@ -1,4 +1,6 @@
 h1.logo
-  a.logo__link(href='/') 
-    img.logo__icon(src=`${require("../components/Logo/svg/logo-icon.svg")}`)
-    img.logo__text(src=`${require("../components/Logo/svg/logo-text.svg")}`)
+  a.logo__link(href='/')
+    .logo__icon
+      include ./svg/logo-icon.svg
+    .logo__icon
+      include ./svg/logo-text.svg
