@@ -6,9 +6,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+    @include clear-ul-style;
   }
 
   &__item {
