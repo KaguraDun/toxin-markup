@@ -5,3 +5,13 @@
   font-style: normal;
   line-height: $line-height;
 }
+
+@mixin clear-link-style {
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    color: inherit;
+    text-decoration: none;
+  }
+}
