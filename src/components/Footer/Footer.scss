@@ -13,18 +13,24 @@
     box-shadow: 0px 1px 0px $dark10;
   }
 
-  &__widgets > .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  &__grid {
+    display: grid;
+    grid-template-columns: 22.41% 13.79% 13.79% 13.79% 22.41%;
+    margin-top: 100px;
+    column-gap: 3.45%;
   }
 
-  &__column {
+  &__grid-column {
     display: flex;
     flex-direction: column;
   }
 
+  &__logo {
+    margin-bottom: 20px;
+  }
+
   &__text {
+    margin: 0;
     color: $dark75;
     @include font-montserrat(14px, 24px);
   }
@@ -34,7 +40,7 @@
   }
 
   &__item-heading {
-    margin-bottom: 21px;
+    margin: 4px 0 21px;
     color: $dark100;
     text-transform: uppercase;
     @include font-montserrat(12px, 15px, bold);
@@ -42,7 +48,7 @@
 
   &__item {
     color: $dark50;
-    @include font-montserrat(14px, 17px);
+    @include font-montserrat(14px, 18px);
 
     &:not(:last-child) {
       margin-bottom: 20px;
@@ -53,14 +59,19 @@
     @include clear-link-style;
   }
 
+  &__input-email {
+    margin-top: 20px;
+  }
+
   &__copyright {
     width: 100%;
   }
 
-  &__copyright > .container {
+  &__copyright-wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    min-height: 70px;
   }
 }

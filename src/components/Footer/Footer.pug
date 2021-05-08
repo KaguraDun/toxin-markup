@@ -1,45 +1,51 @@
 footer.footer
   .footer__widgets
     .container
-      .footer__column
-        include ../Logo/Logo.pug
-        p.footer__text= "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
-      .footer__column
-        ul.footer__item-list
-          li.footer__item-heading= "Навигация"
-          li.footer__item
-            a.footer__item-link(href='/mock-address.html')= "О нас"
-          li.footer__item
-            a.footer__item-link(href='/mock-address.html')= "Новости"
-          li.footer__item
-            a.footer__item-link(href='/mock-address.html')= "Служба Поддержки"
-          li.footer__item
-            a.footer__item-link(href='/mock-address.html')= "Услуги"
-      .footer__column
-        ul.footer__item-list
-          li.footer__item-heading= "О нас"
-          li.footer__item
-            a.footer__item-link(href='/mock-address.html')= "О сервисе"
-          li.footer__item
-            a.footer__item-link(href='/mock-address.html')= "Наша команда"
-          li.footer__item
-            a.footer__item-link(href='/mock-address.html')= "Вакансии"
-          li.footer__item
-            a.footer__item-link(href='/mock-address.html')= "Инвесторы"
-      .footer__column
-        ul.footer__item-list
-          li.footer__item-heading= "Служба поддержки"
-          li.footer__item
-            a.footer__item-link(href='/mock-address.html')= "Соглашения"
-          li.footer__item
-            a.footer__item-link(href='/mock-address.html')= "Сообщества"
-          li.footer__item
-            a.footer__item-link(href='/mock-address.html')= "Связь с нами"
-      .footer__column
-        .footer__item-heading= "Подписка"
-        p.footer__text= "Получайте специальные предложения и новости сервиса"
-        input.input(type='email', placeholder='email')
+      .footer__grid
+        .footer__grid-column
+          .footer__logo
+            include ../Logo/Logo.pug
+          p.footer__text= "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+        .footer__grid-column
+          ul.footer__item-list
+            li.footer__item-heading= "Навигация"
+            li.footer__item
+              a.footer__item-link(href='/mock-address.html')= "О нас"
+            li.footer__item
+              a.footer__item-link(href='/mock-address.html')= "Новости"
+            li.footer__item
+              a.footer__item-link(href='/mock-address.html')= "Служба поддержки"
+            li.footer__item
+              a.footer__item-link(href='/mock-address.html')= "Услуги"
+        .footer__grid-column
+          ul.footer__item-list
+            li.footer__item-heading= "О нас"
+            li.footer__item
+              a.footer__item-link(href='/mock-address.html')= "О сервисе"
+            li.footer__item
+              a.footer__item-link(href='/mock-address.html')= "Наша команда"
+            li.footer__item
+              a.footer__item-link(href='/mock-address.html')= "Вакансии"
+            li.footer__item
+              a.footer__item-link(href='/mock-address.html')= "Инвесторы"
+        .footer__grid-column
+          ul.footer__item-list
+            li.footer__item-heading= "Служба поддержки"
+            li.footer__item
+              a.footer__item-link(href='/mock-address.html')= "Соглашения"
+            li.footer__item
+              a.footer__item-link(href='/mock-address.html')= "Сообщества"
+            li.footer__item
+              a.footer__item-link(href='/mock-address.html')= "Связь с нами"
+        .footer__grid-column
+          .footer__item-heading= "Подписка"
+          p.footer__text= "Получайте специальные предложения и новости сервиса"
+          .footer__input-email
+            include ../../pug-mixins/Input/Input.pug
+            +input({type:'email', placeholder:'Email', arrow: true })
+
   .footer__copyright
     .container
-      include ../Copyright/Copyright.pug
-      include ../Socials/Socials.pug
+      .footer__copyright-wrapper
+        include ../Copyright/Copyright.pug
+        include ../Socials/Socials.pug
