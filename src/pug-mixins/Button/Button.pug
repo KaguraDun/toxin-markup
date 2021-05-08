@@ -1,9 +1,11 @@
+//- available properties: style, size, href, disabled
+
 mixin button(properties)
-  - var classTemplate = "button--";
+  - var modifierTemplate = "button--";
   - var styles = ["button"];
 
-  - if (properties.style) styles.push(classTemplate + properties.style);
-  - if (properties.size) styles.push(classTemplate + properties.size);
+  - if (properties.style) styles.push(modifierTemplate + properties.style);
+  - if (properties.size) styles.push(modifierTemplate + properties.size);
 
   if properties.href
     a(class=`${styles.join(" ")}`, href=`${properties.href}`)= `${properties.text || ""}`
