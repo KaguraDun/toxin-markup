@@ -1,0 +1,14 @@
+//- available properties: type, placeholder, arrow
+
+mixin input(properties)
+  - var modifierTemplate = "input--";
+  - var styles = ["input"];
+  - if (properties.arrow) styles.push(modifierTemplate + "with-arrow");
+
+  .input__wrapper
+    input(
+      class=`${styles.join(" ")}`,
+      type=`${properties.type}`,
+      placeholder=`${properties.placeholder || ""}`
+    )
+    span.input__icon
