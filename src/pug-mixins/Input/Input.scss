@@ -2,15 +2,15 @@
 @import '../../styles/mixins';
 
 .input {
+  box-sizing: border-box;
   width: 100%;
-  @include font-montserrat(14px, 24px);
+  margin: 0 auto;
+  padding: 10px 15px;
   color: $dark25;
   background: $white;
   border: 1px solid $dark25;
-  box-sizing: border-box;
   border-radius: 4px;
-  padding: 10px 15px;
-  margin: 0 auto;
+  @include font-montserrat(14px, 24px);
 
   &__wrapper {
     position: relative;
@@ -18,16 +18,16 @@
 
   &__icon {
     position: absolute;
-    right: 10px;
     top: 10px;
+    right: 10px;
 
     &::after {
-      content: 'arrow_forward';
-      font-family: 'Material Icons';
-      vertical-align: middle;
-      font-size: 24px;
-      line-height: 24px;
       color: $purple;
+      font-size: 24px;
+      font-family: 'Material Icons';
+      line-height: 24px;
+      vertical-align: middle;
+      content: 'arrow_forward';
     }
   }
 }
