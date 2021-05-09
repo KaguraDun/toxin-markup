@@ -1,6 +1,14 @@
-h1.logo
-  a.logo__link(href='/')
-    .logo__icon
-      include ./svg/logo-icon.svg
-    .logo__icon
-      include ./svg/logo-text.svg
+block vars
+
+if isGray
+  h1.logo
+    a.logo__link(href='/')
+      .logo__icon
+        include ./svg/logo-icon-gray.svg
+else
+  h1.logo
+    a.logo__link(href='/')
+      .logo__icon
+        include ./svg/logo-icon.svg
+      .logo__icon-text
+        include ./svg/logo-text.svg
