@@ -1,11 +1,11 @@
+block baseVariables
 doctype html
-block vars
-html(lang='en')
+html(lang='ru')
   head
     meta(name='charset', content='utf-8')
     meta(name='viewport', content='initial-scale=1.0, width=device-width')
     title #{title}
-  body
+  body(class=`${bodyClass}`)
     block header
     block content
     block footer
