@@ -7,12 +7,21 @@
 
 /* all components auto import in index.js */
 
+body {
+  margin: 0;
+}
+
 .container {
   width: 100%;
   max-width: 1160px;
   height: inherit;
   margin: 0 auto;
   padding: 0 20px;
+
+  @media (max-width: $tablet) {
+    max-width: $tablet;
+    padding: 0 10px;
+  }
 }
 
 .mock-address {

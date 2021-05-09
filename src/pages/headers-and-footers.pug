@@ -3,6 +3,11 @@ block vars
   - var title = "Headers and footers";
 
 block content
+  .headers-and-footers__logo
+    .headers-and-footers__logo-icon
+      - var isGray = true;
+      include ../components/Logo/Logo.pug
+      - var isGray = false;
   .headers-and-footers__header-first
     - var isLogged = false;
     include ../components/Header/Header.pug
@@ -11,5 +16,5 @@ block content
     include ../components/Header/Header.pug
   .headers-and-footers__footer
     include ../components/Footer/Footer.pug
-  .header-and-footers__footer-tablet
+  .headers-and-footers__footer-creative
     include ../components/Footer/Footer.pug

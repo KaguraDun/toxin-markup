@@ -7,6 +7,12 @@
   align-items: center;
   background-color: $main-bg-color;
 
+  @media (max-width: $tablet) {
+    &__widgets {
+      display: none;
+    }
+  }
+
   &__widgets {
     width: 100%;
     min-height: 372px;
@@ -67,9 +73,13 @@
     width: 100%;
   }
 
+  &__copyright-logo {
+    display: none;
+  }
+
   &__copyright-wrapper {
     display: flex;
-    flex-direction: row;
+
     align-items: center;
     justify-content: space-between;
     min-height: 70px;

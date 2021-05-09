@@ -2,8 +2,6 @@
 
 .socials {
   display: flex;
-  align-items: center;
-  justify-content: center;
   @include clear-ul-style;
 
   &__item {

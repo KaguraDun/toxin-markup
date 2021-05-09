@@ -3,15 +3,64 @@ body {
 }
 
 .headers-and-footers {
+  &__logo {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  &__logo-icon {
+    margin: 30px 0 62px 30px;
+  }
+
   &__header-first {
-    margin: 140px 0 40px;
+    margin-bottom: 40px;
+    box-shadow: 0px 10px 20px $dark5;
   }
 
   &__header-second {
     margin-bottom: 40px;
+    box-shadow: 0px 10px 20px $dark5;
   }
 
   &__footer {
     margin-bottom: 40px;
+    box-shadow: 0px 10px 20px $dark5;
+  }
+
+  &__footer-creative {
+    display: flex;
+    width: $tablet;
+    margin: 0 auto;
+    margin-bottom: 140px;
+    box-shadow: 0px 10px 20px $dark5;
+
+    .container {
+      box-sizing: border-box;
+    }
+
+    .footer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      min-height: 365px;
+    }
+
+    .footer__widgets {
+      display: none;
+    }
+
+    .footer__copyright-logo {
+      display: block;
+      margin-bottom: 25px;
+    }
+
+    .footer__copyright-text {
+      margin-bottom: 25px;
+    }
+
+    .footer__copyright-wrapper {
+      flex-direction: column;
+    }
   }
 }

@@ -43,9 +43,11 @@ footer.footer
           .footer__input-email
             include ../../pug-mixins/Input/Input.pug
             +input({type:'email', placeholder:'Email', arrow: true })
-
   .footer__copyright
     .container
       .footer__copyright-wrapper
-        include ../Copyright/Copyright.pug
+        .footer__copyright-logo
+          include ../Logo/Logo.pug
+        .footer__copyright-text
+          include ../Copyright/Copyright.pug
         include ../Socials/Socials.pug
