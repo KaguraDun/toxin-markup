@@ -8,6 +8,12 @@
 
 /* all components auto import in index.js */
 
+html {
+  //default font size = rem(14px) or 87.5%
+  @include font-montserrat(87.5%, rem(24px));
+  background: $white;
+}
+
 body {
   margin: 0;
 }

@@ -45,20 +45,20 @@
       margin-bottom: 51px;
 
       &--style-h1 {
-        @include font-montserrat(24px, 29px, bold);
+        @include font-montserrat(rem(24px), rem(29px), bold);
       }
 
       &--style-h2 {
-        @include font-montserrat(19px, 23px, bold);
+        @include font-montserrat(rem(19px), rem(23px), bold);
       }
 
       &--style-h3 {
-        @include font-montserrat(12px, 15px, bold);
+        @include font-montserrat(rem(12px), rem(15px), bold);
       }
 
       &--style-body {
         margin-bottom: 0;
-        @include font-montserrat(14px, 24px);
+        @include font-montserrat(rem(14px), rem(24px));
       }
     }
 

@@ -20,11 +20,11 @@
 
   &__name {
     margin: 0;
-    @include font-montserrat(19px, 28px, bold);
+    @include font-montserrat(rem(19px), rem(28px), bold);
   }
 
   &__code {
     margin: 0;
-    @include font-montserrat(19px, 28px);
+    @include font-montserrat(rem(19px), rem(28px));
   }
 }

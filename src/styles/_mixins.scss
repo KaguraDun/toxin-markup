@@ -1,3 +1,5 @@
+@import '~sass-rem';
+
 @mixin font-montserrat($font-size, $line-height, $font-weight: normal) {
   font-weight: $font-weight;
   font-size: $font-size;
