@@ -2,12 +2,12 @@
   background-color: $white;
 
   &__logo {
-    max-width: 1440px;
+    max-width: rem(1440px);
     margin: 0 auto;
   }
 
   &__logo-icon {
-    margin: 30px 0 67px 30px;
+    margin: rem(30px) 0 rem(67px) rem(30px);
   }
 
   &__container {
@@ -15,7 +15,7 @@
     align-items: flex-start;
     justify-content: space-between;
     width: 100%;
-    max-width: 1140px;
+    max-width: rem(1140px);
     margin: 0 auto;
   }
 
@@ -25,7 +25,7 @@
     @include clear-ul-style();
 
     &-item {
-      margin-bottom: 20px;
+      margin-bottom: rem(20px);
     }
 
     &-item:last-child {
@@ -36,13 +36,13 @@
   &__type {
     display: flex;
     flex-direction: column;
-    max-width: 444px;
+    max-width: rem(444px);
     @include clear-ul-style();
 
     &-item {
       display: flex;
       align-items: flex-start;
-      margin-bottom: 51px;
+      margin-bottom: rem(51px);
 
       &--style-h1 {
         @include font-montserrat(rem(24px), rem(29px), bold);
@@ -63,8 +63,8 @@
     }
 
     &-tag {
-      min-width: 37px;
-      margin: 0 30px 0 0;
+      min-width: rem(37px);
+      margin: 0 rem(30px) 0 0;
       color: $dark25;
       font-weight: normal;
       text-align: right;

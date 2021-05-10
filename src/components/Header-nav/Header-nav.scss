@@ -12,7 +12,7 @@
   &__item {
     color: $dark50;
     cursor: pointer;
-    @include font-montserrat(14px, 17px);
+    @include font-montserrat(rem(14px), rem(17px));
 
     &:not(:last-child) {
       margin-right: 20px;
@@ -25,7 +25,7 @@
 
     &--expanded {
       &::after {
-        font-size: 24px;
+        font-size: rem(24px);
         font-family: 'Material Icons';
         vertical-align: middle;
         content: 'expand_more';

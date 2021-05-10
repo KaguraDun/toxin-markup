@@ -5,6 +5,7 @@
 /* pages */
 @import './pages/colors-and-type.scss';
 @import './pages/headers-and-footers.scss';
+@import './pages/form-elements.scss';
 
 /* all components auto import in index.js */
 
@@ -20,10 +21,10 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1160px;
+  max-width: rem(1160px);
   height: inherit;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 rem(20px);
 
   @media (max-width: $tablet) {
     max-width: $tablet;
@@ -39,6 +40,6 @@ body {
 
   &__error-message {
     color: $dark100;
-    @include font-montserrat(60px, 60px);
+    @include font-montserrat(rem(60px), rem(60px));
   }
 }

@@ -15,14 +15,14 @@
 
   &__widgets {
     width: 100%;
-    min-height: 372px;
+    min-height: rem(372px);
     box-shadow: 0px 1px 0px $dark10;
   }
 
   &__grid {
     display: grid;
     grid-template-columns: 22.41% 13.79% 13.79% 13.79% 22.41%;
-    margin-top: 100px;
+    margin-top: rem(100px);
     column-gap: 3.45%;
   }
 
@@ -32,13 +32,13 @@
   }
 
   &__logo {
-    margin-bottom: 20px;
+    margin-bottom: rem(20px);
   }
 
   &__text {
     margin: 0;
     color: $dark75;
-    @include font-montserrat(14px, 24px);
+    @include font-montserrat(rem(14px), rem(24px));
   }
 
   &__item-list {
@@ -46,18 +46,18 @@
   }
 
   &__item-heading {
-    margin: 4px 0 21px;
+    margin: 4px 0 rem(21px);
     color: $dark100;
     text-transform: uppercase;
-    @include font-montserrat(12px, 15px, bold);
+    @include font-montserrat(rem(12px), rem(15px), bold);
   }
 
   &__item {
     color: $dark50;
-    @include font-montserrat(14px, 18px);
+    @include font-montserrat(rem(14px), rem(18px));
 
     &:not(:last-child) {
-      margin-bottom: 20px;
+      margin-bottom: rem(20px);
     }
   }
 
@@ -66,7 +66,7 @@
   }
 
   &__input-email {
-    margin-top: 20px;
+    margin-top: rem(20px);
   }
 
   &__copyright {
@@ -82,6 +82,6 @@
 
     align-items: center;
     justify-content: space-between;
-    min-height: 70px;
+    min-height: rem(70px);
   }
 }

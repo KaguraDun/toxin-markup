@@ -2,26 +2,26 @@
   background: $gray;
 
   &__logo {
-    max-width: 1440px;
+    max-width: rem(1440px);
     margin: 0 auto;
   }
 
   &__logo-icon {
-    margin: 30px 0 62px 30px;
+    margin: rem(30px) 0 rem(62px) rem(30px);
   }
 
   &__header-first {
-    margin-bottom: 40px;
+    margin-bottom: rem(40px);
     box-shadow: 0px 10px 20px $dark5;
   }
 
   &__header-second {
-    margin-bottom: 40px;
+    margin-bottom: rem(40px);
     box-shadow: 0px 10px 20px $dark5;
   }
 
   &__footer {
-    margin-bottom: 40px;
+    margin-bottom: rem(40px);
     box-shadow: 0px 10px 20px $dark5;
   }
 
@@ -29,7 +29,7 @@
     display: flex;
     width: $tablet;
     margin: 0 auto;
-    margin-bottom: 140px;
+    margin-bottom: rem(140px);
     box-shadow: 0px 10px 20px $dark5;
 
     .container {
@@ -41,7 +41,7 @@
       flex-direction: column;
       justify-content: center;
       width: 100%;
-      min-height: 365px;
+      min-height: rem(365px);
     }
 
     .footer__widgets {
@@ -50,11 +50,11 @@
 
     .footer__copyright-logo {
       display: block;
-      margin-bottom: 25px;
+      margin-bottom: rem(25px);
     }
 
     .footer__copyright-text {
-      margin-bottom: 25px;
+      margin-bottom: rem(25px);
     }
 
     .footer__copyright-wrapper {
