@@ -1,9 +1,9 @@
-//- available properties: type, placeholder, arrow
+//- available properties: type, placeholder, arrow, size= small, medium 
 
 mixin input(properties)
   - var modifierTemplate = "input--";
   - var styles = ["input"];
-
+  - if(properties.size) styles.push(modifierTemplate + 'size-' + properties.size);
 
   .input__wrapper
     input(

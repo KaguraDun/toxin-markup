@@ -10,7 +10,7 @@
   background: $white;
   border: 1px solid $dark25;
   border-radius: 4px;
-  @include font-montserrat(14px, 24px);
+  @include font-montserrat-body();
 
   &__wrapper {
     position: relative;
@@ -30,4 +30,14 @@
       content: 'arrow_forward';
     }
   }
+
+  &--size-small{
+    max-width: rem(260px);
+  }
+
+  &--size-medium{
+    max-width: rem(360px);
+  }
+
+
 }
