@@ -1,0 +1,18 @@
+extends ../layouts/base.pug
+block baseVariables
+  - var title = "Form elements";
+  - var bodyClass = "form-elements";
+
+block content
+  .form-elements__logo
+  .form-elements__logo-icon
+    - var isGray = true;
+    include ../components/Logo/Logo.pug
+  .form-elements__container
+    include ../pug-mixins/Input/Input.pug
+    .form-elements__column
+      .form-elements__input-wrapper
+        .form-elements__input-info
+          .form-elements__input-name= "Text Field"
+          .form-elements__input-state= "Default"
+        +input({type:'text', placeholder:'Email', size:'medium'})
