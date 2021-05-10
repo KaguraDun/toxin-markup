@@ -1,4 +1,5 @@
 @import '~sass-rem';
+@import './constants';
 
 @mixin font-montserrat($font-size, $line-height, $font-weight: normal) {
   font-weight: $font-weight;
@@ -6,6 +7,32 @@
   font-family: Montserrat, Arial, sans-serif;
   font-style: normal;
   line-height: $line-height;
+}
+
+@mixin font-montserrat-h1 {
+  color: $dark100;
+  @include font-montserrat(rem(24px), rem(29px), bold);
+}
+
+@mixin font-montserrat-h2 {
+  color: $dark100;
+  @include font-montserrat(rem(19px), rem(23px), bold);
+}
+
+@mixin font-montserrat-h3 {
+  color: $dark100;
+  text-transform: uppercase;
+  @include font-montserrat(rem(12px), rem(15px), bold);
+}
+
+@mixin font-montserrat-body {
+  color: $dark75;
+  @include font-montserrat(rem(14px), rem(24px));
+}
+
+@mixin font-montserrat-link {
+  color: $dark50;
+  @include font-montserrat(rem(14px), rem(17px));
 }
 
 @mixin clear-link-style {
