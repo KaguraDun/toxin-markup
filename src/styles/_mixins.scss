@@ -25,6 +25,12 @@
   @include font-montserrat(rem(12px), rem(15px), bold);
 }
 
+@mixin font-montserrat-h3-light {
+  color: $dark75;
+  text-transform: uppercase;
+  @include font-montserrat(rem(12px), rem(15px));
+}
+
 @mixin font-montserrat-body {
   color: $dark75;
   @include font-montserrat(rem(14px), rem(24px));

@@ -6,8 +6,8 @@
   width: 100%;
   margin: 0 auto;
   padding: 10px 15px;
-  color: $dark25;
   background: $white;
+  color: $dark25;
   border: 1px solid $dark25;
   border-radius: 4px;
   @include font-montserrat-body();
@@ -31,13 +31,26 @@
     }
   }
 
-  &--size-small{
+  &--size-small {
     max-width: rem(260px);
   }
 
-  &--size-medium{
+  &--size-medium {
     max-width: rem(360px);
   }
 
+  &::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $dark25;
+    opacity: 1; /* Firefox */
+  }
 
+  &:hover,
+  &--hover {
+    border-color: $dark50;
+
+    &::placeholder {
+      color: $dark75;
+    }
+  }
 }

@@ -18,7 +18,12 @@
   }
 
   &__column {
+    width: 100%;
     max-width: rem(320px);
+  }
+
+  &__item {
+    margin-bottom: 20px;
   }
 
   &__input {
@@ -28,6 +33,7 @@
     }
 
     &-info {
+      margin-bottom: 5px;
       display: flex;
       justify-content: space-between;
     }
@@ -37,6 +43,7 @@
     }
 
     &-state {
+      @include font-montserrat-h3-light();
     }
   }
 }

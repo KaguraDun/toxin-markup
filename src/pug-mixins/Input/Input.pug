@@ -3,13 +3,13 @@
 mixin input(properties)
   - var modifierTemplate = "input--";
   - var styles = ["input"];
-  - if(properties.size) styles.push(modifierTemplate + 'size-' + properties.size);
+  - if (properties.size) styles.push(modifierTemplate + "size-" + properties.size);
 
   .input__wrapper
     input(
       class=`${styles.join(" ")}`,
       type=`${properties.type}`,
       placeholder=`${properties.placeholder || ""}`
-    )
+    )&attributes(attributes)
     if properties.arrow
       span.input__icon
