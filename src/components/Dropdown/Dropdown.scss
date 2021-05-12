@@ -1,0 +1,33 @@
+@import '../../styles/constants';
+@import '../../styles/mixins';
+
+.dropdown {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 15px;
+  background: $white;
+  color: $dark25;
+  border: 1px solid $dark25;
+  border-radius: 4px;
+  @include font-montserrat-body();
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    @include font-montserrat-h3();
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item-buttons {
+    display: flex;
+  }
+
+  &:hover {
+    border-color: $dark50;
+  }
+}
