@@ -11,8 +11,7 @@
 
 html {
   //default font size = rem(14px) or 87.5%
-  @include font-montserrat(87.5%, rem(24px));
-  background: $white;
+  @include font-montserrat(87.5%, rem(29px));
 }
 
 body {
