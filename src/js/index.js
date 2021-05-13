@@ -11,15 +11,21 @@ importAll(require.context('../pug-mixins/', true, /\.js|.scss$/));
 const dropdownGuests = document.querySelector('.dropdown-guests');
 
 if (dropdownGuests) {
+  const guestsPattern = ['Гость', 'Гостя', 'Гостей'];
+
   const properties = {
     name: 'Сколько гостей',
     label: 'dropdown',
-    options: [
-      { name: 'Взрослые', value: 1 },
-      { name: 'Дети', value: 2 },
-      { name: 'Младенцы', value: 3 },
-    ],
+    options: {
+      Взрослые: { count: 1, countAs: guestsPattern },
+      Дети: { count: 2, countAs: guestsPattern },
+      Младенцы: {
+        count: 3,
+        pattern: ['Младенец', 'Младенца', 'Младенцев'],
+      },
+    },
   };
+
   const dropdown = new Dropdown(dropdownGuests, properties);
   dropdown.init();
 }

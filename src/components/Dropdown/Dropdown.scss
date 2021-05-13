@@ -2,20 +2,43 @@
 @import '../../styles/mixins';
 
 .dropdown {
-  box-sizing: border-box;
-  width: 100%;
-  margin: 0 auto;
-  padding: 10px 15px;
-  background: $white;
-  color: $dark25;
-  border: 1px solid $dark25;
-  border-radius: 4px;
-  @include font-montserrat-body();
+  display: flex;
+  flex-direction: column;
 
   &__label {
     display: flex;
     flex-direction: column;
+    margin: 0;
     @include font-montserrat-h3();
+  }
+
+  &__input-wrapper {
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 15px;
+    color: $dark25;
+    background: $white;
+    border: 1px solid $dark25;
+    border-radius: 4px;
+    cursor: pointer;
+    @include font-montserrat-body();
+  }
+
+  &__button-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    &:after {
+      color: $dark75;
+      @include font-material-icons('expand_more');
+    }
   }
 
   &__item {
@@ -29,5 +52,17 @@
 
   &:hover {
     border-color: $dark50;
+  }
+}
+
+.button-plus {
+  &::after {
+    content: '+';
+  }
+}
+
+.button-minus {
+  &::after {
+    content: '-';
   }
 }
