@@ -14,13 +14,13 @@ if (dropdownGuests) {
   const guestsPattern = ['Гость', 'Гостя', 'Гостей'];
 
   const properties = {
-    name: 'Сколько гостей',
+    placeholder: 'Сколько гостей',
     label: 'dropdown',
     options: {
-      Взрослые: { count: 1, countAs: guestsPattern },
-      Дети: { count: 2, countAs: guestsPattern },
+      Взрослые: { count: 0, countAs: guestsPattern },
+      Дети: { count: 0, countAs: guestsPattern },
       Младенцы: {
-        count: 3,
+        count: 0,
         pattern: ['Младенец', 'Младенца', 'Младенцев'],
       },
     },
