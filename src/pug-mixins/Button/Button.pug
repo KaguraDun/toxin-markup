@@ -8,6 +8,6 @@ mixin button(properties)
   - if (properties.size) styles.push(modifierTemplate + properties.size);
 
   if properties.href
-    a(class=`${styles.join(" ")}`, href=`${properties.href}`)= `${properties.text || ""}`
+    a(class=styles.join(" "), href=properties.href)= properties.text || ""
   else
-    button(class=`${styles.join(" ")}`, disabled=`${properties.disabled || false}`)= `${properties.text || ""}`
+    button(class=styles.join(" "), disabled=properties.disabled || false)= properties.text || ""
