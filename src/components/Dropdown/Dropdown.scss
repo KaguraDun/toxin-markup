@@ -8,7 +8,7 @@
   &__label {
     display: flex;
     flex-direction: column;
-    margin: 0;
+    margin: 0 0 5px;
     @include font-montserrat-h3();
   }
 
@@ -41,18 +41,60 @@
     }
   }
 
+  &__items {
+    padding: 7px 7px 13px 15px;
+    border: 1px solid $dark50;
+  }
+
   &__item {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 7px;
+    @include font-montserrat-h3;
+
+    &:nth-last-child(2) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__item-name {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item-value {
+    display: flex;
+    align-items: center;
   }
 
   &__item-buttons {
     display: flex;
+    min-width: rem(92px);
+    justify-content: space-between;
+    align-content: center;
   }
 
-  &:hover {
+  &__button-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &:hover,
+  &:active {
     border-color: $dark50;
   }
+}
+
+.button-plus,
+.button-minus {
+  border: 1px solid $dark25;
+  background: transparent;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  @include font-montserrat(rem(18px), rem(22px));
+  color: $dark50;
+  cursor: pointer;
 }
 
 .button-plus {
@@ -65,4 +107,12 @@
   &::after {
     content: '-';
   }
+}
+
+.button-widget {
+  @include font-montserrat-h3;
+  color: $purple;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
 }
