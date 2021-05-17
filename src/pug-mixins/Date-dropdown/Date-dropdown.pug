@@ -1,0 +1,24 @@
+//- available properties:
+//- dateRange: boolean;
+//- arrivalValue: string; departureValue:string; dateRangeValue:string;
+
+include ../Input/Input.pug
+
+mixin date-dropdown(properties)
+  - const arrivalValue = properties.arrivalValue;
+  - const departureValue = properties.departureValue;
+  - const filterDateValue = properties.filterDateValue;
+
+  if properties && properties.dateFilter
+    .date-dropdown
+      .date-dropdown__input
+        p.date-dropdown__label= properties.filterDateLabel || false
+        +input({type:'text', placeholder:'ДД.ММ.ГГГГ', size:'large', dropdown:true, readonly:true, value:filterDateValue}).js-date-dropdown
+  else
+    .date-dropdown
+      .date-dropdown__input
+        p.date-dropdown__label= properties.arrivalLabel || false
+        +input({type:'text', placeholder:'ДД.ММ.ГГГГ', size:'small', dropdown:true, readonly:true, value:arrivalValue}).js-date-dropdown-arrival
+      .date-dropdown__input
+        p.date-dropdown__label= properties.departureLabel || false
+        +input({type:'text', placeholder:'ДД.ММ.ГГГГ', size:'small', dropdown:true, readonly:true, value:departureValue}).js-date-dropdown-departure

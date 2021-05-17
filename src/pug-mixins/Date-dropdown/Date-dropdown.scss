@@ -1,0 +1,21 @@
+@import '../../styles/constants';
+@import '../../styles/mixins';
+
+.date-dropdown {
+  display: flex;
+  justify-content: space-between;
+
+  &__labels {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__label {
+    margin: 0 0 5px;
+    @include font-montserrat-h3;
+  }
+
+  &__input {
+    width: 100%;
+  }
+}
