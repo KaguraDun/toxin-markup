@@ -4,10 +4,11 @@
 .input {
   box-sizing: border-box;
   width: 100%;
+  max-height: 44px;
   margin: 0 auto;
   padding: 10px 15px;
-  background: $white;
   color: $dark25;
+  background: $white;
   border: 1px solid $dark25;
   border-radius: 4px;
   @include font-montserrat-body();
@@ -18,24 +19,30 @@
 
   &__icon {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 50%;
+    right: 6%;
+    transform: translateY(-50%);
 
-    &::after {
+    &--arrow::after {
       color: $purple;
-      font-size: 24px;
-      font-family: 'Material Icons';
-      line-height: 24px;
-      vertical-align: middle;
-      content: 'arrow_forward';
+      @include font-material-icons('arrow_forward');
+    }
+
+    &--expand::after {
+      color: $dark75;
+      @include font-material-icons('expand_more');
     }
   }
 
   &--size-small {
-    max-width: rem(260px);
+    max-width: rem(150px);
   }
 
   &--size-medium {
+    max-width: rem(260px);
+  }
+
+  &--size-large {
     max-width: rem(360px);
   }
 

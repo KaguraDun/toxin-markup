@@ -1,4 +1,8 @@
-//- available properties: type:text; placeholder:text; arrow:boolean; size: small, medium; mask: date 
+//- available properties:
+//- type:string; placeholder:string; value: string || number;
+//- arrow:boolean; size: small, medium, large; mask: date;
+//- dropdown: boolean; readonly: boolean;
+//- value:string || number;
 
 mixin input(properties)
   - const modifierTemplate = "input--";
@@ -12,11 +16,15 @@ mixin input(properties)
     input(
       class=styles.join(" "),
       type=properties.type,
+      value=properties.value || false,
       placeholder=properties.placeholder || false,
       data-mask=properties.mask ? maskList[properties.mask].mask : false,
       pattern=properties.mask ? maskList[properties.mask].pattern : false,
-      title=properties.mask ? "Введите дату в формате ДД.ММ.ГГГГ" : false
+      title=properties.mask ? "Введите дату в формате ДД.ММ.ГГГГ" : false,
+      readonly=properties.readonly || false
     )&attributes(attributes)
 
     if properties.arrow
-      span.input__icon 
+      span.input__icon.input__icon--arrow
+    if properties.dropdown
+      span.input__icon.input__icon--expand
