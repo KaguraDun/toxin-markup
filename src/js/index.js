@@ -1,4 +1,7 @@
 import '../styles/index.scss';
+import 'jquery';
+import 'jquery-mask-plugin';
+
 import Dropdown from '../components/Dropdown/Dropdown';
 
 function importAll(r) {

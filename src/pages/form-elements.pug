@@ -26,3 +26,6 @@ block content
           //- create container for dropdown, set properties in index.js
           .dropdown-guests
         .form-elements__item
+          .form-elements__input-info
+            .form-elements__input-name= "masked text field"
+          +input({type:'text', placeholder:'ДД.ММ.ГГГГ', size:'medium', mask:'date'})

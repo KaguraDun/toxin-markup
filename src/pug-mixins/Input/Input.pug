@@ -1,15 +1,22 @@
-//- available properties: type, placeholder, arrow, size= small, medium 
+//- available properties: type:text; placeholder:text; arrow:boolean; size: small, medium; mask: date 
 
 mixin input(properties)
-  - var modifierTemplate = "input--";
-  - var styles = ["input"];
+  - const modifierTemplate = "input--";
+  - const styles = ["input"];
+  - const maskList = {
+  - date: {mask:'00.00.0000', pattern: "(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}"} 
+  - };
   - if (properties.size) styles.push(modifierTemplate + "size-" + properties.size);
 
   .input__wrapper
     input(
-      class=`${styles.join(" ")}`,
-      type=`${properties.type}`,
-      placeholder=`${properties.placeholder || ""}`
+      class=styles.join(" "),
+      type=properties.type,
+      placeholder=properties.placeholder || false,
+      data-mask=properties.mask ? maskList[properties.mask].mask : false,
+      pattern=properties.mask ? maskList[properties.mask].pattern : false,
+      title=properties.mask ? "Введите дату в формате ДД.ММ.ГГГГ" : false
     )&attributes(attributes)
+
     if properties.arrow
-      span.input__icon
+      span.input__icon 
