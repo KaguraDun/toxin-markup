@@ -20,7 +20,7 @@
   &__icon {
     position: absolute;
     top: 50%;
-    right: 6%;
+    right: 10px;
     transform: translateY(-50%);
 
     &--arrow::after {
@@ -39,7 +39,7 @@
   }
 
   &--size-medium {
-    max-width: rem(260px);
+    max-width: rem(266px);
   }
 
   &--size-large {
