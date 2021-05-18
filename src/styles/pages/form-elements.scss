@@ -11,10 +11,10 @@
   }
 
   &__container {
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     max-width: rem(1158px);
+    margin: 0 auto;
   }
 
   &__column {
@@ -24,6 +24,10 @@
 
   &__item {
     margin-bottom: 20px;
+
+    &:nth-child(n + 4) {
+      margin-bottom: rem(40px);
+    }
   }
 
   &__input {
@@ -33,9 +37,9 @@
     }
 
     &-info {
-      margin-bottom: 5px;
       display: flex;
       justify-content: space-between;
+      margin-bottom: 5px;
     }
 
     &-name {
