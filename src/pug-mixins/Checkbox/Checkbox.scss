@@ -30,7 +30,7 @@
   }
 
   &:focus + &__icon {
-    box-shadow: 0 0 0 2px $dark50;
+    border: 2px solid $purple;
   }
 
   &:disabled + &__icon {
