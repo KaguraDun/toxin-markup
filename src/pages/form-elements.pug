@@ -11,30 +11,39 @@ block content
   .form-elements__container
     include ../pug-mixins/Input/Input.pug
     include ../pug-mixins/Date-dropdown/Date-dropdown.pug
+    include ../pug-mixins/Checkbox/Checkbox.pug
     .form-elements__column
-      .form-elements__input-wrapper
-        .form-elements__item
-          .form-elements__input-info
-            .form-elements__input-name= "text field"
-            .form-elements__input-state= "default"
-          +input({type:'text', placeholder:'Email', size:'large'})
-        .form-elements__item
-          .form-elements__input-info
-            .form-elements__input-name= "text field"
-            .form-elements__input-state= "hover / focus"
-          +input({type:'text', value:'This is pretty awesome', size:'large'}).input--hover
-        .form-elements__item
-          //- create container for dropdown, set properties in index.js
-          .dropdown-guests
-        .form-elements__item
-          .form-elements__input-info
-            .form-elements__input-name= "masked text field"
-          +input({type:'text', placeholder:'ДД.ММ.ГГГГ', size:'large', mask:'date'})
-        .form-elements__item
-          +date-dropdown({departureValue: '19.08.2019', arrivalLabel:'date dropdown', departureLabel:'date dropdown'})
-        .form-elements__item
-          +date-dropdown({dateFilter: true, filterDateValue:'19 авг - 23 авг', filterDateLabel: 'filter date dropdown', size:'medium'})
-        .form-elements__item
-          .form-elements__input-info
-            .form-elements__input-name= "subscription text field"
-          +input({type:'email', placeholder:'Email', arrow: true, size:'medium' })
+      .form-elements__item
+        .form-elements__item-info
+          .form-elements__item-name= "text field"
+          .form-elements__item-state= "default"
+        +input({type:'text', placeholder:'Email', size:'large'})
+      .form-elements__item
+        .form-elements__item-info
+          .form-elements__item-name= "text field"
+          .form-elements__item-state= "hover / focus"
+        +input({type:'text', value:'This is pretty awesome', size:'large'}).input--hover
+      .form-elements__item
+        //- create container for dropdown, set properties in index.js
+        .dropdown-guests
+      .form-elements__item
+        .form-elements__item-info
+          .form-elements__item-name= "masked text field"
+        +input({type:'text', placeholder:'ДД.ММ.ГГГГ', size:'large', mask:'date'})
+      .form-elements__item
+        +date-dropdown({departureValue: '19.08.2019', arrivalLabel:'date dropdown', departureLabel:'date dropdown'})
+      .form-elements__item
+        +date-dropdown({dateFilter: true, filterDateValue:'19 авг - 23 авг', filterDateLabel: 'filter date dropdown', size:'medium'})
+      .form-elements__item
+        .form-elements__item-info
+          .form-elements__item-name= "subscription text field"
+        +input({type:'email', placeholder:'Email', arrow: true, size:'medium' })
+    .form-elements__column
+      .form-elements__item
+        fieldset.form-elements__fieldset
+          legend.form-elements__fieldset-legend= "Checkbox Buttons"
+          +checkbox({text:'Можно курить'})
+          +checkbox({text:'Можно с питомцами', checked:true})
+          +checkbox({text:'Можно пригласить гостей (до 10 человек)', checked:true})
+
+    .form-elements__column
