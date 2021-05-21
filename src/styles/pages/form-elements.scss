@@ -68,5 +68,13 @@
     .checkbox__label {
       margin-bottom: 10px;
     }
+
+    &--row {
+      display: flex;
+
+      & > .input-radio-btn__label:first-of-type {
+        margin-right: 20px;
+      }
+    }
   }
 }
