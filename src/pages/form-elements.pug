@@ -13,6 +13,7 @@ block content
     include ../pug-mixins/Date-dropdown/Date-dropdown.pug
     include ../pug-mixins/Checkbox/Checkbox.pug
     include ../pug-mixins/Input-radio-btn/Input-radio-btn.pug
+    include ../pug-mixins/Input-toggle/Input-toggle.pug
     .form-elements__column
       .form-elements__item
         .form-elements__item-info
@@ -51,4 +52,10 @@ block content
           legend.form-elements__fieldset-legend= "radio buttons"
           +input-radio-btn({text:'мужчина', value:'мужчина', name:'gender', checked:true})
           +input-radio-btn({text:'женщина', value:'женщина', name:'gender'})
+      .form-elements__item.form-elements__item--large-margin
+        fieldset.form-elements__fieldset
+          legend.form-elements__fieldset-legend= "toggle"
+          +input-toggle({text:'Получать спецпредложения', checked:true})
+          +input-toggle({text:'Получать спецпредложения'})
+
     .form-elements__column
