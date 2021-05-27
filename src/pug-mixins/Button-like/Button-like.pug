@@ -1,0 +1,8 @@
+//- available properties:
+  likesNumber: number;
+  disabled: boolean;
+
+mixin button-like(properties)
+  button.button-like(disabled=properties.disabled || false)&attributes(attributes)
+    span.button-like__icon
+    span.button-like__likes-number= properties.likesNumber || ""

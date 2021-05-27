@@ -1,0 +1,35 @@
+@import '../../styles/constants';
+@import '../../styles/mixins';
+
+.button-like {
+  display: flex;
+  align-items: center;
+  width: rem(40px);
+  height: rem(18px);
+  margin: 0;
+  color: $dark25;
+  background: $white;
+  border: 1px solid $dark25;
+  border-radius: rem(10px);
+  cursor: pointer;
+  @include font-montserrat(10px, 12px);
+
+  &__icon {
+    &::after {
+      @include font-material-icons('favorite_border', rem(10px), rem(9px));
+    }
+  }
+
+  &__likes-number {
+    flex: 1;
+  }
+
+  &--pressed {
+    color: $purple;
+    border: 1px solid $purple;
+
+    .button-like__icon::after {
+      @include font-material-icons('favorite', rem(10px), rem(9px));
+    }
+  }
+}
