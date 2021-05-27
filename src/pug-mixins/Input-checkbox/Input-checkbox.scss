@@ -1,36 +1,37 @@
 @import '../../styles/constants';
 @import '../../styles/mixins';
 
-.checkbox {
+.input-checkbox {
   margin: 0;
   appearance: none;
 
   &__label {
     display: flex;
+    align-items: flex-start;
+    color: $dark50;
     text-transform: none;
     @include font-montserrat(rem(14px), rem(18px));
-    color: $dark50;
   }
 
   &__icon {
-    margin-right: rem(10px);
     display: block;
     width: rem(18px);
     height: rem(18px);
+    margin-right: rem(10px);
     border: 1px solid $dark25;
-    border-radius: 4px;
+    border-radius: rem(4px);
   }
 
   &:checked + &__icon {
     background-image: url('./svg/check-mark.svg');
     background-repeat: no-repeat;
-    background-size: 10px;
     background-position: center;
+    background-size: rem(10px);
     border: 1px solid $purple;
   }
 
   &:focus + &__icon {
-    border: 2px solid $purple;
+    box-shadow: 0 0 0 2px $purple;
   }
 
   &:disabled + &__icon {

@@ -1,9 +1,0 @@
-//- available properties:
-  checked: boolean;
-  text: string
-
-mixin checkbox(properties)
-  label.checkbox__label
-    input.checkbox(type='checkbox', checked=properties.checked || false)
-    span.checkbox__icon
-    = properties.text
