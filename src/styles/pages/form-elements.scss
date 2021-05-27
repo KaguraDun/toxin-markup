@@ -12,18 +12,18 @@
 
   &__container {
     display: flex;
+    flex-shrink: 0;
     justify-content: space-between;
     max-width: rem(1158px);
     margin: 0 auto;
-    flex-shrink: 0;
   }
 
   &__column {
-    width: 100%;
-    min-width: rem(320px);
     display: flex;
     flex-direction: column;
-    margin-right: 126px;
+    width: 100%;
+    min-width: rem(320px);
+    margin-right: rem(126px);
 
     &:last-child {
       padding-right: 0;
@@ -31,9 +31,9 @@
   }
 
   &__item {
-    margin-bottom: 20px;
+    margin-bottom: rem(20px);
 
-    &:nth-child(n + 4) {
+    &--large-margin {
       margin-bottom: rem(40px);
     }
   }
@@ -55,25 +55,30 @@
   }
 
   &__fieldset {
-    @include font-montserrat-h3;
     margin: 0;
     padding: 0;
     border: 0;
+    @include font-montserrat-h3;
 
     &-legend {
-      padding: 0;
       margin: 0 0 rem(16px);
+      padding: 0;
     }
 
-    .checkbox__label {
-      margin-bottom: 10px;
+    & > .input-checkbox__label,
+    & > .input-toggle__label {
+      margin-bottom: rem(10px);
     }
 
     &--row {
       display: flex;
 
-      & > .input-radio-btn__label:first-of-type {
-        margin-right: 20px;
+      & > .input-radio__label:not(:last-of-type) {
+        margin-right: rem(20px);
+      }
+
+      & > .button-like:not(:last-of-type) {
+        margin-right: rem(10px);
       }
     }
   }
