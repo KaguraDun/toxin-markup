@@ -9,12 +9,12 @@
   line-height: $line-height;
 }
 
-@mixin font-material-icons($content) {
-  content: $content;
-  font-size: 24px;
+@mixin font-material-icons($content, $font-size: rem(24px), $line-height: rem(24px)) {
+  font-size: $font-size;
   font-family: 'Material Icons';
-  line-height: 24px;
+  line-height: $line-height;
   vertical-align: middle;
+  content: $content;
 }
 
 @mixin font-montserrat-h1 {
