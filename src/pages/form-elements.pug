@@ -14,6 +14,7 @@ block content
     include ../pug-mixins/Checkbox/Checkbox.pug
     include ../pug-mixins/Input-radio-btn/Input-radio-btn.pug
     include ../pug-mixins/Input-toggle/Input-toggle.pug
+    include ../pug-mixins/Button-like/Button-like.pug
     .form-elements__column
       .form-elements__item
         .form-elements__item-info
@@ -57,5 +58,10 @@ block content
           legend.form-elements__fieldset-legend= "toggle"
           +input-toggle({text:'Получать спецпредложения', checked:true})
           +input-toggle({text:'Получать спецпредложения'})
+      .form-elements__item.form-elements__item--large-margin
+        fieldset.form-elements__fieldset.form-elements__fieldset--row
+          legend.form-elements__fieldset-legend= "like button"
+          +button-like({likesNumber:2})
+          +button-like({likesNumber:12}).button-like--pressed
 
     .form-elements__column

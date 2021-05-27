@@ -5,6 +5,8 @@ import 'jquery-mask-plugin';
 import Litepicker from 'litepicker';
 import Dropdown from '../components/Dropdown/Dropdown';
 
+import '../pug-mixins/Button-like/Button-like'
+
 function importAll(r) {
   r.keys().forEach(r);
 }
