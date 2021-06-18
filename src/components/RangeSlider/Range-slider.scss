@@ -1,0 +1,36 @@
+@import '../../styles/constants';
+
+.noUi-horizontal {
+  height: 6px;
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 16px;
+  height: 16px;
+  right: -8px;
+}
+
+.noUi-handle {
+  border-radius: 50%;
+  background: $secondary-gradient;
+  border: 2px solid $white;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.noUi-handle:before,
+.noUi-handle:after {
+  width: 0;
+  height: 0;
+}
+
+.noUi-connect {
+  background: $secondary-gradient;
+}
+
+.noUi-target {
+  background: $white;
+  border: 1px solid $dark25;
+  box-shadow: none;
+  border-radius: 3px;
+}
