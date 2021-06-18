@@ -26,7 +26,11 @@
     margin-right: rem(126px);
 
     &:last-child {
-      padding-right: 0;
+      margin-right: 0;
+    }
+
+    &--small-right-margin {
+      margin-right: rem(72px);
     }
   }
 
