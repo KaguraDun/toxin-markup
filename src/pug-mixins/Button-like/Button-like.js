@@ -17,6 +17,8 @@ function toggleLikeButton(e) {
 
 const likeButtons = document.querySelectorAll('.button-like');
 
-likeButtons.forEach((element) => {
-  element.addEventListener('click', (e) => toggleLikeButton(e));
-});
+export default function addEventToLikeButtons() {
+  likeButtons.forEach((element) => {
+    element.addEventListener('click', (e) => toggleLikeButton(e));
+  });
+}

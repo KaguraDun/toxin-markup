@@ -5,7 +5,7 @@ import 'jquery-mask-plugin';
 import Litepicker from 'litepicker';
 import Dropdown from '../components/Dropdown/Dropdown';
 
-import '../pug-mixins/Button-like/Button-like'
+import addEventToLikeButtons from '../pug-mixins/Button-like/Button-like';
 
 function importAll(r) {
   r.keys().forEach(r);
@@ -78,3 +78,4 @@ new Litepicker({
 //   dropdown.init();
 //   dropdown.dropdownItems.hidden = false;
 // }
+addEventToLikeButtons();
