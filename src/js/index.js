@@ -6,6 +6,7 @@ import Litepicker from 'litepicker';
 import Dropdown from '../components/Dropdown/Dropdown';
 
 import addEventToLikeButtons from '../pug-mixins/Button-like/Button-like';
+import createRangeSlider from '../components/RangeSlider/Range-slider';
 
 function importAll(r) {
   r.keys().forEach(r);
@@ -78,4 +79,6 @@ new Litepicker({
 //   dropdown.init();
 //   dropdown.dropdownItems.hidden = false;
 // }
+
 addEventToLikeButtons();
+createRangeSlider('range-slider');

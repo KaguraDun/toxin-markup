@@ -43,6 +43,10 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 5px;
+
+      &--large-margin {
+        margin-bottom: 20px;
+      }
     }
 
     &-name {
@@ -51,6 +55,10 @@
 
     &-state {
       @include font-montserrat-h3-light();
+    }
+
+    &--size-medium {
+      width: rem(266px);
     }
   }
 

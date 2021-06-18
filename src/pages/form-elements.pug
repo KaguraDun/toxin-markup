@@ -63,5 +63,11 @@ block content
           legend.form-elements__fieldset-legend= "like button"
           +button-like({likesNumber:2})
           +button-like({likesNumber:12}).button-like--pressed
-
     .form-elements__column
+      .form-elements__item.form-elements__item--large-margin.form-elements__item--size-medium
+        .form-elements__item-info.form-elements__item-info--large-margin
+          .form-elements__item-name= "range slider"
+          .form-elements__item-state= "5 000₽ - 10 000₽"
+        //- create container for noUiSlider, set properties in index.js
+        .range-slider
+      
