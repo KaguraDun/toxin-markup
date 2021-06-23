@@ -61,6 +61,14 @@
       @include font-montserrat-h3-light();
     }
 
+    &-wrapper {
+      display: flex;
+
+      & > .button-rate__fieldset:first-child {
+        margin-right: rem(20px);
+      }
+    }
+
     &--size-medium {
       width: rem(266px);
     }

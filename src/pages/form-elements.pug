@@ -15,6 +15,7 @@ block content
     include ../pug-mixins/Input-radio/Input-radio.pug
     include ../pug-mixins/Input-toggle/Input-toggle.pug
     include ../pug-mixins/Button-like/Button-like.pug
+    include ../pug-mixins/Button-rate/Button-rate.pug
     .form-elements__column
       .form-elements__item
         .form-elements__item-info
@@ -63,6 +64,13 @@ block content
           legend.form-elements__fieldset-legend= "like button"
           +button-like({likesNumber:2})
           +button-like({likesNumber:12}).button-like--pressed
+      .form-elements__item.form-elements__item--large-margin
+        .form-elements__item-info.form-elements__item-info--large-margin
+          .form-elements__item-name= "rate button"
+        .form-elements__item-wrapper
+          +button-rate({name:'rating', score:4})
+          +button-rate({name:'rating-second', score:5})
+
     .form-elements__column
       .form-elements__item.form-elements__item--large-margin.form-elements__item--size-medium
         .form-elements__item-info.form-elements__item-info--large-margin
@@ -70,4 +78,3 @@ block content
           .form-elements__item-state= "5 000₽ - 10 000₽"
         //- create container for noUiSlider, set properties in index.js
         .range-slider
-      
