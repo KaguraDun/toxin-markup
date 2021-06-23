@@ -5,17 +5,17 @@
 }
 
 .noUi-horizontal .noUi-handle {
+  right: -8px;
   width: 16px;
   height: 16px;
-  right: -8px;
 }
 
 .noUi-handle {
-  border-radius: 50%;
   background: $secondary-gradient;
   border: 2px solid $white;
-  cursor: pointer;
+  border-radius: 50%;
   box-shadow: none;
+  cursor: pointer;
 }
 
 .noUi-handle:before,
@@ -31,6 +31,6 @@
 .noUi-target {
   background: $white;
   border: 1px solid $dark25;
-  box-shadow: none;
   border-radius: 3px;
+  box-shadow: none;
 }

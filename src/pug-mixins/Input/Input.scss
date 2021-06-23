@@ -4,13 +4,13 @@
 .input {
   box-sizing: border-box;
   width: 100%;
-  max-height: 44px;
+  max-height: rem(44px);
   margin: 0 auto;
-  padding: 10px 15px;
+  padding: rem(10px) rem(15px);
   color: $dark25;
   background: $white;
   border: 1px solid $dark25;
-  border-radius: 4px;
+  border-radius: rem(4px);
   @include font-montserrat-body();
 
   &__wrapper {
