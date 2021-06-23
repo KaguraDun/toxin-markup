@@ -1,0 +1,75 @@
+@import '../../styles/constants';
+@import '../../styles/mixins';
+
+.button-rate {
+  &__fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  &__input-group {
+    position: relative;
+    width: rem(120px);
+    height: rem(24px);
+    background: url('./svg/button-rate-icon-border.svg');
+    background-repeat: repeat-x;
+    background-size: rem(24px) auto;
+
+    &:focus-within {
+      outline: 1px solid $purple;
+      outline-offset: 4px;
+    }
+  }
+
+  &__star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: rem(24px);
+    height: rem(24px);
+    margin: 0;
+    background-repeat: repeat-x;
+    background-size: rem(24px) auto;
+    cursor: pointer;
+    appearance: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:checked,
+    &:hover {
+      background-image: url('./svg/button-rate-icon-full.svg');
+    }
+
+    &:hover ~ & {
+      background-image: url('./svg/button-rate-icon-border.svg');
+    }
+
+    &:nth-child(1) {
+      z-index: 5;
+      width: rem(24px);
+    }
+
+    &:nth-child(2) {
+      z-index: 4;
+      width: rem(48px);
+    }
+
+    &:nth-child(3) {
+      z-index: 3;
+      width: rem(72px);
+    }
+
+    &:nth-child(4) {
+      z-index: 2;
+      width: rem(96px);
+    }
+
+    &:nth-child(5) {
+      z-index: 1;
+      width: rem(120px);
+    }
+  }
+}
