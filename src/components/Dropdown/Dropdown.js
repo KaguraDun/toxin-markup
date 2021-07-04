@@ -39,22 +39,27 @@ class Dropdown {
     return items;
   }
 
+  createControlButtons() {
+    return `
+    <div class="dropdown__button-wrapper">
+    <button class="button-widget js-button-clear">Очистить</button>
+    <button class="button-widget js-button-apply">Применить</button>
+  </div>`;
+  }
+
   createDropdown() {
     const placeholder = this.concatStoreValues() || this.properties.placeholder;
 
     return `
     <div class="dropdown">
-      <p class="dropdown__label">${this.properties.label}</p>
+      <p class="dropdown__label">${this.properties.label ?? ''}</p>
       <div class="dropdown__input-wrapper">
         <input type="text" class="dropdown__input" placeholder="${placeholder}" readonly>
         <span class="dropdown__button-icon"></span>
       </div>
       <div class="dropdown__items" hidden>
         ${this.createItems()}
-        <div class="dropdown__button-wrapper">
-          <button class="button-widget js-button-clear">Очистить</button>
-          <button class="button-widget js-button-apply">Применить</button>
-        </div>
+        ${this.properties.controlButtons ? this.createControlButtons() : ''}
       </div>
     </div>`;
   }
@@ -70,8 +75,8 @@ class Dropdown {
 
     dropdownInputWrapper.addEventListener('click', () => this.toggleDropdownItems());
     this.dropdownItems.addEventListener('click', (e) => this.changeStoreValue(e));
-    buttonClear.addEventListener('click', () => this.resetStoreValues());
-    buttonApply.addEventListener('click', () => this.toggleDropdownItems(this.dropdownItems));
+    buttonClear?.addEventListener('click', () => this.resetStoreValues());
+    buttonApply?.addEventListener('click', () => this.toggleDropdownItems(this.dropdownItems));
   }
 
   changeStoreValue(e) {
