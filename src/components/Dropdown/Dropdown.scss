@@ -20,9 +20,9 @@
   &__input {
     box-sizing: border-box;
     width: 100%;
-    max-height: 44px;
+    max-height: rem(44px);
     margin: 0 auto;
-    padding: 10px 15px;
+    padding: rem(10px 15px);
     color: $dark25;
     background: $white;
     border: 1px solid $dark25;
@@ -34,7 +34,7 @@
   &__button-icon {
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: rem(10px);
     transform: translateY(-50%);
 
     &:after {
@@ -44,7 +44,7 @@
   }
 
   &__items {
-    padding: 7px 7px 13px 15px;
+    padding: rem(7px 7px 7px 15px);
     border: 1px solid $dark50;
   }
 
@@ -54,9 +54,7 @@
     margin-bottom: 7px;
     @include font-montserrat-h3;
 
-    &:nth-last-child(2) {
-      margin-bottom: 20px;
-    }
+
   }
 
   &__item-name {
@@ -89,8 +87,8 @@
 
 .button-plus,
 .button-minus {
-  width: 30px;
-  height: 30px;
+  width: rem(30px);
+  height: rem(30px);
   color: $dark50;
   background: transparent;
   border: 1px solid $dark25;
@@ -116,5 +114,6 @@
   background: transparent;
   border: 0;
   cursor: pointer;
+  margin-top: 20px;
   @include font-montserrat-h3;
 }
