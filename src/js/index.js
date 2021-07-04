@@ -3,10 +3,13 @@ import 'jquery';
 import 'jquery-mask-plugin';
 
 import Litepicker from 'litepicker';
-import Dropdown from '../components/Dropdown/Dropdown';
 
 import addEventToLikeButtons from '../pug-mixins/Button-like/Button-like';
 import createRangeSlider from '../components/RangeSlider/Range-slider';
+import {
+  createDropdownGuests,
+  createDropdownRoomAmenity,
+} from '../components/Dropdown/CreateDropdown';
 
 function importAll(r) {
   r.keys().forEach(r);
@@ -15,26 +18,10 @@ function importAll(r) {
 importAll(require.context('../components/', true, /\.js|.scss$/));
 importAll(require.context('../pug-mixins/', true, /\.js|.scss$/));
 
-const dropdownGuests = document.querySelector('.dropdown-guests');
+const dropdownGuests = document.querySelector('.dropdown-guests-js');
 
 if (dropdownGuests) {
-  const guestsPattern = ['Гость', 'Гостя', 'Гостей'];
-
-  const properties = {
-    placeholder: 'Сколько гостей',
-    label: 'dropdown',
-    options: {
-      Взрослые: { count: 0, countAs: guestsPattern },
-      Дети: { count: 0, countAs: guestsPattern },
-      Младенцы: {
-        count: 0,
-        pattern: ['Младенец', 'Младенца', 'Младенцев'],
-      },
-    },
-  };
-
-  const dropdown = new Dropdown(dropdownGuests, properties);
-  dropdown.init();
+  createDropdownGuests(dropdownGuests);
 }
 
 new Litepicker({
@@ -59,26 +46,17 @@ new Litepicker({
   buttonText: { apply: 'применить', cancel: 'очистить' },
 });
 
-// const dropdownRoomAmenity = document.querySelector('.dropdown-room-amenity');
+const dropdownRoomAmenity = document.querySelector('.dropdown-room-amenity-js');
 
-// if (dropdownRoomAmenity) {
-//   const properties = {
-//     placeholder: 'Удобства',
-//     label: 'dropdown',
-//     options: {
-//       Спальни: { count: 2, pattern: ['Спальня', 'Спальни', 'Спален'] },
-//       Кровати: { count: 2, pattern: ['Кровать', 'Кровати', 'Кроватей'] },
-//       'Ванные комнаты': {
-//         count: 0,
-//         pattern: ['Ванная комната', 'Ванных комнаты', 'Ванных комнат'],
-//       },
-//     },
-//   };
+if (dropdownRoomAmenity) {
+  createDropdownRoomAmenity(dropdownRoomAmenity);
+}
 
-//   const dropdown = new Dropdown(dropdownRoomAmenity, properties);
-//   dropdown.init();
-//   dropdown.dropdownItems.hidden = false;
-// }
+const dropdownRoomAmenityExpanded = document.querySelector('.dropdown-room-amenity-expanded-js');
+
+if (dropdownRoomAmenityExpanded) {
+  createDropdownRoomAmenity(dropdownRoomAmenityExpanded, true, false);
+}
 
 addEventToLikeButtons();
 createRangeSlider('range-slider');
