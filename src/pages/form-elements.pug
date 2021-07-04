@@ -29,7 +29,7 @@ block content
         +input({type:'text', value:'This is pretty awesome', size:'large'}).input--hover
       .form-elements__item
         //- create container for dropdown, set properties in index.js
-        .dropdown-guests
+        .dropdown-guests-js
       .form-elements__item.form-elements__item--large-margin
         .form-elements__item-info
           .form-elements__item-name= "masked text field"
@@ -38,10 +38,23 @@ block content
         +date-dropdown({departureValue: '19.08.2019', arrivalLabel:'date dropdown', departureLabel:'date dropdown'})
       .form-elements__item.form-elements__item--large-margin
         +date-dropdown({dateFilter: true, filterDateValue:'19 авг - 23 авг', filterDateLabel: 'filter date dropdown', size:'medium'})
-      .form-elements__item.form-elements__item--large-margin
+      .form-elements__item.form-elements__item--largest-margin
         .form-elements__item-info
           .form-elements__item-name= "subscription text field"
         +input({type:'email', placeholder:'Email', arrow: true, size:'medium' })
+      .form-elements__item.form-elements__item--size-medium
+        .form-elements__item-info
+          .form-elements__item-name= "dropdown"
+          .form-elements__item-state= "default"
+        //- create container for dropdown, set properties in index.js
+        .dropdown-room-amenity-js
+      .form-elements__item.form-elements__item--size-medium
+        .form-elements__item-info
+          .form-elements__item-name= "dropdown"
+          .form-elements__item-state= "expanded"
+        //- create container for dropdown, set properties in index.js
+        .dropdown-room-amenity-expanded-js
+    
     .form-elements__column.form-elements__column--small-right-margin
       .form-elements__item.form-elements__item--large-margin
         fieldset.form-elements__fieldset
