@@ -56,9 +56,9 @@ module.exports = {
     // Generates an HTML file from a pug template
     ...PAGES.map(
       (page) => new HtmlWebpackPlugin({
-        template: `${PAGES_DIR}/${page}`,
-        filename: `./${page.replace(/\.pug/, '.html')}`,
-      }),
+          template: `${PAGES_DIR}/${page}`,
+          filename: `./${page.replace(/\.pug/, '.html')}`,
+        }),
     ),
   ],
 
@@ -86,7 +86,8 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               sourceMap: true,
-              additionalData: '@import "@/styles/_constants.scss";\n@import "@/styles/_mixins.scss";',
+              additionalData:
+                '@import "@/styles/_constants.scss";\n@import "@/styles/_mixins.scss";',
             },
           },
         ],
@@ -128,7 +129,13 @@ module.exports = {
         test: /\.pug$/,
         use: [
           {
-            loader: 'simple-pug-loader',
+            loader: 'html-loader',
+          },
+          {
+            loader: 'pug-html-loader',
+            options: {
+              basedir: paths.src,
+            },
           },
         ],
       },
@@ -139,13 +146,13 @@ module.exports = {
     extensions: ['.pug', '.js', '.json'],
     alias: {
       '@': paths.src,
-      '@/components': `${paths.src}/components`,
       '@/features': `${paths.src}/features`,
       '@/icons': `${paths.src}/icons`,
       '@/images': `${paths.src}/images`,
       '@/models': `${paths.src}/models`,
       '@/layouts': `${paths.src}/layouts`,
       '@/pages': `${paths.src}/pages`,
+      '@/pug-components': `${paths.src}/pug-components`,
       '@/pug-mixins': `${paths.src}/pug-mixins`,
       '@/services': `${paths.src}/services`,
       '@/styles': `${paths.src}/styles`,

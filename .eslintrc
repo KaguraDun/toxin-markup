@@ -1,5 +1,6 @@
 {
   "parser": "babel-eslint",
+  "plugins": ["prettier", "pug"],
   "rules": {
     "object-curly-newline": "off",
     "linebreak-style": 0,
@@ -15,7 +16,8 @@
       {
         "props": false
       }
-    ]
+    ],
+    "prettier/prettier": "error",
   },
   "settings": {
     "import/resolver": {
@@ -24,15 +26,12 @@
           "./src"
         ],
         "extensions": [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx" 
+          ".pug",
+          ".js"
         ]
       }
     }
   },
-  "plugins": ["pug"],
   "env": {
     "es6": true,
     "browser": true
