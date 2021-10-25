@@ -2,6 +2,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 const fs = require('fs');
 const paths = require('./paths');
@@ -24,7 +26,7 @@ module.exports = {
   // Customize the webpack build process
   plugins: [
     new LiveReloadPlugin({
-      appendScriptTag: true
+      appendScriptTag: true,
     }),
     // Removes/cleans build folders and unused assets when rebuilding
     new CleanWebpackPlugin(),
@@ -41,6 +43,15 @@ module.exports = {
         },
       ],
     }),
+    // ESLint configuration
+    new ESLintPlugin({
+      files: ['.', 'src', 'config'],
+      extensions: ['pug', 'js'],
+      cache: true,
+      cacheLocation: 'node_modules/.cache/eslint/.eslintcache',
+    }),
+
+    new StylelintPlugin({ fix: true }),
 
     // Generates an HTML file from a pug template
     ...PAGES.map(
@@ -71,7 +82,13 @@ module.exports = {
             options: { sourceMap: true, importLoaders: 1 },
           },
           { loader: 'postcss-loader', options: { sourceMap: true } },
-          { loader: 'sass-loader', options: { sourceMap: true } },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              additionalData: '@import "@/styles/_constants.scss";\n@import "@/styles/_mixins.scss";',
+            },
+          },
         ],
       },
 
@@ -116,5 +133,22 @@ module.exports = {
         ],
       },
     ],
+  },
+  resolve: {
+    modules: [paths.src, 'node_modules'],
+    extensions: ['.pug', '.js', '.json'],
+    alias: {
+      '@': paths.src,
+      '@/components': `${paths.src}/components`,
+      '@/features': `${paths.src}/features`,
+      '@/icons': `${paths.src}/icons`,
+      '@/images': `${paths.src}/images`,
+      '@/models': `${paths.src}/models`,
+      '@/layouts': `${paths.src}/layouts`,
+      '@/pages': `${paths.src}/pages`,
+      '@/pug-mixins': `${paths.src}/pug-mixins`,
+      '@/services': `${paths.src}/services`,
+      '@/styles': `${paths.src}/styles`,
+    },
   },
 };
