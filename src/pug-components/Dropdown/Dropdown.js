@@ -66,9 +66,9 @@ class Dropdown {
 
   init() {
     this.element.innerHTML = this.createDropdown();
-
     this.dropdownInput = this.element.querySelector('.dropdown__input');
     this.dropdownItems = this.element.querySelector('.dropdown__items');
+
     const dropdownInputWrapper = this.element.querySelector('.dropdown__input-wrapper');
     const buttonClear = this.element.querySelector('.js-button-clear');
     const buttonApply = this.element.querySelector('.js-button-apply');
