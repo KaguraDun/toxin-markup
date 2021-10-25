@@ -4,19 +4,19 @@ import 'jquery-mask-plugin';
 
 import Litepicker from 'litepicker';
 
-import addEventToLikeButtons from '../pug-mixins/Button-like/Button-like';
-import createRangeSlider from '../components/RangeSlider/Range-slider';
+import addEventToLikeButtons from '@/pug-mixins/Button-like/Button-like';
+import createRangeSlider from '@/pug-components/RangeSlider/Range-slider';
 import {
   createDropdownGuests,
   createDropdownRoomAmenity,
-} from '../components/Dropdown/CreateDropdown';
+} from '@/pug-components/Dropdown/CreateDropdown';
 
 function importAll(r) {
   r.keys().forEach(r);
 }
 
-importAll(require.context('../components/', true, /\.js|.scss$/));
-importAll(require.context('../pug-mixins/', true, /\.js|.scss$/));
+importAll(require.context('@/pug-components/', true, /\.js|.scss$/));
+importAll(require.context('@/pug-mixins/', true, /\.js|.scss$/));
 
 const dropdownGuests = document.querySelector('.dropdown-guests-js');
 

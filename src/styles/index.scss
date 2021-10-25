@@ -3,9 +3,9 @@
 @import './fonts/_fonts.scss';
 
 /* pages */
-@import './pages/colors-and-type.scss';
-@import './pages/headers-and-footers.scss';
-@import './pages/form-elements.scss';
+@import '@/pages/colors-and-type.scss';
+@import '@/pages/headers-and-footers.scss';
+@import '@/pages/form-elements.scss';
 
 /* all components auto import in index.js */
 

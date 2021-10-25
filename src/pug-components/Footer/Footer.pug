@@ -4,7 +4,7 @@ footer.footer
       .footer__grid
         .footer__grid-column
           .footer__logo
-            include ../Logo/Logo.pug
+            include /pug-components/Logo/Logo.pug
           p.footer__text= "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
         .footer__grid-column
           ul.footer__item-list 
@@ -41,13 +41,13 @@ footer.footer
           .footer__item-heading= "Подписка"
           p.footer__text= "Получайте специальные предложения и новости сервиса"
           .footer__input-email
-            include ../../pug-mixins/Input/Input.pug
+            include /pug-mixins/Input/Input.pug
             +input({type:'email', placeholder:'Email', arrow: true })
   .footer__copyright
     .container
       .footer__copyright-wrapper
         .footer__copyright-logo
-          include ../Logo/Logo.pug
+          include /pug-components/Logo/Logo.pug
         .footer__copyright-text
-          include ../Copyright/Copyright.pug
-        include ../Socials/Socials.pug
+          include /pug-components/Copyright/Copyright.pug
+        include /pug-components/Socials/Socials.pug

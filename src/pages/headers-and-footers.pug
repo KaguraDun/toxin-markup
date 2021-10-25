@@ -1,4 +1,4 @@
-extends ../layouts/base.pug
+extends /layouts/base.pug
 block baseVariables
   - var title = "Headers and footers";
   - var bodyClass = 'headers-and-footers';
@@ -7,15 +7,15 @@ block content
   .headers-and-footers__logo
     .headers-and-footers__logo-icon
       - var isGray = true;
-      include ../components/Logo/Logo.pug
+      include /pug-components/Logo/Logo.pug
       - var isGray = false;
   .headers-and-footers__header-first
     - var isLogged = false;
-    include ../components/Header/Header.pug
+    include /pug-components/Header/Header.pug
   .headers-and-footers__header-second
     - var isLogged = true;
-    include ../components/Header/Header.pug
+    include /pug-components/Header/Header.pug
   .headers-and-footers__footer
-    include ../components/Footer/Footer.pug
+    include /pug-components/Footer/Footer.pug
   .headers-and-footers__footer-creative
-    include ../components/Footer/Footer.pug
+    include /pug-components/Footer/Footer.pug
