@@ -1,15 +1,5 @@
 import './Dropdown.scss';
-
-function numWord(value, words) {
-  const absValue = Math.abs(value) % 100;
-  const num = absValue % 10;
-
-  if (absValue > 10 && absValue < 20) return words[2];
-  if (num > 1 && num < 5) return words[1];
-  if (num === 1) return words[0];
-
-  return words[2];
-}
+import getDeclension from '../../helpers/getDeclension';
 
 class Dropdown {
   constructor(element, properties) {
@@ -143,9 +133,9 @@ class Dropdown {
 
       if (countAs) {
         countAsSum += count;
-        countAsStr = countAsSum > 0 ? `${countAsSum} ${numWord(countAsSum, countAs)}` : '';
+        countAsStr = countAsSum > 0 ? `${countAsSum} ${getDeclension(countAsSum, countAs)}` : '';
       } else {
-        const tempStr = `${count} ${numWord(count, pattern)}`;
+        const tempStr = `${count} ${getDeclension(count, pattern)}`;
         storeValues.push(tempStr);
       }
     });
