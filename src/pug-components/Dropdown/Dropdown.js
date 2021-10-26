@@ -29,7 +29,7 @@ class Dropdown {
     return items;
   }
 
-  createControlButtons() {
+  static createControlButtons() {
     return `
     <div class="dropdown__button-wrapper">
     <button class="button-widget js-button-clear">Очистить</button>
@@ -49,7 +49,7 @@ class Dropdown {
       </div>
       <div class="dropdown__items" hidden>
         ${this.createItems()}
-        ${this.properties.controlButtons ? this.createControlButtons() : ''}
+        ${this.properties.controlButtons ? Dropdown.createControlButtons() : ''}
       </div>
     </div>`;
   }

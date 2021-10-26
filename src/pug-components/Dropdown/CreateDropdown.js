@@ -19,6 +19,10 @@ function createDropdownGuests(element, expanded = false, controls = true) {
 
   const dropdown = new Dropdown(element, properties);
   dropdown.init();
+
+  if (expanded) {
+    dropdown.dropdownItems.hidden = false;
+  }
 }
 
 function createDropdownRoomAmenity(element, expanded = false, controls = true) {

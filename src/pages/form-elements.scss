@@ -51,10 +51,10 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 5px;
+    }
 
-      &--large-margin {
-        margin-bottom: 20px;
-      }
+    &-info--large-margin {
+      margin-bottom: 20px;
     }
 
     &-name {
@@ -67,10 +67,10 @@
 
     &-wrapper {
       display: flex;
+    }
 
-      & > .button-rate__fieldset:first-child {
-        margin-right: rem(20px);
-      }
+    &-wrapper > .button-rate__fieldset:first-child {
+      margin-right: rem(20px);
     }
 
     &--size-medium {
@@ -96,14 +96,14 @@
 
     &--row {
       display: flex;
+    }
 
-      & > .input-radio__label:not(:last-of-type) {
-        margin-right: rem(20px);
-      }
+    &--row > .input-radio__label:not(:last-of-type) {
+      margin-right: rem(20px);
+    }
 
-      & > .button-like:not(:last-of-type) {
-        margin-right: rem(10px);
-      }
+    &--row > .button-like:not(:last-of-type) {
+      margin-right: rem(10px);
     }
   }
 }

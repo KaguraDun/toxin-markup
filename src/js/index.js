@@ -1,15 +1,17 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
 import '../styles/index.scss';
 import 'jquery';
 import 'jquery-mask-plugin';
 
 import Litepicker from 'litepicker';
 
-import addEventToLikeButtons from '@/pug-mixins/Button-like/Button-like';
-import createRangeSlider from '@/pug-components/RangeSlider/Range-slider';
+import addEventToLikeButtons from '@/pug-mixins/Button-like/Button-like.js';
+import createRangeSlider from '@/pug-components/RangeSlider/Range-slider.js';
 import {
   createDropdownGuests,
   createDropdownRoomAmenity,
-} from '@/pug-components/Dropdown/CreateDropdown';
+} from '@/pug-components/Dropdown/CreateDropdown.js';
 
 function importAll(r) {
   r.keys().forEach(r);
@@ -24,6 +26,7 @@ if (dropdownGuests) {
   createDropdownGuests(dropdownGuests);
 }
 
+// eslint-disable-next-line no-new
 new Litepicker({
   element: document.querySelector('.js-date-dropdown-arrival'),
   elementEnd: document.querySelector('.js-date-dropdown-departure'),
@@ -36,6 +39,7 @@ new Litepicker({
   buttonText: { apply: 'применить', cancel: 'очистить' },
 });
 
+// eslint-disable-next-line no-new
 new Litepicker({
   element: document.querySelector('.js-date-dropdown'),
   allowRepick: true,

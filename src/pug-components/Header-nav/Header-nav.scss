@@ -20,13 +20,11 @@
       font-weight: bold;
     }
 
-    &--expanded {
-      &::after {
-        font-size: rem(24px);
-        font-family: 'Material Icons';
-        vertical-align: middle;
-        content: 'expand_more';
-      }
+    &--expanded::after {
+      font-size: rem(24px);
+      font-family: 'Material Icons';
+      vertical-align: middle;
+      content: 'expand_more';
     }
   }
 
