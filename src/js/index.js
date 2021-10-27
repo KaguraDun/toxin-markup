@@ -7,6 +7,7 @@ import 'jquery-mask-plugin';
 import Litepicker from 'litepicker';
 
 import addEventToLikeButtons from '@/pug-mixins/Button-like/Button-like.js';
+import addEventToCheckboxLists from '@/pug-mixins/Checkbox-list/Checkbox-list.js';
 import createRangeSlider from '@/pug-components/RangeSlider/Range-slider.js';
 import {
   createDropdownGuests,
@@ -63,4 +64,6 @@ if (dropdownRoomAmenityExpanded) {
 }
 
 addEventToLikeButtons();
+addEventToCheckboxLists();
+
 createRangeSlider('range-slider');

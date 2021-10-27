@@ -4,6 +4,16 @@ block baseVariables
   - var bodyClass = "form-elements";
 
 block content
+  - 
+    var checkboxListItems = [
+      { text: "Завтрак", checked: false },
+      { text: "Письменный стол", checked: true },
+      { text: "Стул для кормления", checked: true },
+      { text: "Кроватка", checked: true },
+      { text: "Телевизор", checked: false },
+      { text: "Шампунь", checked: false },
+    ]
+    
   .form-elements__logo
     .form-elements__logo-icon
       - var isGray = true;
@@ -16,6 +26,7 @@ block content
     include /pug-mixins/Input-toggle/Input-toggle.pug
     include /pug-mixins/Button-like/Button-like.pug
     include /pug-mixins/Button-rate/Button-rate.pug
+    include /pug-mixins/Checkbox-list/Checkbox-list.pug
     .form-elements__column
       .form-elements__item
         .form-elements__item-info
@@ -54,7 +65,19 @@ block content
           .form-elements__item-state= "expanded"
         //- create container for dropdown, set properties in index.js
         .dropdown-room-amenity-expanded-js
-    
+      .form-elements__item.form-elements__item--size-medium
+        +checkbox-list({
+          name: 'expandable checkbox list',
+          expanded: false,
+          items: checkboxListItems
+        })
+      .form-elements__item.form-elements__item--size-medium
+        +checkbox-list({
+          name: 'expandable checkbox list',
+          expanded: true,
+          items: checkboxListItems
+        })
+
     .form-elements__column.form-elements__column--small-right-margin
       .form-elements__item.form-elements__item--large-margin
         fieldset.form-elements__fieldset
