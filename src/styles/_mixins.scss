@@ -1,6 +1,7 @@
 @import '~sass-rem';
 @import './constants';
 @import './mixins/fieldset';
+@import './mixins/button-arrow-icon';
 
 @mixin font-montserrat($font-size, $line-height, $font-weight: normal) {
   font-weight: $font-weight;

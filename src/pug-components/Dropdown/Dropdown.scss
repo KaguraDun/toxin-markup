@@ -29,15 +29,7 @@
   }
 
   &__button-icon {
-    position: absolute;
-    top: 50%;
-    right: rem(10px);
-    transform: translateY(-50%);
-
-    &:after {
-      color: $dark75;
-      @include font-material-icons('expand_more');
-    }
+    @include button-arrow-icon;
   }
 
   &__items {

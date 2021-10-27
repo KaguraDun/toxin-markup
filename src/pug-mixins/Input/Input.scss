@@ -15,19 +15,11 @@
   }
 
   &__icon {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
+    @include button-arrow-icon;
 
     &--arrow::after {
       color: $purple;
       @include font-material-icons('arrow_forward');
-    }
-
-    &--expand::after {
-      color: $dark75;
-      @include font-material-icons('expand_more');
     }
   }
 

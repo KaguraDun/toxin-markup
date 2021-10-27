@@ -1,0 +1,12 @@
+@mixin button-arrow-icon {
+  position: absolute;
+  top: 50%;
+  right: rem(10px);
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  &:after {
+    color: $dark75;
+    @include font-material-icons('expand_more');
+  }
+}
