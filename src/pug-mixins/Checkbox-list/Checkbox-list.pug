@@ -1,0 +1,26 @@
+//- available properties:
+  name: string;
+  expanded: boolean;
+  items: [{name: string, checked: boolean}];
+
+mixin checkbox-list(properties)
+  include /pug-mixins/Input-checkbox/Input-checkbox.pug
+  - var expandModifier = 'checkbox-list__items--expand';
+  - var rotateModifier = 'checkbox-list__icon--rotate';
+  - var itemsStyles = ['checkbox-list__items'];
+  - var iconStyles = ['checkbox-list__icon'];
+
+  -
+    if (properties.expanded) {
+      itemsStyles.push(expandModifier);
+      iconStyles.push(rotateModifier);
+    }
+
+  .checkbox-list
+    button.checkbox-list__button
+      h3.checkbox-list__name=properties.name
+      span(class=iconStyles.join(' '))
+    fieldset(class=itemsStyles.join(' '))
+      each item in properties.items
+        +input-checkbox(item)
+  

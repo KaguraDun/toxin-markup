@@ -1,0 +1,29 @@
+.checkbox-list {
+  &__button {
+    position: relative;
+    width: 100%;
+    margin: 0 0 rem(5px);
+    padding: 0;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+
+  &__name {
+    text-align: left;
+    @include font-montserrat-h3();
+  }
+
+  &__icon {
+    @include button-arrow-icon;
+  }
+
+  &__items {
+    display: none;
+    @include fieldset;
+  }
+
+  &__items--expand {
+    display: block;
+  }
+}
