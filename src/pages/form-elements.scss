@@ -79,31 +79,6 @@
   }
 
   &__fieldset {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    @include font-montserrat-h3;
-
-    &-legend {
-      margin: 0 0 rem(16px);
-      padding: 0;
-    }
-
-    & > .input-checkbox__label,
-    & > .input-toggle__label {
-      margin-bottom: rem(10px);
-    }
-
-    &--row {
-      display: flex;
-    }
-
-    &--row > .input-radio__label:not(:last-of-type) {
-      margin-right: rem(20px);
-    }
-
-    &--row > .button-like:not(:last-of-type) {
-      margin-right: rem(10px);
-    }
+    @include fieldset;
   }
 }
