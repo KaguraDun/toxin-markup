@@ -1,0 +1,47 @@
+.room-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  @include clear-ul-style;
+
+  &__item {
+    display: flex;
+    gap: 10px;
+    max-width: rem(280px);
+  }
+
+  &__item--underlined {
+    padding-bottom: rem(17px);
+    border-bottom: 1px solid $dark10;
+  }
+
+  &__icon {
+    color: $purple;
+  }
+
+  &__icon--comfort:after {
+    @include font-material-icons('insert_emoticon', rem(48px), rem(41px));
+  }
+
+  &__icon--convenience:after {
+    @include font-material-icons('location_city', rem(48px), rem(41px));
+  }
+
+  &__icon--cosiness:after {
+    @include font-material-icons('whatshot', rem(48px), rem(41px));
+  }
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__heading {
+    margin: 0;
+    font-weight: bold;
+  }
+
+  &__text {
+    margin: 0;
+  }
+}
