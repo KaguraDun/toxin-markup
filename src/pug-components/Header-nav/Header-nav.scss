@@ -21,10 +21,7 @@
     }
 
     &--expanded::after {
-      font-size: rem(24px);
-      font-family: 'Material Icons';
-      vertical-align: middle;
-      content: 'expand_more';
+      @include font-material-icons('expand_more');
     }
   }
 

@@ -5,8 +5,8 @@
   disabled: boolean;
 
 mixin button(properties)
-  - var modifierTemplate = "button--";
-  - var styles = ["button"];
+  - const modifierTemplate = "button--";
+  - const styles = ["button"];
 
   - if (properties.style) styles.push(modifierTemplate + properties.style);
   - if (properties.size) styles.push(modifierTemplate + properties.size);

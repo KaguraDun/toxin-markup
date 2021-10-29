@@ -1,19 +1,21 @@
 extends /layouts/base.pug
 block baseVariables
-  - var title = "Headers and footers";
-  - var bodyClass = 'headers-and-footers';
+  - const title = "Headers and footers";
+  - const bodyClass = 'headers-and-footers';
+  - let isGray;
+  - let isLogged;
 
 block content
   .headers-and-footers__logo
     .headers-and-footers__logo-icon
-      - var isGray = true;
+      - isGray = true;
       include /pug-components/Logo/Logo.pug
-      - var isGray = false;
+      - isGray = false;
   .headers-and-footers__header-first
-    - var isLogged = false;
+    - isLogged = false;
     include /pug-components/Header/Header.pug
   .headers-and-footers__header-second
-    - var isLogged = true;
+    - isLogged = true;
     include /pug-components/Header/Header.pug
   .headers-and-footers__footer
     include /pug-components/Footer/Footer.pug

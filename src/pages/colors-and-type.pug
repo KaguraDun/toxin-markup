@@ -1,12 +1,12 @@
 extends /layouts/base.pug
 block baseVariables
-  - var title = "Colors and type";
-  - var bodyClass = "colors-and-type";
+  - const title = "Colors and type";
+  - const bodyClass = "colors-and-type";
 
 block content
   .colors-and-type__logo
     .colors-and-type__logo-icon
-      - var isGray = true; 
+      - const isGray = true; 
       include /pug-components/Logo/Logo.pug
   .colors-and-type__container
     ul.colors-and-type__colors   
