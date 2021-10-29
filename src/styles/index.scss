@@ -11,11 +11,12 @@
 
 html {
   //default font size = rem(14px) or 87.5%
-  @include font-montserrat(87.5%, rem(29px));
+  font-size: 87.5%;
 }
 
 body {
   margin: 0;
+  @include font-montserrat-body;
 }
 
 .container {
