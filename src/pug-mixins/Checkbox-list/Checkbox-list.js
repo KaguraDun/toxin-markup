@@ -18,4 +18,4 @@ function addEventToCheckboxLists() {
   });
 }
 
-export default addEventToCheckboxLists();
+export default addEventToCheckboxLists;
