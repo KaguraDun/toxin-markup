@@ -46,7 +46,7 @@ block content
         +input({type:'text', value:'This is pretty awesome', size:'large'}).input--hover
       .form-elements__item
         //- create container for dropdown, set properties in index.js
-        .dropdown-guests-js
+        .js-dropdown-guests
       .form-elements__item.form-elements__item--large-margin
         .form-elements__item-info
           .form-elements__item-name= "masked text field"
@@ -64,13 +64,13 @@ block content
           .form-elements__item-name= "dropdown"
           .form-elements__item-state= "default"
         //- create container for dropdown, set properties in index.js
-        .dropdown-room-amenity-js
+        .js-dropdown-room-amenity
       .form-elements__item.form-elements__item--size-medium
         .form-elements__item-info
           .form-elements__item-name= "dropdown"
           .form-elements__item-state= "expanded"
         //- create container for dropdown, set properties in index.js
-        .dropdown-room-amenity-expanded-js
+        .js-dropdown-room-amenity-expanded
       .form-elements__item.form-elements__item--size-medium
         +checkbox-list({
           name: 'expandable checkbox list',
@@ -121,4 +121,4 @@ block content
           .form-elements__item-name= "range slider"
           .form-elements__item-state= "5 000₽ - 10 000₽"
         //- create container for noUiSlider, set properties in index.js
-        .range-slider
+        .js-range-slider

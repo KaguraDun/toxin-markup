@@ -21,7 +21,7 @@ function importAll(r) {
 importAll(require.context('@/pug-components/', true, /\.js|.scss$/));
 importAll(require.context('@/pug-mixins/', true, /\.js|.scss$/));
 
-const dropdownGuests = document.querySelector('.dropdown-guests-js');
+const dropdownGuests = document.querySelector('.js-dropdown-guests');
 
 if (dropdownGuests) {
   createDropdownGuests(dropdownGuests);
@@ -51,13 +51,13 @@ new Litepicker({
   buttonText: { apply: 'применить', cancel: 'очистить' },
 });
 
-const dropdownRoomAmenity = document.querySelector('.dropdown-room-amenity-js');
+const dropdownRoomAmenity = document.querySelector('.js-dropdown-room-amenity');
 
 if (dropdownRoomAmenity) {
   createDropdownRoomAmenity(dropdownRoomAmenity);
 }
 
-const dropdownRoomAmenityExpanded = document.querySelector('.dropdown-room-amenity-expanded-js');
+const dropdownRoomAmenityExpanded = document.querySelector('.js-dropdown-room-amenity-expanded');
 
 if (dropdownRoomAmenityExpanded) {
   createDropdownRoomAmenity(dropdownRoomAmenityExpanded, true, false);
@@ -66,4 +66,4 @@ if (dropdownRoomAmenityExpanded) {
 addEventToLikeButtons();
 addEventToCheckboxLists();
 
-createRangeSlider('range-slider');
+createRangeSlider('js-range-slider');
