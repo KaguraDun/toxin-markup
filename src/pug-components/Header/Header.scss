@@ -19,7 +19,7 @@
   }
 
   &__vertical-line {
-    &:after {
+    &::after {
       width: 1px;
       height: 30px;
       color: $dark10;

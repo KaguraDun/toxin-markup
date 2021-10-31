@@ -18,15 +18,15 @@
   &__icon {
     color: $purple;
 
-    &--comfort:after {
+    &--comfort::after {
       @include font-material-icons('insert_emoticon', rem(48px), rem(41px));
     }
 
-    &--convenience:after {
+    &--convenience::after {
       @include font-material-icons('location_city', rem(48px), rem(41px));
     }
 
-    &--cosiness:after {
+    &--cosiness::after {
       @include font-material-icons('whatshot', rem(48px), rem(41px));
     }
   }

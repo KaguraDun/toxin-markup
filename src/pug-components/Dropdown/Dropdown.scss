@@ -29,6 +29,7 @@
   }
 
   &__button-icon {
+    @include button-icon;
     @include button-arrow-icon;
   }
 
