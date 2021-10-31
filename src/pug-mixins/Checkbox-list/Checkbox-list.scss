@@ -22,6 +22,10 @@
   &__items {
     display: none;
     @include fieldset;
+
+    & > .input-checkbox__label {
+      margin-bottom: rem(10px);
+    }
   }
 
   &__items--expand {
