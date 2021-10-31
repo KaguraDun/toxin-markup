@@ -38,7 +38,7 @@
     margin-bottom: rem(20px);
 
     &--large-margin {
-      margin-bottom: rem(40px);
+      margin-bottom: rem(45px);
     }
 
     &--largest-margin {
@@ -80,5 +80,34 @@
 
   &__fieldset {
     @include fieldset;
+
+    &-row {
+      display: flex;
+    }
+
+    &-row:not(:last-of-type) {
+      margin-bottom: rem(30px);
+    }
+
+    &-row > .button:not(:last-of-type) {
+      margin-right: rem(19px);
+    }
+
+    & > .input-checkbox__label,
+    & > .input-toggle__label {
+      margin-bottom: rem(10px);
+    }
+
+    &--row {
+      display: flex;
+    }
+
+    &--row > .input-radio__label:not(:last-of-type) {
+      margin-right: rem(20px);
+    }
+
+    &--row > .button-like:not(:last-of-type) {
+      margin-right: rem(10px);
+    }
   }
 }
