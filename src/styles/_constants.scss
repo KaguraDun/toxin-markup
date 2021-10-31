@@ -12,7 +12,12 @@ $gray: #f4f4f6;
 $white: #ffffff;
 
 /* gradients */
-$primary-gradient: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+$primary-gradient: linear-gradient(180deg, rgba(188, 156, 255, 1) 0%, rgba(139, 164, 249, 1) 100%);
+$primary-gradient--hover: linear-gradient(
+  180deg,
+  rgba(188, 156, 255, 0.5) 0%,
+  rgba(139, 164, 249, 0.5) 100%
+);
 $secondary-gradient: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
 
 /* backgrounds */
