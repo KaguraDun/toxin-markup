@@ -1,17 +1,24 @@
 //- available properties:
-  style: filled;
-  size:;
+  size: small | medium | full-width;
+  style: filled | border | borderless;
+  arrow: boolean;
+  text: string;
   href: string;
   disabled: boolean;
 
-mixin button(properties)
-  - const modifierTemplate = "button--";
-  - const styles = ["button"];
+mixin button-content(arrow, text)
+  span.button__text= text
+  if (arrow)
+    span.button__icon
 
-  - if (properties.style) styles.push(modifierTemplate + properties.style);
-  - if (properties.size) styles.push(modifierTemplate + properties.size);
+mixin button({size='medium', style='border', arrow=false, text="", href, disabled })
+  - const modifier= "button--";
+  - const buttonStyles = `button ${modifier + style} ${modifier + size}`;
 
-  if properties.href
-    a(class=styles.join(" "), href=properties.href)= properties.text || ""
+  if href
+    a(class=buttonStyles, href=href)&attributes(attributes)
+      +button-content(arrow, text)
   else
-    button(class=styles.join(" "), disabled=properties.disabled || false)= properties.text || ""
+    button(class=buttonStyles, disabled=disabled || false)&attributes(attributes)
+      +button-content(arrow, text)
+

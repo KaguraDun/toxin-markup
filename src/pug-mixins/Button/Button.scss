@@ -1,18 +1,84 @@
 .button {
+  position: relative;
   margin: 0;
-  padding: 10px 20px;
-  color: $purple;
-  text-transform: uppercase;
+  padding: 0;
   text-decoration: none;
-  background: white;
-  border: 2px solid $purple;
-  border-radius: 22px;
+  border: 0;
+  border-radius: rem(22px);
   cursor: pointer;
-  @include font-montserrat(12px, 15px, bold);
+
+  @include font-montserrat(rem(12px), rem(15px), bold);
+
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+    text-transform: uppercase;
+    background: transparent;
+    border-radius: rem(22px);
+  }
+
+  &__icon {
+    @include button-icon;
+
+    &::after {
+      @include font-material-icons('arrow_forward');
+    }
+  }
+
+  &--small .button__text {
+    padding: rem(8px 18px);
+  }
+
+  &--medium .button__text {
+    padding: rem(13px 18px);
+  }
+
+  &--full-width {
+    width: 100%;
+
+    .button__text {
+      padding: rem(13px 18px);
+    }
+  }
 
   &--filled {
-    color: white;
+    color: $white;
     background: $primary-gradient;
-    border: 0;
+
+    &.button:hover,
+    &.button--hover {
+      background: $primary-gradient--hover;
+    }
+  }
+
+  &--border {
+    color: $purple;
+    background: $primary-gradient;
+
+    .button__text {
+      background: $white;
+    }
+
+    &.button:hover,
+    &.button--hover {
+      background: $primary-gradient--hover;
+    }
+  }
+
+  &--borderless {
+    padding: 0;
+    color: $purple;
+    background: none;
+
+    .button__text {
+      padding: 0;
+    }
+
+    &.button:hover,
+    &.button--hover {
+      color: $dark50;
+    }
   }
 }
