@@ -27,29 +27,37 @@ if (dropdownGuests) {
   createDropdownGuests(dropdownGuests);
 }
 
-// eslint-disable-next-line no-new
-new Litepicker({
-  element: document.querySelector('.js-date-dropdown-arrival'),
-  elementEnd: document.querySelector('.js-date-dropdown-departure'),
-  singleMode: false,
-  autoApply: false,
-  allowRepick: true,
-  autoRefresh: true,
-  minDate: Date.now(),
-  disallowLockDaysInRange: true,
-  buttonText: { apply: 'применить', cancel: 'очистить' },
-});
+const dateDropdownArrival = document.querySelector('.js-date-dropdown-arrival');
+const dateDropdownDeparture = document.querySelector('.js-date-dropdown-departure');
+const dateDropdown = document.querySelector('.js-date-dropdown');
 
-// eslint-disable-next-line no-new
-new Litepicker({
-  element: document.querySelector('.js-date-dropdown'),
-  allowRepick: true,
-  autoApply: false,
-  singleMode: false,
-  autoRefresh: true,
-  minDate: Date.now(),
-  buttonText: { apply: 'применить', cancel: 'очистить' },
-});
+if (dateDropdownArrival && dateDropdownDeparture) {
+  // eslint-disable-next-line no-new
+  new Litepicker({
+    element: dateDropdownArrival,
+    elementEnd: dateDropdownDeparture,
+    singleMode: false,
+    autoApply: false,
+    allowRepick: true,
+    autoRefresh: true,
+    minDate: Date.now(),
+    disallowLockDaysInRange: true,
+    buttonText: { apply: 'применить', cancel: 'очистить' },
+  });
+}
+
+if (dateDropdown) {
+  // eslint-disable-next-line no-new
+  new Litepicker({
+    element: dateDropdown,
+    allowRepick: true,
+    autoApply: false,
+    singleMode: false,
+    autoRefresh: true,
+    minDate: Date.now(),
+    buttonText: { apply: 'применить', cancel: 'очистить' },
+  });
+}
 
 const dropdownRoomAmenity = document.querySelector('.js-dropdown-room-amenity');
 
