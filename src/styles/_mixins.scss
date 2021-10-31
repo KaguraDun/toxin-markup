@@ -12,11 +12,21 @@
 }
 
 @mixin font-material-icons($content, $font-size: rem(24px), $line-height: rem(24px)) {
+  display: inline-block;
+  font-weight: normal;
   font-size: $font-size;
   font-family: 'Material Icons';
+  font-style: normal;
   line-height: $line-height;
+  direction: ltr;
+  letter-spacing: normal;
+  white-space: nowrap;
+  text-transform: none;
   vertical-align: middle;
+  word-wrap: normal;
   content: $content;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
 }
 
 @mixin font-montserrat-h1 {
