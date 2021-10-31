@@ -2,8 +2,8 @@
   checked: boolean;
   text: string
 
-mixin input-checkbox(properties)
+mixin input-checkbox({checked, text})
   label.input-checkbox__label
-    input.input-checkbox(type='checkbox', checked=properties.checked || false)
+    input.input-checkbox(type='checkbox', checked=checked || false)
     span.input-checkbox__icon
-    = properties.text
+    = text

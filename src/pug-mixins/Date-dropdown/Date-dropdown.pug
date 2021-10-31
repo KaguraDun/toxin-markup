@@ -1,22 +1,27 @@
 //- available properties:
-  dateRange: boolean;
-  dateRangeValue: string;
+  filter: boolean;
+  filterValue: string;
+  filterLabel: string;
+  dateLabel: string;
+  size: small | medium;
+  arrivalLabel: string;
   arrivalValue: string;
+  departureLabel: string;
   departureValue: string;
 
 include /pug-mixins/Input/Input.pug
 
-mixin date-dropdown(properties)
-  if properties && properties.dateFilter
+mixin date-dropdown({filter, filterValue, filterLabel, dateLabel, size, arrivalLabel, departureLabel, arrivalValue, departureValue })
+  if filter
     .date-dropdown
       .date-dropdown__input-filter
-        p.date-dropdown__label= properties.filterDateLabel || false
-        +input({type:'text', placeholder:'ДД.ММ.ГГГГ', size: properties.size, dropdown:true, readonly:true, value:properties.filterDateValue}).js-date-dropdown
+        p.date-dropdown__label= filterLabel || false
+        +input({type:'text', placeholder:'ДД.ММ.ГГГГ', size: size, dropdown:true, readonly:true, value:filterValue}).js-date-dropdown
   else
     .date-dropdown
       .date-dropdown__input
-        p.date-dropdown__label= properties.arrivalLabel || false
-        +input({type:'text', placeholder:'ДД.ММ.ГГГГ', size:'small', dropdown:true, readonly:true, value:properties.arrivalValue}).js-date-dropdown-arrival
+        p.date-dropdown__label= arrivalLabel || false
+        +input({type:'text', placeholder:'ДД.ММ.ГГГГ', size:'small', dropdown:true, readonly:true, value:arrivalValue}).js-date-dropdown-arrival
       .date-dropdown__input
-        p.date-dropdown__label= properties.departureLabel || false
-        +input({type:'text', placeholder:'ДД.ММ.ГГГГ', size:'small', dropdown:true, readonly:true, value:properties.departureValue}).js-date-dropdown-departure
+        p.date-dropdown__label= departureLabel || false
+        +input({type:'text', placeholder:'ДД.ММ.ГГГГ', size:'small', dropdown:true, readonly:true, value:departureValue}).js-date-dropdown-departure

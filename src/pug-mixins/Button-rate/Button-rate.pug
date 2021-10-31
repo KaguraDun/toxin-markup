@@ -1,12 +1,16 @@
-mixin button-rate(properties)
+//- available properties:
+  score: 1 | 2 | 3 | 4 | 5;
+  name: string;
+
+mixin button-rate({ score, name })
   fieldset.button-rate__fieldset
     .button-rate__input-group
       - const rateValues = ["Ужасно", "Сносно", "Нормально", "Хорошо", "Отлично"];
       each val, i in rateValues
-        - const isChecked = i < properties.score;
+        - const isChecked = i < score;
         input.button-rate__star(
           type='radio',
-          name=properties.name,
+          name=name,
           value=val,
           aria-label=val,
           checked=isChecked

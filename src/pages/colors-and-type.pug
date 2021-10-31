@@ -6,10 +6,10 @@ block baseVariables
 block content
   .colors-and-type__logo
     .colors-and-type__logo-icon
-      - const isGray = true; 
+      - const isGray = true;
       include /pug-components/Logo/Logo.pug
   .colors-and-type__container
-    ul.colors-and-type__colors   
+    ul.colors-and-type__colors 
       include /pug-mixins/Color-example/Color-example.pug
       li.colors-and-type__colors-item
         +color-example('rgba(31, 32, 65, 1)', '#1F2041', 'Dark Shade 100%')

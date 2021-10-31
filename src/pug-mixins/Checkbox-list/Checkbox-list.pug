@@ -1,26 +1,23 @@
 //- available properties:
   name: string;
   expanded: boolean;
-  items: [{name: string, checked: boolean}];
+  items: Item[];
+  Item: {
+    name: string,
+    checked: boolean
+  }
 
-mixin checkbox-list(properties)
+mixin checkbox-list({ name, expanded, items })
   include /pug-mixins/Input-checkbox/Input-checkbox.pug
-  - const expandModifier = 'checkbox-list__items--expand';
-  - const rotateModifier = 'checkbox-list__icon--rotate';
-  - const itemsStyles = ['checkbox-list__items'];
-  - const iconStyles = ['checkbox-list__icon'];
-
-  -
-    if (properties.expanded) {
-      itemsStyles.push(expandModifier);
-      iconStyles.push(rotateModifier);
-    }
+  - const expandModifier = "checkbox-list__items--expand";
+  - const rotateModifier = "checkbox-list__icon--rotate";
+  - const itemsStyles = `checkbox-list__items ${expanded ? expandModifier : ""}`;
+  - const iconStyles = `checkbox-list__icon ${expanded ? rotateModifier : ""}`;
 
   .checkbox-list
     button.checkbox-list__button
-      h3.checkbox-list__name=properties.name
-      span(class=iconStyles.join(' '))
-    fieldset(class=itemsStyles.join(' '))
-      each item in properties.items
+      h3.checkbox-list__name= name
+      span(class=iconStyles)
+    fieldset(class=itemsStyles)
+      each item in items
         +input-checkbox(item)
-  

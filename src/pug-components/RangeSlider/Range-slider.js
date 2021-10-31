@@ -2,7 +2,7 @@ import noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
 import './Range-slider.scss';
 
-export default function createRangeSlider(sliderName) {
+function createRangeSlider(sliderName) {
   const sliderContainer = document.querySelector(`.${sliderName}`);
 
   if (!sliderContainer) return;
@@ -17,3 +17,5 @@ export default function createRangeSlider(sliderName) {
     },
   });
 }
+
+export default createRangeSlider;

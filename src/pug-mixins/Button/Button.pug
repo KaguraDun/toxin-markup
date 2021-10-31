@@ -11,14 +11,13 @@ mixin button-content(arrow, text)
   if (arrow)
     span.button__icon
 
-mixin button({size='medium', style='border', arrow=false, text="", href, disabled })
-  - const modifier= "button--";
+mixin button({size='medium', style='border', arrow=false, text="", disabled=false, href })
+  - const modifier = "button--";
   - const buttonStyles = `button ${modifier + style} ${modifier + size}`;
 
   if href
     a(class=buttonStyles, href=href)&attributes(attributes)
       +button-content(arrow, text)
   else
-    button(class=buttonStyles, disabled=disabled || false)&attributes(attributes)
+    button(class=buttonStyles, disabled=disabled)&attributes(attributes)
       +button-content(arrow, text)
-

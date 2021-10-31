@@ -2,7 +2,7 @@
   likesNumber: number;
   disabled: boolean;
 
-mixin button-like(properties)
-  button.button-like(disabled=properties.disabled || false)&attributes(attributes)
+mixin button-like({ disabled = false, likesNumber })
+  button.button-like(disabled=disabled)&attributes(attributes)
     span.button-like__icon
-    span.button-like__likes-number= properties.likesNumber || ""
+    span.button-like__likes-number= likesNumber

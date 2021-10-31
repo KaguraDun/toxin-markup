@@ -4,13 +4,8 @@
   name: string;
   text: string
 
-mixin input-radio(properties)
+mixin input-radio({checked= false, value=false, name=false, text})
   label.input-radio__label
-    input.input-radio(
-      type='radio',
-      checked=properties.checked || false,
-      value=properties.value || false,
-      name=properties.name || false
-    )
+    input.input-radio(type='radio', checked=checked, value=value, name=name)
     span.input-radio__icon
-    span.input-radio__label-text= properties.text
+    span.input-radio__label-text= text

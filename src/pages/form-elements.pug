@@ -55,7 +55,7 @@ block content
       .form-elements__item.form-elements__item--large-margin
         +date-dropdown({departureValue: '19.08.2019', arrivalLabel:'date dropdown', departureLabel:'date dropdown'})
       .form-elements__item.form-elements__item--large-margin
-        +date-dropdown({dateFilter: true, filterDateValue:'19 авг - 23 авг', filterDateLabel: 'filter date dropdown', size:'medium'})
+        +date-dropdown({filter: true, filterValue:'19 авг - 23 авг', filterLabel: 'filter date dropdown', size:'medium'})
       .form-elements__item.form-elements__item--largest-margin
         .form-elements__item-info
           .form-elements__item-name= "subscription text field"
@@ -73,17 +73,9 @@ block content
         //- create container for dropdown, set properties in index.js
         .js-dropdown-room-amenity-expanded
       .form-elements__item.form-elements__item--size-medium
-        +checkbox-list({
-          name: 'expandable checkbox list',
-          expanded: false,
-          items: checkboxListItems
-        })
+        +checkbox-list({ name: 'expandable checkbox list', expanded: false, items: checkboxListItems })
       .form-elements__item.form-elements__item--size-medium.form-elements__item--largest-margin
-        +checkbox-list({
-          name: 'expandable checkbox list',
-          expanded: true,
-          items: checkboxListItems
-        })
+        +checkbox-list({ name: 'expandable checkbox list', expanded: true, items: checkboxListItems })
       .form-elements__item
         +room-info({items: roomInfoItems})
 
@@ -137,5 +129,3 @@ block content
             +button({style:'borderless', text: 'click me'}).button--hover
           .form-elements__fieldset-row
             +button({size:'full-width', style:'filled', arrow:true, text: 'перейти к оплате', href:'/mock-address.html'})
-
-
