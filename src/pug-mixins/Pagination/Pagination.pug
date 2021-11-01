@@ -11,11 +11,11 @@ mixin pagination({ currentPage, pagesCount, itemsPerPage })
 
   .pagination
     .pagination__controls
-      +button({style: 'round-selected', text:'1'})
-      +button({style: 'round', text:'2'})
-      +button({style: 'round', text:'3'})
+      +button({style: 'page-selected', text:'1'})
+      +button({style: 'page', text:'2'})
+      +button({style: 'page', text:'3'})
       span.pagination__ellipsis= '...'
-      +button({style: 'round', text:pagesCount})
-      +button({style: 'round-arrow', arrow:true })
+      +button({style: 'page', text:pagesCount})
+      +button({style: 'page-next', arrow:true })
     p.pagination__text= `${leftValue} - ${rightValue} из 100+ вариантов аренды`
     
