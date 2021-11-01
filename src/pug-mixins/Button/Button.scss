@@ -81,4 +81,36 @@
       color: $dark50;
     }
   }
+
+  &--round,
+  &--round-selected,
+  &--round-arrow {
+    width: rem(40px);
+    @include font-montserrat(rem(12px), rem(15px));
+
+    .button__text {
+      margin: 0;
+    }
+  }
+
+  &--round {
+    color: $dark50;
+    background: none;
+  }
+
+  &--round-selected {
+    color: $white;
+    background: $primary-gradient;
+  }
+
+  &--round-arrow {
+    color: $white;
+    background: $secondary-gradient;
+
+    .button__icon {
+      right: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
 }
