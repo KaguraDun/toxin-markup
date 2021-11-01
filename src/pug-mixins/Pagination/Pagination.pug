@@ -1,0 +1,21 @@
+//- available properties:
+  currentPage: number;
+  pagesCount: number;
+  itemsPerPage: number;
+
+include /pug-mixins/Button/Button.pug
+
+mixin pagination({ currentPage, pagesCount, itemsPerPage })
+  - const rightValue = itemsPerPage * currentPage;
+  - const leftValue =  rightValue - itemsPerPage + 1;
+
+  .pagination
+    .pagination__controls
+      +button({style: 'round-selected', text:'1'})
+      +button({style: 'round', text:'2'})
+      +button({style: 'round', text:'3'})
+      span.pagination__ellipsis= '...'
+      +button({style: 'round', text:pagesCount})
+      +button({style: 'round-arrow', arrow:true })
+    p.pagination__text= `${leftValue} - ${rightValue} из 100+ вариантов аренды`
+    

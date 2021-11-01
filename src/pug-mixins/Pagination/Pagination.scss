@@ -1,0 +1,22 @@
+.pagination {
+  display: flex;
+  flex-direction: column;
+  max-width: rem(241px);
+
+  &__controls {
+    display: flex;
+    margin-bottom: rem(10px);
+  }
+
+  &__ellipsis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: rem(40px);
+  }
+
+  &__text {
+    align-self: center;
+    margin: 0;
+  }
+}
