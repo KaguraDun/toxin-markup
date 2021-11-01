@@ -1,4 +1,17 @@
 extends /layouts/base.pug
+
+include /pug-mixins/Input/Input.pug
+include /pug-mixins/Date-dropdown/Date-dropdown.pug
+include /pug-mixins/Input-checkbox/Input-checkbox.pug
+include /pug-mixins/Input-radio/Input-radio.pug
+include /pug-mixins/Input-toggle/Input-toggle.pug
+include /pug-mixins/Button/Button.pug
+include /pug-mixins/Button-like/Button-like.pug
+include /pug-mixins/Button-rate/Button-rate.pug
+include /pug-mixins/Checkbox-list/Checkbox-list.pug
+include /pug-mixins/Room-info/Room-info.pug
+include /pug-mixins/Pagination/Pagination.pug
+
 block baseVariables
   - const title = "Form elements";
   - const bodyClass = "form-elements";
@@ -24,16 +37,6 @@ block content
       - const isGray = true;
       include /pug-components/Logo/Logo.pug
   .form-elements__container
-    include /pug-mixins/Input/Input.pug
-    include /pug-mixins/Date-dropdown/Date-dropdown.pug
-    include /pug-mixins/Input-checkbox/Input-checkbox.pug
-    include /pug-mixins/Input-radio/Input-radio.pug
-    include /pug-mixins/Input-toggle/Input-toggle.pug
-    include /pug-mixins/Button/Button.pug
-    include /pug-mixins/Button-like/Button-like.pug
-    include /pug-mixins/Button-rate/Button-rate.pug
-    include /pug-mixins/Checkbox-list/Checkbox-list.pug
-    include /pug-mixins/Room-info/Room-info.pug
     .form-elements__column
       .form-elements__item
         .form-elements__item-info
@@ -115,7 +118,7 @@ block content
           .form-elements__item-state= "5 000₽ - 10 000₽"
         //- create container for noUiSlider, set properties in index.js
         .js-range-slider
-      .form-elements__item
+      .form-elements__item.form-elements__item--large-margin
         fieldset.form-elements__fieldset
           legend.form-elements__fieldset-legend= "buttons"
           .form-elements__fieldset-row
@@ -129,3 +132,7 @@ block content
             +button({style:'borderless', text: 'click me'}).button--hover
           .form-elements__fieldset-row
             +button({size:'full-width', style:'filled', arrow:true, text: 'перейти к оплате', href:'/mock-address.html'})
+      .form-elements__item
+        .form-elements__item-info.form-elements__item-info--large-margin
+          .form-elements__item-name= "pagination"
+        +pagination({currentPage:1, pagesCount:15, itemsPerPage:12})
