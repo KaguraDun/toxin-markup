@@ -6,6 +6,14 @@ class Dropdown {
     this.element = element;
     this.properties = properties;
     this.store = properties.options;
+
+    this.dropdownInput = null;
+    this.dropdownItems = null;
+    this.buttonClear = null;
+
+    this.changeStoreValue = this.changeStoreValue.bind(this);
+    this.resetStoreValues = this.resetStoreValues.bind(this);
+    this.toggleDropdownItems = this.toggleDropdownItems.bind(this);
   }
 
   createItems() {
@@ -16,17 +24,21 @@ class Dropdown {
       const buttonMinusDisabled = value <= 0 ? 'disabled' : '';
 
       items += `
-      <div class="dropdown__item">
+      <li class="dropdown__item">
         <div class="dropdown__item-name">${key}</div>
         <div class="dropdown__item-buttons">
           <button class="button-minus" ${buttonMinusDisabled}></button>
           <div class="dropdown__item-value" data-value="${key}">${value}</div>
           <button class="button-plus"></button>
         </div>
-      </div>`;
+      </li>`;
     });
 
     return items;
+  }
+
+  getStoreSum() {
+    return Object.values(this.store).reduce((acc, option) => acc + Number(option.count), 0);
   }
 
   static createControlButtons() {
@@ -38,7 +50,7 @@ class Dropdown {
   }
 
   createDropdown() {
-    const placeholder = this.concatStoreValues() || this.properties.placeholder;
+    const { placeholder } = this.properties;
 
     return `
     <div class="dropdown">
@@ -47,26 +59,43 @@ class Dropdown {
         <input type="text" class="dropdown__input" placeholder="${placeholder}" readonly>
         <span class="dropdown__button-icon"></span>
       </div>
-      <div class="dropdown__items" hidden>
+      <ul class="dropdown__items" hidden>
         ${this.createItems()}
         ${this.properties.controlButtons ? Dropdown.createControlButtons() : ''}
-      </div>
+      </ul>
     </div>`;
+  }
+
+  hideButtonClear(isHidden) {
+    if (!this.buttonClear) return;
+
+    const modifier = 'button--hidden';
+
+    if (isHidden) {
+      this.buttonClear.classList.add(modifier);
+    } else {
+      this.buttonClear.classList.remove(modifier);
+    }
   }
 
   init() {
     this.element.innerHTML = this.createDropdown();
     this.dropdownInput = this.element.querySelector('.dropdown__input');
+    this.dropdownInput.value = this.concatStoreValues();
     this.dropdownItems = this.element.querySelector('.dropdown__items');
 
     const dropdownInputWrapper = this.element.querySelector('.dropdown__input-wrapper');
-    const buttonClear = this.element.querySelector('.js-button-clear');
+    this.buttonClear = this.element.querySelector('.js-button-clear');
     const buttonApply = this.element.querySelector('.js-button-apply');
 
-    dropdownInputWrapper.addEventListener('click', () => this.toggleDropdownItems());
-    this.dropdownItems.addEventListener('click', (e) => this.changeStoreValue(e));
-    buttonClear?.addEventListener('click', () => this.resetStoreValues());
-    buttonApply?.addEventListener('click', () => this.toggleDropdownItems(this.dropdownItems));
+    dropdownInputWrapper.addEventListener('click', this.toggleDropdownItems);
+
+    this.dropdownItems.addEventListener('click', this.changeStoreValue);
+    this.buttonClear?.addEventListener('click', this.resetStoreValues);
+    buttonApply?.addEventListener('click', this.toggleDropdownItems);
+
+    const isClearButtonHidden = this.getStoreSum() === 0;
+    if (isClearButtonHidden) this.hideButtonClear(true);
   }
 
   changeStoreValue(e) {
@@ -95,6 +124,12 @@ class Dropdown {
     }
 
     this.dropdownInput.value = this.concatStoreValues();
+
+    if (this.getStoreSum() > 0) {
+      this.hideButtonClear(false);
+    } else if (this.getStoreSum() === 0) {
+      this.hideButtonClear(true);
+    }
   }
 
   resetStoreValues() {
@@ -115,6 +150,8 @@ class Dropdown {
 
     this.dropdownInput.value = null;
     this.dropdownInput.placeholder = this.properties.placeholder;
+
+    this.hideButtonClear(true);
   }
 
   toggleDropdownItems() {

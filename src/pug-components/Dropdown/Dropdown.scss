@@ -19,12 +19,14 @@
     width: 100%;
     max-height: rem(44px);
     margin: 0 auto;
-    padding: rem(10px 15px);
+    padding: rem(10px 32% 10px 15px);
     color: $dark25;
+    text-overflow: ellipsis;
     background: $white;
     border: 1px solid $dark25;
     border-radius: 4px;
     cursor: pointer;
+
     @include font-montserrat-body();
   }
 
@@ -34,15 +36,21 @@
   }
 
   &__items {
-    padding: rem(7px 7px 7px 15px);
+    margin: 0;
+    padding: rem(7px 7px 13px 15px);
+    list-style-type: none;
     border: 1px solid $dark50;
   }
 
   &__item {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 7px;
+    margin-bottom: rem(7px);
     @include font-montserrat-h3;
+
+    &:last-of-type {
+      margin-bottom: rem(20px);
+    }
   }
 
   &__item-name {
@@ -85,6 +93,10 @@
   @include font-montserrat(rem(18px), rem(22px));
 }
 
+.button--hidden {
+  visibility: hidden;
+}
+
 .button-plus {
   &::after {
     content: '+';
@@ -98,10 +110,15 @@
 }
 
 .button-widget {
-  margin-top: 20px;
+  padding: 0;
   color: $purple;
+  text-transform: uppercase;
   background: transparent;
   border: 0;
   cursor: pointer;
-  @include font-montserrat-h3;
+  @include font-montserrat(rem(12px), rem(15px), bold);
+
+  &:hover {
+    color: $dark50;
+  }
 }
