@@ -37,7 +37,7 @@ block content
       - const isGray = true;
       include /pug-components/Logo/Logo.pug
   .form-elements__container
-    .form-elements__column
+    .form-elements__grid-item.form-elements__grid-column-1
       .form-elements__item
         .form-elements__item-info
           .form-elements__item-name= "text field"
@@ -57,12 +57,14 @@ block content
         +input({type:'text', placeholder:'ДД.ММ.ГГГГ', size:'large', mask:'date'})
       .form-elements__item.form-elements__item--large-margin
         +date-dropdown({departureValue: '19.08.2019', arrivalLabel:'date dropdown', departureLabel:'date dropdown'})
-      .form-elements__item.form-elements__item--large-margin
+      .form-elements__item.form-elements__item--size-medium.form-elements__item--large-margin
         +date-dropdown({filter: true, filterValue:'19 авг - 23 авг', filterLabel: 'filter date dropdown', size:'medium'})
-      .form-elements__item.form-elements__item--largest-margin
+      .form-elements__item.form-elements__item--size-medium
         .form-elements__item-info
           .form-elements__item-name= "subscription text field"
         +input({type:'email', placeholder:'Email', arrow: true, size:'medium' })
+
+    .form-elements__grid-item.form-elements__grid-column-1
       .form-elements__item.form-elements__item--size-medium
         .form-elements__item-info
           .form-elements__item-name= "dropdown"
@@ -77,12 +79,14 @@ block content
         .js-dropdown-room-amenity-expanded
       .form-elements__item.form-elements__item--size-medium
         +checkbox-list({ name: 'expandable checkbox list', expanded: false, items: checkboxListItems })
-      .form-elements__item.form-elements__item--size-medium.form-elements__item--largest-margin
+      .form-elements__item.form-elements__item--size-medium
         +checkbox-list({ name: 'expandable checkbox list', expanded: true, items: checkboxListItems })
+    
+    .form-elements__grid-item.form-elements__grid-column-1
       .form-elements__item
         +room-info({items: roomInfoItems})
 
-    .form-elements__column.form-elements__column--small-right-margin
+    .form-elements__grid-item.form-elements__grid-column-2
       .form-elements__item.form-elements__item--large-margin
         fieldset.form-elements__fieldset
           legend.form-elements__fieldset-legend= "checkbox buttons"
@@ -111,14 +115,18 @@ block content
           +button-rate({name:'rating', score:4})
           +button-rate({name:'rating-second', score:5})
 
-    .form-elements__column
+    .form-elements__grid-item.form-elements__grid-column-2
+    .form-elements__grid-item.form-elements__grid-column-2
+
+    .form-elements__grid-item.form-elements__grid-column-3
       .form-elements__item.form-elements__item--large-margin.form-elements__item--size-medium
         .form-elements__item-info.form-elements__item-info--large-margin
           .form-elements__item-name= "range slider"
           .form-elements__item-state= "5 000₽ - 10 000₽"
         //- create container for noUiSlider, set properties in index.js
-        .js-range-slider
-      .form-elements__item.form-elements__item--large-margin
+        .slider
+          .js-range-slider
+      .form-elements__item.form-elements__item--medium-margin
         fieldset.form-elements__fieldset
           legend.form-elements__fieldset-legend= "buttons"
           .form-elements__fieldset-row
@@ -136,3 +144,6 @@ block content
         .form-elements__item-info.form-elements__item-info--large-margin
           .form-elements__item-name= "pagination"
         +pagination({currentPage:1, pagesCount:15, itemsPerPage:12})
+        
+    .form-elements__grid-item.form-elements__grid-column-3
+    .form-elements__grid-item.form-elements__grid-column-3
