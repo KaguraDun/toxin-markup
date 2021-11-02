@@ -1,17 +1,18 @@
 import Dropdown from './Dropdown';
 
-function createDropdownGuests(element, expanded = false, controls = true) {
+function createDropdownGuests({ element, expanded = false, controls = true, values = [], label }) {
   const guestsPattern = ['Гость', 'Гостя', 'Гостей'];
+  const [adults = 0, children = 0, babies = 0] = values;
 
   const properties = {
     placeholder: 'Сколько гостей',
-    label: 'dropdown',
+    label,
     controlButtons: controls,
     options: {
-      Взрослые: { count: 0, countAs: guestsPattern },
-      Дети: { count: 0, countAs: guestsPattern },
+      Взрослые: { count: adults, countAs: guestsPattern },
+      Дети: { count: children, countAs: guestsPattern },
       Младенцы: {
-        count: 0,
+        count: babies,
         pattern: ['Младенец', 'Младенца', 'Младенцев'],
       },
     },
@@ -25,15 +26,24 @@ function createDropdownGuests(element, expanded = false, controls = true) {
   }
 }
 
-function createDropdownRoomAmenity(element, expanded = false, controls = true) {
+function createDropdownRoomAmenity({
+  element,
+  expanded = false,
+  controls = true,
+  values = [],
+  label,
+}) {
+  const [bedrooms = 0, beds = 0, bathrooms = 0] = values;
+
   const properties = {
     placeholder: 'Удобства',
+    label,
     controlButtons: controls,
     options: {
-      Спальни: { count: 2, pattern: ['Спальня', 'Спальни', 'Спален'] },
-      Кровати: { count: 2, pattern: ['Кровать', 'Кровати', 'Кроватей'] },
+      Спальни: { count: bedrooms, pattern: ['Спальня', 'Спальни', 'Спален'] },
+      Кровати: { count: beds, pattern: ['Кровать', 'Кровати', 'Кроватей'] },
       'Ванные комнаты': {
-        count: 0,
+        count: bathrooms,
         pattern: ['Ванная комната', 'Ванных комнаты', 'Ванных комнат'],
       },
     },
