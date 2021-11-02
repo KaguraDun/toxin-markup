@@ -24,7 +24,26 @@ importAll(require.context('@/pug-mixins/', true, /\.js|.scss$/));
 const dropdownGuests = document.querySelector('.js-dropdown-guests');
 
 if (dropdownGuests) {
-  createDropdownGuests(dropdownGuests);
+  createDropdownGuests({ element: dropdownGuests, label: 'dropdown' });
+}
+
+const dropdownGuestsWithControls = document.querySelector('.js-dropdown-guests--with-controls');
+
+if (dropdownGuestsWithControls) {
+  createDropdownGuests({ element: dropdownGuestsWithControls, expanded: true, label: 'dropdown' });
+}
+
+const dropdownGuestsWithControlsAndValues = document.querySelector(
+  '.js-dropdown-guests--with-controls-and-values',
+);
+
+if (dropdownGuestsWithControlsAndValues) {
+  createDropdownGuests({
+    element: dropdownGuestsWithControlsAndValues,
+    expanded: true,
+    values: [2, 1, 0],
+    label: 'dropdown',
+  });
 }
 
 const dateDropdownArrival = document.querySelector('.js-date-dropdown-arrival');
@@ -62,13 +81,18 @@ if (dateDropdown) {
 const dropdownRoomAmenity = document.querySelector('.js-dropdown-room-amenity');
 
 if (dropdownRoomAmenity) {
-  createDropdownRoomAmenity(dropdownRoomAmenity);
+  createDropdownRoomAmenity({ element: dropdownRoomAmenity, values: [2, 2, 1] });
 }
 
 const dropdownRoomAmenityExpanded = document.querySelector('.js-dropdown-room-amenity-expanded');
 
 if (dropdownRoomAmenityExpanded) {
-  createDropdownRoomAmenity(dropdownRoomAmenityExpanded, true, false);
+  createDropdownRoomAmenity({
+    element: dropdownRoomAmenityExpanded,
+    expanded: true,
+    controls: false,
+    values: [2, 2, 0],
+  });
 }
 
 addEventToLikeButtons();
