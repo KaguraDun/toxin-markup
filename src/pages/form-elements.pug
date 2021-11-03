@@ -11,6 +11,7 @@ include /pug-mixins/Button-rate/Button-rate.pug
 include /pug-mixins/Checkbox-list/Checkbox-list.pug
 include /pug-mixins/Room-info/Room-info.pug
 include /pug-mixins/Pagination/Pagination.pug
+include /pug-mixins/Bullet-list/Bullet-list.pug
 
 block baseVariables
   - const title = "Form elements";
@@ -41,6 +42,12 @@ block content
     const roomInfoItems = [
       { info: 'comfort', underline: true },
       { info: 'convenience', underline: true },
+    ]
+
+    const bulletListItems = [
+      'Нельзя с питомцами',
+      'Без вечеринок и мероприятий',
+      'Время прибытия — после 13:00,\n а выезд до 12:00'
     ]
 
   .form-elements__logo
@@ -159,7 +166,10 @@ block content
         +pagination({currentPage:1, pagesCount:15, itemsPerPage:12})
 
     .form-elements__grid-item.form-elements__grid-column-3
-      //- create container for dropdown, set properties in index.js
-      .js-dropdown-guests--with-controls-and-values
+      .form-elements__item.form-elements__item--largest-margin
+        //- create container for dropdown, set properties in index.js
+        .js-dropdown-guests--with-controls-and-values
+      .form-elements__item
+        +bullet-list({name: 'bullet list', items: bulletListItems})
 
     .form-elements__grid-item.form-elements__grid-column-3
