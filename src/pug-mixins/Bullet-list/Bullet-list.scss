@@ -1,0 +1,32 @@
+.bullet-list {
+  &__name {
+    margin-bottom: 16px;
+    @include font-montserrat-h3();
+  }
+
+  &__items {
+    @include clear-ul-style;
+  }
+
+  &__item {
+    display: flex;
+    align-items: baseline;
+    margin: rem(0 0 10px);
+    white-space: pre-line;
+
+    &-text {
+      margin: 0;
+      padding: 0;
+    }
+
+    &::before {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-right: 10px;
+      background: $dark25;
+      border-radius: 50%;
+      content: '';
+    }
+  }
+}
