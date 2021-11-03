@@ -43,8 +43,9 @@
     }
   }
 
-  &--filled {
-    color: $white;
+  &--filled,
+  &--border,
+  &--page-selected {
     background: $primary-gradient;
 
     &.button:hover,
@@ -53,17 +54,16 @@
     }
   }
 
+  &--filled,
+  &--page-selected {
+    color: $white;
+  }
+
   &--border {
     color: $purple;
-    background: $primary-gradient;
 
     .button__text {
       background: $white;
-    }
-
-    &.button:hover,
-    &.button--hover {
-      background: $primary-gradient--hover;
     }
   }
 
@@ -98,11 +98,6 @@
     background: none;
   }
 
-  &--page-selected {
-    color: $white;
-    background: $primary-gradient;
-  }
-
   &--page-next {
     color: $white;
     background: $secondary-gradient;
@@ -111,6 +106,11 @@
       right: 0;
       left: 50%;
       transform: translate(-50%, -50%);
+    }
+
+    &.button:hover,
+    &.button--hover {
+      background: $secondary-gradient--hover;
     }
   }
 }
