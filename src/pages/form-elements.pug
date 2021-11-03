@@ -31,6 +31,9 @@ block content
       { text: 'Можно курить' },
       { text: 'Можно с питомцами', checked:true },
       { text: 'Можно пригласить гостей (до 10 человек)', checked:true },
+    const richCheckboxItems = [
+      { text: 'Широкий коридор', info:'Ширина коридоров в номере\n не менее 91 см.'},
+      { text: 'Помощник для инвалидов', info:'На 1 этаже вас встретит специалист\n  и проводит до номера.'},
     ]
 
     const roomInfoItems = [
@@ -118,8 +121,12 @@ block content
           +button-rate({name:'rating-second', score:5})
 
     .form-elements__grid-item.form-elements__grid-column-2
-      //- create container for dropdown, set properties in index.js
-      .js-dropdown-guests--with-controls
+      .form-elements__item.form-elements__item--largest-margin
+        //- create container for dropdown, set properties in index.js
+        .js-dropdown-guests--with-controls
+      .form-elements__item
+        +checkbox-list({name: 'rich Checkbox Buttons', expandable:false, items: richCheckboxItems})
+
     .form-elements__grid-item.form-elements__grid-column-2
 
     .form-elements__grid-item.form-elements__grid-column-3
