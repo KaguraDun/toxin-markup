@@ -1,5 +1,6 @@
 //- available properties:
   name: string;
+  expandable: boolean;
   expanded: boolean;
   items: Item[];
   Item: {
@@ -7,7 +8,7 @@
     checked: boolean
   }
 
-mixin checkbox-list({ name, expanded, items })
+mixin checkbox-list({ name, expandable=false, expanded=true, items })
   include /pug-mixins/Input-checkbox/Input-checkbox.pug
   - const expandModifier = "checkbox-list__items--expand";
   - const rotateModifier = "checkbox-list__icon--rotate";
@@ -15,9 +16,13 @@ mixin checkbox-list({ name, expanded, items })
   - const iconStyles = `checkbox-list__icon ${expanded ? rotateModifier : ""}`;
 
   .checkbox-list
-    button.checkbox-list__button
+    if expandable
+      button.checkbox-list__button
+        h3.checkbox-list__name= name
+        span(class=iconStyles)
+    else
       h3.checkbox-list__name= name
-      span(class=iconStyles)
+
     fieldset(class=itemsStyles)
       each item in items
         +input-checkbox(item)

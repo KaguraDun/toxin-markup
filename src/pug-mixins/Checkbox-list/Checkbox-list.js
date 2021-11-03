@@ -14,7 +14,11 @@ function toggleExpand(e) {
 const checkboxLists = document.querySelectorAll('.checkbox-list');
 function addEventToCheckboxLists() {
   checkboxLists.forEach((element) => {
-    element.addEventListener('click', toggleExpand);
+    const isExpandable = element.firstElementChild.tagName === 'BUTTON';
+
+    if (isExpandable) {
+      element.addEventListener('click', toggleExpand);
+    }
   });
 }
 

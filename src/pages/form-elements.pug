@@ -27,6 +27,12 @@ block content
       { text: "Шампунь", checked: false },
     ]
 
+    const checkboxButtonsItems = [
+      { text: 'Можно курить' },
+      { text: 'Можно с питомцами', checked:true },
+      { text: 'Можно пригласить гостей (до 10 человек)', checked:true },
+    ]
+
     const roomInfoItems = [
       { info: 'comfort', underline: true },
       { info: 'convenience', underline: true },
@@ -78,21 +84,17 @@ block content
         //- create container for dropdown, set properties in index.js
         .js-dropdown-room-amenity-expanded
       .form-elements__item.form-elements__item--size-medium
-        +checkbox-list({ name: 'expandable checkbox list', expanded: false, items: checkboxListItems })
+        +checkbox-list({ name: 'expandable checkbox list', expandable: true, expanded: false, items: checkboxListItems })
       .form-elements__item.form-elements__item--size-medium
-        +checkbox-list({ name: 'expandable checkbox list', expanded: true, items: checkboxListItems })
-    
+        +checkbox-list({ name: 'expandable checkbox list', expandable: true, expanded: true, items: checkboxListItems })
+
     .form-elements__grid-item.form-elements__grid-column-1
       .form-elements__item
         +room-info({items: roomInfoItems})
 
     .form-elements__grid-item.form-elements__grid-column-2
       .form-elements__item.form-elements__item--large-margin
-        fieldset.form-elements__fieldset
-          legend.form-elements__fieldset-legend= "checkbox buttons"
-          +input-checkbox({text:'Можно курить'})
-          +input-checkbox({text:'Можно с питомцами', checked:true})
-          +input-checkbox({text:'Можно пригласить гостей (до 10 человек)', checked:true})
+        +checkbox-list({name:'checkbox buttons', expandable:false, items:checkboxButtonsItems})
       .form-elements__item.form-elements__item--large-margin
         fieldset.form-elements__fieldset.form-elements__fieldset--row
           legend.form-elements__fieldset-legend= "radio buttons"
@@ -146,7 +148,7 @@ block content
         .form-elements__item-info.form-elements__item-info--large-margin
           .form-elements__item-name= "pagination"
         +pagination({currentPage:1, pagesCount:15, itemsPerPage:12})
-        
+
     .form-elements__grid-item.form-elements__grid-column-3
       //- create container for dropdown, set properties in index.js
       .js-dropdown-guests--with-controls-and-values
