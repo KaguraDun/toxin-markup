@@ -1,4 +1,7 @@
 extends /layouts/base.pug
+
+include /pug-mixins/Logo/Logo.pug
+
 block baseVariables
   - const title = "Headers and footers";
   - const bodyClass = "headers-and-footers";
@@ -8,9 +11,7 @@ block baseVariables
 block content
   .headers-and-footers__logo
     .headers-and-footers__logo-icon
-      - isGray = true;
-      include /pug-components/Logo/Logo.pug
-      - isGray = false;
+      +logo({style:'gray'})
   .headers-and-footers__header-first
     - isLogged = false;
     include /pug-components/Header/Header.pug

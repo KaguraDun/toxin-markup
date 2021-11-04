@@ -1,8 +1,11 @@
 block headerVariables
+
+include /pug-mixins/Logo/Logo.pug
+
 header.header
   .container
     .header__left-col
-      include /pug-components/Logo/Logo.pug
+      +logo({style:'colored'})
     .header__right-col
       include /pug-components/Header-nav/Header-nav.pug
       include /pug-mixins/Button/Button.pug

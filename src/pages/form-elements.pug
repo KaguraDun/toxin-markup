@@ -1,5 +1,6 @@
 extends /layouts/base.pug
 
+include /pug-mixins/Logo/Logo.pug
 include /pug-mixins/Input/Input.pug
 include /pug-mixins/Date-dropdown/Date-dropdown.pug
 include /pug-mixins/Input-checkbox/Input-checkbox.pug
@@ -53,8 +54,7 @@ block content
 
   .form-elements__logo
     .form-elements__logo-icon
-      - const isGray = true;
-      include /pug-components/Logo/Logo.pug
+      +logo({style:'gray'})
   .form-elements__container
     .form-elements__grid-item.form-elements__grid-column-1
       .form-elements__item

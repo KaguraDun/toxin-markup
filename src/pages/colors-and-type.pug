@@ -1,4 +1,7 @@
 extends /layouts/base.pug
+
+include /pug-mixins/Logo/Logo.pug
+
 block baseVariables
   - const title = "Colors and type";
   - const bodyClass = "colors-and-type";
@@ -6,8 +9,7 @@ block baseVariables
 block content
   .colors-and-type__logo
     .colors-and-type__logo-icon
-      - const isGray = true;
-      include /pug-components/Logo/Logo.pug
+      +logo({style:'colored'})
   .colors-and-type__container
     ul.colors-and-type__colors 
       include /pug-mixins/Color-example/Color-example.pug
