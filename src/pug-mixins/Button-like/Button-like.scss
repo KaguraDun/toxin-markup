@@ -1,7 +1,7 @@
 .button-like {
   display: flex;
   align-items: center;
-  width: rem(40px);
+  min-width: rem(40px);
   height: rem(18px);
   margin: 0;
   color: $dark25;
