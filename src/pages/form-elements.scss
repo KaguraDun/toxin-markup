@@ -35,6 +35,10 @@
       grid-column: 3;
     }
 
+    &-2-3 {
+      grid-column: 3/6;
+    }
+
     &-3 {
       grid-column: 5;
     }

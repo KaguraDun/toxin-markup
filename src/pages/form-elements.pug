@@ -12,6 +12,7 @@ include /pug-mixins/Checkbox-list/Checkbox-list.pug
 include /pug-mixins/Room-info/Room-info.pug
 include /pug-mixins/Pagination/Pagination.pug
 include /pug-mixins/Bullet-list/Bullet-list.pug
+include /pug-mixins/Review/Review.pug
 
 block baseVariables
   - const title = "Form elements";
@@ -136,7 +137,16 @@ block content
       .form-elements__item
         +checkbox-list({name: 'rich Checkbox Buttons', expandable:false, items: richCheckboxItems})
 
-    .form-elements__grid-item.form-elements__grid-column-2
+    .form-elements__grid-item.form-elements__grid-column-2-3
+      -
+        const reviewProps = {
+          avatar: '../images/user-avatars/murad-sarafanov.png',
+          name: 'Мурад Сарафанов',
+          date:'5 дней назад',
+          text: `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.\n И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\n не жаловался из соседей.`,
+          likesNumber: 12,
+        }
+      +review(reviewProps)
 
     .form-elements__grid-item.form-elements__grid-column-3
       .form-elements__item.form-elements__item--large-margin.form-elements__item--size-medium
@@ -171,5 +181,3 @@ block content
         .js-dropdown-guests--with-controls-and-values
       .form-elements__item
         +bullet-list({name: 'bullet list', items: bulletListItems})
-
-    .form-elements__grid-item.form-elements__grid-column-3
