@@ -1,12 +1,12 @@
 extends /layouts/base.pug
 
-include /pug-mixins/Logo/Logo.pug
-
 block baseVariables
   - const title = "Headers and footers";
   - const bodyClass = "headers-and-footers";
-  - let isGray;
-  - let isLogged;
+
+include /components/Logo/Logo.pug
+include /components/Header/Header.pug
+include /components/Footer/Footer.pug
 
 block content
   .headers-and-footers__logo
@@ -14,11 +14,10 @@ block content
       +logo({style:'gray'})
   .headers-and-footers__header-first
     - isLogged = false;
-    include /pug-components/Header/Header.pug
+    +header({isLogged:false})
   .headers-and-footers__header-second
-    - isLogged = true;
-    include /pug-components/Header/Header.pug
+    +header({isLogged:true})
   .headers-and-footers__footer
-    include /pug-components/Footer/Footer.pug
+    +footer
   .headers-and-footers__footer-creative
-    include /pug-components/Footer/Footer.pug
+    +footer

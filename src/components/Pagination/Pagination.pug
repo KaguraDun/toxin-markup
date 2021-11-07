@@ -3,19 +3,18 @@
   pagesCount: number;
   itemsPerPage: number;
 
-include /pug-mixins/Button/Button.pug
+include /components/Button/Button.pug
 
 mixin pagination({ currentPage, pagesCount, itemsPerPage })
   - const rightValue = itemsPerPage * currentPage;
-  - const leftValue =  rightValue - itemsPerPage + 1;
+  - const leftValue = rightValue - itemsPerPage + 1;
 
   .pagination
     .pagination__controls
       +button({style: 'page-selected', text:'1'})
       +button({style: 'page', text:'2'})
       +button({style: 'page', text:'3'})
-      span.pagination__ellipsis= '...'
+      span.pagination__ellipsis= "..."
       +button({style: 'page', text:pagesCount})
       +button({style: 'page-next', arrow:true })
     p.pagination__text= `${leftValue} - ${rightValue} из 100+ вариантов аренды`
-    

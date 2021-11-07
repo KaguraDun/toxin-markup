@@ -9,7 +9,7 @@
   }
 
 mixin checkbox-list({ name, expandable=false, expanded=true, items })
-  include /pug-mixins/Input-checkbox/Input-checkbox.pug
+  include /components/Input-checkbox/Input-checkbox.pug
   - const expandModifier = "checkbox-list__items--expand";
   - const rotateModifier = "checkbox-list__icon--rotate";
   - const itemsStyles = `checkbox-list__items ${expanded ? expandModifier : ""}`;

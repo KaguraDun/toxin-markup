@@ -1,4 +1,5 @@
 //- available properties:
+  type: button | reset | submit
   size: small | medium | full-width;
   style: filled | border | borderless | page | page-selected | page-next;
   arrow: boolean;
@@ -11,7 +12,7 @@ mixin button-content(arrow, text)
   if (arrow)
     span.button__icon
 
-mixin button({size='medium', style='border', arrow=false, text="", disabled=false, href })
+mixin button({type='button', size='medium', style='border', arrow=false, text="", disabled=false, href })
   - const modifier = "button--";
   - const buttonStyles = `button ${modifier + style} ${modifier + size}`;
 
@@ -19,5 +20,5 @@ mixin button({size='medium', style='border', arrow=false, text="", disabled=fals
     a(class=buttonStyles, href=href)&attributes(attributes)
       +button-content(arrow, text)
   else
-    button(class=buttonStyles, disabled=disabled)&attributes(attributes)
+    button(type=type, class=buttonStyles, disabled=disabled)&attributes(attributes)
       +button-content(arrow, text)
