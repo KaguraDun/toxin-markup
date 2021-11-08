@@ -33,5 +33,8 @@ $secondary-gradient--hover: linear-gradient(
 $main-bg-color: white;
 
 /* media */
+$desktop: 1440px;
 $tablet: 768px;
 $mobile: 320px;
+
+$container-default: rem(1160px);

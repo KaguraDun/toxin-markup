@@ -1,0 +1,11 @@
+@mixin container($max-width: rem(1160px)) {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 rem(20px);
+
+  @media (max-width: $tablet) {
+    max-width: $tablet;
+    padding: 0 10px;
+  }
+}

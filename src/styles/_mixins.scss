@@ -2,6 +2,7 @@
 @import './mixins/fieldset';
 @import './mixins/button-icon';
 @import './mixins/button-arrow-icon';
+@import './mixins/container';
 
 @mixin font-montserrat($font-size, $line-height, $font-weight: normal) {
   font-weight: $font-weight;
