@@ -1,6 +1,5 @@
 /* eslint-disable import/extensions */
 /* eslint-disable import/no-unresolved */
-import '../styles/index.scss';
 import 'jquery';
 import 'jquery-mask-plugin';
 
@@ -14,11 +13,7 @@ import {
   createDropdownRoomAmenity,
 } from '@/components/Dropdown/CreateDropdown.js';
 
-function importAll(r) {
-  r.keys().forEach(r);
-}
-
-importAll(require.context('@/components/', true, /\.js|.scss$/));
+import './form-elements.scss';
 
 const dropdownGuests = document.querySelector('.js-dropdown-guests');
 

@@ -3,10 +3,12 @@
   min-height: rem(70px);
   background-color: $main-bg-color;
 
-  & > .container {
+  .header__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include container();
   }
 
   &__right-col {

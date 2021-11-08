@@ -1,0 +1,11 @@
+.mock-address {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  &__error-message {
+    color: $dark100;
+    @include font-montserrat(rem(60px), rem(60px));
+  }
+}

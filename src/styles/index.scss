@@ -2,12 +2,7 @@
 @import './_mixins';
 @import './fonts/_fonts.scss';
 
-/* pages */
-@import '@/pages/colors-and-type.scss';
-@import '@/pages/headers-and-footers.scss';
-@import '@/pages/form-elements.scss';
-
-/* all components auto import in index.js */
+/* all components auto import in helpers/importAllComponents.js */
 
 html {
   //default font size = rem(14px) or 87.5%
@@ -17,16 +12,4 @@ html {
 body {
   margin: 0;
   @include font-montserrat-body;
-}
-
-.mock-address {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-
-  &__error-message {
-    color: $dark100;
-    @include font-montserrat(rem(60px), rem(60px));
-  }
 }

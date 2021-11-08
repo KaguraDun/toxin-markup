@@ -10,6 +10,10 @@
     }
   }
 
+  &__container {
+    @include container();
+  }
+
   &__widgets {
     width: 100%;
     min-height: rem(372px);

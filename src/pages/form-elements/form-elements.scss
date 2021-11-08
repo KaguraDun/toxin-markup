@@ -2,7 +2,7 @@
   background-color: $white;
 
   &__logo {
-    max-width: rem(1440px);
+    max-width: $desktop;
     margin: 0 auto;
   }
 
@@ -16,8 +16,8 @@
     grid-template-rows: repeat(3, auto);
     grid-template-columns: rem(320px) rem(126px) rem(320px) rem(72px) rem(320px);
     row-gap: rem(100px);
-    max-width: rem(1158px);
-    margin: 0 auto;
+
+    @include container();
   }
 
   &__grid-item {

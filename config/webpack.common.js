@@ -9,11 +9,17 @@ const fs = require('fs');
 const paths = require('./paths');
 
 const PAGES_DIR = `${paths.src}/pages/`;
-const PAGES = fs.readdirSync(PAGES_DIR).filter((fileName) => fileName.endsWith('.pug'));
+const PAGES = [...new Set(fs.readdirSync(PAGES_DIR))];
+
+const entryPoints = PAGES.map((page) => ({
+  [page]: {
+    import: [`${paths.src}/helpers/importAllComponents.js`, `${PAGES_DIR}${page}/${page}.js`],
+  },
+}));
 
 module.exports = {
   // Where webpack looks to start building the bundle
-  entry: [`${paths.src}/js/index.js`],
+  entry: Object.assign({}, ...entryPoints),
 
   // Where webpack outputs the assets and bundles
   output: {
@@ -55,10 +61,11 @@ module.exports = {
 
     // Generates an HTML file from a pug template
     ...PAGES.map(
-      (page) => new HtmlWebpackPlugin({
-          template: `${PAGES_DIR}/${page}`,
-          filename: `./${page.replace(/\.pug/, '.html')}`,
-        }),
+      (page) =>
+        new HtmlWebpackPlugin({
+        template: `${PAGES_DIR}/${page}/${page}`,
+        filename: `${page}.html`,
+      }),
     ),
   ],
 
