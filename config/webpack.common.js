@@ -164,4 +164,9 @@ module.exports = {
       '@/styles': `${paths.src}/styles`,
     },
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
 };
