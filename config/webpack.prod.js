@@ -1,7 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const common = require('./webpack.common.js');
+const common = require('./webpack.common');
 const paths = require('./paths');
 
 module.exports = merge(common, {

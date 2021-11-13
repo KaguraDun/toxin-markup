@@ -8,7 +8,7 @@
     "lint:fix": "eslint --fix --ext .js,.pug .",
     "stlint": "stylelint '**/*{.css,.scss}'",
     "stlint:fix": "stylelint '**/*{.css,.scss}' --fix",
-    "prettier-pug": "prettier --write '**/*.pug'"
+    "prettier-pug": "npx prettier --write '**/*.pug'"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -25,6 +25,7 @@
     "css-minimizer-webpack-plugin": "^1.1.5",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-import-resolver-webpack": "^0.13.2",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^4.0.0",

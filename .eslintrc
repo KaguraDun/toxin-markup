@@ -20,17 +20,7 @@
     "prettier/prettier": "error",
   },
   "settings": {
-    "import/resolver": {
-      "node": {
-        "paths": [
-          "./src"
-        ],
-        "extensions": [
-          ".pug",
-          ".js"
-        ]
-      }
-    }
+    "import/resolver": { "webpack": { "config": "./config/webpack.common.js" } }
   },
   "env": {
     "es6": true,
