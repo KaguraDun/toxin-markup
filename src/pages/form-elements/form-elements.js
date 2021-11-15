@@ -1,18 +1,28 @@
-/* eslint-disable import/extensions */
-/* eslint-disable import/no-unresolved */
 import 'jquery';
 import 'jquery-mask-plugin';
 
-import Litepicker from 'litepicker';
-
 import addEventToLikeButtons from '@/components/Button-like/Button-like.js';
 import addEventToCheckboxLists from '@/components/Checkbox-list/Checkbox-list.js';
-import createRangeSlider from '@/components/RangeSlider/Range-slider.js';
+import createRangeSlider from '@/components/RangeSlider/Range-slider';
 import {
   createDropdownGuests,
   createDropdownRoomAmenity,
-} from '@/components/Dropdown/CreateDropdown.js';
+} from '@/components/Dropdown/CreateDropdown';
 
+import '@/components/Logo/Logo.js';
+import '@/components/Input/Input.js';
+import '@/components/Date-dropdown/Date-dropdown.js';
+import '@/components/Input-checkbox/Input-checkbox.js';
+import '@/components/Input-radio/Input-radio.js';
+import '@/components/Input-toggle/Input-toggle.js';
+import '@/components/Button/Button.js';
+import '@/components/Button-rate/Button-rate.js';
+import '@/components/Room-info/Room-info.js';
+import '@/components/Pagination/Pagination.js';
+import '@/components/Bullet-list/Bullet-list.js';
+import '@/components/Review/Review.js';
+
+import '@/styles/index.scss';
 import './form-elements.scss';
 
 const dropdownGuests = document.querySelector('.js-dropdown-guests');

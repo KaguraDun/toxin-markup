@@ -1,3 +1,5 @@
+/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable import/no-extraneous-dependencies */
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -9,12 +11,10 @@ const fs = require('fs');
 const paths = require('./paths');
 
 const PAGES_DIR = `${paths.src}/pages/`;
-const PAGES = [...new Set(fs.readdirSync(PAGES_DIR))];
+const PAGE_FOLDERS = [...fs.readdirSync(PAGES_DIR)];
 
-const entryPoints = PAGES.map((page) => ({
-  [page]: {
-    import: [`${paths.src}/helpers/importAllComponents.js`, `${PAGES_DIR}${page}/${page}.js`],
-  },
+const entryPoints = PAGE_FOLDERS.map((page) => ({
+  [page]: `${PAGES_DIR}${page}/${page}.js`,
 }));
 
 module.exports = {
@@ -24,7 +24,7 @@ module.exports = {
   // Where webpack outputs the assets and bundles
   output: {
     path: paths.build,
-    filename: '[name].bundle.js',
+    filename: '[name].[hash].js',
     publicPath: '/',
     assetModuleFilename: 'assets/resource/[name][ext]',
   },
@@ -60,12 +60,14 @@ module.exports = {
     new StylelintPlugin({ fix: true }),
 
     // Generates an HTML file from a pug template
-    ...PAGES.map(
+    // Page folders and files inside have the same name
+    ...PAGE_FOLDERS.map(
       (page) =>
         new HtmlWebpackPlugin({
-        template: `${PAGES_DIR}/${page}/${page}`,
-        filename: `${page}.html`,
-      }),
+          chunks: [page],
+          template: `${PAGES_DIR}/${page}/${page}`,
+          filename: `${page}.html`,
+        }),
     ),
   ],
 
@@ -93,8 +95,12 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               sourceMap: true,
-              additionalData:
-                '@import "@/styles/_constants.scss";\n@import "@/styles/_mixins.scss";',
+            },
+          },
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: `${paths.src}/styles/_resources.scss`,
             },
           },
         ],
@@ -166,7 +172,14 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          name: 'vendors',
+          test: /node_modules/,
+          chunks: 'all',
+          enforce: true,
+        },
+      },
     },
   },
 };
