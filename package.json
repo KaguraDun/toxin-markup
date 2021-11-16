@@ -61,9 +61,9 @@
     "webpack-merge": "^5.3.0"
   },
   "dependencies": {
+    "flatpickr": "^4.4.0",
     "jquery": "^3.6.0",
     "jquery-mask-plugin": "^1.14.16",
-    "litepicker": "^2.0.11",
     "nouislider": "^15.2.0",
     "pug": "^3.0.2"
   }
