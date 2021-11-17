@@ -23,6 +23,10 @@ function hideExternalNextMonthDays() {
   });
 }
 
+function changeDefaultDateDelimiter(dateStr, instance) {
+  instance.element.value = dateStr.replace('—', '-');
+}
+
 function createCalendar({
   firstInputSelector,
   secondInputSelector,
@@ -40,11 +44,11 @@ function createCalendar({
     prevArrow: '',
     nextArrow: '',
     inline: isOpen,
-    dateFormat: 'Y-m-d',
     locale: Russian,
     onChange(dateObj, dateStr, instance) {
       instance.open();
       hideExternalNextMonthDays();
+      changeDefaultDateDelimiter(dateStr, instance);
     },
     onMonthChange() {
       hideExternalNextMonthDays();
@@ -54,7 +58,7 @@ function createCalendar({
     },
     onReady(dateObj, dateStr, instance) {
       hideExternalNextMonthDays();
-
+      changeDefaultDateDelimiter(dateStr, instance);
       if (today) {
         const days = Array.from(instance.daysContainer.querySelectorAll('.flatpickr-day'));
         const todayElement = days.filter(
@@ -85,10 +89,15 @@ function createCalendar({
   if (singleInputSelector) {
     flatpickr(singleInputSelector, {
       ...commonOptions,
+      dateFormat: 'd M',
     });
+
+    const singleInput = document.querySelector(singleInputSelector);
+    singleInput.readOnly = true;
   } else {
     flatpickr(firstInputSelector, {
       ...commonOptions,
+      dateFormat: 'd.m.Y',
       // eslint-disable-next-line new-cap
       plugins: [new rangePlugin({ input: secondInputSelector })],
     });
