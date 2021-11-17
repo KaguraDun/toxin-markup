@@ -1,27 +1,40 @@
 //- available properties:
-  filter: boolean;
-  filterValue: string;
-  filterLabel: string;
+  dropdownLabel: string;
   dateLabel: string;
   size: small | medium;
   arrivalLabel: string;
-  arrivalValue: string;
   departureLabel: string;
-  departureValue: string;
+  dropdownClass: string;
+  dropdownArrivalClass: string;
+  dropdownDepartureClass: string;
 
 include /components/Input/Input.pug
 
-mixin date-dropdown({filter, filterValue, filterLabel, dateLabel, size, arrivalLabel, departureLabel, arrivalValue, departureValue })
-  if filter
+mixin date-dropdown({dropdownLabel,size,arrivalLabel,departureLabel,dropdownClass,dropdownArrivalClass,dropdownDepartureClass})
+  -
+    const inputPropsBase = {
+      type:'text',
+      placeholder:'ДД.ММ.ГГГГ',
+      dropdown:true,
+      readonly:true,
+    }
+
+  if dropdownLabel
     .date-dropdown
       .date-dropdown__input-filter
-        p.date-dropdown__label= filterLabel || false
-        +input({type:'text', placeholder:'ДД.ММ.ГГГГ', size: size, dropdown:true, readonly:true, value:filterValue}).js-date-dropdown
+        p.date-dropdown__label= dropdownLabel || false
+        -
+          const inputPropsSingle = Object.assign({}, inputPropsBase, {
+            size: size,
+            placeholder:'ДД МM - ДД МM'
+          })
+        
+        +input(inputPropsSingle)(class=dropdownClass)
   else
     .date-dropdown
       .date-dropdown__input
         p.date-dropdown__label= arrivalLabel || false
-        +input({type:'text', placeholder:'ДД.ММ.ГГГГ', size:'small', dropdown:true, readonly:true, value:arrivalValue}).js-date-dropdown-arrival
+        +input(inputPropsBase)(class=dropdownArrivalClass)
       .date-dropdown__input
         p.date-dropdown__label= departureLabel || false
-        +input({type:'text', placeholder:'ДД.ММ.ГГГГ', size:'small', dropdown:true, readonly:true, value:departureValue}).js-date-dropdown-departure
+        +input(inputPropsBase)(class=dropdownDepartureClass)
