@@ -10,14 +10,6 @@ createCalendar({
   secondInputSelector: '.js-find-rooms-dropdown-departure',
 });
 
-createCalendar({
-  singleInputSelector: '.js-cards-calendar--opened',
-  isOpen: true,
-  defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 23)],
-  today: 8,
-  minDate: new Date(2019, 7, 8),
-});
-
 const dropdownGuests = document.querySelector('.js-cards-find-rooms-dropdown-guests');
 
 if (dropdownGuests) {
