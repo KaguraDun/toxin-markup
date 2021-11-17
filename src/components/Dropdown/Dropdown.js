@@ -27,9 +27,9 @@ class Dropdown {
       <li class="dropdown__item">
         <div class="dropdown__item-name">${key}</div>
         <div class="dropdown__item-buttons">
-          <button class="button-minus" ${buttonMinusDisabled}></button>
+          <button type="button" class="button-minus" ${buttonMinusDisabled}></button>
           <div class="dropdown__item-value" data-value="${key}">${value}</div>
-          <button class="button-plus"></button>
+          <button type="button" class="button-plus"></button>
         </div>
       </li>`;
     });
@@ -44,8 +44,8 @@ class Dropdown {
   static createControlButtons() {
     return `
     <div class="dropdown__button-wrapper">
-    <button class="button-widget js-button-clear">Очистить</button>
-    <button class="button-widget js-button-apply">Применить</button>
+    <button type="button" class="button-widget js-button-clear">Очистить</button>
+    <button type="button" class="button-widget js-button-apply">Применить</button>
   </div>`;
   }
 
