@@ -1,0 +1,22 @@
+extends /layouts/base.pug
+
+include /components/Logo/Logo.pug
+include /components/Find-rooms/Find-rooms.pug
+
+block baseVariables
+  - const title = "Cards";
+  - const bodyClass = "cards";
+
+block content
+  .cards__logo
+    .cards__logo-icon 
+      +logo({style:'gray'}) 
+
+  .cards__container
+    .cards__column 
+      +find-rooms
+
+    .cards__column 
+
+    .cards__column
+      .js-cards-calendar--opened
