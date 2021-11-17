@@ -1,0 +1,27 @@
+include /components/Date-dropdown/Date-dropdown.pug
+include /components/button/button.pug
+
+mixin find-rooms
+  form.find-rooms
+    h2.find-rooms__heading= "Найдём номера под\n ваши пожелания"
+    -
+      const dateDropdownProps = {
+        arrivalLabel:'прибытие',
+        departureLabel:'выезд',
+        dropdownArrivalClass: 'js-find-rooms-dropdown-arrival',
+        dropdownDepartureClass: 'js-find-rooms-dropdown-departure',
+      }
+    .find-rooms__date-dropdown
+      +date-dropdown(dateDropdownProps)
+    .find-rooms__dropdown-guests
+      .js-cards-find-rooms-dropdown-guests
+    .find-rooms__button
+      -
+        const buttonProps = {
+          type:'submit',
+          size:'full-width',
+          style: 'filled',
+          arrow:true,
+          text:'подобрать номер',
+        }
+      +button(buttonProps)
