@@ -4,6 +4,7 @@ import 'jquery-mask-plugin';
 import addEventToLikeButtons from '@/components/Button-like/Button-like.js';
 import addEventToCheckboxLists from '@/components/Checkbox-list/Checkbox-list.js';
 import createRangeSlider from '@/components/RangeSlider/Range-slider';
+import createCalendar from '@/components/Calendar/Calendar';
 import {
   createDropdownGuests,
   createDropdownRoomAmenity,
@@ -50,37 +51,20 @@ if (dropdownGuestsWithControlsAndValues) {
   });
 }
 
-const dateDropdownArrival = document.querySelector('.js-date-dropdown-arrival');
-const dateDropdownDeparture = document.querySelector('.js-date-dropdown-departure');
-const dateDropdown = document.querySelector('.js-date-dropdown');
+createCalendar({
+  firstInputSelector: '.js-form-elements-dropdown-arrival',
+  secondInputSelector: '.js-form-elements-dropdown-departure',
+  defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 19)],
+  today: 8,
+  minDate: new Date(2019, 7, 8),
+});
 
-if (dateDropdownArrival && dateDropdownDeparture) {
-  // eslint-disable-next-line no-new
-  new Litepicker({
-    element: dateDropdownArrival,
-    elementEnd: dateDropdownDeparture,
-    singleMode: false,
-    autoApply: false,
-    allowRepick: true,
-    autoRefresh: true,
-    minDate: Date.now(),
-    disallowLockDaysInRange: true,
-    buttonText: { apply: 'применить', cancel: 'очистить' },
-  });
-}
-
-if (dateDropdown) {
-  // eslint-disable-next-line no-new
-  new Litepicker({
-    element: dateDropdown,
-    allowRepick: true,
-    autoApply: false,
-    singleMode: false,
-    autoRefresh: true,
-    minDate: Date.now(),
-    buttonText: { apply: 'применить', cancel: 'очистить' },
-  });
-}
+createCalendar({
+  singleInputSelector: '.js-form-elements-dropdown-single',
+  defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 23)],
+  today: 8,
+  minDate: new Date(2019, 7, 8),
+});
 
 const dropdownRoomAmenity = document.querySelector('.js-dropdown-room-amenity');
 
