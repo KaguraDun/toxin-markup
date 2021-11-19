@@ -1,4 +1,4 @@
-import './Header.scss';
-import '@/components/Logo/Logo.js';
-import '@/components/Header-nav/Header-nav.js';
-import '@/components/Button/Button.js';
+import './header.scss';
+import '@/components/logo/logo.js';
+import '@/components/header-nav/header-nav.js';
+import '@/components/button/button.js';

@@ -1,9 +1,9 @@
-import { createDropdownGuests } from '@/components/Dropdown/CreateDropdown';
-import createCalendar from '@/components/Calendar/Calendar';
+import { createDropdownGuests } from '@/components/dropdown/createdropdown';
+import createCalendar from '@/components/calendar/calendar';
 
-import './Find-rooms.scss';
-import '@/components/Date-dropdown/Date-dropdown.js';
-import '@/components/Button/Button.js';
+import './find-rooms.scss';
+import '@/components/date-dropdown/date-dropdown.js';
+import '@/components/button/button.js';
 
 createCalendar({
   firstInputSelector: '.js-find-rooms-dropdown-arrival',

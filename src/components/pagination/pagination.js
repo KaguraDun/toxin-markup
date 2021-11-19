@@ -1,2 +1,2 @@
-import './Pagination.scss';
-import '@/components/Button/Button.js';
+import './pagination.scss';
+import '@/components/button/button.js';

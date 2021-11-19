@@ -1,4 +1,4 @@
-import './Button-like.scss';
+import './button-like.scss';
 
 function toggleLikesNumber(likesNumberElement, isButtonPressed) {
   const likesCount = Number(likesNumberElement.innerText);

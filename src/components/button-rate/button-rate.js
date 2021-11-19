@@ -1,1 +1,1 @@
-import './Button-rate.scss';
+import './button-rate.scss';

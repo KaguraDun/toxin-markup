@@ -1,1 +1,1 @@
-import './Input-radio.scss';
+import './input-radio.scss';

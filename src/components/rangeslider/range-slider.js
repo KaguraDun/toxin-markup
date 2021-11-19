@@ -1,6 +1,6 @@
 import noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
-import './Range-slider.scss';
+import './range-slider.scss';
 
 function createRangeSlider(sliderName) {
   const sliderContainer = document.querySelector(`.${sliderName}`);

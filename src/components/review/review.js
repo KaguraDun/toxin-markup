@@ -1,2 +1,2 @@
-import './Review.scss';
-import '@/components/Button-like/Button-like.js';
+import './review.scss';
+import '@/components/button-like/button-like.js';

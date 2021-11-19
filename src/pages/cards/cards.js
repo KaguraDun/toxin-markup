@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
-import createCalendar from '@/components/Calendar/Calendar';
-import '@/components/Logo/Logo.js';
-import '@/components/Find-rooms/Find-rooms.js';
-import '@/components/Sign-up/Sign-up.js';
+import createCalendar from '@/components/calendar/calendar';
+import '@/components/logo/logo.js';
+import '@/components/find-rooms/find-rooms.js';
+import '@/components/sign-up/sign-up.js';
 
 import '@/styles/index.scss';
 import './cards.scss';

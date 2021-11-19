@@ -1,5 +1,5 @@
-import './Checkbox-list.scss';
-import '@/components/Input-checkbox/Input-checkbox.js';
+import './checkbox-list.scss';
+import '@/components/input-checkbox/input-checkbox.js';
 
 function toggleExpand(e) {
   const target = e.target.closest('.checkbox-list__button');

@@ -1,5 +1,5 @@
 import './headers-and-footers.scss';
-import '@/components/Logo/Logo.js';
-import '@/components/Header/Header.js';
-import '@/components/Footer/Footer.js';
+import '@/components/logo/logo.js';
+import '@/components/header/header.js';
+import '@/components/footer/footer.js';
 import '@/styles/index.scss';

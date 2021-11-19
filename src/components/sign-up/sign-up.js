@@ -1,5 +1,5 @@
-import './Sign-up.scss';
-import '@/components/Input/Input.js';
-import '@/components/Input-radio/Input-radio.js';
-import '@/components/Input-toggle/Input-toggle.js';
-import '@/components/Button/Button.js';
+import './sign-up.scss';
+import '@/components/input/input.js';
+import '@/components/input-radio/input-radio.js';
+import '@/components/input-toggle/input-toggle.js';
+import '@/components/button/button.js';

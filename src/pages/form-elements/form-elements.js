@@ -1,24 +1,24 @@
-import addEventToLikeButtons from '@/components/Button-like/Button-like.js';
-import addEventToCheckboxLists from '@/components/Checkbox-list/Checkbox-list.js';
-import createRangeSlider from '@/components/RangeSlider/Range-slider';
-import createCalendar from '@/components/Calendar/Calendar';
+import addEventToLikeButtons from '@/components/button-like/button-like.js';
+import addEventToCheckboxLists from '@/components/checkbox-list/checkbox-list.js';
+import createRangeSlider from '@/components/rangeslider/range-slider';
+import createCalendar from '@/components/calendar/calendar';
 import {
   createDropdownGuests,
   createDropdownRoomAmenity,
-} from '@/components/Dropdown/CreateDropdown';
+} from '@/components/dropdown/createdropdown';
 
-import '@/components/Logo/Logo.js';
-import '@/components/Input/Input.js';
-import '@/components/Date-dropdown/Date-dropdown.js';
-import '@/components/Input-checkbox/Input-checkbox.js';
-import '@/components/Input-radio/Input-radio.js';
-import '@/components/Input-toggle/Input-toggle.js';
-import '@/components/Button/Button.js';
-import '@/components/Button-rate/Button-rate.js';
-import '@/components/Room-info/Room-info.js';
-import '@/components/Pagination/Pagination.js';
-import '@/components/Bullet-list/Bullet-list.js';
-import '@/components/Review/Review.js';
+import '@/components/logo/logo.js';
+import '@/components/input/input.js';
+import '@/components/date-dropdown/date-dropdown.js';
+import '@/components/input-checkbox/input-checkbox.js';
+import '@/components/input-radio/input-radio.js';
+import '@/components/input-toggle/input-toggle.js';
+import '@/components/button/button.js';
+import '@/components/button-rate/button-rate.js';
+import '@/components/room-info/room-info.js';
+import '@/components/pagination/pagination.js';
+import '@/components/bullet-list/bullet-list.js';
+import '@/components/review/review.js';
 
 import '@/styles/index.scss';
 import './form-elements.scss';

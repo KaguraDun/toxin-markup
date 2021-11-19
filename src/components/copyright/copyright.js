@@ -1,1 +1,1 @@
-import './Copyright.scss';
+import './copyright.scss';

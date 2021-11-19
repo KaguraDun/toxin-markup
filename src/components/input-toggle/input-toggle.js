@@ -1,1 +1,1 @@
-import './Input-toggle.scss';
+import './input-toggle.scss';

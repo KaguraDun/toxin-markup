@@ -1,1 +1,1 @@
-import './Input-checkbox.scss';
+import './input-checkbox.scss';
