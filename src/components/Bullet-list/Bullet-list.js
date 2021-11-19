@@ -1,1 +1,1 @@
-import './Bullet-list.pug';
+import './Bullet-list.scss';
