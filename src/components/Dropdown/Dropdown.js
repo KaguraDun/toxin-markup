@@ -44,9 +44,9 @@ class Dropdown {
   static createControlButtons() {
     return `
     <div class="dropdown__button-wrapper">
-    <button type="button" class="button-widget js-button-clear">Очистить</button>
-    <button type="button" class="button-widget js-button-apply">Применить</button>
-  </div>`;
+      <button type="button" class="button-widget js-button-clear">Очистить</button>
+      <button type="button" class="button-widget js-button-apply">Применить</button>
+    </div>`;
   }
 
   createDropdown() {
