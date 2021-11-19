@@ -2,6 +2,7 @@
 import createCalendar from '@/components/Calendar/Calendar';
 import '@/components/Logo/Logo.js';
 import '@/components/Find-rooms/Find-rooms.js';
+import '@/components/Sign-up/Sign-up.js';
 
 import '@/styles/index.scss';
 import './cards.scss';

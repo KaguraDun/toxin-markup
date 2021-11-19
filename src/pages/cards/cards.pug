@@ -2,6 +2,7 @@ extends /layouts/base.pug
 
 include /components/Logo/Logo.pug
 include /components/Find-rooms/Find-rooms.pug
+include /components/Sign-up/Sign-up.pug
 
 block baseVariables
   - const title = "Cards";
@@ -10,13 +11,15 @@ block baseVariables
 block content
   .cards__logo
     .cards__logo-icon 
-      +logo({style:'gray'}) 
+      +logo({style:'gray'})
 
   .cards__container
     .cards__column 
       +find-rooms
+      +sign-up
 
     .cards__column 
 
     .cards__column
-      .js-cards-calendar--opened
+      .cards__calendar 
+        .js-cards-calendar--opened 
