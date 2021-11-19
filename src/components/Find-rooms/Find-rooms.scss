@@ -1,14 +1,5 @@
 .find-rooms {
-  box-sizing: border-box;
-  max-width: rem(380px);
-  padding: rem(40px 30px 30px);
-  background: $white;
-
-  &__heading {
-    margin: 0 0 rem(25px);
-    white-space: pre-line;
-    @include font-montserrat-h1;
-  }
+  @include form;
 
   &__date-dropdown {
     margin-bottom: rem(20px);
