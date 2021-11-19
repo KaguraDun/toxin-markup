@@ -174,16 +174,24 @@ block content
         fieldset.form-elements__fieldset
           legend.form-elements__fieldset-legend= "buttons"
           .form-elements__fieldset-row
-            +button({style:'filled', text: 'click me'})
-            +button({style:'filled', text: 'click me'}).button--hover
+            +button({style:'filled', width: 'small', text: 'click me'})
+            +button({style:'filled', width: 'small', text: 'click me'}).button--hover
           .form-elements__fieldset-row
-            +button({text: 'click me'})
-            +button({text: 'click me'}).button--hover
+            +button({width: 'small', text: 'click me'})
+            +button({width: 'small', text: 'click me'}).button--hover
           .form-elements__fieldset-row
             +button({style:'borderless', text: 'click me'})
             +button({style:'borderless', text: 'click me'}).button--hover
           .form-elements__fieldset-row
-            +button({size:'full-width', style:'filled', arrow:true, text: 'перейти к оплате', href:'/mock-address.html'})
+            -
+              const buttonPaymentProps = {
+                style: 'filled',
+                width: 'full',
+                arrow: true,
+                text: 'перейти к оплате',
+                href: '/mock-address.html'
+              }
+            +button(buttonPaymentProps)
       .form-elements__item
         .form-elements__item-info.form-elements__item-info--large-margin
           .form-elements__item-name= "pagination"
