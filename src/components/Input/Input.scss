@@ -36,6 +36,10 @@
     max-width: rem(360px);
   }
 
+  &--size-full {
+    max-width: 100%;
+  }
+
   &::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: $dark25;

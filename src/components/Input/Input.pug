@@ -1,17 +1,23 @@
 //- available properties:
   type: string;
   placeholder: string;
-  value: string || number;
+  value: string | number;
   arrow: boolean;
-  size: small, medium, large;
+  size: small | medium | large | full;
   mask: date;
   dropdown: boolean;
   readonly: boolean;
   required: boolean;
 
-mixin input({type, placeholder= false, value=false, arrow, size, mask, dropdown, readonly=false, required=false})
-  - const maskList = { date: { mask: "00.00.0000", pattern: "(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}" } };
-  - const inputSize = size ? `input--size- ${size}` : false;
+mixin input({type='text', placeholder=false, value=false, arrow= false, size='full', mask=false, dropdown=false, readonly=false, required=false})
+  -
+    const maskList = {
+      date: {
+        mask: "00.00.0000",
+          pattern: "(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}"
+        }
+      };
+  - const inputSize = `input--size-${size}`
 
   .input__wrapper(class=inputSize)
     input.input(

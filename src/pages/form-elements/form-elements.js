@@ -1,6 +1,3 @@
-import 'jquery';
-import 'jquery-mask-plugin';
-
 import addEventToLikeButtons from '@/components/Button-like/Button-like.js';
 import addEventToCheckboxLists from '@/components/Checkbox-list/Checkbox-list.js';
 import createRangeSlider from '@/components/RangeSlider/Range-slider';
