@@ -1,11 +1,11 @@
 import addEventToLikeButtons from '@/components/button-like/button-like.js';
 import addEventToCheckboxLists from '@/components/checkbox-list/checkbox-list.js';
-import createRangeSlider from '@/components/rangeslider/range-slider';
+import createRangeSlider from '@/components/range-slider/range-slider';
 import createCalendar from '@/components/calendar/calendar';
 import {
   createDropdownGuests,
   createDropdownRoomAmenity,
-} from '@/components/dropdown/createdropdown';
+} from '@/components/dropdown/create-dropdown';
 
 import '@/components/logo/logo.js';
 import '@/components/input/input.js';

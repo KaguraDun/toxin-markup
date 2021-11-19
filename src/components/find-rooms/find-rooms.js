@@ -1,4 +1,4 @@
-import { createDropdownGuests } from '@/components/dropdown/createdropdown';
+import { createDropdownGuests } from '@/components/dropdown/create-dropdown';
 import createCalendar from '@/components/calendar/calendar';
 
 import './find-rooms.scss';

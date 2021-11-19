@@ -1,3 +1,5 @@
+import Dropdown from './dropdown';
+
 function createDropdownGuests({ element, expanded = false, controls = true, values = [], label }) {
   const guestsPattern = ['Гость', 'Гостя', 'Гостей'];
   const [adults = 0, children = 0, babies = 0] = values;
