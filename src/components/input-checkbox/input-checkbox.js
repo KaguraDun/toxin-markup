@@ -1,0 +1,1 @@
+import './Input-checkbox.scss';

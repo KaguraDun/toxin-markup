@@ -1,0 +1,34 @@
+.noUi-horizontal {
+  height: 6px;
+}
+
+.noUi-horizontal .noUi-handle {
+  right: -8px;
+  width: 16px;
+  height: 16px;
+}
+
+.noUi-handle {
+  background: $secondary-gradient;
+  border: 2px solid $white;
+  border-radius: 50%;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.noUi-handle::before,
+.noUi-handle::after {
+  width: 0;
+  height: 0;
+}
+
+.noUi-connect {
+  background: $secondary-gradient;
+}
+
+.noUi-target {
+  background: $white;
+  border: 1px solid $dark25;
+  border-radius: 3px;
+  box-shadow: none;
+}

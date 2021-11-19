@@ -1,0 +1,7 @@
+.copyright {
+  &__text {
+    margin: 0;
+    color: $dark75;
+    @include font-montserrat(rem(14px), rem(17px));
+  }
+}

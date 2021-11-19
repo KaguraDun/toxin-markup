@@ -1,0 +1,27 @@
+.color-example {
+  display: flex;
+
+  &__box {
+    width: 70px;
+    height: 70px;
+    margin-right: 40px;
+    border-radius: 6px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $dark100;
+  }
+
+  &__name {
+    margin: 0;
+    @include font-montserrat(rem(19px), rem(28px), bold);
+  }
+
+  &__code {
+    margin: 0;
+    @include font-montserrat(rem(19px), rem(28px));
+  }
+}

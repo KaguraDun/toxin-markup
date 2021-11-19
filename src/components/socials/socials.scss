@@ -1,0 +1,10 @@
+.socials {
+  display: flex;
+  @include clear-ul-style;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: rem(20px);
+    }
+  }
+}

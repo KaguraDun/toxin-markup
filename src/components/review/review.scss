@@ -1,0 +1,38 @@
+.review {
+  display: flex;
+  flex-direction: column;
+
+  &__author {
+    display: flex;
+    margin-bottom: rem(10px);
+  }
+
+  &__avatar {
+    width: rem(48px);
+    height: rem(48px);
+    margin-right: rem(10px);
+  }
+
+  &__name,
+  &__date,
+  &__text {
+    margin: 0;
+  }
+
+  &__name {
+    @include font-montserrat(rem(14px), rem(24px), bold);
+  }
+
+  &__text {
+    white-space: pre-line;
+  }
+
+  &__info {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &__info > .button-like {
+    margin: rem(0 14px 0 5px);
+  }
+}

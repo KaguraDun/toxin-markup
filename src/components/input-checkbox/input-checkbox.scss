@@ -1,0 +1,55 @@
+.input-checkbox {
+  margin: 0;
+  appearance: none;
+
+  &__label {
+    display: flex;
+    align-items: flex-start;
+    color: $dark50;
+    white-space: pre-line;
+    text-transform: none;
+    @include font-montserrat(rem(14px), rem(18px));
+  }
+
+  &__icon {
+    display: block;
+    min-width: rem(18px);
+    min-height: rem(18px);
+    margin-right: rem(10px);
+    border: 1px solid $dark25;
+    border-radius: rem(4px);
+  }
+
+  &:checked + &__icon {
+    background-image: url('./svg/check-mark.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: rem(10px);
+    border: 1px solid $purple;
+  }
+
+  &:focus + &__icon {
+    box-shadow: 0 0 0 2px $purple;
+  }
+
+  &:disabled + &__icon {
+    border: 1px solid $dark25;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
+    margin-bottom: 5px;
+    color: $dark75;
+    font-weight: bold;
+
+    @include font-montserrat(rem(14px), rem(18px), bold);
+  }
+
+  &__info {
+    @include font-montserrat(rem(12px), rem(14px));
+  }
+}

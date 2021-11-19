@@ -1,0 +1,40 @@
+//- available properties:
+  dropdownLabel: string;
+  dateLabel: string;
+  size: small | medium;
+  arrivalLabel: string;
+  departureLabel: string;
+  dropdownClass: string;
+  dropdownArrivalClass: string;
+  dropdownDepartureClass: string;
+
+include /components/Input/Input.pug
+
+mixin date-dropdown({dropdownLabel,size,arrivalLabel,departureLabel,dropdownClass,dropdownArrivalClass,dropdownDepartureClass})
+  -
+    const inputPropsBase = {
+      type:'text',
+      placeholder:'ДД.ММ.ГГГГ',
+      dropdown:true,
+      readonly:true,
+    }
+
+  if dropdownLabel
+    .date-dropdown
+      .date-dropdown__input-filter
+        p.date-dropdown__label= dropdownLabel || false
+        -
+          const inputPropsSingle = Object.assign({}, inputPropsBase, {
+            size: size,
+            placeholder:'ДД МM - ДД МM'
+          })
+
+        +input(inputPropsSingle)(class=dropdownClass)
+  else
+    .date-dropdown
+      .date-dropdown__input
+        p.date-dropdown__label= arrivalLabel || false
+        +input(inputPropsBase)(class=dropdownArrivalClass)
+      .date-dropdown__input
+        p.date-dropdown__label= departureLabel || false
+        +input(inputPropsBase)(class=dropdownDepartureClass)

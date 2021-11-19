@@ -1,0 +1,45 @@
+include /components/Input/Input.pug
+include /components/Input-radio/Input-radio.pug
+include /components/Input-toggle/Input-toggle.pug
+include /components/Button/Button.pug
+
+mixin sign-up
+  form.sign-up
+    h2.sign-up__heading= "Регистрация аккаунта"
+    .sign-up__name
+      +input({placeholder: 'Имя'})
+    .sign-up__surname
+      +input({placeholder: 'Фамилия'})
+    .sign-up__gender
+      fieldset.sign-up__gender-fieldset
+        +input-radio({checked: true, name : 'gender', value: 'male', text: 'Мужчина'})
+        +input-radio({name : 'gender', value: 'female', text: 'Женщина'})
+    .sign-up__birth-date
+      fieldset.sign-up__birth-date-fieldset
+        legend.sign-up__birth-date-legend= "дата рождения"
+        +input({type:'text', placeholder:'ДД.ММ.ГГГГ', size:'large', mask:'date'})
+    .sign-up__entry-data
+      fieldset.sign-up__entry-data-fieldset
+        legend.sign-up__entry-data-legend= "данные для входа в сервис"
+        +input({type:'email', placeholder:'Email', size:'large'}) 
+        +input({type:'password', placeholder:'Пароль', size:'large'})
+        +input-toggle({text:'Получать спецпредложения'})
+    .sign-up__button-payment
+      -
+        const buttonPaymentProps = {
+          type: 'submit',
+          width:'full',
+          style: 'filled',
+          arrow: true,
+          text: 'перейти к оплате'
+        }
+      +button(buttonPaymentProps)
+    .sign-up__sign-in
+      p.sign-up__sign-in-text= "Уже есть аккаунт на Toxin"
+      -
+        const buttonSignInProps = {
+          width: 'small',
+          text: 'войти',
+          href: '/login.html'
+        }
+      +button(buttonSignInProps)

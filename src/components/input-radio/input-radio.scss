@@ -1,0 +1,61 @@
+.input-radio {
+  margin: 0;
+  appearance: none;
+
+  &__label {
+    display: flex;
+    align-items: center;
+    color: $dark50;
+    text-transform: none;
+    @include font-montserrat(rem(14px), rem(24px));
+  }
+
+  &__icon {
+    position: relative;
+    display: inline-block;
+    width: rem(18px);
+    height: rem(18px);
+    margin-right: rem(10px);
+    border: 1px solid $dark25;
+    border-radius: rem(10px);
+    cursor: pointer;
+    transition: 0.4s;
+  }
+
+  &:checked + &__icon {
+    border: 1px solid $purple;
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: rem(12px);
+      height: rem(12px);
+      background: $dark25;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: 0.4s;
+      content: '';
+    }
+  }
+
+  &:checked ~ &__label-text {
+    color: $dark75;
+  }
+
+  &:checked + &__icon::before {
+    background: $primary-gradient;
+  }
+
+  &:focus + &__icon {
+    box-shadow: 0 0 0 2px $purple;
+  }
+
+  &:disabled + &__icon {
+    border: 1px solid $dark25;
+  }
+
+  &:disabled + &__icon::before {
+    background: $dark25;
+  }
+}

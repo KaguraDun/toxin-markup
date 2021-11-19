@@ -1,0 +1,11 @@
+//- available properties:
+  colorRGBA: string;
+  colorCode: string;
+  colorName: string;
+
+mixin color-example(colorRGBA, colorCode, colorName)
+  .color-example
+    .color-example__box(style=`background:${colorRGBA}`)
+    .color-example__info
+      p.color-example__name #{ colorName }
+      p.color-example__code #{ colorCode }
