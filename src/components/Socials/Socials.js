@@ -1,1 +1,0 @@
-import './Socials.scss';

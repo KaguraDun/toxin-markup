@@ -1,1 +1,0 @@
-import './Input-toggle.scss';

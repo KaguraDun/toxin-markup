@@ -1,1 +1,0 @@
-import './Room-info.scss';
