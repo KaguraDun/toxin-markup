@@ -11,7 +11,7 @@ const fs = require('fs');
 const paths = require('./paths');
 
 const PAGES_DIR = `${paths.src}/pages/`;
-const PAGE_FOLDERS = [...fs.readdirSync(PAGES_DIR)];
+const PAGE_FOLDERS = fs.readdirSync(PAGES_DIR);
 
 const entryPoints = PAGE_FOLDERS.map((page) => ({
   [page]: `${PAGES_DIR}${page}/${page}.js`,
