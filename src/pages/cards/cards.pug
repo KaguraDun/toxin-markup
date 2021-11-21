@@ -3,6 +3,7 @@ extends /layouts/base.pug
 include /components/logo/logo.pug
 include /components/find-rooms/find-rooms.pug
 include /components/sign-up/sign-up.pug
+include /components/book-room/book-room.pug
 
 block baseVariables
   - const title = "Cards";
@@ -18,7 +19,8 @@ block content
       +find-rooms
       +sign-up
 
-    .cards__column 
+    .cards__column
+      +book-room
 
     .cards__column
       .cards__calendar 

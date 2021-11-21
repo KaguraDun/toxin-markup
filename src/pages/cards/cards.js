@@ -3,6 +3,7 @@ import createCalendar from '@/components/calendar/calendar';
 import '@/components/logo/logo.js';
 import '@/components/find-rooms/find-rooms.js';
 import '@/components/sign-up/sign-up.js';
+import '@/components/book-room/book-room.js';
 
 import '@/styles/index.scss';
 import './cards.scss';
