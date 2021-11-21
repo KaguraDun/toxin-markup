@@ -45,6 +45,7 @@ function createCalendar({
     nextArrow: '',
     inline: isOpen,
     locale: Russian,
+    monthSelectorType: 'static',
     onChange(dateObj, dateStr, instance) {
       instance.open();
       hideExternalNextMonthDays();
@@ -106,8 +107,6 @@ function createCalendar({
 
     // Hide external days row when changing between two inputs
     firstInput.addEventListener('focus', hideExternalNextMonthDays);
-    secondInput.addEventListener('focus', hideExternalNextMonthDays);
-    secondInput.addEventListener('click', hideExternalNextMonthDays);
 
     firstInput.readOnly = true;
     secondInput.readOnly = true;

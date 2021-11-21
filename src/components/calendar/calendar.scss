@@ -3,6 +3,7 @@
   padding: rem(20px);
   background: $white;
   border: 1px solid #1f204140;
+
   @include font-montserrat-body;
 }
 
@@ -28,6 +29,7 @@
     background: $secondary-gradient--hover;
   }
 }
+
 .flatpickr-day.inRange,
 .flatpickr-day.nextMonthDay.inRange,
 .flatpickr-day.prevMonthDay.inRange {
@@ -50,6 +52,7 @@
 }
 
 .flatpickr-day.nextMonthDay {
+
   &:hover {
     color: $white !important;
     font-weight: bold !important;
@@ -72,6 +75,7 @@
 }
 
 .flatpickr-day.disabled {
+
   &:hover {
     color: $dark50 !important;
     font-weight: normal !important;
@@ -113,6 +117,7 @@
 
 .flatpickr-day.startRange,
 .flatpickr-day.selected.startRange {
+
   &::before {
     right: 0;
     left: 50%;
@@ -132,6 +137,7 @@
 .flatpickr-prev-month {
   top: rem(10px) !important;
   left: rem(10px) !important;
+
   &::before {
     color: $purple;
 
@@ -154,11 +160,12 @@
 }
 
 .flatpickr-months {
-  margin-bottom: rem(30px);
+  margin-bottom: rem(25px);
 }
 
 .flatpickr-weekday {
   color: $purple !important;
+
   @include font-montserrat(rem(12px) !important, rem(15px !important), bold !important);
 }
 
