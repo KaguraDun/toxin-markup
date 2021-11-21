@@ -4,6 +4,7 @@ include /components/logo/logo.pug
 include /components/find-rooms/find-rooms.pug
 include /components/sign-up/sign-up.pug
 include /components/book-room/book-room.pug
+include /components/sign-in/sign-in.pug
 
 block baseVariables
   - const title = "Cards";
@@ -21,7 +22,8 @@ block content
 
     .cards__column
       +book-room
+      +sign-in
 
     .cards__column
-      .cards__calendar 
+      .cards__calendar
         .js-cards-calendar--opened 
