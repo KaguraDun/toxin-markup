@@ -3,7 +3,6 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const LiveReloadPlugin = require('webpack-livereload-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 
@@ -18,22 +17,19 @@ const entryPoints = PAGE_FOLDERS.map((page) => ({
 }));
 
 module.exports = {
+  target: 'web',
   // Where webpack looks to start building the bundle
   entry: Object.assign({}, ...entryPoints),
-
   // Where webpack outputs the assets and bundles
   output: {
     path: paths.build,
-    filename: '[name].[hash].js',
+    filename: '[name].[fullhash].js',
     publicPath: '/',
     assetModuleFilename: 'assets/resource/[name][ext]',
   },
 
   // Customize the webpack build process
   plugins: [
-    new LiveReloadPlugin({
-      appendScriptTag: true,
-    }),
     // Removes/cleans build folders and unused assets when rebuilding
     new CleanWebpackPlugin(),
 
@@ -78,7 +74,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader'],
+        use: ['babel-loader'],
       },
 
       // Styles: Inject CSS into the head with source maps
