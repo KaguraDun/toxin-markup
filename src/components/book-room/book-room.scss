@@ -1,0 +1,125 @@
+.book-room {
+  @include form;
+
+  &__info {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: rem(23px);
+  }
+
+  &__room-number-wrapper,
+  &__price-wrapper {
+    display: flex;
+    align-items: baseline;
+    white-space: pre;
+  }
+
+  &__number-symbol {
+    color: $dark100;
+
+    @include font-montserrat(rem(14px), rem(17px), bold);
+  }
+
+  &__number {
+    margin-right: rem(8px);
+
+    @include font-montserrat-h1;
+  }
+
+  &__type {
+    color: $purple;
+    text-transform: uppercase;
+
+    @include font-montserrat(rem(12px), rem(15px), bold);
+  }
+
+  &__price {
+    color: $dark50;
+
+    @include font-montserrat(rem(14px), rem(18px), bold);
+  }
+
+  &__price-text {
+    color: $dark50;
+
+    @include font-montserrat(rem(12px), rem(18px));
+  }
+
+  &__date-dropdown,
+  &__dropdown-guests {
+    margin-bottom: rem(20px);
+  }
+
+  &__price-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: rem(30px);
+
+    @include clear-ul-style;
+
+    & {
+      margin-bottom: rem(30px);
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    white-space: pre-line;
+  }
+
+  &__item-name-wrapper {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    width: rem(214px);
+    line-height: rem(18px);
+  }
+
+  &__item-about {
+    position: absolute;
+    right: -5px;
+    cursor: pointer;
+
+    &:hover::before {
+      color: $dark50;
+      border: 1px solid $dark50;
+    }
+
+    &::before {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      align-items: center;
+      justify-content: center;
+      min-width: rem(20px);
+      min-height: rem(20px);
+      color: $dark25;
+      text-align: center;
+      border: 1px solid $dark25;
+      border-radius: 50%;
+      content: 'i';
+
+      @include font-montserrat(rem(12px), rem(14px), bold);
+    }
+  }
+
+  &__total {
+    display: flex;
+    margin-bottom: rem(20px);
+  }
+
+  &__total-text,
+  &__total-sum {
+    white-space: nowrap;
+
+    @include font-montserrat-h2;
+  }
+
+  &__total-filler {
+    flex-grow: 1;
+    border-bottom: 1px dotted $dark25;
+  }
+}

@@ -1,0 +1,54 @@
+include /components/button/button.pug
+include /components/date-dropdown/date-dropdown.pug
+
+mixin book-room
+  form.book-room
+    .book-room__info
+      .book-room__room-number-wrapper
+        span.book-room__number-symbol= "№ "
+        span.book-room__number= "888"
+        span.book-room__type= "люкс"
+      .book-room__price-wrapper
+        .book-room__price= "9 990₽"
+        .book-room__price-text= " в сутки"
+    .book-room__date-dropdown
+      -
+        const dateDropdownProps = {
+          arrivalLabel:'прибытие',
+          departureLabel:'выезд',
+          dropdownArrivalClass: 'js-book-room__date-dropdown-arrival',
+          dropdownDepartureClass: 'js-book-room__date-dropdown-departure',
+        }
+    .book-room__date-dropdown
+      +date-dropdown(dateDropdownProps)
+    .book-room__dropdown-guests
+      .js-book-room__dropdown-guests
+    ul.book-room__price-list
+      li.book-room__item
+        .book-room__item-name-wrapper
+          span.book-room__item-name= "9 990₽ х 4 суток"
+        span.book-room__item-sum= "39 960₽"
+      li.book-room__item
+        .book-room__item-name-wrapper
+          span.book-room__item-name= "Сбор за услуги: скидка 2 179₽"
+          span.book-room__item-about
+        span.book-room__item-sum= "0₽"
+      li.book-room__item
+        .book-room__item-name-wrapper
+          span.book-room__item-name= "Сбор за дополнительные\n услуги"
+          span.book-room__item-about
+        span.book-room__item-sum= "300₽"
+    .book-room__total
+      .book-room__total-text= "Итого"
+      .book-room__total-filler
+      .book-room__total-sum= "38 081₽"
+    .book-room__button-book
+      -
+        const buttonBookProps = {
+          type: 'submit',
+          width:'full',
+          style: 'filled',
+          arrow: true,
+          text: 'забронировать'
+        }
+      +button(buttonBookProps)
