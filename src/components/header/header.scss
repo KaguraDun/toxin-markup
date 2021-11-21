@@ -21,6 +21,7 @@
   }
 
   &__vertical-line {
+
     &::after {
       width: 1px;
       height: 30px;
@@ -32,6 +33,7 @@
   &__username {
     color: $dark50;
     cursor: pointer;
+
     @include font-montserrat(rem(14px), rem(17px));
   }
 }

@@ -9,9 +9,11 @@
   border: 1px solid $dark25;
   border-radius: rem(10px);
   cursor: pointer;
+
   @include font-montserrat(10px, 12px);
 
   &__icon {
+
     &::after {
       @include font-material-icons('favorite_border', rem(10px), rem(9px));
     }

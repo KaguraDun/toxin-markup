@@ -8,6 +8,7 @@
   background: $white;
   border: 1px solid $dark25;
   border-radius: rem(4px);
+
   @include font-montserrat-body();
 
   &__wrapper {
@@ -16,10 +17,12 @@
 
   &__icon {
     @include button-icon;
+
     @include button-arrow-icon;
 
     &--arrow::after {
       color: $purple;
+
       @include font-material-icons('arrow_forward');
     }
   }

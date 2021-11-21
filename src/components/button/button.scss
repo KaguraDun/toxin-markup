@@ -90,6 +90,7 @@
   &--page-selected,
   &--page-next {
     width: rem(40px);
+
     @include font-montserrat(rem(12px), rem(15px));
 
     .button__text {

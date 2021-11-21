@@ -6,6 +6,7 @@
     display: flex;
     align-items: center;
     text-transform: none;
+
     @include font-montserrat-body;
   }
 
@@ -18,9 +19,9 @@
     border: 1px solid $dark25;
     border-radius: rem(10px);
     cursor: pointer;
-    transition: 0.4s;
+    transition: .4s;
 
-    &:before {
+    &::before {
       position: absolute;
       top: 50%;
       left: 10%;
@@ -29,7 +30,7 @@
       background: $dark25;
       border-radius: 50%;
       transform: translate(-10%, -50%);
-      transition: 0.4s;
+      transition: .4s;
       content: '';
     }
   }

@@ -21,6 +21,7 @@
   &__colors {
     display: flex;
     flex-direction: column;
+
     @include clear-ul-style();
 
     &-item {
@@ -36,6 +37,7 @@
     display: flex;
     flex-direction: column;
     max-width: rem(444px);
+
     @include clear-ul-style();
 
     &-item {
@@ -58,6 +60,7 @@
 
     &-item--style-body {
       margin-bottom: 0;
+
       @include font-montserrat(rem(14px), rem(24px));
     }
 

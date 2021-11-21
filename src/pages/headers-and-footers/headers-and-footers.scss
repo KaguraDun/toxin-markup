@@ -14,7 +14,7 @@
   &__header-second,
   &__footer {
     margin-bottom: rem(40px);
-    box-shadow: 0px rem(10px) rem(20px) $dark5;
+    box-shadow: 0 rem(10px) rem(20px) $dark5;
   }
 
   &__footer-creative {
@@ -22,7 +22,7 @@
     width: $tablet;
     margin: 0 auto;
     margin-bottom: rem(140px);
-    box-shadow: 0px rem(10px) rem(20px) $dark5;
+    box-shadow: 0 rem(10px) rem(20px) $dark5;
 
     .container {
       box-sizing: border-box;

@@ -9,10 +9,12 @@
 
   &__label {
     margin: 0 0 5px;
+
     @include font-montserrat-h3;
   }
 
   &__input {
+
     & > .input__wrapper > .input {
       cursor: pointer;
     }

@@ -1,14 +1,17 @@
 .header-nav {
+
   &__list {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+
     @include clear-ul-style;
   }
 
   &__item {
     color: $dark50;
     cursor: pointer;
+
     @include font-montserrat(rem(14px), rem(17px));
 
     &:not(:last-child) {

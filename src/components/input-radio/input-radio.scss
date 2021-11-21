@@ -7,6 +7,7 @@
     align-items: center;
     color: $dark50;
     text-transform: none;
+
     @include font-montserrat(rem(14px), rem(24px));
   }
 
@@ -19,13 +20,13 @@
     border: 1px solid $dark25;
     border-radius: rem(10px);
     cursor: pointer;
-    transition: 0.4s;
+    transition: .4s;
   }
 
   &:checked + &__icon {
     border: 1px solid $purple;
 
-    &:before {
+    &::before {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -34,7 +35,7 @@
       background: $dark25;
       border-radius: 50%;
       transform: translate(-50%, -50%);
-      transition: 0.4s;
+      transition: .4s;
       content: '';
     }
   }

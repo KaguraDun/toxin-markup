@@ -1,6 +1,8 @@
 .bullet-list {
+
   &__name {
     margin-bottom: 16px;
+
     @include font-montserrat-h3();
   }
 

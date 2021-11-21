@@ -17,11 +17,13 @@
 
   &__name {
     margin: 0;
+
     @include font-montserrat(rem(19px), rem(28px), bold);
   }
 
   &__code {
     margin: 0;
+
     @include font-montserrat(rem(19px), rem(28px));
   }
 }

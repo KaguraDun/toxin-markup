@@ -5,6 +5,7 @@
   background-color: $main-bg-color;
 
   @media (max-width: $tablet) {
+
     &__widgets {
       display: none;
     }
@@ -17,7 +18,7 @@
   &__widgets {
     width: 100%;
     min-height: rem(372px);
-    box-shadow: 0px 1px 0px $dark10;
+    box-shadow: 0 1px 0 $dark10;
   }
 
   &__grid {
@@ -39,6 +40,7 @@
   &__text {
     margin: 0;
     color: $dark75;
+
     @include font-montserrat(rem(14px), rem(24px));
   }
 
@@ -50,11 +52,13 @@
     margin: 4px 0 rem(21px);
     color: $dark100;
     text-transform: uppercase;
+
     @include font-montserrat(rem(12px), rem(15px), bold);
   }
 
   &__item {
     color: $dark50;
+
     @include font-montserrat(rem(14px), rem(18px));
 
     &:not(:last-child) {
@@ -80,7 +84,6 @@
 
   &__copyright-wrapper {
     display: flex;
-
     align-items: center;
     justify-content: space-between;
     min-height: rem(70px);

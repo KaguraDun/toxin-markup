@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: column;
     margin: 0 0 5px;
+
     @include font-montserrat-h3();
   }
 
@@ -32,6 +33,7 @@
 
   &__button-icon {
     @include button-icon;
+
     @include button-arrow-icon;
   }
 
@@ -46,6 +48,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: rem(7px);
+
     @include font-montserrat-h3;
   }
 
@@ -88,6 +91,7 @@
   border: 1px solid $dark25;
   border-radius: 50%;
   cursor: pointer;
+
   @include font-montserrat(rem(18px), rem(22px));
 }
 
@@ -96,12 +100,14 @@
 }
 
 .button-plus {
+
   &::after {
     content: '+';
   }
 }
 
 .button-minus {
+
   &::after {
     content: '-';
   }
@@ -114,6 +120,7 @@
   background: transparent;
   border: 0;
   cursor: pointer;
+
   @include font-montserrat(rem(12px), rem(15px), bold);
 
   &:hover {

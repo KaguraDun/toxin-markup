@@ -1,4 +1,4 @@
-@import '~sass-rem';
+@import 'sass-rem';
 $rem-baseline: 14px;
 @import './mixins/fieldset';
 @import './mixins/button-icon';
@@ -28,43 +28,50 @@ $rem-baseline: 14px;
   vertical-align: middle;
   word-wrap: normal;
   content: $content;
-  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
 
 @mixin font-montserrat-h1 {
   color: $dark100;
+
   @include font-montserrat(rem(24px), rem(29px), bold);
 }
 
 @mixin font-montserrat-h2 {
   color: $dark100;
+
   @include font-montserrat(rem(19px), rem(23px), bold);
 }
 
 @mixin font-montserrat-h3 {
   color: $dark100;
   text-transform: uppercase;
+
   @include font-montserrat(rem(12px), rem(15px), bold);
 }
 
 @mixin font-montserrat-h3-light {
   color: $dark75;
   text-transform: uppercase;
+
   @include font-montserrat(rem(12px), rem(15px));
 }
 
 @mixin font-montserrat-body {
   color: $dark75;
+
   @include font-montserrat(rem(14px), rem(24px));
 }
 
 @mixin font-montserrat-link {
   color: $dark50;
+
   @include font-montserrat(rem(14px), rem(17px));
 }
 
 @mixin clear-link-style {
+
   &,
   &:hover,
   &:focus,

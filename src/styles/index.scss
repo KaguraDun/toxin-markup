@@ -3,7 +3,7 @@
 /* all components auto import in helpers/importAllComponents.js */
 
 html {
-  //default font size = rem(14px) or 87.5%
+  /* default font size = rem(14px) or 87.5% */
   font-size: 87.5%;
 
   @media (max-width: $tablet) {
@@ -13,5 +13,6 @@ html {
 
 body {
   margin: 0;
+
   @include font-montserrat-body;
 }

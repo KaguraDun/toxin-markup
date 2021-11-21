@@ -6,6 +6,7 @@
 
   &__error-message {
     color: $dark100;
+
     @include font-montserrat(rem(60px), rem(60px));
   }
 }
