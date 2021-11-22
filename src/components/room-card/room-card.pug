@@ -1,0 +1,32 @@
+//- available properties:
+  sliderContent: string;
+  number: number;
+  price: number;
+  type: люкс;
+  score: 1 | 2 | 3 | 4 | 5;
+  reviewsNumber: number;
+
+include /components/room-info/room-info.pug
+include /components/button-rate/button-rate.pug
+
+mixin room-card({sliderContent, number, price, type, score, reviewsNumber })
+  .room-card
+    .room-card__slider
+      .room-card__slider-button-left
+      img.room-card__slider-content(src=sliderContent)
+      .room-card__slider-button-right
+      .room-card__slider-buttons
+        .room-card__slider-button.room-card__slider-button--selected
+        .room-card__slider-button
+        .room-card__slider-button
+        .room-card__slider-button
+    .room-card__content
+      .room-card__room-info
+        +room-info({numberStyle: 'compact', number, price, type})
+      hr.room-card__delimiter
+      .room-card__rating
+        .room-card__button-rate
+          +button-rate({score, name: `room-card-${number}`})
+        .room-card__reviews-wrapper
+          span.room-card__reviews-number= reviewsNumber
+          span.room-card__reviews-text= " Отзывов"

@@ -1,0 +1,107 @@
+.room-card {
+  max-width: rem(270px);
+  background: $white;
+  border-radius: 4px;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, .05);
+
+  &__slider {
+    position: relative;
+    max-height: 270px;
+    border-radius: 4px;
+  }
+
+  &__slider-button-left,
+  &__slider-button-right {
+    position: absolute;
+    width: 50px;
+    height: 100%;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      top: 40%;
+      display: inline-block;
+      color: $white;
+      transform: rotate(90deg);
+
+      @include font-material-icons('expand_more');
+    }
+  }
+
+  &__slider-button-left {
+    top: 0;
+    left: 0;
+
+    &::before {
+      left: 10px;
+      transform: rotate(90deg);
+    }
+  }
+
+  &__slider-button-right {
+    top: 0;
+    right: 0;
+
+    &::before {
+      right: 10px;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &__slider-buttons {
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+    display: flex;
+    gap: 3.75px;
+  }
+
+  &__slider-button {
+    width: 5px;
+    height: 5px;
+    border: 1px solid $white;
+    border-radius: 50%;
+    filter: drop-shadow(0px 5px 5px $dark30);
+
+    &--selected {
+      background: $white;
+    }
+  }
+
+  &__content {
+    padding: rem(15px 20px 20px);
+  }
+
+  &__room-info {
+    margin-bottom: rem(10px);
+  }
+
+  &__delimiter {
+    border: 1px solid $dark10;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__reviews-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-end;
+    white-space: pre;
+  }
+
+  &__reviews-number {
+    color: $dark50;
+
+    @include font-montserrat(rem(14px), rem(18px), bold);
+  }
+
+  &__reviews-text {
+    color: $dark50;
+
+    @include font-montserrat(rem(14px), rem(18px));
+  }
+}
