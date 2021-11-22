@@ -111,7 +111,7 @@ module.exports = {
         },
       },
 
-      // Fonts and SVGs: Inline files
+      // Fonts: Inline files
       {
         test: /\.(woff(2)?|eot|ttf|otf)$/,
         type: 'asset/resource',
@@ -153,6 +153,7 @@ module.exports = {
     alias: {
       '@': paths.src,
       '@/components': `${paths.src}/components`,
+      '@/helpers': `${paths.src}/helpers`,
       '@/features': `${paths.src}/features`,
       '@/icons': `${paths.src}/icons`,
       '@/images': `${paths.src}/images`,
