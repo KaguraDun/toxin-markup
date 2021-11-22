@@ -1,9 +1,12 @@
+//- available properties:
+  button-text: string;
+
 include /components/input/input.pug
 include /components/input-radio/input-radio.pug
 include /components/input-toggle/input-toggle.pug
 include /components/button/button.pug
 
-mixin sign-up
+mixin sign-up({buttonText='зарегистрироваться'})
   form.sign-up
     h2.sign-up__heading= "Регистрация аккаунта"
     .sign-up__name
@@ -31,7 +34,7 @@ mixin sign-up
           width:'full',
           style: 'filled',
           arrow: true,
-          text: 'перейти к оплате'
+          text: buttonText
         }
       +button(buttonPaymentProps)
     .sign-up__sign-in
