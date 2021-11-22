@@ -1,0 +1,43 @@
+.room-info {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  &__room-number-wrapper,
+  &__price-wrapper {
+    display: flex;
+    align-items: baseline;
+    white-space: pre;
+  }
+
+  &__number-symbol {
+    color: $dark100;
+
+    @include font-montserrat(rem(14px), rem(17px), bold);
+  }
+
+  &__number {
+    margin-right: rem(8px);
+
+    @include font-montserrat-h1;
+  }
+
+  &__type {
+    color: $purple;
+    text-transform: uppercase;
+
+    @include font-montserrat(rem(12px), rem(15px), bold);
+  }
+
+  &__price {
+    color: $dark50;
+
+    @include font-montserrat(rem(14px), rem(18px), bold);
+  }
+
+  &__price-text {
+    color: $dark50;
+
+    @include font-montserrat(rem(12px), rem(18px));
+  }
+}

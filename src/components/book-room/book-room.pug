@@ -1,16 +1,11 @@
 include /components/button/button.pug
 include /components/date-dropdown/date-dropdown.pug
+include /components/room-info/room-info.pug
 
 mixin book-room
   form.book-room
-    .book-room__info
-      .book-room__room-number-wrapper
-        span.book-room__number-symbol= "№ "
-        span.book-room__number= "888"
-        span.book-room__type= "люкс"
-      .book-room__price-wrapper
-        .book-room__price= "9 990₽"
-        .book-room__price-text= " в сутки"
+    .book-room__room-info
+      +room-info
     .book-room__date-dropdown
       -
         const dateDropdownProps = {
