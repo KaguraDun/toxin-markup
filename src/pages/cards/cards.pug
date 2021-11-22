@@ -5,6 +5,7 @@ include /components/find-rooms/find-rooms.pug
 include /components/sign-up/sign-up.pug
 include /components/book-room/book-room.pug
 include /components/sign-in/sign-in.pug
+include /components/room-card/room-card.pug
 
 block baseVariables
   - const title = "Cards";
@@ -25,5 +26,26 @@ block content
       +sign-in
 
     .cards__column
-      .cards__calendar
-        .js-cards-calendar--opened 
+      .cards__calendar 
+        .js-cards-calendar--opened
+      .cards__room-card
+        -
+          const roomCard888Props = {
+            sliderContent: require('/public/images/rooms/room888.jpg'),
+            number: 888,
+            price: 9990,
+            type: 'люкс',
+            score: 5,
+            reviewsNumber: 145
+          }
+        +room-card(roomCard888Props)
+      .cards__room-card
+        -
+          const roomCard840Props = {
+            sliderContent: require('/public/images/rooms/room840.jpg'),
+            number: 840,
+            price: 9990,
+            score: 4,
+            reviewsNumber: 65
+          }
+        +room-card(roomCard840Props)
