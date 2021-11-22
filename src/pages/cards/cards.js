@@ -6,7 +6,7 @@ import '@/components/sign-up/sign-up.js';
 import '@/components/book-room/book-room.js';
 import '@/components/sign-in/sign-in.js';
 
-import '@/styles/index.scss';
+import '@/styles/_common.scss';
 import './cards.scss';
 
 createCalendar({

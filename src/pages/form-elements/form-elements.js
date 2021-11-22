@@ -20,7 +20,7 @@ import '@/components/pagination/pagination.js';
 import '@/components/bullet-list/bullet-list.js';
 import '@/components/review/review.js';
 
-import '@/styles/index.scss';
+import '@/styles/_common.scss';
 import './form-elements.scss';
 
 const dropdownGuests = document.querySelector('.js-dropdown-guests');
