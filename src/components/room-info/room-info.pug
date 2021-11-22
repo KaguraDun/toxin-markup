@@ -1,9 +1,21 @@
-mixin room-info
-  .room-info
+//- available properties:
+  number: number;
+  price: number;
+  type: люкс;
+
+mixin room-info({number, price, type=''})
+  -
+    const formatPrice = new Intl.NumberFormat('ru-RU', {
+      style: 'currency',
+      currency: 'RUB',
+      minimumFractionDigits: 0,
+    }).format(price).replace(/\s(?=[^.]$)/, '');
+
+  .room-info 
     .room-info__room-number-wrapper
       span.room-info__number-symbol= "№ "
-      span.room-info__number= "888"
-      span.room-info__type= "люкс"
+      span.room-info__number=number
+      span.room-info__type=type
     .room-info__price-wrapper
-      .room-info__price= "9 990₽"
+      .room-info__price=formatPrice
       .room-info__price-text= " в сутки"
