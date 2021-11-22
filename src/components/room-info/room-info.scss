@@ -17,9 +17,19 @@
   }
 
   &__number {
-    margin-right: rem(8px);
+    color: $dark100;
 
-    @include font-montserrat-h1;
+    &--compact {
+      margin-right: rem(1px);
+
+      @include font-montserrat(rem(19px), rem(23px), bold);
+    }
+
+    &--normal {
+      margin-right: rem(8px);
+
+      @include font-montserrat-h1;
+    }
   }
 
   &__type {

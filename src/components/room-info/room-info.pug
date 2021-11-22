@@ -1,10 +1,12 @@
 //- available properties:
+  numberStyle: compact | normal;
   number: number;
   price: number;
   type: люкс;
 
-mixin room-info({number, price, type=''})
+mixin room-info({numberStyle='normal', number, price, type=''})
   -
+    const numberClasses = `room-info__number room-info__number--${numberStyle}`;
     const formatPrice = new Intl.NumberFormat('ru-RU', {
       style: 'currency',
       currency: 'RUB',
@@ -14,8 +16,8 @@ mixin room-info({number, price, type=''})
   .room-info 
     .room-info__room-number-wrapper
       span.room-info__number-symbol= "№ "
-      span.room-info__number=number
-      span.room-info__type=type
+      span(class=numberClasses)= number
+      span.room-info__type= type
     .room-info__price-wrapper
-      .room-info__price=formatPrice
+      .room-info__price= formatPrice
       .room-info__price-text= " в сутки"
