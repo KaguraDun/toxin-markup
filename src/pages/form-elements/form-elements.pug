@@ -10,7 +10,7 @@ include /components/button/button.pug
 include /components/button-like/button-like.pug
 include /components/button-rate/button-rate.pug
 include /components/checkbox-list/checkbox-list.pug
-include /components/room-info/room-info.pug
+include /components/room-advantages/room-advantages.pug
 include /components/pagination/pagination.pug
 include /components/bullet-list/bullet-list.pug
 include /components/review/review.pug
@@ -39,11 +39,6 @@ block content
     const richCheckboxItems = [
       { text: 'Широкий коридор', info:'Ширина коридоров в номере\n не менее 91 см.'},
       { text: 'Помощник для инвалидов', info:'На 1 этаже вас встретит специалист\n  и проводит до номера.'},
-    ]
-
-    const roomInfoItems = [
-      { info: 'comfort', underline: true },
-      { info: 'convenience', underline: true },
     ]
 
     const bulletListItems = [
@@ -117,7 +112,12 @@ block content
 
     .form-elements__grid-item.form-elements__grid-column-1
       .form-elements__item
-        +room-info({items: roomInfoItems})
+        -
+          const roomAdvantagesItems = [
+            { info: 'comfort', underline: true },
+            { info: 'convenience', underline: true },
+          ]
+        +room-advantages({items: roomAdvantagesItems})
 
     .form-elements__grid-item.form-elements__grid-column-2
       .form-elements__item.form-elements__item--large-margin

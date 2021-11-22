@@ -15,7 +15,7 @@ import '@/components/input-radio/input-radio.js';
 import '@/components/input-toggle/input-toggle.js';
 import '@/components/button/button.js';
 import '@/components/button-rate/button-rate.js';
-import '@/components/room-info/room-info.js';
+import '@/components/room-advantages/room-advantages.js';
 import '@/components/pagination/pagination.js';
 import '@/components/bullet-list/bullet-list.js';
 import '@/components/review/review.js';
