@@ -1,12 +1,13 @@
 .socials {
   display: flex;
+  gap: 20px;
 
   @include clear-ul-style;
 
-  &__item {
-
-    &:not(:last-child) {
-      margin-right: rem(20px);
-    }
+  &__item-link {
+    display: flex;
+    align-items: flex-end;
+    width: 24px;
+    height: 24px;
   }
 }
