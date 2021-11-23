@@ -72,6 +72,7 @@ module.exports = {
     ...PAGE_FOLDERS.map(
       (page) =>
         new HtmlWebpackPlugin({
+          favicon: `${paths.public}/images/favicon-32x32.png`,
           chunks: [page],
           template: `${PAGES_DIR}/${page}/${page}`,
           filename: `${page}.html`,
