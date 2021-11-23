@@ -73,6 +73,7 @@ module.exports = {
       (page) =>
         new HtmlWebpackPlugin({
           favicon: `${paths.public}/images/favicon-32x32.png`,
+          inject: 'body',
           chunks: [page],
           template: `${PAGES_DIR}/${page}/${page}`,
           filename: `${page}.html`,
