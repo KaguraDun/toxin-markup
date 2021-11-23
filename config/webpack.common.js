@@ -27,6 +27,18 @@ module.exports = {
     publicPath: '/',
     assetModuleFilename: 'assets/resource/[name][ext]',
   },
+  cache: {
+    // 1. Set cache type to filesystem
+    type: 'filesystem',
+    allowCollectingMemory: true,
+    buildDependencies: {
+      // 2. Add your config as buildDependency to get cache invalidation on config change
+      config: [__filename],
+
+      // 3. If you have other things the build depends on you can add them here
+      // Note that webpack, loaders and all modules referenced from your config are automatically added
+    },
+  },
 
   // Customize the webpack build process
   plugins: [
@@ -74,7 +86,10 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: {
+          loader: 'babel-loader',
+          options: { cacheDirectory: true },
+        },
       },
 
       // Styles: Inject CSS into the head with source maps
