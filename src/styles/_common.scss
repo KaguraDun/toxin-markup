@@ -6,13 +6,25 @@ html {
   /* default font size = rem(14px) or 87.5% */
   font-size: 87.5%;
 
+  @media (max-width: $desktop) {
+    font-size: 70%;
+  }
+
   @media (max-width: $tablet) {
-    font-size: 50%;
+    font-size: 70%;
+  }
+
+  @media (min-width: $mobile-s) {
   }
 }
 
 body {
+  height: 100vh;
   margin: 0;
 
   @include font-montserrat-body;
+}
+
+.footer {
+  margin-top: auto;
 }

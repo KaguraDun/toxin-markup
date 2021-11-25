@@ -1,6 +1,6 @@
 @mixin form {
   box-sizing: border-box;
-  max-width: rem(380px);
+  width: rem(380px);
   padding: rem(40px 30px 30px);
   background: $white;
   border: 1px solid rgba(0, 0, 0, .12);

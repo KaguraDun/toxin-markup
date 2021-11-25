@@ -18,4 +18,11 @@
   &__icon-text {
     display: flex;
   }
+
+  @media (max-width: $tablet) {
+
+    &__icon {
+      transform: scale(.7);
+    }
+  }
 }
