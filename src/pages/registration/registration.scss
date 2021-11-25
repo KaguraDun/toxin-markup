@@ -1,4 +1,4 @@
-.registration {
+.registration-page {
   display: flex;
   flex-direction: column;
 
@@ -17,9 +17,5 @@
 
   &__sign-up {
     padding: rem(17px 0);
-  }
-
-  &__footer {
-    margin-top: auto;
   }
 }
