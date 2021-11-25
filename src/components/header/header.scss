@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  width: 100%;
   min-height: rem(70px);
   background-color: $main-bg-color;
 
@@ -8,23 +9,98 @@
     align-items: center;
     justify-content: space-between;
 
-    @include container();
+    @include container;
   }
 
   &__right-col {
+    position: relative;
     display: flex;
+    gap: rem(20px);
     align-items: center;
 
-    & > :not(:last-child) {
-      margin-right: rem(20px);
+    @media (max-width: $tablet) {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+      padding: rem(60px 10px 0);
+      background: $white;
+      transform: translateX(-1000px);
+      opacity: 0;
+      transition: transform .75s ease, opacity .75s ease;
     }
+  }
+
+  &__burger {
+    position: absolute;
+    right: 0;
+    z-index: $z-index-burger-button;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    padding: rem(20px);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+
+    @media (max-width: $tablet) {
+      display: flex;
+    }
+  }
+
+  &__burger-line {
+    width: rem(35px);
+    height: 2px;
+    background: $purple;
+    transition: transform .75s ease, opacity .75s ease;
+  }
+
+  .header__burger-line-1 {
+    transform: rotate(0);
+    transform-origin: top left;
+  }
+
+  .header__burger-line-2 {
+    opacity: 1;
+  }
+
+  .header__burger-line-3 {
+    transform: rotate(0);
+    transform-origin: bottom left;
+  }
+
+  &__burger.header__burger--open {
+    position: fixed;
+
+    .header__burger-line-1 {
+      transform: rotate(45deg);
+      transform-origin: top left;
+    }
+
+    .header__burger-line-2 {
+      opacity: 0;
+    }
+
+    .header__burger-line-3 {
+      transform: rotate(-45deg);
+      transform-origin: bottom left;
+    }
+  }
+
+  &__right-col.header__burger--open {
+    z-index: $z-index-header-nav;
+    transform: translateX(0px);
+    opacity: 1;
   }
 
   &__vertical-line {
 
     &::after {
       width: 1px;
-      height: 30px;
+      height: rem(30px);
       color: $dark10;
       content: '|';
     }

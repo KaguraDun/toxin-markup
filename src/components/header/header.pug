@@ -7,6 +7,10 @@ mixin header({isLogged=false})
     .header__container
       .header__left-col
         +logo({style:'colored'})
+      button.header__burger
+        .header__burger-line.header__burger-line-1
+        .header__burger-line.header__burger-line-2
+        .header__burger-line.header__burger-line-3
       .header__right-col
         +header-nav
 
