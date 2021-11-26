@@ -64,6 +64,8 @@
 }
 
 .flatpickr-day {
+  width: rem(40px) !important;
+  height: rem(40px) !important;
   margin: 0 !important;
   color: $dark50 !important;
   border: 0 !important;
@@ -105,7 +107,7 @@
     position: absolute;
     z-index: -1;
     display: block;
-    width: 20px;
+    width: rem(20px);
     height: 100%;
     color: $white !important;
     background: $purple50;
