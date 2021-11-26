@@ -4,6 +4,7 @@
 
   &__background {
     width: 100%;
+    min-height: rem(702px);
     background: url('/public/images/backgrounds/background-4.jpg') no-repeat;
     background-size: cover;
   }
@@ -16,6 +17,6 @@
   }
 
   &__sign-in {
-    padding: rem(172px 0);
+    margin-top: rem(172px);
   }
 }

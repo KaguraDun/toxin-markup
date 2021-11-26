@@ -1,6 +1,7 @@
 @mixin container($max-width: $container-default) {
   width: 100%;
   max-width: rem($max-width);
+  height: 100%;
   margin: 0 auto;
   padding: 0 rem(20px);
 
