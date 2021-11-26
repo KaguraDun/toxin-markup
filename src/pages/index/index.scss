@@ -1,0 +1,35 @@
+.landing-page {
+  display: flex;
+  flex-direction: column;
+
+  &__background {
+    width: 100%;
+    min-height: rem(830px);
+    background: url('/public/images/backgrounds/background-3.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include container;
+
+    @media (max-width: $mobile) {
+      align-items: center;
+    }
+  }
+
+  &__find-rooms {
+    margin-top: rem(70px);
+  }
+
+  &__text {
+    align-self: flex-end;
+    margin-bottom: rem(17px);
+    white-space: pre-line;
+    text-align: right;
+  }
+}
