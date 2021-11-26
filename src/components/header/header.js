@@ -8,8 +8,8 @@ import '@/components/button/button.js';
 
   function handleBurgerMenuClick() {
     const openModifier = 'header__burger--open';
-    const headerNavigation = document.querySelector('.header__right-col');
-    headerNavigation.classList.toggle(openModifier);
+    const header = document.querySelector('.header');
+    header.classList.toggle(openModifier);
     burgerMenu.classList.toggle(openModifier);
   }
 

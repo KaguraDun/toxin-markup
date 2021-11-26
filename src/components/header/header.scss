@@ -12,6 +12,12 @@
     @include container;
   }
 
+  &__left-col {
+    @media (max-width: $tablet) {
+      z-index: $z-index-header-logo;
+    }
+  }
+
   &__right-col {
     position: relative;
     display: flex;
@@ -26,7 +32,7 @@
       left: 0;
       flex-direction: column-reverse;
       justify-content: flex-end;
-      padding: rem(60px 10px 0);
+      padding: rem(70px 10px 0);
       background: $white;
       transform: translateX(-1000px);
       opacity: 0;
@@ -90,7 +96,11 @@
     }
   }
 
-  &__right-col.header__burger--open {
+  &.header__burger--open &__left-col {
+    position: fixed;
+  }
+
+  &.header__burger--open &__right-col {
     z-index: $z-index-header-nav;
     transform: translateX(0px);
     opacity: 1;
