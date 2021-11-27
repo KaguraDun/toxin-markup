@@ -1,0 +1,17 @@
+.room-filter {
+
+  &__dropdown-guests,
+  &__range-slider {
+    margin-bottom: rem(30px);
+  }
+
+  &__date-dropdown,
+  &__checkbox-list,
+  &__rich-checkbox-list {
+    margin-bottom: rem(20px);
+  }
+
+  &__dropdown-room-amenity {
+    margin-bottom: rem(15px);
+  }
+}

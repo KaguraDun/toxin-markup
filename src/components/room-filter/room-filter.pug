@@ -1,0 +1,62 @@
+include /components/date-dropdown/date-dropdown.pug
+include /components/range-slider/range-slider.pug
+include /components/checkbox-list/checkbox-list.pug
+
+mixin room-filter
+  .room-filter
+    .room-filter__date-dropdown
+      -
+        const dateDropdownProps = {
+          dropdownLabel:'даты пребывания в отеле',
+          dropdownClass: 'js-room-filter__date-dropdown',
+        }
+      +date-dropdown(dateDropdownProps)
+    .room-filter__dropdown-guests
+      .js-room-filter__dropdown-guests
+    .room-filter__range-slider
+      -
+        const rangeSliderProps = {
+          className: 'js-room-filter__range-slider',
+          label: 'диапазон цены',
+          priceRange: '5 000₽ - 10 000₽',
+          additionalText:'Стоимость за сутки пребывания в номере',
+        }
+
+      +range-slider(rangeSliderProps)
+    .room-filter__checkbox-list
+      -
+        const checkboxListProps = {
+          name: 'правила дома',
+          items: [
+            { text: 'Можно курить' },
+            { text: 'Можно с питомцами', checked:true },
+            { text: 'Можно пригласить гостей\n (до 10 человек)', checked:true },
+          ]
+        }
+      +checkbox-list(checkboxListProps)
+    .room-filter__rich-checkbox-list
+      -
+        const richCheckboxListProps = {
+          name: 'доступность',
+          items: [
+            { text: 'Широкий коридор', info: 'Ширина коридоров в номере\n не менее 91 см.' },
+            { text: 'Помощник для инвалидов',
+              info: 'На 1 этаже вас встретит специалист\n и проводит до номера.'
+            },
+          ]
+        }
+      +checkbox-list(richCheckboxListProps)
+    .room-filter__dropdown-room-amenity
+      .js-room-filter__dropdown-room-amenity
+    .room-filter__expandable-checkbox-list
+      -
+        const expandableCheckboxListProps = {
+          name: 'дополнительные удобства',
+          expandable: true,
+          expanded: false,
+          items: [
+            { text: 'Широкий коридор', info: 'Ширина коридоров в номере\n не менее 91 см.' },
+            { text: 'Помощник для инвалидов', info: 'На 1 этаже вас встретит специалист\n и проводит до номера.'},
+          ]
+        }
+      +checkbox-list(expandableCheckboxListProps)
