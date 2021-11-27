@@ -1,0 +1,20 @@
+extends /layouts/base.pug
+
+block baseVariables
+  - const title = "Search room";
+  - const bodyClass = "search-room-page";
+
+include /components/header/header.pug
+include /components/room-filter/room-filter.pug
+include /components/footer/footer.pug
+
+block header
+  +header({isLogged:false})
+block content
+  .search-room-page__background
+    section.search-room-page__container
+      aside.search-room-page__filter
+        +room-filter
+
+block footer
+  +footer
