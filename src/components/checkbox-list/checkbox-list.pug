@@ -5,7 +5,8 @@
   items: Item[];
   Item: {
     name: string,
-    checked: boolean
+    checked: boolean,
+    info: string,
   }
 
 include /components/input-checkbox/input-checkbox.pug
@@ -18,7 +19,7 @@ mixin checkbox-list({ name, expandable=false, expanded=true, items })
 
   .checkbox-list
     if expandable
-      button.checkbox-list__button
+      button(type='button').checkbox-list__button
         h3.checkbox-list__name= name
         span(class=iconStyles)
     else

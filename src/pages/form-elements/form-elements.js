@@ -1,6 +1,5 @@
 import addEventToLikeButtons from '@/components/button-like/button-like.js';
-import addEventToCheckboxLists from '@/components/checkbox-list/checkbox-list.js';
-import createRangeSlider from '@/components/range-slider/range-slider';
+import createRangeSlider from '@/components/range-slider/range-slider.js';
 import createCalendar from '@/components/calendar/calendar';
 import {
   createDropdownGuests,
@@ -15,6 +14,7 @@ import '@/components/input-radio/input-radio.js';
 import '@/components/input-toggle/input-toggle.js';
 import '@/components/button/button.js';
 import '@/components/button-rate/button-rate.js';
+import '@/components/checkbox-list/checkbox-list.js';
 import '@/components/room-advantages/room-advantages.js';
 import '@/components/pagination/pagination.js';
 import '@/components/bullet-list/bullet-list.js';
@@ -81,6 +81,5 @@ if (dropdownRoomAmenityExpanded) {
 }
 
 addEventToLikeButtons();
-addEventToCheckboxLists();
 
 createRangeSlider('js-range-slider');
