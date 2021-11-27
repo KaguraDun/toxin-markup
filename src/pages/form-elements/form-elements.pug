@@ -14,39 +14,13 @@ include /components/room-advantages/room-advantages.pug
 include /components/pagination/pagination.pug
 include /components/bullet-list/bullet-list.pug
 include /components/review/review.pug
+include /components/range-slider/range-slider.pug
 
 block baseVariables
   - const title = "Form elements";
   - const bodyClass = "form-elements";
 
 block content
-  -
-    const checkboxListItems = [
-      { text: "Завтрак", checked: false },
-      { text: "Письменный стол", checked: true },
-      { text: "Стул для кормления", checked: true },
-      { text: "Кроватка", checked: true },
-      { text: "Телевизор", checked: false },
-      { text: "Шампунь", checked: false },
-    ]
-
-    const checkboxButtonsItems = [
-      { text: 'Можно курить' },
-      { text: 'Можно с питомцами', checked:true },
-      { text: 'Можно пригласить гостей\n (до 10 человек)', checked:true },
-    ]
-
-    const richCheckboxItems = [
-      { text: 'Широкий коридор', info:'Ширина коридоров в номере\n не менее 91 см.'},
-      { text: 'Помощник для инвалидов', info:'На 1 этаже вас встретит специалист\n  и проводит до номера.'},
-    ]
-
-    const bulletListItems = [
-      'Нельзя с питомцами',
-      'Без вечеринок и мероприятий',
-      'Время прибытия — после 13:00,\n а выезд до 12:00'
-    ]
-
   .form-elements__logo
     .form-elements__logo-icon
       +logo({style:'gray'})
@@ -64,7 +38,7 @@ block content
         +input({type:'text', value:'This is pretty awesome', size:'large'}).input--hover
       .form-elements__item
         //- create container for dropdown, set properties in index.js
-        .js-dropdown-guests
+        .js-form-elements__dropdown-guests
       .form-elements__item.form-elements__item--large-margin
         .form-elements__item-info
           .form-elements__item-name= "masked text field"
@@ -74,8 +48,8 @@ block content
           const dateDropdownProps = {
             arrivalLabel:'date dropdown',
             departureLabel:'date dropdown',
-            dropdownArrivalClass: 'js-form-elements-dropdown-arrival',
-            dropdownDepartureClass: 'js-form-elements-dropdown-departure',
+            dropdownArrivalClass: 'js-form-elements__dropdown-arrival',
+            dropdownDepartureClass: 'js-form-elements__dropdown-departure',
           }
 
         +date-dropdown(dateDropdownProps)
@@ -84,7 +58,7 @@ block content
           const dateDropdownSingleProps = {
             dropdownLabel: 'filter date dropdown',
             size:'medium',
-            dropdownClass: 'js-form-elements-dropdown-single',
+            dropdownClass: 'js-form-elements__dropdown-single',
           }
         +date-dropdown(dateDropdownSingleProps)
       .form-elements__item.form-elements__item--size-medium
@@ -98,14 +72,23 @@ block content
           .form-elements__item-name= "dropdown"
           .form-elements__item-state= "default"
         //- create container for dropdown, set properties in index.js
-        .js-dropdown-room-amenity
+        .js-form-elements__dropdown-room-amenity
       .form-elements__item.form-elements__item--size-medium
         .form-elements__item-info
           .form-elements__item-name= "dropdown"
           .form-elements__item-state= "expanded"
         //- create container for dropdown, set properties in index.js
-        .js-dropdown-room-amenity-expanded
+        .js-form-elements__dropdown-room-amenity-expanded
       .form-elements__item.form-elements__item--size-medium
+        -
+          const checkboxListItems = [
+            { text: "Завтрак", checked: false },
+            { text: "Письменный стол", checked: true },
+            { text: "Стул для кормления", checked: true },
+            { text: "Кроватка", checked: true },
+            { text: "Телевизор", checked: false },
+            { text: "Шампунь", checked: false },
+          ]
         +checkbox-list({ name: 'expandable checkbox list', expandable: true, expanded: false, items: checkboxListItems })
       .form-elements__item.form-elements__item--size-medium
         +checkbox-list({ name: 'expandable checkbox list', expandable: true, expanded: true, items: checkboxListItems })
@@ -121,6 +104,12 @@ block content
 
     .form-elements__grid-item.form-elements__grid-column-2
       .form-elements__item.form-elements__item--large-margin
+        -
+          const checkboxButtonsItems = [
+            { text: 'Можно курить' },
+            { text: 'Можно с питомцами', checked:true },
+            { text: 'Можно пригласить гостей\n (до 10 человек)', checked:true },
+          ]
         +checkbox-list({name:'checkbox buttons', expandable:false, items:checkboxButtonsItems})
       .form-elements__item.form-elements__item--large-margin
         fieldset.form-elements__fieldset.form-elements__fieldset--row
@@ -147,8 +136,15 @@ block content
     .form-elements__grid-item.form-elements__grid-column-2
       .form-elements__item.form-elements__item--largest-margin
         //- create container for dropdown, set properties in index.js
-        .js-dropdown-guests--with-controls
+        .js-form-elements__dropdown-guests--with-controls
       .form-elements__item
+        -
+          const richCheckboxItems = [
+            { text: 'Широкий коридор', info:'Ширина коридоров в номере\n не менее 91 см.'},
+            { text: 'Помощник для инвалидов',
+             info:'На 1 этаже вас встретит специалист\n  и проводит до номера.'
+            },
+          ]
         +checkbox-list({name: 'rich Checkbox Buttons', expandable:false, items: richCheckboxItems})
 
     .form-elements__grid-item.form-elements__grid-column-2-3
@@ -164,12 +160,14 @@ block content
 
     .form-elements__grid-item.form-elements__grid-column-3
       .form-elements__item.form-elements__item--large-margin.form-elements__item--size-medium
-        .form-elements__item-info.form-elements__item-info--large-margin
-          .form-elements__item-name= "range slider"
-          .form-elements__item-state= "5 000₽ - 10 000₽"
-        //- create container for noUiSlider, set properties in index.js
-        .slider
-          .js-range-slider
+        -
+          const rangeSliderProps = {
+            className: 'js-form-elements__range-slider',
+            label: 'range slider',
+            priceRange: '5 000₽ - 10 000₽',
+          }
+
+        +range-slider(rangeSliderProps)
       .form-elements__item.form-elements__item--medium-margin
         fieldset.form-elements__fieldset
           legend.form-elements__fieldset-legend= "buttons"
@@ -200,6 +198,12 @@ block content
     .form-elements__grid-item.form-elements__grid-column-3
       .form-elements__item.form-elements__item--largest-margin
         //- create container for dropdown, set properties in index.js
-        .js-dropdown-guests--with-controls-and-values
+        .js-form-elements__dropdown-guests--with-controls-and-values
       .form-elements__item
+        -
+          const bulletListItems = [
+            'Нельзя с питомцами',
+            'Без вечеринок и мероприятий',
+            'Время прибытия — после 13:00,\n а выезд до 12:00'
+          ]
         +bullet-list({name: 'bullet list', items: bulletListItems})

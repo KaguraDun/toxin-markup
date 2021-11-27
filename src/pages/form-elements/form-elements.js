@@ -23,20 +23,22 @@ import '@/components/review/review.js';
 import '@/styles/_common.scss';
 import './form-elements.scss';
 
-const dropdownGuests = document.querySelector('.js-dropdown-guests');
+const dropdownGuests = document.querySelector('.js-form-elements__dropdown-guests');
 
 if (dropdownGuests) {
   createDropdownGuests({ element: dropdownGuests, label: 'dropdown' });
 }
 
-const dropdownGuestsWithControls = document.querySelector('.js-dropdown-guests--with-controls');
+const dropdownGuestsWithControls = document.querySelector(
+  '.js-form-elements__dropdown-guests--with-controls',
+);
 
 if (dropdownGuestsWithControls) {
   createDropdownGuests({ element: dropdownGuestsWithControls, expanded: true, label: 'dropdown' });
 }
 
 const dropdownGuestsWithControlsAndValues = document.querySelector(
-  '.js-dropdown-guests--with-controls-and-values',
+  '.js-form-elements__dropdown-guests--with-controls-and-values',
 );
 
 if (dropdownGuestsWithControlsAndValues) {
@@ -49,27 +51,29 @@ if (dropdownGuestsWithControlsAndValues) {
 }
 
 createCalendar({
-  firstInputSelector: '.js-form-elements-dropdown-arrival',
-  secondInputSelector: '.js-form-elements-dropdown-departure',
+  firstInputSelector: '.js-form-elements__dropdown-arrival',
+  secondInputSelector: '.js-form-elements__dropdown-departure',
   defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 19)],
   today: 8,
   minDate: new Date(2019, 7, 8),
 });
 
 createCalendar({
-  singleInputSelector: '.js-form-elements-dropdown-single',
+  singleInputSelector: '.js-form-elements__dropdown-single',
   defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 23)],
   today: 8,
   minDate: new Date(2019, 7, 8),
 });
 
-const dropdownRoomAmenity = document.querySelector('.js-dropdown-room-amenity');
+const dropdownRoomAmenity = document.querySelector('.js-form-elements__dropdown-room-amenity');
 
 if (dropdownRoomAmenity) {
   createDropdownRoomAmenity({ element: dropdownRoomAmenity, values: [2, 2, 1] });
 }
 
-const dropdownRoomAmenityExpanded = document.querySelector('.js-dropdown-room-amenity-expanded');
+const dropdownRoomAmenityExpanded = document.querySelector(
+  '.js-form-elements__dropdown-room-amenity-expanded',
+);
 
 if (dropdownRoomAmenityExpanded) {
   createDropdownRoomAmenity({
@@ -82,4 +86,4 @@ if (dropdownRoomAmenityExpanded) {
 
 addEventToLikeButtons();
 
-createRangeSlider('js-range-slider');
+createRangeSlider('js-form-elements__range-slider');
