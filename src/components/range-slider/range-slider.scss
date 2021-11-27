@@ -1,11 +1,43 @@
+.range-slider {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: rem(5px);
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(20px);
+  }
+
+  &__name {
+    @include font-montserrat-h3();
+  }
+
+  &__price-range {
+    color: $dark50;
+
+    @include font-montserrat(rem(12px), rem(15px));
+  }
+
+  &__container {
+    margin-bottom: rem(18px);
+  }
+
+  &__additional-text {
+    color: $dark50;
+
+    @include font-montserrat(rem(12px), rem(14px));
+  }
+}
+
 .noUi-horizontal {
-  height: 6px;
+  height: rem(6px);
 }
 
 .noUi-horizontal .noUi-handle {
-  right: -8px;
-  width: 16px;
-  height: 16px;
+  right: rem(-8px);
+  width: rem(16px);
+  height: rem(16px);
 }
 
 .noUi-handle {
