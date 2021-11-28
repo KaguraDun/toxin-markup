@@ -6,14 +6,18 @@
 
   &__slider {
     position: relative;
-    max-height: 270px;
+    max-height: rem(270px);
     border-radius: 4px;
+  }
+
+  &__slider-content {
+    width: 100%;
   }
 
   &__slider-button-left,
   &__slider-button-right {
     position: absolute;
-    width: 50px;
+    width: rem(50px);
     height: 100%;
     cursor: pointer;
 
@@ -33,7 +37,7 @@
     left: 0;
 
     &::before {
-      left: 10px;
+      left: rem(10px);
       transform: rotate(90deg);
     }
   }
@@ -43,22 +47,22 @@
     right: 0;
 
     &::before {
-      right: 10px;
+      right: rem(10px);
       transform: rotate(-90deg);
     }
   }
 
   &__slider-buttons {
     position: absolute;
-    right: 15px;
-    bottom: 20px;
+    right: rem(15px);
+    bottom: rem(20px);
     display: flex;
-    gap: 3.75px;
+    gap: rem(3.75px);
   }
 
   &__slider-button {
-    width: 5px;
-    height: 5px;
+    width: rem(5px);
+    height: rem(5px);
     border: 1px solid $white;
     border-radius: 50%;
     filter: drop-shadow(0px 5px 5px $dark30);
