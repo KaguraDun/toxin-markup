@@ -6,6 +6,7 @@ block baseVariables
 
 include /components/header/header.pug
 include /components/room-filter/room-filter.pug
+include /components/room-cards-list/room-cards-list.pug
 include /components/footer/footer.pug
 
 block header
@@ -15,6 +16,8 @@ block content
     section.search-room-page__container
       aside.search-room-page__filter
         +room-filter
+      .search-room-page__room-cards-list
+        +room-cards-list
 
 block footer
   +footer
