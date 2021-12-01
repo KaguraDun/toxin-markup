@@ -1,0 +1,30 @@
+.review-list {
+  display: flex;
+  flex-direction: column;
+
+  &__info {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  &__heading {
+    margin-bottom: rem(20px);
+
+    @include font-montserrat-h2;
+  }
+
+  &__number {
+    margin-right: rem(10px);
+    color: $dark50;
+
+    @include font-montserrat(rem(14px), rem(14px));
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: rem(22px);
+    align-items: center;
+  }
+}
