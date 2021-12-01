@@ -1,10 +1,10 @@
 //- available properties:
-  name: string;
+  heading: string;
   items: string[];
 
-mixin bullet-list({name, items})
+mixin bullet-list({heading, items})
   .bullet-list
-    .bullet-list__name= name
+    .bullet-list__heading=heading
     ul.bullet-list__items
       each item in items
         li.bullet-list__item
