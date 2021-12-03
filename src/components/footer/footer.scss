@@ -58,6 +58,11 @@
     &:not(:last-child) {
       margin-bottom: rem(20px);
     }
+
+    &:hover {
+      color: $dark75;
+      font-weight: bold;
+    }
   }
 
   &__item-link {
