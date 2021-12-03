@@ -3,7 +3,7 @@
   "parserOptions": {
     "requireConfigFile": false
   },
-  "plugins": ["prettier", "pug"],
+  "plugins": ["prettier", "pug", "simple-import-sort"],
   "rules": {
     "object-curly-newline": "off",
     "linebreak-style": 0,
@@ -20,7 +20,9 @@
         "props": false
       }
     ],
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "simple-import-sort/imports": 2,
+    "simple-import-sort/exports": 2
   },
   "settings": {
     "import/resolver": { "webpack": { "config": "./config/webpack.common.js" } }
