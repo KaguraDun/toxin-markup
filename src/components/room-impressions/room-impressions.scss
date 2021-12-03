@@ -1,0 +1,57 @@
+.room-impressions {
+
+  &__heading {
+    margin-bottom: rem(25px);
+
+    @include font-montserrat-h2;
+  }
+
+  &__chart-container {
+    max-width: rem(120px);
+    max-height: rem(120px);
+    margin-right: rem(30px);
+  }
+
+  &__chart-wrapper {
+    display: flex;
+  }
+
+  &__legend-items {
+    align-self: flex-end;
+
+    @include clear-ul-style;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &::before {
+      position: absolute;
+      width: rem(10px);
+      height: rem(10px);
+      border-radius: 50%;
+      content: '';
+    }
+
+    &--great::before {
+      background: $orange-gradient;
+    }
+
+    &--good::before {
+      background: $secondary-gradient;
+    }
+
+    &--passably::before {
+      background: $primary-gradient;
+    }
+
+    &--disappointed::before {
+      background: $black-gradient;
+    }
+  }
+
+  &__item-text {
+    margin-left: rem(15px);
+  }
+}
