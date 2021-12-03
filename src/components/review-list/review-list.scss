@@ -15,7 +15,6 @@
   }
 
   &__number {
-    margin-right: rem(10px);
     color: $dark50;
 
     @include font-montserrat(rem(14px), rem(14px));

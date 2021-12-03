@@ -1,4 +1,5 @@
 import './dropdown.scss';
+
 import getDeclension from '../../helpers/getDeclension';
 
 class Dropdown {

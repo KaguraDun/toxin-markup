@@ -1,9 +1,9 @@
-import { createDropdownGuests } from '@/components/dropdown/create-dropdown';
-import createCalendar from '@/components/calendar/calendar';
-
 import './find-rooms.scss';
 import '@/components/date-dropdown/date-dropdown.js';
 import '@/components/button/button.js';
+
+import createCalendar from '@/components/calendar/calendar';
+import { createDropdownGuests } from '@/components/dropdown/create-dropdown';
 
 (() => {
   createCalendar({
