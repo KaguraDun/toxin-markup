@@ -13,6 +13,8 @@
   }
 
   &__left-col {
+    margin: 0;
+
     @media (max-width: $tablet) {
       z-index: $z-index-header-logo;
     }

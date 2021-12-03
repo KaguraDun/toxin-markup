@@ -6,7 +6,8 @@ mixin header({isLogged=false})
   header.header
     .header__container
       .header__left-col
-        +logo({style:'colored'})
+        h1.header__logo
+          +logo({style:'colored'})
       button.header__burger
         .header__burger-line.header__burger-line-1
         .header__burger-line.header__burger-line-2
