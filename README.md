@@ -1,33 +1,41 @@
-Clone this repo and npm install.
+# Toxin markup
+[Figma markup](https://www.figma.com/file/MumYcKVk9RkKZEG6dR5E3A/MetaLamp-%28former-FSD%29-frontend-education-program.-The-2nd-task?node-id=0:1)
 
+## Website pages:
+1. [Landing](https://kd-toxin-markup.netlify.app/)
+2. [Search room](https://kd-toxin-markup.netlify.app/search-room.html)
+3. [Room details ](https://kd-toxin-markup.netlify.app/room-details.html)
+4. [Sign-in](https://kd-toxin-markup.netlify.app/sign-in.html)
+5. [Register](https://kd-toxin-markup.netlify.app/registration.html)
+
+## UI kit pages:
+1. [Colors and type](https://kd-toxin-markup.netlify.app/colors-and-type.html)
+2. [Form elements](https://kd-toxin-markup.netlify.app/form-elements.html)
+3. [Cards](https://kd-toxin-markup.netlify.app/cards.html)
+4. [Headers and footers](https://kd-toxin-markup.netlify.app/headers-and-footers.html)
+
+## Use tips
+Use  first
 ```bash
-npm i
+npm install
 ```
-
-## Usage
-
-### Development server
-
+### Start
 ```bash
-npm start
+npm run start
 ```
-
-You can view the development server at `localhost:8080`.
-
 ### Production build
-
 ```bash
 npm run build
 ```
-
-> Note: Install [http-server](https://www.npmjs.com/package/http-server) globally to deploy a simple server.
-
+### Run eslint auto fix
 ```bash
-npm i -g http-server
+npm run lint:fix
 ```
-
-You can view the deploy by creating a server in `dist`.
-
+### Run style lint auto fix
 ```bash
-cd dist && http-server
+npm run stlint:fix
+```
+### Prettify pug files
+```bash
+npm run pug-prettify
 ```
