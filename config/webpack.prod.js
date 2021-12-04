@@ -9,16 +9,11 @@ const paths = require('./paths');
 module.exports = merge(common, {
   mode: 'production',
   devtool: false,
-  output: {
-    path: paths.build,
-    publicPath: '',
-    filename: 'js/[name].[fullhash].js',
-  },
   plugins: [
     // Extracts CSS into separate files
     // Note: style-loader is for development, MiniCssExtractPlugin is for production
     new MiniCssExtractPlugin({
-      filename: 'styles/[name].[contenthash].css',
+      filename: '[name].[contenthash].css',
       chunkFilename: '[id].css',
     }),
   ],

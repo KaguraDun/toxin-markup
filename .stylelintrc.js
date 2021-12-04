@@ -1,4 +1,5 @@
 module.exports = {
+  customSyntax: "postcss-scss",
   extends: ["stylelint-prettier/recommended",
             "stylelint-config-rational-order"],
   plugins: ["stylelint-order", "stylelint-scss"],

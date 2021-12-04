@@ -22,9 +22,8 @@ module.exports = {
   // Where webpack outputs the assets and bundles
   output: {
     path: paths.build,
-    filename: '[name].[fullhash].js',
-    publicPath: '/',
-    assetModuleFilename: 'assets/resource/[name][ext]',
+    filename: 'assets/js/[name].[fullhash].js',
+    publicPath: '',
   },
   cache: {
     // 1. Set cache type to filesystem
@@ -60,7 +59,6 @@ module.exports = {
       (page) =>
         new HtmlWebpackPlugin({
           favicon: `${paths.public}/images/favicon-32x32.png`,
-          inject: 'body',
           chunks: [page],
           template: `${PAGES_DIR}/${page}/${page}`,
           filename: `${page}.html`,
@@ -111,31 +109,32 @@ module.exports = {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/images/[name][ext]',
+          filename: 'assets/images/[name].[contenthash][ext]',
         },
       },
 
       // Fonts: Inline files
       {
-        test: /\.(woff(2)?|eot|ttf|otf)$/,
+        test: /\.(woff(2)?|eot|ttf|otf|svg)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/fonts/[name][ext]',
+          filename: 'assets/fonts/[name].[contenthash][ext]',
         },
+        include: /fonts/,
       },
-
       {
         test: /\.(svg)$/,
+        exclude: /fonts/,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/icons/[name][ext]',
+          filename: 'assets/icons/[name].[contenthash][ext]',
         },
       },
       {
         test: /\.(ogg|mp3|wav|mpe?g)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/audio/[name][ext]',
+          filename: 'assets/audio/[name].[contenthash][ext]',
         },
       },
       {
@@ -164,6 +163,7 @@ module.exports = {
       '@/models': `${paths.src}/models`,
       '@/layouts': `${paths.src}/layouts`,
       '@/pages': `${paths.src}/pages`,
+      '@/public': paths.public,
       '@/services': `${paths.src}/services`,
       '@/styles': `${paths.src}/styles`,
     },
