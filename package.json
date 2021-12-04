@@ -6,9 +6,9 @@
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix --ext .js,.pug .",
-    "stlint": "stylelint '**/*{.css,.scss}'",
-    "stlint:fix": "stylelint '**/*{.css,.scss}' --fix",
-    "prettier-pug": "npx prettier --write '**/*.pug'"
+    "stlint": "stylelint **/*{.css,.scss}",
+    "stlint:fix": "stylelint **/*{.css,.scss} --fix",
+    "pug-prettify": "npx prettier --write **/*.pug"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
