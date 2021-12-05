@@ -17,8 +17,7 @@
 
     &:hover,
     &--selected {
-      color: $dark75;
-      font-weight: bold;
+      -webkit-text-stroke: 1px $dark75;
     }
 
     &--expanded::after {
