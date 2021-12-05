@@ -55,6 +55,8 @@
   &__item-name {
     display: flex;
     align-items: center;
+    padding-right: rem(5px);
+    word-break: break-all;
   }
 
   &__item-value {
@@ -71,6 +73,7 @@
 
   &__button-wrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-top: rem(20px);
     padding-bottom: rem(13px);
