@@ -157,6 +157,7 @@ class Dropdown {
 
   toggleDropdownItems() {
     this.dropdownItems.hidden = !this.dropdownItems.hidden;
+    this.dropdownInput.classList.toggle('dropdown__input--expanded');
   }
 
   concatStoreValues() {
