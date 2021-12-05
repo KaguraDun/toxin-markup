@@ -3,7 +3,7 @@ include /components/button/button.pug
 
 mixin find-rooms
   form.find-rooms
-    h2.find-rooms__heading= "Найдём номера под\n ваши пожелания"
+    h2.find-rooms__heading!= "Найдём номера под <br> ваши пожелания"
     -
       const dateDropdownProps = {
         arrivalLabel:'прибытие',

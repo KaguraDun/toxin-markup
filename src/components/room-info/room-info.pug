@@ -20,4 +20,4 @@ mixin room-info({numberStyle='normal', number, price, type=''})
       span.room-info__type= type
     .room-info__price-wrapper
       .room-info__price= formatPrice
-      .room-info__price-text= " в сутки"
+      .room-info__price-text!= "&nbsp; в сутки"

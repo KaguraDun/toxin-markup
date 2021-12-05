@@ -20,10 +20,10 @@ mixin checkbox-list({ name, expandable=false, expanded=true, items })
   .checkbox-list
     if expandable
       button.checkbox-list__button(type='button')
-        span.checkbox-list__name= name
+        span.checkbox-list__name!= name
         span(class=iconStyles)
     else
-      .checkbox-list__name= name
+      .checkbox-list__name!= name
 
     fieldset(class=itemsStyles)
       each item in items

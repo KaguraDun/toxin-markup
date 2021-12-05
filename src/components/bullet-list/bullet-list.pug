@@ -8,4 +8,4 @@ mixin bullet-list({heading, items})
     ul.bullet-list__items
       each item in items
         li.bullet-list__item
-          p.bullet-list__item-text= item
+          p.bullet-list__item-text!= item

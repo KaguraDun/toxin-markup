@@ -9,7 +9,7 @@ mixin input-checkbox({checked, text, info})
     span.input-checkbox__icon
     if info
       span.input-checkbox__wrapper
-        span.input-checkbox__text= text
-        span.input-checkbox__info= info
+        span.input-checkbox__text!= text
+        span.input-checkbox__info!= info
     else
-      = text
+      != text
