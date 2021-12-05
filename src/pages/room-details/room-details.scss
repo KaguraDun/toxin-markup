@@ -93,9 +93,30 @@
     @include font-montserrat-h2;
   }
 
-  @media (max-width: $tablet) {
+  @media (max-width: $laptop) {
 
     &__container {
+      grid-template-areas: 'advantages book-room'
+        'impressions book-room'
+        'reviews reviews'
+        'rules cancel-text';
+      grid-template-rows: repeat(4, auto);
+      grid-template-columns: repeat(2, auto);
+      justify-items: center;
+    }
+  }
+
+  @media (max-width: $mobile) {
+
+    &__container {
+      grid-template-areas: 'advantages'
+        'impressions'
+        'book-room'
+        'reviews'
+        'rules'
+        'cancel-text';
+      grid-template-rows: auto;
+      grid-template-columns: auto;
     }
   }
 }
