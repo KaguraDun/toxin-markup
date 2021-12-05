@@ -1,0 +1,88 @@
+@import 'sass-rem';
+$rem-baseline: 14px;
+@import './mixins/fieldset';
+@import './mixins/button-icon';
+@import './mixins/button-arrow-icon';
+@import './mixins/container';
+@import './mixins/form';
+
+@mixin font-montserrat($font-size, $line-height, $font-weight: normal) {
+  font-weight: $font-weight;
+  font-size: $font-size;
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  line-height: $line-height;
+}
+
+@mixin font-material-icons($content, $font-size: rem(24px), $line-height: rem(24px)) {
+  display: inline-block;
+  font-weight: normal;
+  font-size: $font-size;
+  font-family: 'Material Icons';
+  font-style: normal;
+  line-height: $line-height;
+  direction: ltr;
+  letter-spacing: normal;
+  white-space: nowrap;
+  text-transform: none;
+  vertical-align: middle;
+  word-wrap: normal;
+  content: $content;
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+@mixin font-montserrat-h1 {
+  color: $dark100;
+
+  @include font-montserrat(rem(24px), rem(29px), bold);
+}
+
+@mixin font-montserrat-h2 {
+  color: $dark100;
+
+  @include font-montserrat(rem(19px), rem(23px), bold);
+}
+
+@mixin font-montserrat-h3 {
+  color: $dark100;
+  text-transform: uppercase;
+
+  @include font-montserrat(rem(12px), rem(15px), bold);
+}
+
+@mixin font-montserrat-h3-light {
+  color: $dark75;
+  text-transform: uppercase;
+
+  @include font-montserrat(rem(12px), rem(15px));
+}
+
+@mixin font-montserrat-body {
+  color: $dark75;
+
+  @include font-montserrat(rem(14px), rem(24px));
+}
+
+@mixin font-montserrat-link {
+  color: $dark50;
+
+  @include font-montserrat(rem(14px), rem(17px));
+}
+
+@mixin clear-link-style {
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@mixin clear-ul-style {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}

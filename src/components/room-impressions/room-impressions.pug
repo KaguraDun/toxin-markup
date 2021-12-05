@@ -1,0 +1,15 @@
+mixin room-impressions({className})
+  div(class=className)
+    .room-impressions__heading= "Впечатления от номера"
+    .room-impressions__chart-wrapper
+      .room-impressions__chart-container
+        canvas.room-impressions__chart(width='120', height='120')
+      ul.room-impressions__legend-items
+        li.room-impressions__item.room-impressions__item--great
+          span.room-impressions__item-text= "Великолепно"
+        li.room-impressions__item.room-impressions__item--good
+          span.room-impressions__item-text= "Хорошо"
+        li.room-impressions__item.room-impressions__item--passably
+          span.room-impressions__item-text= "Удовлетворительно"
+        li.room-impressions__item.room-impressions__item--disappointed
+          span.room-impressions__item-text= "Разочарован"

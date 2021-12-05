@@ -1,0 +1,19 @@
+extends /layouts/base.pug
+
+block baseVariables
+  - const title = "Registration";
+  - const bodyClass = "registration-page";
+
+include /components/header/header.pug
+include /components/sign-up/sign-up.pug
+include /components/footer/footer.pug
+
+block header
+  +header({isLogged:false})
+block content
+  .registration-page__background
+    section.registration-page__container
+      .registration-page__sign-up
+        +sign-up({buttonText: 'зарегистрироваться'})
+block footer
+  +footer

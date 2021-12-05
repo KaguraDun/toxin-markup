@@ -1,0 +1,17 @@
+@import './fonts/fonts.scss';
+
+html {
+  /* default font size = rem(14px) or 87.5% */
+  font-size: 87.5%;
+
+  @media (max-width: $desktop) {
+    font-size: 70%;
+  }
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+
+  @include font-montserrat-body;
+}

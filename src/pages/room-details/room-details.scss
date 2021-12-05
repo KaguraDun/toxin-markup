@@ -1,0 +1,122 @@
+.room-details-page {
+  display: flex;
+  flex-direction: column;
+
+  &__room-photos {
+    display: grid;
+    grid-template-areas: 'photo-1 photo-2'
+      'photo-1 photo-3';
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, auto);
+    margin: 0 auto;
+  }
+
+  &__room-photo-1,
+  &__room-photo-2,
+  &__room-photo-3 {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__room-photo-1 {
+    grid-area: photo-1;
+    height: 100%;
+  }
+
+  &__room-photo-2 {
+    grid-area: photo-2;
+  }
+
+  &__room-photo-3 {
+    grid-area: photo-3;
+  }
+
+  &__background {
+    width: 100%;
+    background: $white;
+    border-bottom: 1px solid $dark10;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-areas: 'advantages impressions book-room'
+      'reviews reviews book-room'
+      'rules cancel-text .';
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(3, auto);
+    gap: rem(35px 69px);
+    justify-content: space-between;
+
+    @include container;
+
+    & {
+      margin-top: rem(70px);
+      margin-bottom: 60px;
+    }
+  }
+
+  &__room-advantages {
+    grid-area: advantages;
+  }
+
+  &__room-advantages-heading {
+    margin-bottom: rem(23px);
+
+    @include font-montserrat-h2;
+  }
+
+  &__room-impressions {
+    grid-area: impressions;
+  }
+
+  &__book-room {
+    grid-area: book-room;
+  }
+
+  &__review-list {
+    grid-area: reviews;
+  }
+
+  &__rules {
+    grid-area: rules;
+    width: rem(292px);
+  }
+
+  &__cancel {
+    grid-area: cancel-text;
+    width: rem(345px);
+  }
+
+  &__cancel-heading {
+    margin-bottom: rem(20px);
+
+    @include font-montserrat-h2;
+  }
+
+  @media (max-width: $laptop) {
+
+    &__container {
+      grid-template-areas: 'advantages book-room'
+        'impressions book-room'
+        'reviews reviews'
+        'rules cancel-text';
+      grid-template-rows: repeat(4, auto);
+      grid-template-columns: repeat(2, auto);
+      justify-items: center;
+    }
+  }
+
+  @media (max-width: $mobile) {
+
+    &__container {
+      grid-template-areas: 'advantages'
+        'impressions'
+        'book-room'
+        'reviews'
+        'rules'
+        'cancel-text';
+      grid-template-rows: auto;
+      grid-template-columns: auto;
+    }
+  }
+}

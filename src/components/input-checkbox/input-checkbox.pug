@@ -1,0 +1,15 @@
+//- available properties:
+  checked: boolean;
+  text: string;
+  info: string;
+
+mixin input-checkbox({checked, text, info})
+  label.input-checkbox__label
+    input.input-checkbox(type='checkbox', checked=checked || false)
+    span.input-checkbox__icon
+    if info
+      span.input-checkbox__wrapper
+        span.input-checkbox__text!= text
+        span.input-checkbox__info!= info
+    else
+      != text

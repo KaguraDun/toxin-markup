@@ -1,0 +1,12 @@
+@mixin button-arrow-icon {
+
+  &::after {
+    color: $dark75;
+
+    @include font-material-icons('expand_more');
+  }
+
+  &--rotate::after {
+    @include font-material-icons('expand_less');
+  }
+}

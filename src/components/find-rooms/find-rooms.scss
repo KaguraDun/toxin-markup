@@ -1,0 +1,11 @@
+.find-rooms {
+  @include form;
+
+  &__date-dropdown {
+    margin-bottom: rem(20px);
+  }
+
+  &__dropdown-guests {
+    margin-bottom: rem(30px);
+  }
+}

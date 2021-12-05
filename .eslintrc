@@ -1,0 +1,35 @@
+{
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false
+  },
+  "plugins": ["prettier", "pug", "simple-import-sort"],
+  "rules": {
+    "object-curly-newline": "off",
+    "linebreak-style": 0,
+    "max-len": [
+      "error",
+      {
+        "code": 100,
+        "ignoreComments": true
+      }
+    ],
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ],
+    "prettier/prettier": "error",
+    "simple-import-sort/imports": 2,
+    "simple-import-sort/exports": 2
+  },
+  "settings": {
+    "import/resolver": { "webpack": { "config": "./config/webpack.common.js" } }
+  },
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "extends": "airbnb-base"
+}

@@ -1,0 +1,23 @@
+extends /layouts/base.pug
+
+block baseVariables
+  - const title = "Headers and footers";
+  - const bodyClass = "headers-and-footers";
+
+include /components/logo/logo.pug
+include /components/header/header.pug
+include /components/footer/footer.pug
+
+block content
+  .headers-and-footers__logo
+    .headers-and-footers__logo-icon
+      +logo({style:'gray'})
+  .headers-and-footers__header-first
+    - isLogged = false;
+    +header({isLogged:false})
+  .headers-and-footers__header-second
+    +header({isLogged:true})
+  .headers-and-footers__footer
+    +footer
+  .headers-and-footers__footer-creative
+    +footer

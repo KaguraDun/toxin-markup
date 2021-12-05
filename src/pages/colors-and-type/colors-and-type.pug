@@ -1,0 +1,44 @@
+extends /layouts/base.pug
+
+include /components/logo/logo.pug
+include /components/color-example/color-example.pug
+
+block baseVariables
+  - const title = "Colors and type";
+  - const bodyClass = "colors-and-type";
+
+block content
+  .colors-and-type__logo
+    .colors-and-type__logo-icon
+      +logo({style:'gray'})
+  .colors-and-type__container
+    ul.colors-and-type__colors 
+      li.colors-and-type__colors-item
+        +color-example('rgba(31, 32, 65, 1)', '#1F2041', 'Dark Shade 100%')
+      li.colors-and-type__colors-item
+        +color-example('rgba(31, 32, 65, 0.75)','#1F2041', 'Dark Shade 75%')
+      li.colors-and-type__colors-item
+        +color-example('rgba(31, 32, 65, 0.5)','#1F2041', 'Dark Shade 50%')
+      li.colors-and-type__colors-item
+        +color-example('rgba(31, 32, 65, 0.25)','#1F2041', 'Dark Shade 25%')
+      li.colors-and-type__colors-item
+        +color-example('rgba(31, 32, 65, 0.05)','#1F2041', 'Dark Shade 5%')
+      li.colors-and-type__colors-item 
+        +color-example('rgba(188, 156, 255, 1)','#BC9CFF', 'Purple')
+      li.colors-and-type__colors-item
+        +color-example('rgba(111, 207, 151, 1)','#6FCF97', 'Green') 
+    ul.colors-and-type__type
+      li.colors-and-type__type-item.colors-and-type__type-item--style-h1
+        p.colors-and-type__type-tag= "H1"
+        p.colors-and-type__type-text= "This one is the sub-section or widget title"
+      li.colors-and-type__type-item.colors-and-type__type-item--style-h2
+        p.colors-and-type__type-tag= "H2"
+        p.colors-and-type__type-text= "Next one is the item title inside widgets"
+      li.colors-and-type__type-item.colors-and-type__type-item--style-h3
+        p.colors-and-type__type-tag= "H3"
+        p.colors-and-type__type-text.colors-and-type__type-text--style-h3= "This is a label or CTA text"
+      li.colors-and-type__type-item.colors-and-type__type-item--style-body
+        p.colors-and-type__type-tag= "Body"
+        p.colors-and-type__type-text.colors-and-type__type-text--style-body
+          | This is the body text which is used for most
+          | of the design, like paragraphs, lists, etc.

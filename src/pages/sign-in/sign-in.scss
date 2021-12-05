@@ -1,0 +1,22 @@
+.sign-in-page {
+  display: flex;
+  flex-direction: column;
+
+  &__background {
+    width: 100%;
+    min-height: rem(702px);
+    background: url('/public/images/backgrounds/background-4.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+
+    @include container;
+  }
+
+  &__sign-in {
+    margin-top: rem(172px);
+  }
+}

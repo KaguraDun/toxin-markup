@@ -1,0 +1,19 @@
+extends /layouts/base.pug
+
+block baseVariables
+  - const title = "Sign-in";
+  - const bodyClass = "sign-in-page";
+
+include /components/header/header.pug
+include /components/sign-in/sign-in.pug
+include /components/footer/footer.pug
+
+block header
+  +header({isLogged:false})
+block content
+  .sign-in-page__background
+    section.sign-in-page__container
+      .sign-in-page__sign-in
+        +sign-in
+block footer
+  +footer

@@ -1,0 +1,23 @@
+//- available properties:
+  items: Item[];
+  Item: {
+    avatar: string;
+    name: string;
+    date: string;
+    text: string;
+    likesNumber: number;
+    likePressed: boolean;
+  };
+
+include /components/review/review.pug
+
+mixin review-list({items})
+  - const reviewNumber = `${items.length} отзыва`;
+
+  .review-list
+    .review-list__info
+      .review-list__heading= "Отзывы посетителей номера"
+      .review-list__number= reviewNumber
+    .review-list__items
+      each item in items
+        +review(item)

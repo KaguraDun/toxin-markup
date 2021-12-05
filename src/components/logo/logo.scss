@@ -1,0 +1,27 @@
+.logo {
+  display: flex;
+
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    display: flex;
+
+    &:first-child {
+      margin-right: rem(12.5px);
+    }
+  }
+
+  &__icon-text {
+    display: flex;
+  }
+
+  @media (max-width: $tablet) {
+
+    &__icon {
+      transform: scale(.7);
+    }
+  }
+}

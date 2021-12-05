@@ -1,0 +1,137 @@
+.form-elements {
+  background-color: $white;
+
+  &__logo {
+    max-width: $desktop;
+    margin: 0 auto;
+  }
+
+  &__logo-icon {
+    margin: rem(30px) 0 rem(67px) rem(30px);
+  }
+
+  &__container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: rem(320px) rem(126px) rem(320px) rem(72px) rem(320px);
+    row-gap: rem(100px);
+
+    @include container();
+  }
+
+  &__grid-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__grid-column {
+
+    &-1 {
+      grid-column: 1;
+    }
+
+    &-2 {
+      grid-column: 3;
+    }
+
+    &-2-3 {
+      grid-column: 3/6;
+    }
+
+    &-3 {
+      grid-column: 5;
+    }
+  }
+
+  &__item {
+    margin-bottom: rem(20px);
+
+    &--medium-margin {
+      margin-bottom: rem(30px);
+    }
+
+    &--large-margin {
+      margin-bottom: rem(40px);
+    }
+
+    &--largest-margin {
+      margin-bottom: rem(100px);
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item {
+
+    &-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    &-info--large-margin {
+      margin-bottom: rem(20px);
+    }
+
+    &-name {
+      @include font-montserrat-h3();
+    }
+
+    &-state {
+      @include font-montserrat-h3-light();
+    }
+
+    &-wrapper {
+      display: flex;
+    }
+
+    &-wrapper > .button-rate__fieldset:first-child {
+      margin-right: rem(20px);
+    }
+
+    &--size-medium {
+      width: rem(266px);
+    }
+  }
+
+  &__fieldset {
+    @include fieldset;
+
+    &-row {
+      display: flex;
+    }
+
+    &-row:not(:last-of-type) {
+      margin-bottom: rem(30px);
+    }
+
+    &-row > .button:not(:last-of-type) {
+      margin-right: rem(19px);
+    }
+
+    & > .input-checkbox__label,
+    & > .input-toggle__label {
+      margin-bottom: rem(10px);
+    }
+
+    &--row {
+      display: flex;
+    }
+
+    &--row > .input-radio__label:not(:last-of-type) {
+      margin-right: rem(20px);
+    }
+
+    &--row > .button-like:not(:last-of-type) {
+      margin-right: rem(10px);
+    }
+  }
+
+  .slider {
+    padding: 10px;
+  }
+}

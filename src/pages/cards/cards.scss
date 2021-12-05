@@ -1,0 +1,26 @@
+.cards {
+  background-color: $gray;
+
+  &__logo {
+    max-width: $desktop;
+    margin: 0 auto;
+  }
+
+  &__logo-icon {
+    margin: rem(30px) 0 rem(72px) rem(30px);
+  }
+
+  &__container {
+    display: flex;
+    gap: rem(40px);
+    justify-content: space-between;
+
+    @include container();
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: rem(40px);
+  }
+}

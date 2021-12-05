@@ -1,0 +1,27 @@
+//- available properties:
+  items: Item[]
+  Item: {
+    info: 'comfort' | 'convenience' | 'cosiness';
+    underline: boolean;
+  }
+
+mixin room-advantages-item(icon, heading, text, underline)
+  - const itemClass = `room-advantages__item ${underline ? "room-advantages__item--underlined" : ""}`;
+  - const iconClass = `room-advantages__icon room-advantages__icon--${icon}`;
+
+  li(class=itemClass)
+    div(class=iconClass)
+    .room-advantages__about
+      p.room-advantages__heading= heading
+      p.room-advantages__text= text
+
+mixin room-advantages({items})
+  ul.room-advantages
+    each item in items
+      case item.info
+        when 'comfort'
+          +room-advantages-item('comfort','Комфорт', 'Шумопоглощающие стены', item.underline)
+        when 'convenience'
+          +room-advantages-item('convenience','Удобство', 'Окно в каждой из спален', item.underline)
+        when 'cosiness'
+          +room-advantages-item('cosiness','Уют', 'Номер оснащён камином', item.underline)

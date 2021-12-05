@@ -1,0 +1,14 @@
+//- available properties:
+  style: colored | gray;
+
+mixin logo({style})
+  a.logo__link(href='/')
+    case style
+      when 'gray'
+        span.logo__icon
+          include ./svg/logo-icon-gray.svg
+      when 'colored'
+        span.logo__icon
+          include ./svg/logo-icon.svg
+        span.logo__icon-text
+          include ./svg/logo-text.svg

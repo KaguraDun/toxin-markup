@@ -1,0 +1,14 @@
+//- available properties:
+  className: string;
+  label: string;
+  priceRange: string
+  additionalText: string
+
+mixin range-slider({className, label, priceRange, additionalText=null})
+  .range-slider
+    .range-slider__info
+      .range-slider__name= label
+      .range-slider__price-range= priceRange
+    .range-slider__container
+      div(class=className)
+    .range-slider__additional-text= additionalText

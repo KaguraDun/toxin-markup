@@ -1,0 +1,87 @@
+extends /layouts/base.pug
+
+block baseVariables
+  - const title = "Room details";
+  - const bodyClass = "room-details-page";
+
+include /components/header/header.pug
+include /components/room-advantages/room-advantages.pug
+include /components/room-impressions/room-impressions.pug
+include /components/book-room/book-room.pug
+include /components/review-list/review-list.pug
+include /components/bullet-list/bullet-list.pug
+include /components/footer/footer.pug
+
+block header
+  +header({isLogged:false}) 
+block content
+  .room-details-page__room-photos
+    img.room-details-page__room-photo-1(
+      src=require("./images/room-photo-1.jpg"),
+      alt='room photo 1'
+    )
+    img.room-details-page__room-photo-2(
+      src=require("./images/room-photo-2.jpg"),
+      alt='room photo 2'
+    )
+    img.room-details-page__room-photo-3(
+      src=require("./images/room-photo-3.jpg"),
+      alt='room photo 3'
+    )
+
+  .room-details-page__background
+    section.room-details-page__container
+      .room-details-page__room-advantages
+        .room-details-page__room-advantages-heading= "Cведения о номере"
+        -
+          const roomAdvantagesProps = [
+            { info: 'comfort', underline: true },
+            { info: 'convenience', underline: true },
+            { info: 'cosiness', underline: false },
+          ]
+        +room-advantages({items: roomAdvantagesProps})
+      .room-details-page__room-impressions
+        +room-impressions({className: 'js-room-details-page__room-impressions'})
+      .room-details-page__book-room
+        +book-room
+      .room-details-page__review-list
+        -
+          const reviewListProps = {
+            items: [
+              {
+                avatar: require('/public/images/users/murad-sarafanov.png'),
+                name: 'Мурад Сарафанов',
+                date:'5 дней назад',
+                text: `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.<br> И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.`,
+                likesNumber: 12,
+              },
+              {
+                avatar: require('/public/images/users/patrisija-stjoklyshkova.png'),
+                name: 'Патрисия Стёклышкова',
+                date:'Неделю назад',
+                text: `Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент`,
+                likesNumber: 2,
+                isLikePressed: false,
+              }
+            ]
+          }
+        +review-list(reviewListProps)
+      .room-details-page__rules
+        -
+          const rulesProps = {
+            heading: 'Правила',
+            items: [
+              'Нельзя с питомцами',
+              'Без вечеринок и мероприятий',
+              'Время прибытия — после 13:00,<br> а выезд до 12:00'
+              ]
+          }
+        +bullet-list(rulesProps)
+      .room-details-page__cancel
+        .room-details-page__cancel-heading= "Отмена"
+        .room-details-page__cancel-text
+          | Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн.
+          | до прибытия вы получите полный возврат за вычетом сбора за услуги.
+
+block footer
+  +footer

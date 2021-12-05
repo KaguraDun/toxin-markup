@@ -1,0 +1,1 @@
+import './room-advantages.scss';

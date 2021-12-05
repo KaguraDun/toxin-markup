@@ -1,0 +1,56 @@
+.headers-and-footers {
+  background: $gray;
+
+  &__logo {
+    max-width: rem(1440px);
+    margin: 0 auto;
+  }
+
+  &__logo-icon {
+    margin: rem(30px) 0 rem(62px) rem(30px);
+  }
+
+  &__header-first,
+  &__header-second,
+  &__footer {
+    margin-bottom: rem(40px);
+    box-shadow: 0 rem(10px) rem(20px) $dark5;
+  }
+
+  &__footer-creative {
+    display: flex;
+    width: $tablet;
+    margin: 0 auto;
+    margin-bottom: rem(140px);
+    box-shadow: 0 rem(10px) rem(20px) $dark5;
+
+    .footer__container {
+      box-sizing: border-box;
+    }
+
+    .footer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      padding: rem(120px 0);
+    }
+
+    .footer__widgets {
+      display: none;
+    }
+
+    .footer__copyright-logo {
+      display: block;
+      margin-bottom: rem(25px);
+    }
+
+    .footer__copyright-text {
+      margin-bottom: rem(25px);
+    }
+
+    .footer__copyright-wrapper {
+      flex-direction: column;
+    }
+  }
+}

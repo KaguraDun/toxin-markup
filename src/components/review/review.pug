@@ -1,0 +1,20 @@
+//- available properties:
+  avatar: string;
+  name: string;
+  date: string;
+  text: string;
+  likesNumber: number;
+  isLikePressed: boolean;
+
+include /components/button-like/button-like.pug
+
+mixin review({ avatar, name, date, text, likesNumber, isLikePressed=true })
+  .review
+    .review__author
+      img.review__avatar(src=avatar, alt=name)
+      .review_author-wrapper
+        p.review__name= name
+        p.review__date= date
+    .review__info
+      +button-like({likesNumber, isPressed:isLikePressed})
+      p.review__text!= text

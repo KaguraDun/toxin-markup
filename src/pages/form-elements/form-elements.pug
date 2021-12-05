@@ -1,0 +1,211 @@
+extends /layouts/base.pug
+
+include /components/logo/logo.pug
+include /components/input/input.pug
+include /components/date-dropdown/date-dropdown.pug
+include /components/input-checkbox/input-checkbox.pug
+include /components/input-radio/input-radio.pug
+include /components/input-toggle/input-toggle.pug
+include /components/button/button.pug
+include /components/button-like/button-like.pug
+include /components/button-rate/button-rate.pug
+include /components/checkbox-list/checkbox-list.pug
+include /components/room-advantages/room-advantages.pug
+include /components/pagination/pagination.pug
+include /components/bullet-list/bullet-list.pug
+include /components/review/review.pug
+include /components/range-slider/range-slider.pug
+
+block baseVariables
+  - const title = "Form elements";
+  - const bodyClass = "form-elements";
+
+block content
+  .form-elements__logo
+    .form-elements__logo-icon
+      +logo({style:'gray'})
+  .form-elements__container
+    .form-elements__grid-item.form-elements__grid-column-1
+      .form-elements__item
+        .form-elements__item-info
+          .form-elements__item-name= "text field"
+          .form-elements__item-state= "default"
+        +input({type:'text', placeholder:'Email', size:'large'})
+      .form-elements__item
+        .form-elements__item-info
+          .form-elements__item-name= "text field"
+          .form-elements__item-state= "hover / focus"
+        +input({type:'text', value:'This is pretty awesome', size:'large'}).input--hover
+      .form-elements__item
+        //- create container for dropdown, set properties in index.js
+        .js-form-elements__dropdown-guests
+      .form-elements__item.form-elements__item--large-margin
+        .form-elements__item-info
+          .form-elements__item-name= "masked text field"
+        +input({type:'text', placeholder:'ДД.ММ.ГГГГ', size:'large', mask:'date'})
+      .form-elements__item.form-elements__item--large-margin
+        -
+          const dateDropdownProps = {
+            arrivalLabel:'date dropdown',
+            departureLabel:'date dropdown',
+            dropdownArrivalClass: 'js-form-elements__dropdown-arrival',
+            dropdownDepartureClass: 'js-form-elements__dropdown-departure',
+          }
+
+        +date-dropdown(dateDropdownProps)
+      .form-elements__item.form-elements__item--size-medium.form-elements__item--large-margin
+        -
+          const dateDropdownSingleProps = {
+            dropdownLabel: 'filter date dropdown',
+            size:'medium',
+            dropdownClass: 'js-form-elements__dropdown-single',
+          }
+        +date-dropdown(dateDropdownSingleProps)
+      .form-elements__item.form-elements__item--size-medium
+        .form-elements__item-info
+          .form-elements__item-name= "subscription text field"
+        +input({type:'email', placeholder:'Email', arrow: true, size:'medium' })
+
+    .form-elements__grid-item.form-elements__grid-column-1
+      .form-elements__item.form-elements__item--size-medium
+        .form-elements__item-info
+          .form-elements__item-name= "dropdown"
+          .form-elements__item-state= "default"
+        //- create container for dropdown, set properties in index.js
+        .js-form-elements__dropdown-room-amenity
+      .form-elements__item.form-elements__item--size-medium
+        .form-elements__item-info
+          .form-elements__item-name= "dropdown"
+          .form-elements__item-state= "expanded"
+        //- create container for dropdown, set properties in index.js
+        .js-form-elements__dropdown-room-amenity-expanded
+      .form-elements__item.form-elements__item--size-medium
+        -
+          const checkboxListItems = [
+            { text: "Завтрак", checked: false },
+            { text: "Письменный стол", checked: true },
+            { text: "Стул для кормления", checked: true },
+            { text: "Кроватка", checked: true },
+            { text: "Телевизор", checked: false },
+            { text: "Шампунь", checked: false },
+          ]
+        +checkbox-list({ name: 'expandable checkbox list', expandable: true, expanded: false, items: checkboxListItems })
+      .form-elements__item.form-elements__item--size-medium
+        +checkbox-list({ name: 'expandable checkbox list', expandable: true, expanded: true, items: checkboxListItems })
+
+    .form-elements__grid-item.form-elements__grid-column-1
+      .form-elements__item
+        -
+          const roomAdvantagesItems = [
+            { info: 'comfort', underline: true },
+            { info: 'convenience', underline: true },
+          ]
+        +room-advantages({items: roomAdvantagesItems})
+
+    .form-elements__grid-item.form-elements__grid-column-2
+      .form-elements__item.form-elements__item--large-margin
+        -
+          const checkboxButtonsItems = [
+            { text: 'Можно курить' },
+            { text: 'Можно с питомцами', checked:true },
+            { text: 'Можно пригласить гостей<br> (до 10 человек)', checked:true },
+          ]
+        +checkbox-list({name:'checkbox buttons', expandable:false, items:checkboxButtonsItems})
+      .form-elements__item.form-elements__item--large-margin
+        fieldset.form-elements__fieldset.form-elements__fieldset--row
+          legend.form-elements__fieldset-legend= "radio buttons"
+          +input-radio({text:'Мужчина', value:'мужчина', name:'gender', checked:true})
+          +input-radio({text:'Женщина', value:'женщина', name:'gender'})
+      .form-elements__item.form-elements__item--large-margin
+        fieldset.form-elements__fieldset
+          legend.form-elements__fieldset-legend= "toggle"
+          +input-toggle({text:'Получать спецпредложения', checked:true})
+          +input-toggle({text:'Получать спецпредложения'})
+      .form-elements__item.form-elements__item--large-margin
+        fieldset.form-elements__fieldset.form-elements__fieldset--row
+          legend.form-elements__fieldset-legend= "like button"
+          +button-like({likesNumber:2})
+          +button-like({likesNumber:12 , isPressed:true})
+      .form-elements__item.form-elements__item--large-margin
+        .form-elements__item-info.form-elements__item-info--large-margin
+          .form-elements__item-name= "rate button"
+        .form-elements__item-wrapper
+          +button-rate({name:'rating', score:4})
+          +button-rate({name:'rating-second', score:5})
+
+    .form-elements__grid-item.form-elements__grid-column-2
+      .form-elements__item.form-elements__item--largest-margin
+        //- create container for dropdown, set properties in index.js
+        .js-form-elements__dropdown-guests--with-controls
+      .form-elements__item
+        -
+          const richCheckboxItems = [
+            { text: 'Широкий коридор', info:'Ширина коридоров в номере<br> не менее 91 см.'},
+            { text: 'Помощник для инвалидов',
+             info:'На 1 этаже вас встретит специалист<br>  и проводит до номера.'
+            },
+          ]
+        +checkbox-list({name: 'rich Checkbox Buttons', expandable:false, items: richCheckboxItems})
+
+    .form-elements__grid-item.form-elements__grid-column-2-3
+      -
+        const reviewProps = {
+          avatar: require('/public/images/users/murad-sarafanov.png'),
+          name: 'Мурад Сарафанов',
+          date:'5 дней назад',
+          text: `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.<br> И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто<br> не жаловался из соседей.`,
+          likesNumber: 12,
+        }
+      +review(reviewProps) 
+
+    .form-elements__grid-item.form-elements__grid-column-3
+      .form-elements__item.form-elements__item--large-margin.form-elements__item--size-medium
+        -
+          const rangeSliderProps = {
+            className: 'js-form-elements__range-slider',
+            label: 'range slider',
+            priceRange: '5 000₽ - 10 000₽',
+          }
+
+        +range-slider(rangeSliderProps)
+      .form-elements__item.form-elements__item--medium-margin
+        fieldset.form-elements__fieldset
+          legend.form-elements__fieldset-legend= "buttons"
+          .form-elements__fieldset-row
+            +button({style:'filled', width: 'small', text: 'click me'})
+            +button({style:'filled', width: 'small', text: 'click me'}).button--hover
+          .form-elements__fieldset-row
+            +button({width: 'small', text: 'click me'})
+            +button({width: 'small', text: 'click me'}).button--hover
+          .form-elements__fieldset-row
+            +button({style:'borderless', text: 'click me'})
+            +button({style:'borderless', text: 'click me'}).button--hover
+          .form-elements__fieldset-row
+            -
+              const buttonPaymentProps = {
+                style: 'filled',
+                width: 'full',
+                arrow: true,
+                text: 'перейти к оплате',
+                href: '/mock-address.html'
+              }
+            +button(buttonPaymentProps)
+      .form-elements__item
+        .form-elements__item-info.form-elements__item-info--large-margin
+          .form-elements__item-name= "pagination"
+        +pagination({currentPage:1, pagesCount:15, itemsPerPage:12})
+
+    .form-elements__grid-item.form-elements__grid-column-3
+      .form-elements__item.form-elements__item--largest-margin
+        //- create container for dropdown, set properties in index.js
+        .js-form-elements__dropdown-guests--with-controls-and-values
+      .form-elements__item
+        .form-elements__item-info
+          .form-elements__item-name= "bullet list"
+        -
+          const bulletListItems = [
+            'Нельзя с питомцами',
+            'Без вечеринок и мероприятий',
+            'Время прибытия — после 13:00,<br> а выезд до 12:00'
+          ]
+        +bullet-list({items: bulletListItems})

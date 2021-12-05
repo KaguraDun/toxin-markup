@@ -1,0 +1,60 @@
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  max-height: rem(44px);
+  margin: 0 auto;
+  padding: rem(10px) rem(15px);
+  color: $dark25;
+  background: $white;
+  border: 1px solid $dark25;
+  border-radius: rem(4px);
+
+  @include font-montserrat-body();
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__icon {
+    @include button-icon;
+
+    @include button-arrow-icon;
+
+    &--arrow::after {
+      color: $purple;
+
+      @include font-material-icons('arrow_forward');
+    }
+  }
+
+  &--size-small {
+    max-width: rem(150px);
+  }
+
+  &--size-medium {
+    max-width: rem(266px);
+  }
+
+  &--size-large {
+    max-width: rem(360px);
+  }
+
+  &--size-full {
+    max-width: 100%;
+  }
+
+  &::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $dark25;
+    opacity: 1; /* Firefox */
+  }
+
+  &:hover,
+  &--hover {
+    border-color: $dark50;
+
+    &::placeholder {
+      color: $dark75;
+    }
+  }
+}

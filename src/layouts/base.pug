@@ -1,0 +1,11 @@
+block baseVariables
+doctype html
+html(lang='ru')
+  head
+    meta(name='charset', content='utf-8')
+    meta(name='viewport', content='initial-scale=1.0, width=device-width')
+    title #{ title }
+  body(class=`${bodyClass}`)
+    block header
+    block content
+    block footer

@@ -1,0 +1,84 @@
+.book-room {
+  @include form;
+
+  &__room-info {
+    margin-bottom: rem(23px);
+  }
+
+  &__date-dropdown,
+  &__dropdown-guests {
+    margin-bottom: rem(20px);
+  }
+
+  &__price-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: rem(30px);
+
+    @include clear-ul-style;
+
+    & {
+      margin-bottom: rem(30px);
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    white-space: pre-line;
+  }
+
+  &__item-name-wrapper {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    width: rem(214px);
+    line-height: rem(18px);
+  }
+
+  &__item-about {
+    position: absolute;
+    right: -5px;
+    cursor: pointer;
+
+    &:hover::before {
+      color: $dark50;
+      border: 1px solid $dark50;
+    }
+
+    &::before {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      align-items: center;
+      justify-content: center;
+      min-width: rem(20px);
+      min-height: rem(20px);
+      color: $dark25;
+      text-align: center;
+      border: 1px solid $dark25;
+      border-radius: 50%;
+      content: 'i';
+
+      @include font-montserrat(rem(12px), rem(14px), bold);
+    }
+  }
+
+  &__total {
+    display: flex;
+    margin-bottom: rem(20px);
+  }
+
+  &__total-text,
+  &__total-sum {
+    white-space: nowrap;
+
+    @include font-montserrat-h2;
+  }
+
+  &__total-filler {
+    flex-grow: 1;
+    border-bottom: 1px dotted $dark25;
+  }
+}

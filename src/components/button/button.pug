@@ -1,0 +1,25 @@
+//- available properties:
+  type: button | reset | submit
+  size: small | medium
+  width: small | full | auto;
+  style: filled | border | borderless | page | page-selected | page-next;
+  arrow: boolean;
+  text: string;
+  href: string;
+  disabled: boolean;
+
+mixin button-content(arrow, text)
+  span.button__text= text
+  if (arrow)
+    span.button__icon
+
+mixin button({type='button', size='medium', width='auto', style='border', arrow=false, text="", disabled=false, href=null })
+  - const modifier = "button--";
+  - const buttonStyles = `button ${modifier + style} ${modifier + size} ${modifier}width-${width}`;
+
+  if href
+    a(class=buttonStyles, href=href)&attributes(attributes)
+      +button-content(arrow, text)
+  else
+    button(type=type, class=buttonStyles, disabled=disabled)&attributes(attributes)
+      +button-content(arrow, text)

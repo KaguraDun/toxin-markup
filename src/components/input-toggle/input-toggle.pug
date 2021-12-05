@@ -1,0 +1,9 @@
+//- available properties:
+  checked: boolean;
+  text: string
+
+mixin input-toggle({checked = false, text})
+  label.input-toggle__label
+    input.input-toggle(type='checkbox', checked=checked)
+    span.input-toggle__icon
+    = text
