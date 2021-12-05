@@ -1,7 +1,7 @@
 .header {
   display: flex;
   width: 100%;
-  min-height: rem(70px);
+  max-height: rem(70px);
   background-color: $main-bg-color;
 
   .header__container {

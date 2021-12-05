@@ -23,7 +23,7 @@ mixin checkbox-list({ name, expandable=false, expanded=true, items })
         span.checkbox-list__name= name
         span(class=iconStyles)
     else
-      span.checkbox-list__name= name
+      .checkbox-list__name= name
 
     fieldset(class=itemsStyles)
       each item in items

@@ -55,8 +55,12 @@ mixin room-filter
           expandable: true,
           expanded: false,
           items: [
-            { text: 'Широкий коридор', info: 'Ширина коридоров в номере\n не менее 91 см.' },
-            { text: 'Помощник для инвалидов', info: 'На 1 этаже вас встретит специалист\n и проводит до номера.'},
+            { text: "Завтрак", checked: false },
+            { text: "Письменный стол", checked: true },
+            { text: "Стул для кормления", checked: true },
+            { text: "Кроватка", checked: true },
+            { text: "Телевизор", checked: false },
+            { text: "Шампунь", checked: false },
           ]
         }
       +checkbox-list(expandableCheckboxListProps)

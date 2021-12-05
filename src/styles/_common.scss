@@ -1,7 +1,5 @@
 @import './fonts/fonts.scss';
 
-/* all components auto import in helpers/importAllComponents.js */
-
 html {
   /* default font size = rem(14px) or 87.5% */
   font-size: 87.5%;
@@ -16,8 +14,4 @@ body {
   margin: 0;
 
   @include font-montserrat-body;
-}
-
-.footer {
-  margin-top: auto;
 }
