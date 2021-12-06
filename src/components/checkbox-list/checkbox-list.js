@@ -2,7 +2,7 @@ import './checkbox-list.scss';
 import '@/components/input-checkbox/input-checkbox.js';
 
 (() => {
-  function toggleExpand(e) {
+  function handleCheckboxListExpand(e) {
     const target = e.target.closest('.checkbox-list__button');
     if (!target) return;
 
@@ -21,7 +21,7 @@ import '@/components/input-checkbox/input-checkbox.js';
       const isExpandable = element.firstElementChild.tagName === 'BUTTON';
 
       if (isExpandable) {
-        element.addEventListener('click', toggleExpand);
+        element.addEventListener('click', handleCheckboxListExpand);
       }
     });
   }
