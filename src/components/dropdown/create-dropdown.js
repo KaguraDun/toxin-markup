@@ -8,6 +8,7 @@ function createDropdownGuests({ element, expanded = false, controls = true, valu
     placeholder: 'Сколько гостей',
     label,
     controlButtons: controls,
+    isExpanded: expanded,
     options: {
       Взрослые: { count: adults, countAs: guestsPattern },
       Дети: { count: children, countAs: guestsPattern },
@@ -20,10 +21,6 @@ function createDropdownGuests({ element, expanded = false, controls = true, valu
 
   const dropdown = new Dropdown(element, properties);
   dropdown.init();
-
-  if (expanded) {
-    dropdown.dropdownItems.hidden = false;
-  }
 }
 
 function createDropdownRoomAmenity({
@@ -39,6 +36,7 @@ function createDropdownRoomAmenity({
     placeholder: 'Удобства',
     label,
     controlButtons: controls,
+    isExpanded: expanded,
     options: {
       Спальни: { count: bedrooms, pattern: ['Спальня', 'Спальни', 'Спален'] },
       Кровати: { count: beds, pattern: ['Кровать', 'Кровати', 'Кроватей'] },
@@ -51,10 +49,6 @@ function createDropdownRoomAmenity({
 
   const dropdown = new Dropdown(element, properties);
   dropdown.init();
-
-  if (expanded) {
-    dropdown.dropdownItems.hidden = false;
-  }
 }
 
 export { createDropdownGuests, createDropdownRoomAmenity };

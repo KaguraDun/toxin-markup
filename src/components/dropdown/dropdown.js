@@ -11,11 +11,14 @@ class Dropdown {
     this.dropdownInput = null;
     this.dropdownItems = null;
     this.buttonClear = null;
+    this.buttonApply = null;
 
-    this.changeStoreValue = this.changeStoreValue.bind(this);
-    this.resetStoreValues = this.resetStoreValues.bind(this);
-    this.toggleDropdownItems = this.toggleDropdownItems.bind(this);
+    this.handleStoreValueChange = this.handleStoreValueChange.bind(this);
+    this.handleStoreValuesReset = this.handleStoreValuesReset.bind(this);
+    this.handleDropdownExpand = this.handleDropdownExpand.bind(this);
   }
+
+  #DROPDOWN_EXPANDED_CLASS = 'dropdown__input--expanded';
 
   createItems() {
     let items = '';
@@ -51,16 +54,18 @@ class Dropdown {
   }
 
   createDropdown() {
-    const { placeholder } = this.properties;
+    const { isExpanded, placeholder } = this.properties;
+    const expandedClass = isExpanded ? this.#DROPDOWN_EXPANDED_CLASS : '';
+    const dropdownInputClass = `dropdown__input ${expandedClass}`;
 
     return `
     <div class="dropdown">
       <p class="dropdown__label">${this.properties.label ?? ''}</p>
       <div class="dropdown__input-wrapper">
-        <input type="text" class="dropdown__input" placeholder="${placeholder}" readonly>
+        <input type="text" class="${dropdownInputClass}" placeholder="${placeholder}" readonly>
         <span class="dropdown__button-icon"></span>
       </div>
-      <ul class="dropdown__items" hidden>
+      <ul class="dropdown__items" ${isExpanded ? '' : 'hidden'}>
         ${this.createItems()}
         ${this.properties.controlButtons ? Dropdown.createControlButtons() : ''}
       </ul>
@@ -71,12 +76,7 @@ class Dropdown {
     if (!this.buttonClear) return;
 
     const modifier = 'button--hidden';
-
-    if (isHidden) {
-      this.buttonClear.classList.add(modifier);
-    } else {
-      this.buttonClear.classList.remove(modifier);
-    }
+    this.buttonClear.classList.toggle(modifier, isHidden);
   }
 
   init() {
@@ -87,19 +87,18 @@ class Dropdown {
 
     const dropdownInputWrapper = this.element.querySelector('.dropdown__input-wrapper');
     this.buttonClear = this.element.querySelector('.js-button-clear');
-    const buttonApply = this.element.querySelector('.js-button-apply');
+    this.buttonApply = this.element.querySelector('.js-button-apply');
 
-    dropdownInputWrapper.addEventListener('click', this.toggleDropdownItems);
+    dropdownInputWrapper.addEventListener('click', this.handleDropdownExpand);
+    this.dropdownItems.addEventListener('click', this.handleStoreValueChange);
+    this.buttonClear?.addEventListener('click', this.handleStoreValuesReset);
+    this.buttonApply?.addEventListener('click', this.handleDropdownExpand);
 
-    this.dropdownItems.addEventListener('click', this.changeStoreValue);
-    this.buttonClear?.addEventListener('click', this.resetStoreValues);
-    buttonApply?.addEventListener('click', this.toggleDropdownItems);
-
-    const isClearButtonHidden = this.getStoreSum() === 0;
-    if (isClearButtonHidden) this.hideButtonClear(true);
+    const isButtonClearHidden = this.getStoreSum() === 0;
+    this.hideButtonClear(isButtonClearHidden);
   }
 
-  changeStoreValue(e) {
+  handleStoreValueChange(e) {
     const parent = e.target.parentElement;
 
     if (parent.className !== 'dropdown__item-buttons') return;
@@ -126,14 +125,11 @@ class Dropdown {
 
     this.dropdownInput.value = this.concatStoreValues();
 
-    if (this.getStoreSum() > 0) {
-      this.hideButtonClear(false);
-    } else if (this.getStoreSum() === 0) {
-      this.hideButtonClear(true);
-    }
+    const isStoreSumEqualsZero = this.getStoreSum() === 0;
+    this.hideButtonClear(isStoreSumEqualsZero);
   }
 
-  resetStoreValues() {
+  handleStoreValuesReset() {
     Object.keys(this.store).forEach((key) => {
       this.store[key].count = 0;
     });
@@ -155,14 +151,14 @@ class Dropdown {
     this.hideButtonClear(true);
   }
 
-  toggleDropdownItems() {
+  handleDropdownExpand() {
     this.dropdownItems.hidden = !this.dropdownItems.hidden;
-    this.dropdownInput.classList.toggle('dropdown__input--expanded');
+    this.dropdownInput.classList.toggle(this.#DROPDOWN_EXPANDED_CLASS);
   }
 
   concatStoreValues() {
     const storeValues = [];
-    let countAsStr = '';
+    let countAsText = '';
     let countAsSum = 0;
 
     Object.keys(this.store).forEach((key) => {
@@ -172,14 +168,14 @@ class Dropdown {
 
       if (countAs) {
         countAsSum += count;
-        countAsStr = countAsSum > 0 ? `${countAsSum} ${getDeclension(countAsSum, countAs)}` : '';
+        countAsText = countAsSum > 0 ? `${countAsSum} ${getDeclension(countAsSum, countAs)}` : '';
       } else {
         const tempStr = `${count} ${getDeclension(count, pattern)}`;
         storeValues.push(tempStr);
       }
     });
 
-    if (countAsStr !== '') storeValues.unshift(countAsStr);
+    if (countAsText !== '') storeValues.unshift(countAsText);
 
     return storeValues.join(', ');
   }
