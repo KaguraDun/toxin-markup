@@ -7,7 +7,7 @@ import './button-like.scss';
     likesNumberElement.innerText = isButtonPressed ? likesCount + 1 : likesCount - 1;
   }
 
-  function toggleLikeButton(e) {
+  function handleLikeButtonClick(e) {
     const target = e.target.closest('.button-like');
 
     if (target) {
@@ -20,6 +20,6 @@ import './button-like.scss';
   const likeButtons = document.querySelectorAll('.button-like');
 
   likeButtons.forEach((element) => {
-    element.addEventListener('click', toggleLikeButton);
+    element.addEventListener('click', handleLikeButtonClick);
   });
 })();
