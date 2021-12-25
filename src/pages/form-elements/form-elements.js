@@ -1,3 +1,10 @@
+import createCalendar from '@/components/calendar/calendar';
+import {
+  createDropdownGuests,
+  createDropdownRoomAmenity,
+} from '@/components/dropdown/create-dropdown';
+import createRangeSlider from '@/components/range-slider/range-slider.js';
+
 import '@/components/logo/logo.js';
 import '@/components/input/input.js';
 import '@/components/date-dropdown/date-dropdown.js';
@@ -14,13 +21,6 @@ import '@/components/bullet-list/bullet-list.js';
 import '@/components/review/review.js';
 import '@/styles/_common.scss';
 import './form-elements.scss';
-
-import createCalendar from '@/components/calendar/calendar';
-import {
-  createDropdownGuests,
-  createDropdownRoomAmenity,
-} from '@/components/dropdown/create-dropdown';
-import createRangeSlider from '@/components/range-slider/range-slider.js';
 
 const dropdownGuests = document.querySelector('.js-form-elements__dropdown-guests');
 

@@ -1,6 +1,6 @@
-import './dropdown.scss';
-
 import getDeclension from '../../helpers/getDeclension';
+
+import './dropdown.scss';
 
 class Dropdown {
   constructor(element, properties) {
