@@ -1,5 +1,5 @@
-import './checkbox-list.scss';
 import '@/components/input-checkbox/input-checkbox.js';
+import './checkbox-list.scss';
 
 (() => {
   function handleCheckboxListExpand(e) {
