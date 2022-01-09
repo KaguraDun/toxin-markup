@@ -29,7 +29,7 @@ if (dropdownGuests) {
 }
 
 const dropdownGuestsWithControls = document.querySelector(
-  '.js-form-elements__dropdown-guests--with-controls',
+  '.js-form-elements__dropdown-guests_with-controls',
 );
 
 if (dropdownGuestsWithControls) {
@@ -37,7 +37,7 @@ if (dropdownGuestsWithControls) {
 }
 
 const dropdownGuestsWithControlsAndValues = document.querySelector(
-  '.js-form-elements__dropdown-guests--with-controls-and-values',
+  '.js-form-elements__dropdown-guests_with-controls-and-values',
 );
 
 if (dropdownGuestsWithControlsAndValues) {

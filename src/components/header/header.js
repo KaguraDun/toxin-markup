@@ -7,7 +7,7 @@ import './header.scss';
   const burgerMenu = document.querySelector('.header__burger');
 
   function handleBurgerMenuClick() {
-    const openModifier = 'header__burger--open';
+    const openModifier = 'header__burger_open';
     const header = document.querySelector('.header');
 
     header.classList.toggle(openModifier);

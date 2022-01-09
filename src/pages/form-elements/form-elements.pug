@@ -35,15 +35,15 @@ block content
         .form-elements__item-info
           .form-elements__item-name= "text field"
           .form-elements__item-state= "hover / focus"
-        +input({type:'text', value:'This is pretty awesome', size:'large'}).input--hover
+        +input({type:'text', value:'This is pretty awesome', size:'large'}).input_hover
       .form-elements__item
         //- create container for dropdown, set properties in index.js
         .js-form-elements__dropdown-guests
-      .form-elements__item.form-elements__item--large-margin
+      .form-elements__item.form-elements__item_margin_large
         .form-elements__item-info
           .form-elements__item-name= "masked text field"
         +input({type:'text', placeholder:'ДД.ММ.ГГГГ', size:'large', mask:'date'})
-      .form-elements__item.form-elements__item--large-margin
+      .form-elements__item.form-elements__item_margin_large
         -
           const dateDropdownProps = {
             arrivalLabel:'date dropdown',
@@ -53,7 +53,7 @@ block content
           }
 
         +date-dropdown(dateDropdownProps)
-      .form-elements__item.form-elements__item--size-medium.form-elements__item--large-margin
+      .form-elements__item.form-elements__item_size_medium.form-elements__item_margin_large
         -
           const dateDropdownSingleProps = {
             dropdownLabel: 'filter date dropdown',
@@ -61,25 +61,25 @@ block content
             dropdownClass: 'js-form-elements__dropdown-single',
           }
         +date-dropdown(dateDropdownSingleProps)
-      .form-elements__item.form-elements__item--size-medium
+      .form-elements__item.form-elements__item_size_medium
         .form-elements__item-info
           .form-elements__item-name= "subscription text field"
         +input({type:'email', placeholder:'Email', arrow: true, size:'medium' })
 
     .form-elements__grid-item.form-elements__grid-column-1
-      .form-elements__item.form-elements__item--size-medium
+      .form-elements__item.form-elements__item_size_medium
         .form-elements__item-info
           .form-elements__item-name= "dropdown"
           .form-elements__item-state= "default"
         //- create container for dropdown, set properties in index.js
         .js-form-elements__dropdown-room-amenity
-      .form-elements__item.form-elements__item--size-medium
+      .form-elements__item.form-elements__item_size_medium
         .form-elements__item-info
           .form-elements__item-name= "dropdown"
           .form-elements__item-state= "expanded"
         //- create container for dropdown, set properties in index.js
         .js-form-elements__dropdown-room-amenity-expanded
-      .form-elements__item.form-elements__item--size-medium
+      .form-elements__item.form-elements__item_size_medium
         -
           const checkboxListItems = [
             { text: "Завтрак", checked: false },
@@ -90,7 +90,7 @@ block content
             { text: "Шампунь", checked: false },
           ]
         +checkbox-list({ name: 'expandable checkbox list', expandable: true, expanded: false, items: checkboxListItems })
-      .form-elements__item.form-elements__item--size-medium
+      .form-elements__item.form-elements__item_size_medium
         +checkbox-list({ name: 'expandable checkbox list', expandable: true, expanded: true, items: checkboxListItems })
 
     .form-elements__grid-item.form-elements__grid-column-1
@@ -103,7 +103,7 @@ block content
         +room-advantages({items: roomAdvantagesItems})
 
     .form-elements__grid-item.form-elements__grid-column-2
-      .form-elements__item.form-elements__item--large-margin
+      .form-elements__item.form-elements__item_margin_large
         -
           const checkboxButtonsItems = [
             { text: 'Можно курить' },
@@ -111,32 +111,32 @@ block content
             { text: 'Можно пригласить гостей<br> (до 10 человек)', checked:true },
           ]
         +checkbox-list({name:'checkbox buttons', expandable:false, items:checkboxButtonsItems})
-      .form-elements__item.form-elements__item--large-margin
-        fieldset.form-elements__fieldset.form-elements__fieldset--row
+      .form-elements__item.form-elements__item_margin_large
+        fieldset.form-elements__fieldset.form-elements__fieldset_row
           legend.form-elements__fieldset-legend= "radio buttons"
           +input-radio({text:'Мужчина', value:'мужчина', name:'gender', checked:true})
           +input-radio({text:'Женщина', value:'женщина', name:'gender'})
-      .form-elements__item.form-elements__item--large-margin
+      .form-elements__item.form-elements__item_margin_large
         fieldset.form-elements__fieldset
           legend.form-elements__fieldset-legend= "toggle"
           +input-toggle({text:'Получать спецпредложения', checked:true})
           +input-toggle({text:'Получать спецпредложения'})
-      .form-elements__item.form-elements__item--large-margin
-        fieldset.form-elements__fieldset.form-elements__fieldset--row
+      .form-elements__item.form-elements__item_margin_large
+        fieldset.form-elements__fieldset.form-elements__fieldset_row
           legend.form-elements__fieldset-legend= "like button"
           +button-like({likesNumber:2})
           +button-like({likesNumber:12 , isPressed:true})
-      .form-elements__item.form-elements__item--large-margin
-        .form-elements__item-info.form-elements__item-info--large-margin
+      .form-elements__item.form-elements__item_margin_large
+        .form-elements__item-info.form-elements__item-info_margin_large
           .form-elements__item-name= "rate button"
         .form-elements__item-wrapper
           +button-rate({name:'rating', score:4})
           +button-rate({name:'rating-second', score:5})
 
     .form-elements__grid-item.form-elements__grid-column-2
-      .form-elements__item.form-elements__item--extra-large-margin
+      .form-elements__item.form-elements__item_margin_extra-large
         //- create container for dropdown, set properties in index.js
-        .js-form-elements__dropdown-guests--with-controls
+        .js-form-elements__dropdown-guests_with-controls
       .form-elements__item
         -
           const richCheckboxItems = [
@@ -159,7 +159,7 @@ block content
       +review(reviewProps) 
 
     .form-elements__grid-item.form-elements__grid-column-3
-      .form-elements__item.form-elements__item--large-margin.form-elements__item--size-medium
+      .form-elements__item.form-elements__item_margin_large.form-elements__item_size_medium
         -
           const rangeSliderProps = {
             className: 'js-form-elements__range-slider',
@@ -168,18 +168,18 @@ block content
           }
 
         +range-slider(rangeSliderProps)
-      .form-elements__item.form-elements__item--medium-margin
+      .form-elements__item.form-elements__item_margin_medium
         fieldset.form-elements__fieldset
           legend.form-elements__fieldset-legend= "buttons"
           .form-elements__fieldset-row
             +button({style:'filled', width: 'small', text: 'click me'})
-            +button({style:'filled', width: 'small', text: 'click me'}).button--hover
+            +button({style:'filled', width: 'small', text: 'click me'}).button_hover
           .form-elements__fieldset-row
             +button({width: 'small', text: 'click me'})
-            +button({width: 'small', text: 'click me'}).button--hover
+            +button({width: 'small', text: 'click me'}).button_hover
           .form-elements__fieldset-row
             +button({style:'borderless', text: 'click me'})
-            +button({style:'borderless', text: 'click me'}).button--hover
+            +button({style:'borderless', text: 'click me'}).button_hover
           .form-elements__fieldset-row
             -
               const buttonPaymentProps = {
@@ -191,14 +191,14 @@ block content
               }
             +button(buttonPaymentProps)
       .form-elements__item
-        .form-elements__item-info.form-elements__item-info--large-margin
+        .form-elements__item-info.form-elements__item-info_margin_large
           .form-elements__item-name= "pagination"
         +pagination({currentPage:1, pagesCount:15, itemsPerPage:12})
 
     .form-elements__grid-item.form-elements__grid-column-3
-      .form-elements__item.form-elements__item--extra-large-margin
+      .form-elements__item.form-elements__item_margin_extra-large
         //- create container for dropdown, set properties in index.js
-        .js-form-elements__dropdown-guests--with-controls-and-values
+        .js-form-elements__dropdown-guests_with-controls-and-values
       .form-elements__item
         .form-elements__item-info
           .form-elements__item-name= "bullet list"

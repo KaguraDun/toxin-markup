@@ -10,7 +10,7 @@
     gap: rem(10px);
     max-width: rem(280px);
 
-    &--underlined {
+    &_underlined {
       padding-bottom: rem(17px);
       border-bottom: 1px solid $dark10;
     }
@@ -19,15 +19,15 @@
   &__icon {
     color: $purple;
 
-    &--comfort::after {
+    &_comfort::after {
       @include font-material-icons('insert_emoticon', rem(48px), rem(41px));
     }
 
-    &--convenience::after {
+    &_convenience::after {
       @include font-material-icons('location_city', rem(48px), rem(41px));
     }
 
-    &--cosiness::after {
+    &_cosiness::after {
       @include font-material-icons('whatshot', rem(48px), rem(41px));
     }
   }

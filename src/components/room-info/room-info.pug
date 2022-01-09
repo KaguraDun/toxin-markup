@@ -6,7 +6,7 @@
 
 mixin room-info({numberStyle='normal', number, price, type=''})
   -
-    const numberClasses = `room-info__number room-info__number--${numberStyle}`;
+    const numberClasses = `room-info__number room-info__number_${numberStyle}`;
     const formatPrice = new Intl.NumberFormat('ru-RU', {
       style: 'currency',
       currency: 'RUB',

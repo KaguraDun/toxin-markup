@@ -11,7 +11,7 @@ import '@/styles/_common.scss';
 import './cards.scss';
 
 createCalendar({
-  singleInputSelector: '.js-cards-calendar--opened',
+  singleInputSelector: '.js-cards-calendar_opened',
   isOpen: true,
   defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 23)],
   today: 8,

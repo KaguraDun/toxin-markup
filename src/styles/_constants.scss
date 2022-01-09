@@ -14,7 +14,7 @@ $black: #000;
 
 /* gradients */
 $primary-gradient: linear-gradient(180deg, rgba(188, 156, 255, 1) 0%, rgba(139, 164, 249, 1) 100%);
-$primary-gradient--hover: linear-gradient(
+$primary-gradient_hover: linear-gradient(
   180deg,
   rgba(188, 156, 255, .5) 0%,
   rgba(139, 164, 249, .5) 100%
@@ -24,7 +24,7 @@ $secondary-gradient: linear-gradient(
   rgba(111, 207, 151, 1) 0%,
   rgba(102, 210, 234, 1) 100%
 );
-$secondary-gradient--hover: linear-gradient(
+$secondary-gradient_hover: linear-gradient(
   180deg,
   rgba(111, 207, 151, .5) 0%,
   rgba(102, 210, 234, .5) 100%

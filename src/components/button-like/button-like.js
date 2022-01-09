@@ -11,7 +11,7 @@ import './button-like.scss';
     const target = e.target.closest('.button-like');
 
     if (target) {
-      const isButtonPressed = target.classList.toggle('button-like--pressed');
+      const isButtonPressed = target.classList.toggle('button-like_pressed');
       const likesNumberElement = target.querySelector('.button-like__likes-number');
 
       toggleLikesNumber(likesNumberElement, isButtonPressed);

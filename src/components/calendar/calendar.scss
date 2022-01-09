@@ -26,7 +26,7 @@
   border-radius: 50%;
 
   &:hover {
-    background: $secondary-gradient--hover;
+    background: $secondary-gradient_hover;
   }
 }
 
@@ -199,6 +199,6 @@
   }
 }
 
-.flatpickr-day--hidden {
+.flatpickr-day_hidden {
   display: none !important;
 }

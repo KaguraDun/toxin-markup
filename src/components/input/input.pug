@@ -17,7 +17,7 @@ mixin input({type='text', placeholder=false, value=false, arrow= false, size='fu
           pattern: "(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}"
         }
       };
-  - const inputSize = `input--size-${size}`;
+  - const inputSize = `input_size_${size}`;
 
   .input__wrapper(class=inputSize)
     input.input(
@@ -32,6 +32,6 @@ mixin input({type='text', placeholder=false, value=false, arrow= false, size='fu
     )&attributes(attributes)
 
     if arrow
-      span.input__icon.input__icon--arrow
+      span.input__icon.input__icon_arrow
     if dropdown
-      span.input__icon.input__icon--expand
+      span.input__icon.input__icon_expand

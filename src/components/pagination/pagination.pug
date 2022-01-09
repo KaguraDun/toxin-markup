@@ -11,10 +11,10 @@ mixin pagination({ currentPage, pagesCount, itemsPerPage })
 
   .pagination
     .pagination__controls
-      +button({style: 'page-selected', text:'1'})
+      +button({style: 'page_selected', text:'1'})
       +button({style: 'page', text:'2'})
       +button({style: 'page', text:'3'})
       span.pagination__ellipsis= "..."
       +button({style: 'page', text:pagesCount})
-      +button({style: 'page-next', arrow:true })
+      +button({style: 'page_next', arrow:true })
     p.pagination__text= `${leftValue} - ${rightValue} из 100+ вариантов аренды`

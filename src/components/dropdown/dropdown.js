@@ -18,7 +18,7 @@ class Dropdown {
     this.handleDropdownExpand = this.handleDropdownExpand.bind(this);
   }
 
-  #DROPDOWN_EXPANDED_CLASS = 'dropdown__input--expanded';
+  #DROPDOWN_EXPANDED_CLASS = 'dropdown__input_expanded';
 
   createItems() {
     let items = '';
@@ -75,7 +75,7 @@ class Dropdown {
   hideButtonClear(isHidden) {
     if (!this.buttonClear) return;
 
-    const modifier = 'button--hidden';
+    const modifier = 'button_hidden';
     this.buttonClear.classList.toggle(modifier, isHidden);
   }
 

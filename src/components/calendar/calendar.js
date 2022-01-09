@@ -17,7 +17,7 @@ function hideExternalNextMonthDays() {
 
     if (nextDays.length >= daysInWeek) {
       nextDays.splice(-daysInWeek).forEach((day) => {
-        day.classList.add('flatpickr-day--hidden');
+        day.classList.add('flatpickr-day_hidden');
       });
     }
   });
@@ -73,13 +73,13 @@ function createCalendar({
         $(instance.calendarContainer),
       );
 
-      $(' <button class="button button--borderless" type="button">Очистить</button>')
+      $(' <button class="button button_borderless" type="button">Очистить</button>')
         .on('click', () => {
           instance.clear();
         })
         .appendTo($buttonContainer);
 
-      $(' <button class="button button--borderless" type="button">Применить</button>')
+      $(' <button class="button button_borderless" type="button">Применить</button>')
         .on('click', () => {
           instance.close();
         })

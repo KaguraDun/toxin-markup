@@ -31,7 +31,7 @@
 
     @include font-montserrat-body();
 
-    &--expanded {
+    &_expanded {
       border: 1px solid $dark50;
     }
   }
@@ -120,7 +120,7 @@
   }
 }
 
-.button--hidden {
+.button_hidden {
   visibility: hidden;
 }
 
