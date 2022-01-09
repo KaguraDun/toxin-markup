@@ -48,19 +48,19 @@
   &__item {
     margin-bottom: rem(20px);
 
-    &--medium-margin {
+    &_margin_medium {
       margin-bottom: rem(30px);
     }
 
-    &--large-margin {
+    &_margin_large {
       margin-bottom: rem(40px);
     }
 
-    &--largest-margin {
+    &_margin_largest {
       margin-bottom: rem(100px);
     }
 
-    &--extra-large-margin {
+    &_margin_extra-large {
       margin-bottom: rem(256px);
     }
 
@@ -77,7 +77,7 @@
       margin-bottom: 5px;
     }
 
-    &-info--large-margin {
+    &-info_margin_large {
       margin-bottom: rem(20px);
     }
 
@@ -97,7 +97,7 @@
       margin-right: rem(20px);
     }
 
-    &--size-medium {
+    &_size_medium {
       width: rem(266px);
     }
   }
@@ -122,15 +122,15 @@
       margin-bottom: rem(10px);
     }
 
-    &--row {
+    &_row {
       display: flex;
     }
 
-    &--row > .input-radio__label:not(:last-of-type) {
+    &_row > .input-radio__label:not(:last-of-type) {
       margin-right: rem(20px);
     }
 
-    &--row > .button-like:not(:last-of-type) {
+    &_row > .button-like:not(:last-of-type) {
       margin-right: rem(10px);
     }
   }

@@ -1,4 +1,6 @@
 /* eslint-disable no-unused-vars */
+import createCalendar from '@/components/calendar/calendar';
+
 import '@/components/logo/logo.js';
 import '@/components/find-rooms/find-rooms.js';
 import '@/components/sign-up/sign-up.js';
@@ -8,10 +10,8 @@ import '@/components/room-card/room-card.js';
 import '@/styles/_common.scss';
 import './cards.scss';
 
-import createCalendar from '@/components/calendar/calendar';
-
 createCalendar({
-  singleInputSelector: '.js-cards-calendar--opened',
+  singleInputSelector: '.js-cards-calendar_opened',
   isOpen: true,
   defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 23)],
   today: 8,

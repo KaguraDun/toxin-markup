@@ -1,11 +1,11 @@
-import 'flatpickr/dist/themes/light.css';
-import './calendar.scss';
-import '@/components/button/button.js';
-
 import flatpickr from 'flatpickr';
 import { Russian } from 'flatpickr/dist/l10n/ru';
 import rangePlugin from 'flatpickr/dist/plugins/rangePlugin';
 import * as $ from 'jquery';
+
+import '@/components/button/button.js';
+import 'flatpickr/dist/themes/light.css';
+import './calendar.scss';
 
 function hideExternalNextMonthDays() {
   const elements = document.querySelectorAll('.flatpickr-calendar');
@@ -17,7 +17,7 @@ function hideExternalNextMonthDays() {
 
     if (nextDays.length >= daysInWeek) {
       nextDays.splice(-daysInWeek).forEach((day) => {
-        day.classList.add('flatpickr-day--hidden');
+        day.classList.add('flatpickr-day_hidden');
       });
     }
   });
@@ -73,13 +73,13 @@ function createCalendar({
         $(instance.calendarContainer),
       );
 
-      $(' <button class="button button--borderless" type="button">Очистить</button>')
+      $(' <button class="button button_borderless" type="button">Очистить</button>')
         .on('click', () => {
           instance.clear();
         })
         .appendTo($buttonContainer);
 
-      $(' <button class="button button--borderless" type="button">Применить</button>')
+      $(' <button class="button button_borderless" type="button">Применить</button>')
         .on('click', () => {
           instance.close();
         })

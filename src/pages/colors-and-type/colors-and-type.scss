@@ -46,19 +46,19 @@
       margin-bottom: rem(51px);
     }
 
-    &-item--style-h1 {
+    &-item_style-h1 {
       @include font-montserrat(rem(24px), rem(29px), bold);
     }
 
-    &-item--style-h2 {
+    &-item_style-h2 {
       @include font-montserrat(rem(19px), rem(23px), bold);
     }
 
-    &-item--style-h3 {
+    &-item_style-h3 {
       @include font-montserrat(rem(12px), rem(15px), bold);
     }
 
-    &-item--style-body {
+    &-item_style-body {
       margin-bottom: 0;
 
       @include font-montserrat(rem(14px), rem(24px));
@@ -78,11 +78,11 @@
       white-space: break-spaces;
     }
 
-    &-text--style-h3 {
+    &-text_style-h3 {
       text-transform: uppercase;
     }
 
-    &-text--style-body {
+    &-text_style-body {
       color: $dark75;
     }
   }

@@ -6,7 +6,7 @@
     @include font-material-icons('expand_more');
   }
 
-  &--rotate::after {
+  &_rotate::after {
     @include font-material-icons('expand_less');
   }
 }

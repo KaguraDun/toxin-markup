@@ -6,8 +6,8 @@
   }
 
 mixin room-advantages-item(icon, heading, text, underline)
-  - const itemClass = `room-advantages__item ${underline ? "room-advantages__item--underlined" : ""}`;
-  - const iconClass = `room-advantages__icon room-advantages__icon--${icon}`;
+  - const itemClass = `room-advantages__item ${underline ? "room-advantages__item_underlined" : ""}`;
+  - const iconClass = `room-advantages__icon room-advantages__icon_${icon}`;
 
   li(class=itemClass)
     div(class=iconClass)

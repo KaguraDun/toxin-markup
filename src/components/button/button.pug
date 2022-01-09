@@ -2,7 +2,7 @@
   type: button | reset | submit
   size: small | medium
   width: small | full | auto;
-  style: filled | border | borderless | page | page-selected | page-next;
+  style: filled | border | borderless | page | page_selected | page_next;
   arrow: boolean;
   text: string;
   href: string;
@@ -14,8 +14,8 @@ mixin button-content(arrow, text)
     span.button__icon
 
 mixin button({type='button', size='medium', width='auto', style='border', arrow=false, text="", disabled=false, href=null })
-  - const modifier = "button--";
-  - const buttonStyles = `button ${modifier + style} ${modifier + size} ${modifier}width-${width}`;
+  - const modifier = "button_";
+  - const buttonStyles = `button ${modifier + style} ${modifier}size_${size} ${modifier}width_${width}`;
 
   if href
     a(class=buttonStyles, href=href)&attributes(attributes)

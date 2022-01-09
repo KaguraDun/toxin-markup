@@ -16,11 +16,11 @@
     @include font-montserrat(rem(14px), rem(17px));
 
     &:hover,
-    &--selected {
+    &_selected {
       -webkit-text-stroke: 1px $dark75;
     }
 
-    &--expanded::after {
+    &_expanded::after {
       @include font-material-icons('expand_more');
     }
   }

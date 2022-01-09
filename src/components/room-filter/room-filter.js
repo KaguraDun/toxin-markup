@@ -1,13 +1,13 @@
-import '@/components/date-dropdown/date-dropdown.js';
-import '@/components/checkbox-list/checkbox-list.js';
-import './room-filter.scss';
-
 import createCalendar from '@/components/calendar/calendar';
 import {
   createDropdownGuests,
   createDropdownRoomAmenity,
 } from '@/components/dropdown/create-dropdown';
 import createRangeSlider from '@/components/range-slider/range-slider.js';
+
+import '@/components/date-dropdown/date-dropdown.js';
+import '@/components/checkbox-list/checkbox-list.js';
+import './room-filter.scss';
 
 (() => {
   createCalendar({

@@ -81,7 +81,7 @@
     transform-origin: bottom left;
   }
 
-  &__burger.header__burger--open {
+  &__burger.header__burger_open {
     position: fixed;
 
     .header__burger-line-1 {
@@ -99,11 +99,11 @@
     }
   }
 
-  &.header__burger--open &__left-col {
+  &.header__burger_open &__left-col {
     position: fixed;
   }
 
-  &.header__burger--open &__right-col {
+  &.header__burger_open &__right-col {
     z-index: $z-index-header-nav;
     transform: translateX(0px);
     opacity: 1;

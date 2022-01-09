@@ -1,5 +1,5 @@
-import './checkbox-list.scss';
 import '@/components/input-checkbox/input-checkbox.js';
+import './checkbox-list.scss';
 
 (() => {
   function handleCheckboxListExpand(e) {
@@ -10,8 +10,8 @@ import '@/components/input-checkbox/input-checkbox.js';
     const buttonIcon = target.parentElement.querySelector('.checkbox-list__icon');
 
     if (items) {
-      items.classList.toggle('checkbox-list__items--expand');
-      buttonIcon.classList.toggle('checkbox-list__icon--rotate');
+      items.classList.toggle('checkbox-list__items_expand');
+      buttonIcon.classList.toggle('checkbox-list__icon_rotate');
     }
   }
 

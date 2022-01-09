@@ -28,43 +28,43 @@
     }
   }
 
-  &--small .button__text {
+  &_size_small .button__text {
     padding: rem(8px 18px);
   }
 
-  &--medium .button__text {
+  &_size_medium .button__text {
     padding: rem(13px 18px);
   }
 
-  &--width-small {
+  &_width_small {
     min-width: 100px;
   }
 
-  &--width-full {
+  &_width_full {
     width: 100%;
   }
 
-  &--width-auto {
+  &_width_auto {
     width: auto;
   }
 
-  &--filled,
-  &--border,
-  &--page-selected {
+  &_filled,
+  &_border,
+  &_page_selected {
     background: $primary-gradient;
 
     &.button:hover,
-    &.button--hover {
-      background: $primary-gradient--hover;
+    &.button_hover {
+      background: $primary-gradient_hover;
     }
   }
 
-  &--filled,
-  &--page-selected {
+  &_filled,
+  &_page_selected {
     color: $white;
   }
 
-  &--border {
+  &_border {
     color: $purple;
 
     .button__text {
@@ -72,7 +72,7 @@
     }
   }
 
-  &--borderless {
+  &_borderless {
     padding: 0;
     color: $purple;
     background: none;
@@ -82,14 +82,14 @@
     }
 
     &.button:hover,
-    &.button--hover {
+    &.button_hover {
       color: $dark50;
     }
   }
 
-  &--page,
-  &--page-selected,
-  &--page-next {
+  &_page,
+  &_page_selected,
+  &_page_next {
     width: rem(40px);
 
     @include font-montserrat(rem(12px), rem(15px));
@@ -99,12 +99,12 @@
     }
   }
 
-  &--page {
+  &_page {
     color: $dark50;
     background: none;
   }
 
-  &--page-next {
+  &_page_next {
     color: $white;
     background: $secondary-gradient;
 
@@ -115,8 +115,8 @@
     }
 
     &.button:hover,
-    &.button--hover {
-      background: $secondary-gradient--hover;
+    &.button_hover {
+      background: $secondary-gradient_hover;
     }
   }
 }

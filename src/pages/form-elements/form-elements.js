@@ -1,3 +1,10 @@
+import createCalendar from '@/components/calendar/calendar';
+import {
+  createDropdownGuests,
+  createDropdownRoomAmenity,
+} from '@/components/dropdown/create-dropdown';
+import createRangeSlider from '@/components/range-slider/range-slider.js';
+
 import '@/components/logo/logo.js';
 import '@/components/input/input.js';
 import '@/components/date-dropdown/date-dropdown.js';
@@ -15,13 +22,6 @@ import '@/components/review/review.js';
 import '@/styles/_common.scss';
 import './form-elements.scss';
 
-import createCalendar from '@/components/calendar/calendar';
-import {
-  createDropdownGuests,
-  createDropdownRoomAmenity,
-} from '@/components/dropdown/create-dropdown';
-import createRangeSlider from '@/components/range-slider/range-slider.js';
-
 const dropdownGuests = document.querySelector('.js-form-elements__dropdown-guests');
 
 if (dropdownGuests) {
@@ -29,7 +29,7 @@ if (dropdownGuests) {
 }
 
 const dropdownGuestsWithControls = document.querySelector(
-  '.js-form-elements__dropdown-guests--with-controls',
+  '.js-form-elements__dropdown-guests_with-controls',
 );
 
 if (dropdownGuestsWithControls) {
@@ -37,7 +37,7 @@ if (dropdownGuestsWithControls) {
 }
 
 const dropdownGuestsWithControlsAndValues = document.querySelector(
-  '.js-form-elements__dropdown-guests--with-controls-and-values',
+  '.js-form-elements__dropdown-guests_with-controls-and-values',
 );
 
 if (dropdownGuestsWithControlsAndValues) {

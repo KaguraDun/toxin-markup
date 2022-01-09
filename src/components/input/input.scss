@@ -20,26 +20,26 @@
 
     @include button-arrow-icon;
 
-    &--arrow::after {
+    &_arrow::after {
       color: $purple;
 
       @include font-material-icons('arrow_forward');
     }
   }
 
-  &--size-small {
+  &_size_small {
     max-width: rem(150px);
   }
 
-  &--size-medium {
+  &_size_medium {
     max-width: rem(266px);
   }
 
-  &--size-large {
+  &_size_large {
     max-width: rem(360px);
   }
 
-  &--size-full {
+  &_size_full {
     max-width: 100%;
   }
 
@@ -50,7 +50,7 @@
   }
 
   &:hover,
-  &--hover {
+  &_hover {
     border-color: $dark50;
 
     &::placeholder {

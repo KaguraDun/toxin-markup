@@ -3,6 +3,7 @@
 html {
   /* default font size = rem(14px) or 87.5% */
   font-size: 87.5%;
+  font-family: Montserrat, Arial, sans-serif;
 
   @media (max-width: $desktop) {
     font-size: 70%;

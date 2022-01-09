@@ -1,6 +1,6 @@
-import './room-impressions.scss';
-
 import Chart from 'chart.js/auto';
+
+import './room-impressions.scss';
 
 function getTotal(chart) {
   const sum = chart.config.data.datasets[0].data.reduce((a, b) => a + b, 0);
