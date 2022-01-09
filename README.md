@@ -39,3 +39,10 @@ npm run stlint:fix
 ```bash
 npm run pug-prettify
 ```
+
+## Dependencies
+* chart.js: 3.6.1
+* flatpickr: 4.6.9
+* jquery: 3.6.0
+* jquery-mask-plugin: 1.14.16
+* nouislider: 15.5.0
