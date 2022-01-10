@@ -110,13 +110,9 @@
   }
 
   &__vertical-line {
-
-    &::after {
-      width: 1px;
-      height: rem(30px);
-      color: $dark10;
-      content: '|';
-    }
+    width: 1px;
+    height: rem(30px);
+    border-right: 1px solid $dark10;
   }
 
   &__username {
