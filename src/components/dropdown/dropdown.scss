@@ -39,7 +39,7 @@
   &__button-icon {
     @include button-icon;
 
-    @include button-arrow-icon;
+    @include expand-icon;
   }
 
   &__items {

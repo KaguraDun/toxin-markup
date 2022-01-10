@@ -1,36 +1,35 @@
-.landing-page {
+.pages {
   display: flex;
   flex-direction: column;
-
-  &__background {
-    width: 100%;
-    min-height: rem(830px);
-    background: url('/public/images/backgrounds/background-3.jpg') no-repeat;
-    background-size: cover;
-  }
+  margin-top: rem(30px);
 
   &__container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    height: 100%;
+    align-items: center;
 
     @include container;
+  }
 
-    @media (max-width: $mobile) {
-      align-items: center;
+  &__logo {
+    margin-bottom: rem(20px);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10px);
+    color: $dark50;
+
+    @include clear-ul-style();
+    @include font-montserrat(rem(28px), rem(28px));
+  }
+
+  &__link {
+    @include clear-link-style();
+
+    &:hover {
+      color: $dark75;
     }
-  }
-
-  &__find-rooms {
-    margin-top: rem(70px);
-  }
-
-  &__text {
-    align-self: flex-end;
-    margin-bottom: rem(17px);
-    white-space: pre-line;
-    text-align: right;
   }
 }

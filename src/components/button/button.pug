@@ -14,12 +14,31 @@ mixin button-content(arrow, text)
     span.button__icon
 
 mixin button({type='button', size='medium', width='auto', style='border', arrow=false, text="", disabled=false, href=null })
-  - const modifier = "button_";
-  - const buttonStyles = `button ${modifier + style} ${modifier}size_${size} ${modifier}width_${width}`;
+  -
+    const classListStyle = {
+      filled : 'button_filled',
+      border: 'button_border',
+      borderless: 'button_borderless',
+      page: 'button_page',
+      page_selected: 'button_page_selected',
+      page_next: 'button_page_next',
+    }
+  -
+    const classListSize = {
+      small: 'button_size_small',
+      medium: 'button_size_medium',
+    }
+  -
+    const classListWidth = {
+      small: 'button_width_small',
+      full: 'button_width_full',
+      auto: 'button_width_auto',
+    }
+  - const buttonClassNames = `button ${classListStyle[style]} ${classListSize[size]} ${classListWidth[width]}`;
 
   if href
-    a(class=buttonStyles, href=href)&attributes(attributes)
+    a(class=buttonClassNames, href=href)&attributes(attributes)
       +button-content(arrow, text)
   else
-    button(type=type, class=buttonStyles, disabled=disabled)&attributes(attributes)
+    button(type=type, class=buttonClassNames, disabled=disabled)&attributes(attributes)
       +button-content(arrow, text)
