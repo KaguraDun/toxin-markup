@@ -1,8 +1,8 @@
 # Toxin markup
 [Figma markup](https://www.figma.com/file/MumYcKVk9RkKZEG6dR5E3A/MetaLamp-%28former-FSD%29-frontend-education-program.-The-2nd-task?node-id=0:1)
 
-## Website pages:
-1. [Landing](https://kd-toxin-markup.netlify.app/)
+## [Website pages:](https://kd-toxin-markup.netlify.app)
+1. [Landing](https://kd-toxin-markup.netlify.app/landing-page.html)
 2. [Search room](https://kd-toxin-markup.netlify.app/search-room.html)
 3. [Room details ](https://kd-toxin-markup.netlify.app/room-details.html)
 4. [Sign-in](https://kd-toxin-markup.netlify.app/sign-in.html)
