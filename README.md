@@ -41,6 +41,7 @@ npm run pug-prettify
 ```
 
 ## Dependencies
+* node: 14.18.1
 * chart.js: 3.6.1
 * flatpickr: 4.6.9
 * jquery: 3.6.0
