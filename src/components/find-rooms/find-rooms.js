@@ -7,11 +7,11 @@ import './find-rooms.scss';
 
 (() => {
   createCalendar({
-    firstInputSelector: '.js-find-rooms-dropdown-arrival',
-    secondInputSelector: '.js-find-rooms-dropdown-departure',
+    firstInputSelector: '.js-find-rooms__dropdown-arrival',
+    secondInputSelector: '.js-find-rooms__dropdown-departure',
   });
 
-  const dropdownGuests = document.querySelector('.js-cards-find-rooms-dropdown-guests');
+  const dropdownGuests = document.querySelector('.js-find-rooms__dropdown-guests');
 
   if (dropdownGuests) {
     createDropdownGuests({ element: dropdownGuests, label: 'гости' });
