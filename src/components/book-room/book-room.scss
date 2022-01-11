@@ -26,20 +26,27 @@
   &__item {
     display: flex;
     justify-content: space-between;
-    white-space: pre-line;
   }
 
   &__item-name-wrapper {
     position: relative;
     display: flex;
     align-items: baseline;
-    width: rem(214px);
-    line-height: rem(18px);
+    width: rem(220px);
+  }
+
+  &__item-name {
+    line-height: rem(24px);
+
+    &_multiline {
+      line-height: rem(18px);
+    }
   }
 
   &__item-about {
     position: absolute;
-    right: -5px;
+    top: 0;
+    right: 0;
     cursor: pointer;
 
     &:hover::before {
@@ -50,7 +57,6 @@
     &::before {
       position: absolute;
       display: flex;
-      align-items: center;
       align-items: center;
       justify-content: center;
       min-width: rem(20px);
