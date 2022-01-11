@@ -2,10 +2,10 @@ include /components/button/button.pug
 include /components/date-dropdown/date-dropdown.pug
 include /components/room-info/room-info.pug
 
-mixin book-room
+mixin book-room({roomInfo, priceList, totalSum})
   form.book-room
     .book-room__room-info
-      +room-info({number: 888, price: 9990, type: 'люкс' })
+      +room-info(roomInfo)
     .book-room__date-dropdown
       -
         const dateDropdownProps = {
@@ -19,26 +19,24 @@ mixin book-room
     .book-room__dropdown-guests
       .js-book-room__dropdown-guests
     ul.book-room__price-list
-      li.book-room__item
-        .book-room__item-name-wrapper
-          span.book-room__item-name= "9 990₽ х 4 суток"
-        span.book-room__item-sum= "39 960₽"
-      li.book-room__item
-        .book-room__item-name-wrapper
-          span.book-room__item-name= "Сбор за услуги: скидка 2 179₽"
-          span.book-room__item-about
-        span.book-room__item-sum= "0₽"
-      li.book-room__item
-        .book-room__item-name-wrapper
-          span.book-room__item-name
-            | Сбор за дополнительные
-            | услуги
-          span.book-room__item-about
-        span.book-room__item-sum= "300₽"
+      each item in priceList
+        li.book-room__item
+          .book-room__item-name-wrapper
+            - const hasNewLines = item.name.includes("<br>");
+            -
+              const itemNameClassNames = {
+                "book-room__item-name": true,
+                "book-room__item-name_multiline": hasNewLines,
+              }
+            span(class=itemNameClassNames)!= item.name
+            if item.about
+              span.book-room__item-about
+          span.book-room__item-sum #{ item.total }
+
     .book-room__total
       .book-room__total-text= "Итого"
       .book-room__total-filler
-      .book-room__total-sum= "38 081₽"
+      .book-room__total-sum #{ totalSum }
     .book-room__button-book
       -
         const buttonBookProps = {
