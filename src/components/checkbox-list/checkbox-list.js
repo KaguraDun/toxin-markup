@@ -1,4 +1,5 @@
 import '@/components/input-checkbox/input-checkbox.js';
+
 import './checkbox-list.scss';
 
 (() => {

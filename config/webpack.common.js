@@ -1,11 +1,12 @@
 /* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable import/no-extraneous-dependencies */
+const fs = require('fs');
+
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 
-const fs = require('fs');
 const paths = require('./paths');
 
 const PAGES_DIR = `${paths.src}/pages/`;

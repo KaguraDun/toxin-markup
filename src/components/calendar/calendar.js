@@ -1,10 +1,11 @@
-import flatpickr from 'flatpickr';
-import { Russian } from 'flatpickr/dist/l10n/ru';
-import rangePlugin from 'flatpickr/dist/plugins/rangePlugin';
 import * as $ from 'jquery';
+import flatpickr from 'flatpickr';
+import rangePlugin from 'flatpickr/dist/plugins/rangePlugin';
+import { Russian } from 'flatpickr/dist/l10n/ru';
+import 'flatpickr/dist/themes/light.css';
 
 import '@/components/button/button.js';
-import 'flatpickr/dist/themes/light.css';
+
 import './calendar.scss';
 
 function hideExternalNextMonthDays() {

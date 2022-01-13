@@ -1,9 +1,9 @@
 import createCalendar from '@/components/calendar/calendar';
 import { createDropdownGuests } from '@/components/dropdown/create-dropdown';
-
 import '@/components/button/button.js';
 import '@/components/date-dropdown/date-dropdown.js';
 import '@/components/room-info/room-info.js';
+
 import './book-room.scss';
 
 (() => {
