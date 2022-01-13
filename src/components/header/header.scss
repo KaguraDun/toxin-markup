@@ -1,7 +1,7 @@
 .header {
   display: flex;
   width: 100%;
-  max-height: rem(70px);
+  min-height: rem(70px);
   background-color: $main-bg-color;
 
   .header__container {
@@ -40,6 +40,29 @@
       transform: translateX(-1000px);
       opacity: 0;
       transition: transform .75s ease, opacity .75s ease;
+    }
+  }
+
+  &__nav-list {
+    display: grid;
+    grid-auto-flow: column;
+    gap: rem(20px);
+    align-items: center;
+
+    @include clear-ul-style;
+
+    @media (max-width: $tablet) {
+      grid-auto-flow: row;
+      gap: 0;
+      margin-top: rem(20px);
+    }
+  }
+
+  &__nav-item {
+    width: 100%;
+
+    @media (max-width: $tablet) {
+      padding: rem(20px);
     }
   }
 

@@ -1,5 +1,5 @@
 import '@/components/logo/logo.js';
-import '@/components/header-nav/header-nav.js';
+import '@/components/link/link.js';
 import '@/components/button/button.js';
 
 import './header.scss';
