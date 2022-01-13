@@ -3,7 +3,7 @@
   "parserOptions": {
     "requireConfigFile": false
   },
-  "plugins": ["prettier", "pug", "simple-import-sort"],
+  "plugins": ["import", "prettier", "pug"],
   "rules": {
     "object-curly-newline": "off",
     "linebreak-style": 0,
@@ -21,25 +21,23 @@
       }
     ],
     "prettier/prettier": "error",
-    "simple-import-sort/imports": [
+    "import/order": [
       "error",
       {
         "groups": [
-        // Packages. 
-        // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
-        ["^@?\\w"],
-        // Absolute imports and other imports such as Vue-style `@/foo`.
-        // Anything not matched in another group.
-        ["^"],
-        // Relative imports.
-        // Anything that starts with a dot.
-        ["^\\."],
-        // Side effect imports.   
-        ["^\\u0000"] 
-        ]
+          "builtin",
+          "unknown",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "newlines-between": "always",
+        "warnOnUnassignedImports": true
       }
     ],
-    "simple-import-sort/exports": "error"
+    "import/newline-after-import": "error"
   },
   "settings": {
     "import/resolver": { "webpack": { "config": "./config/webpack.common.js" } }
@@ -48,5 +46,9 @@
     "es6": true,
     "browser": true
   },
-  "extends": "airbnb-base"
+  "extends": [
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "airbnb-base"
+  ]
 }
