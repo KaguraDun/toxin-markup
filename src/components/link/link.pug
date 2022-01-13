@@ -1,0 +1,15 @@
+//- available properties:
+  url: string;
+  text: string;
+  innerItems { url: string, text: string }[]
+
+mixin link({url, text, selected=false, innerItems=[]})
+  - const isExpandable = innerItems.length > 0;
+    if innerItems.length > 0
+      .link__dropdown #{ text }
+        ul.link__items
+          each item in innerItems
+            li.link__item
+              a.link(href=item.url) #{ item.text }
+    else
+      a(class={ link: true, link_selected: selected }, href=url) #{ text }
