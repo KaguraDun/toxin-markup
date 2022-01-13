@@ -1,0 +1,12 @@
+//- available properties:
+  itemList:{
+    heading: string,
+    items: {link: string, text: string}[]
+  }
+
+mixin footer-item-list({heading, items})
+  h3.footer-item-list__heading #{ heading }
+  ul.footer-item-list
+    each item in items
+      li.footer-item-list__item
+        a.footer-item-list__item-link(href=item.link) #{ item.text }

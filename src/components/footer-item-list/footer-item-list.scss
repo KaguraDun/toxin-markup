@@ -1,0 +1,30 @@
+.footer-item-list {
+  @include clear-ul-style;
+
+  &__heading {
+    margin: 4px 0 rem(21px);
+    color: $dark100;
+    text-transform: uppercase;
+
+    @include font-montserrat(rem(12px), rem(15px), bold);
+  }
+
+  &__item {
+    color: $dark50;
+
+    @include font-montserrat(rem(14px), rem(18px));
+
+    &:not(:last-child) {
+      margin-bottom: rem(20px);
+    }
+
+    &:hover {
+      color: $dark75;
+      font-weight: bold;
+    }
+  }
+
+  &__item-link {
+    @include clear-link-style;
+  }
+}
