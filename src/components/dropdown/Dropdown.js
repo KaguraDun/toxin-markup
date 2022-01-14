@@ -31,9 +31,12 @@ class Dropdown {
       <li class="dropdown__item">
         <div class="dropdown__item-name">${key}</div>
         <div class="dropdown__item-buttons">
-          <button type="button" class="button-minus" ${buttonMinusDisabled}></button>
-          <div class="dropdown__item-value" data-value="${key}">${value}</div>
-          <button type="button" class="button-plus"></button>
+          <button type="button" class="button-minus js-button-minus" ${buttonMinusDisabled}>
+          </button>
+          <div class="dropdown__item-value js-dropdown__item-value" data-value="${key}">
+            ${value}
+          </div>
+          <button type="button" class="button-plus js-button-plus"></button>
         </div>
       </li>`;
     });
@@ -56,16 +59,16 @@ class Dropdown {
   createDropdown() {
     const { isExpanded, placeholder } = this.properties;
     const expandedClass = isExpanded ? this.#DROPDOWN_EXPANDED_CLASS : '';
-    const dropdownInputClass = `dropdown__input ${expandedClass}`;
+    const dropdownInputClass = `dropdown__input js-dropdown__input ${expandedClass}`;
 
     return `
     <div class="dropdown">
       <p class="dropdown__label">${this.properties.label ?? ''}</p>
-      <div class="dropdown__input-wrapper">
+      <div class="dropdown__input-wrapper js-dropdown__input-wrapper">
         <input type="text" class="${dropdownInputClass}" placeholder="${placeholder}" readonly>
         <span class="dropdown__button-icon"></span>
       </div>
-      <ul class="dropdown__items" ${isExpanded ? '' : 'hidden'}>
+      <ul class="dropdown__items js-dropdown__items" ${isExpanded ? '' : 'hidden'}>
         ${this.createItems()}
         ${this.properties.controlButtons ? Dropdown.createControlButtons() : ''}
       </ul>
@@ -81,11 +84,11 @@ class Dropdown {
 
   init() {
     this.element.innerHTML = this.createDropdown();
-    this.dropdownInput = this.element.querySelector('.dropdown__input');
+    this.dropdownInput = this.element.querySelector('.js-dropdown__input');
     this.dropdownInput.value = this.concatStoreValues();
-    this.dropdownItems = this.element.querySelector('.dropdown__items');
+    this.dropdownItems = this.element.querySelector('.js-dropdown__items');
 
-    const dropdownInputWrapper = this.element.querySelector('.dropdown__input-wrapper');
+    const dropdownInputWrapper = this.element.querySelector('.js-dropdown__input-wrapper');
     this.buttonClear = this.element.querySelector('.js-button-clear');
     this.buttonApply = this.element.querySelector('.js-button-apply');
 
@@ -103,10 +106,10 @@ class Dropdown {
 
     if (parent.className !== 'dropdown__item-buttons') return;
 
-    const valueElement = parent.querySelector('.dropdown__item-value');
+    const valueElement = parent.querySelector('.js-dropdown__item-value');
     const { value } = valueElement.dataset;
-    const buttonMinus = parent.querySelector('.button-minus');
-    const buttonPlus = parent.querySelector('.button-plus');
+    const buttonMinus = parent.querySelector('.js-button-minus');
+    const buttonPlus = parent.querySelector('.js-button-plus');
 
     if (e.target === buttonMinus) {
       this.store[value].count -= 1;
@@ -134,8 +137,8 @@ class Dropdown {
       this.store[key].count = 0;
     });
 
-    const valueElements = this.element.querySelectorAll('.dropdown__item-value');
-    const buttonsMinus = this.element.querySelectorAll('.button-minus');
+    const valueElements = this.element.querySelectorAll('.js-dropdown__item-value');
+    const buttonsMinus = this.element.querySelectorAll('.js-button-minus');
 
     valueElements.forEach((element) => {
       element.innerText = 0;

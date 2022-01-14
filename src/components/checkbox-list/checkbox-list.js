@@ -4,11 +4,11 @@ import './checkbox-list.scss';
 
 (() => {
   function handleCheckboxListExpand(e) {
-    const target = e.target.closest('.checkbox-list__button');
+    const target = e.target.closest('.js-checkbox-list__button');
     if (!target) return;
 
-    const items = target.parentElement.querySelector('.checkbox-list__items');
-    const buttonIcon = target.parentElement.querySelector('.checkbox-list__icon');
+    const items = target.parentElement.querySelector('.js-checkbox-list__items');
+    const buttonIcon = target.parentElement.querySelector('.js-checkbox-list__icon');
 
     if (items) {
       items.classList.toggle('checkbox-list__items_expand');
@@ -16,7 +16,7 @@ import './checkbox-list.scss';
     }
   }
 
-  const checkboxLists = document.querySelectorAll('.checkbox-list');
+  const checkboxLists = document.querySelectorAll('.js-checkbox-list');
   function addEventToCheckboxLists() {
     checkboxLists.forEach((element) => {
       const isExpandable = element.firstElementChild.tagName === 'BUTTON';

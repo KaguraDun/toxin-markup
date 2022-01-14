@@ -3,12 +3,12 @@ include /components/link/link.pug
 include /components/button/button.pug
 
 mixin header({isLogged=false})
-  header.header
+  header.header.js-header
     .header__container
       .header__left-col
         h1.header__logo
           +logo({style:'colored'})
-      button.header__burger
+      button.header__burger.js-header__burger
         span.header__burger-line.header__burger-line-1
         span.header__burger-line.header__burger-line-2
         span.header__burger-line.header__burger-line-3
