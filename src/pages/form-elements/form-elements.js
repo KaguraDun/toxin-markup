@@ -53,14 +53,14 @@ createCalendar({
   firstInputSelector: '.js-form-elements__dropdown-arrival',
   secondInputSelector: '.js-form-elements__dropdown-departure',
   defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 19)],
-  today: 8,
+  today: new Date(2019, 7, 8),
   minDate: new Date(2019, 7, 8),
 });
 
 createCalendar({
   singleInputSelector: '.js-form-elements__dropdown-single',
   defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 23)],
-  today: 8,
+  today: new Date(2019, 7, 8),
   minDate: new Date(2019, 7, 8),
 });
 

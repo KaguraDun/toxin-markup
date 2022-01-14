@@ -8,20 +8,16 @@ import '@/components/button/button.js';
 
 import './calendar.scss';
 
-function hideExternalNextMonthDays() {
-  const elements = document.querySelectorAll('.flatpickr-calendar');
+function hideExternalNextMonthDays(instance) {
+  const nextDays = Array.from(instance.days.querySelectorAll('.nextMonthDay'));
 
-  elements.forEach((element) => {
-    const nextDays = Array.from(element.querySelectorAll('.nextMonthDay'));
+  const daysInWeek = 7;
 
-    const daysInWeek = 7;
-
-    if (nextDays.length >= daysInWeek) {
-      nextDays.splice(-daysInWeek).forEach((day) => {
-        day.classList.add('flatpickr-day_hidden');
-      });
-    }
-  });
+  if (nextDays.length >= daysInWeek) {
+    nextDays.splice(-daysInWeek).forEach((day) => {
+      day.classList.add('flatpickr-day_hidden');
+    });
+  }
 }
 
 function changeDefaultDateDelimiter(dateStr, instance) {
@@ -49,38 +45,33 @@ function createCalendar({
     monthSelectorType: 'static',
     onChange(dateObj, dateStr, instance) {
       instance.open();
-      hideExternalNextMonthDays();
+      hideExternalNextMonthDays(instance);
       changeDefaultDateDelimiter(dateStr, instance);
     },
-    onMonthChange() {
-      hideExternalNextMonthDays();
+    onMonthChange(dateObj, dateStr, instance) {
+      hideExternalNextMonthDays(instance);
     },
-    onOpen() {
-      hideExternalNextMonthDays();
+    onOpen(dateObj, dateStr, instance) {
+      hideExternalNextMonthDays(instance);
     },
     onReady(dateObj, dateStr, instance) {
-      hideExternalNextMonthDays();
-      changeDefaultDateDelimiter(dateStr, instance);
       if (today) {
-        const days = Array.from(instance.daysContainer.querySelectorAll('.flatpickr-day'));
-        const todayElement = days.filter(
-          (day) => day.classList.length === 1 && day.textContent === String(today),
-        )[0];
-
-        todayElement.classList.add('today');
+        instance.now = today;
+        instance.redraw();
       }
-
-      const $buttonContainer = $(' <div class="flatpickr-buttons"></div>').appendTo(
+      hideExternalNextMonthDays(instance);
+      changeDefaultDateDelimiter(dateStr, instance);
+      const $buttonContainer = $('<div class="flatpickr-buttons"></div>').appendTo(
         $(instance.calendarContainer),
       );
 
-      $(' <button class="button button_borderless" type="button">Очистить</button>')
+      $('<button class="button button_borderless" type="button">Очистить</button>')
         .on('click', () => {
           instance.clear();
         })
         .appendTo($buttonContainer);
 
-      $(' <button class="button button_borderless" type="button">Применить</button>')
+      $('<button class="button button_borderless" type="button">Применить</button>')
         .on('click', () => {
           instance.close();
         })
@@ -106,7 +97,7 @@ function createCalendar({
     const firstInput = document.querySelector(firstInputSelector);
     const secondInput = document.querySelector(secondInputSelector);
 
-    // Hide external days row when changing between two inputs
+    // Hide external days when changing between two inputs
     firstInput.addEventListener('focus', hideExternalNextMonthDays);
 
     firstInput.readOnly = true;
