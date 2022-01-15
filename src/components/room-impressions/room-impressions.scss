@@ -34,19 +34,19 @@
       content: '';
     }
 
-    &_great::before {
+    &_style_great::before {
       background: $orange-gradient;
     }
 
-    &_good::before {
+    &_style_good::before {
       background: $secondary-gradient;
     }
 
-    &_passably::before {
+    &_style_passably::before {
       background: $primary-gradient;
     }
 
-    &_disappointed::before {
+    &_style_disappointed::before {
       background: $black-gradient;
     }
   }
