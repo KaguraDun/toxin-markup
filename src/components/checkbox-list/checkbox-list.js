@@ -11,8 +11,10 @@ import './checkbox-list.scss';
     const buttonIcon = target.parentElement.querySelector('.js-checkbox-list__icon');
 
     if (items) {
-      items.classList.toggle('checkbox-list__items_expand');
-      buttonIcon.classList.toggle('checkbox-list__icon_rotate');
+      const isExpanded = items.classList.toggle('checkbox-list__items_expanded');
+
+      buttonIcon.classList.toggle('checkbox-list__icon_style_expand-less', isExpanded);
+      buttonIcon.classList.toggle('checkbox-list__icon_style_expand', !isExpanded);
     }
   }
 
