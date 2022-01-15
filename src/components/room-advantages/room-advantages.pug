@@ -5,15 +5,7 @@
     underline: boolean;
   }
 
-mixin room-advantages-item(icon, heading, text, underline)
-  - const itemClass = `room-advantages__item ${underline ? "room-advantages__item_underlined" : ""}`;
-  - const iconClass = `room-advantages__icon room-advantages__icon_${icon}`;
-
-  li(class=itemClass)
-    div(class=iconClass)
-    .room-advantages__about
-      p.room-advantages__heading= heading
-      p.room-advantages__text= text
+include /components/room-advantages-item/room-advantages-item.pug
 
 mixin room-advantages({items})
   ul.room-advantages

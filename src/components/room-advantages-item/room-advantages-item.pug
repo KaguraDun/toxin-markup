@@ -1,0 +1,21 @@
+//- available properties:
+  icon: comfort | convenience | cosiness
+  heading: string
+  test: string
+  underline: boolean
+
+mixin room-advantages-item(icon, heading, text, underline)
+  -
+    const icons = {
+      comfort:'room-advantages-item__icon_style_comfort',
+      convenience:'room-advantages-item__icon_style_convenience',
+      cosiness:'room-advantages-item__icon_style_cosiness',
+    }
+  - const itemClassNames = `room-advantages-item ${underline ? "room-advantages-item_underlined" : ""}`;
+  - const iconClassNames = `room-advantages-item__icon ${icons[icon]}`;
+
+  li(class=itemClassNames)
+    div(class=iconClassNames)
+    .room-advantages-item__about
+      p.room-advantages-item__heading= heading
+      p.room-advantages-item__text= text
