@@ -61,17 +61,21 @@ function createCalendar({
       }
       hideExternalNextMonthDays(instance);
       changeDefaultDateDelimiter(dateStr, instance);
-      const $buttonContainer = $('<div class="flatpickr-buttons"></div>').appendTo(
+      const $buttonContainer = $('<div class="flatpickr__buttons"></div>').appendTo(
         $(instance.calendarContainer),
       );
 
-      $('<button class="button button_borderless" type="button">Очистить</button>')
+      $(`<button class="button button_style_borderless" type="button">
+           <span class='button__text'>очистить</span>
+         </button>`)
         .on('click', () => {
           instance.clear();
         })
         .appendTo($buttonContainer);
 
-      $('<button class="button button_borderless" type="button">Применить</button>')
+      $(`<button class="button button_style_borderless" type="button">
+           <span class='button__text'>применить</span>
+         </button>`)
         .on('click', () => {
           instance.close();
         })
