@@ -11,7 +11,7 @@ import './book-room.scss';
     firstInputSelector: '.js-book-room__date-dropdown-arrival',
     secondInputSelector: '.js-book-room__date-dropdown-departure',
     defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 23)],
-    today: 8,
+    today: new Date(2019, 7, 8),
     minDate: new Date(2019, 7, 8),
   });
 
