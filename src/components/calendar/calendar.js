@@ -55,10 +55,13 @@ function createCalendar({
       hideExternalNextMonthDays(instance);
     },
     onReady(dateObj, dateStr, instance) {
-      if (today) {
+      const isTodayValidDate = today && today instanceof Date;
+
+      if (isTodayValidDate) {
         instance.now = today;
         instance.redraw();
       }
+
       hideExternalNextMonthDays(instance);
       changeDefaultDateDelimiter(dateStr, instance);
       const $buttonContainer = $('<div class="flatpickr__buttons"></div>').appendTo(
@@ -92,7 +95,7 @@ function createCalendar({
     const singleInput = document.querySelector(singleInputSelector);
     singleInput.readOnly = true;
   } else {
-    flatpickr(firstInputSelector, {
+    const flatpickrInstance = flatpickr(firstInputSelector, {
       ...commonOptions,
       dateFormat: 'd.m.Y',
       // eslint-disable-next-line new-cap
@@ -102,7 +105,9 @@ function createCalendar({
     const secondInput = document.querySelector(secondInputSelector);
 
     // Hide external days when changing between two inputs
-    firstInput.addEventListener('focus', hideExternalNextMonthDays);
+    firstInput.addEventListener('focus', () => {
+      hideExternalNextMonthDays(flatpickrInstance);
+    });
 
     firstInput.readOnly = true;
     secondInput.readOnly = true;
