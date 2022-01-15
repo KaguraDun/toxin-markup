@@ -35,7 +35,7 @@ block content
         .form-elements__item-info
           .form-elements__item-name= "text field"
           .form-elements__item-state= "hover / focus"
-        +input({type:'text', value:'This is pretty awesome', size:'large'}).input_hover
+        +input({type:'text', value:'This is pretty awesome', size:'large'}).input_hovered
       .form-elements__item
         //- create container for dropdown, set properties in index.js
         .js-form-elements__dropdown-guests
@@ -64,7 +64,7 @@ block content
       .form-elements__item.form-elements__item_size_medium
         .form-elements__item-info
           .form-elements__item-name= "subscription text field"
-        +input({type:'email', placeholder:'Email', arrow: true, size:'medium' })
+        +input({type:'email', placeholder:'Email', icon:'arrow', size:'medium' })
 
     .form-elements__grid-item.form-elements__grid-column-1
       .form-elements__item.form-elements__item_size_medium

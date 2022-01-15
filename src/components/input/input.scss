@@ -15,16 +15,16 @@
     position: relative;
   }
 
-  &__icon {
-    @include button-icon;
+  &__icon_style_arrow {
+    @include icon-arrow($purple);
+  }
 
-    @include expand-icon;
+  &__icon_style_expand-more {
+    @include icon-expand-more;
+  }
 
-    &_arrow::after {
-      color: $purple;
-
-      @include font-material-icons('arrow_forward');
-    }
+  &__icon_style_expand_less {
+    @include icon-expand-less;
   }
 
   &_size_small {
@@ -50,7 +50,7 @@
   }
 
   &:hover,
-  &_hover {
+  &_hovered {
     border-color: $dark50;
 
     &::placeholder {
