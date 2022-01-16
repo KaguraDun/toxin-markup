@@ -26,7 +26,7 @@ mixin book-room({roomInfo, priceList, totalSum})
             -
               const itemNameClassNames = {
                 "book-room__item-name": true,
-                "book-room__item-name_multiline": hasNewLines,
+                "book-room__item-name_style_multiline": hasNewLines,
               }
             span(class=itemNameClassNames)!= item.name
             if item.about
