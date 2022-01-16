@@ -3,6 +3,7 @@ const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+
 const common = require('./webpack.common');
 const paths = require('./paths');
 
@@ -35,7 +36,7 @@ module.exports = merge(common, {
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: `${paths.src}/styles/_resources.scss`,
+              resources: `${paths.src}/assets/styles/_resources.scss`,
             },
           },
         ],

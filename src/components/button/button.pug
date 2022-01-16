@@ -8,20 +8,15 @@
   href: string;
   disabled: boolean;
 
-mixin button-content(arrow, text)
-  span.button__text= text
-  if (arrow)
-    span.button__icon
-
 mixin button({type='button', size='medium', width='auto', style='border', arrow=false, text="", disabled=false, href=null })
   -
     const classListStyle = {
-      filled : 'button_filled',
-      border: 'button_border',
-      borderless: 'button_borderless',
-      page: 'button_page',
-      page_selected: 'button_page_selected',
-      page_next: 'button_page_next',
+      borderless: 'button_style_borderless',
+      border: 'button_style_border',
+      filled : 'button_style_filled',
+      page: 'button_style_page',
+      page_selected: 'button_style_page-selected',
+      page_next: 'button_style_page-next',
     }
   -
     const classListSize = {
@@ -38,7 +33,11 @@ mixin button({type='button', size='medium', width='auto', style='border', arrow=
 
   if href
     a(class=buttonClassNames, href=href)&attributes(attributes)
-      +button-content(arrow, text)
+      span.button__text= text
+      if (arrow)
+        span.button__icon.button__icon_with-arrow
   else
     button(type=type, class=buttonClassNames, disabled=disabled)&attributes(attributes)
-      +button-content(arrow, text)
+      span.button__text= text
+      if (arrow)
+        span.button__icon.button__icon_with-arrow 

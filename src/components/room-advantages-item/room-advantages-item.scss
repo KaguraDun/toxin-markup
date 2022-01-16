@@ -1,0 +1,40 @@
+.room-advantages-item {
+  display: flex;
+  gap: rem(10px);
+  max-width: rem(280px);
+
+  &_underlined {
+    padding-bottom: rem(17px);
+    border-bottom: 1px solid $dark10;
+  }
+
+  &__icon {
+    color: $purple;
+
+    &_style_comfort::after {
+      @include font-material-icons('insert_emoticon', rem(48px), rem(41px));
+    }
+
+    &_style_convenience::after {
+      @include font-material-icons('location_city', rem(48px), rem(41px));
+    }
+
+    &_style_cosiness::after {
+      @include font-material-icons('whatshot', rem(48px), rem(41px));
+    }
+  }
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__heading {
+    margin: 0;
+    font-weight: bold;
+  }
+
+  &__text {
+    margin: 0;
+  }
+}

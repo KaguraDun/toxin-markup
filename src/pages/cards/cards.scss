@@ -2,7 +2,7 @@
   background-color: $gray;
 
   &__logo {
-    max-width: rem(1440px);
+    max-width: rem($desktop-large);
     margin: 0 auto;
   }
 

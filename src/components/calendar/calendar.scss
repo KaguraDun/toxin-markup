@@ -204,16 +204,12 @@
   border: 0;
 }
 
-.flatpickr-buttons {
+.flatpickr__buttons {
   display: flex;
   justify-content: space-between;
   padding-top: rem(20px);
   background: $white;
   border: 0;
-
-  & > .button {
-    text-transform: uppercase;
-  }
 }
 
 .flatpickr-day_hidden {

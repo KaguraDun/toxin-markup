@@ -1,21 +1,22 @@
-import createCalendar from '@/components/calendar/calendar';
+import Calendar from '@/components/calendar/Calendar';
+import createRangeSlider from '@/components/range-slider/range-slider.js';
 import {
   createDropdownGuests,
   createDropdownRoomAmenity,
 } from '@/components/dropdown/create-dropdown';
-import createRangeSlider from '@/components/range-slider/range-slider.js';
-
 import '@/components/date-dropdown/date-dropdown.js';
 import '@/components/checkbox-list/checkbox-list.js';
+
 import './room-filter.scss';
 
 (() => {
-  createCalendar({
+  const calendar = new Calendar({
     singleInputSelector: '.js-room-filter__date-dropdown',
     defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 23)],
-    today: 8,
+    today: new Date(2019, 7, 8),
     minDate: new Date(2019, 7, 8),
   });
+  calendar.render();
 
   const dropdownGuests = document.querySelector('.js-room-filter__dropdown-guests');
 

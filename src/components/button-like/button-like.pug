@@ -7,9 +7,10 @@ mixin button-like({ disabled = false, likesNumber, isPressed=false })
   -
     const buttonStyles = {
       'button-like': true,
+      'js-button-like': true,
       'button-like_pressed': isPressed
     }
 
   button(class=buttonStyles, disabled=disabled)&attributes(attributes)
     span.button-like__icon
-    span.button-like__likes-number= likesNumber
+    span.button-like__likes-number.js-button-like__likes-number= likesNumber

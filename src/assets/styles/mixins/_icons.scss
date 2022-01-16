@@ -1,0 +1,36 @@
+@mixin icon-base {
+  position: absolute;
+  top: 50%;
+  right: rem(10px);
+  transform: translateY(-50%);
+}
+
+@mixin icon-expand-more {
+  @include icon-base();
+
+  &::after {
+    color: $dark75;
+
+    @include font-material-icons('expand_more');
+  }
+}
+
+@mixin icon-expand-less {
+  @include icon-base();
+
+  &::after {
+    color: $dark75;
+
+    @include font-material-icons('expand_less');
+  }
+}
+
+@mixin icon-arrow($color: none) {
+  @include icon-base();
+
+  &::after {
+    color: $color;
+
+    @include font-material-icons('arrow_forward');
+  }
+}

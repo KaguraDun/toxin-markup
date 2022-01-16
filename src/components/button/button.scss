@@ -20,12 +20,8 @@
     border-radius: rem(22px);
   }
 
-  &__icon {
-    @include button-icon;
-
-    &::after {
-      @include font-material-icons('arrow_forward');
-    }
+  &__icon_with-arrow {
+    @include icon-arrow();
   }
 
   &_size_small .button__text {
@@ -48,23 +44,23 @@
     width: auto;
   }
 
-  &_filled,
-  &_border,
-  &_page_selected {
+  &_style_filled,
+  &_style_border,
+  &_style_page-selected {
     background: $primary-gradient;
 
     &.button:hover,
-    &.button_hover {
+    &.button_hovered {
       background: $primary-gradient_hover;
     }
   }
 
-  &_filled,
-  &_page_selected {
+  &_style_filled,
+  &_style_page-selected {
     color: $white;
   }
 
-  &_border {
+  &_style_border {
     color: $purple;
 
     .button__text {
@@ -72,7 +68,7 @@
     }
   }
 
-  &_borderless {
+  &_style_borderless {
     padding: 0;
     color: $purple;
     background: none;
@@ -82,14 +78,14 @@
     }
 
     &.button:hover,
-    &.button_hover {
+    &.button_hovered {
       color: $dark50;
     }
   }
 
-  &_page,
-  &_page_selected,
-  &_page_next {
+  &_style_page,
+  &_style_page-selected,
+  &_style_page-next {
     width: rem(40px);
 
     @include font-montserrat(rem(12px), rem(15px));
@@ -99,12 +95,12 @@
     }
   }
 
-  &_page {
+  &_style_page {
     color: $dark50;
     background: none;
   }
 
-  &_page_next {
+  &_style_page-next {
     color: $white;
     background: $secondary-gradient;
 
@@ -115,7 +111,7 @@
     }
 
     &.button:hover,
-    &.button_hover {
+    &.button_hovered {
       background: $secondary-gradient_hover;
     }
   }

@@ -2,7 +2,7 @@
   background: $gray;
 
   &__logo {
-    max-width: rem(1440px);
+    max-width: rem($desktop-large);
     margin: 0 auto;
   }
 
@@ -19,38 +19,35 @@
 
   &__footer-creative {
     display: flex;
-    width: $tablet;
-    margin: 0 auto;
-    margin-bottom: rem(140px);
-    box-shadow: 0 rem(10px) rem(20px) $dark5;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: rem(120px 0);
 
-    .footer__container {
-      box-sizing: border-box;
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+      width: $tablet;
+      margin: 0 auto;
+      margin-bottom: rem(140px);
+      background: $white;
+      box-shadow: 0 rem(10px) rem(20px) $dark5;
     }
 
-    .footer {
+    &__copyright {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      width: 100%;
-      padding: rem(120px 0);
+      align-items: center;
     }
 
-    .footer__widgets {
-      display: none;
-    }
-
-    .footer__copyright-logo {
+    &__copyright-logo {
       display: block;
       margin-bottom: rem(25px);
     }
 
-    .footer__copyright-text {
+    &__copyright-text {
       margin-bottom: rem(25px);
-    }
-
-    .footer__copyright-wrapper {
-      flex-direction: column;
     }
   }
 }

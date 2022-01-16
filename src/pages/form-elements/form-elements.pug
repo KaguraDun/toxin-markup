@@ -25,7 +25,7 @@ block content
     .form-elements__logo-icon
       +logo({style:'gray'})
   .form-elements__container
-    .form-elements__grid-item.form-elements__grid-column-1
+    .form-elements__grid-item.form-elements__grid-item_column_1
       .form-elements__item
         .form-elements__item-info
           .form-elements__item-name= "text field"
@@ -35,10 +35,10 @@ block content
         .form-elements__item-info
           .form-elements__item-name= "text field"
           .form-elements__item-state= "hover / focus"
-        +input({type:'text', value:'This is pretty awesome', size:'large'}).input_hover
+        +input({type:'text', value:'This is pretty awesome', size:'large'}).input_hovered
       .form-elements__item
         //- create container for dropdown, set properties in index.js
-        .js-form-elements__dropdown-guests
+        .form-elements__dropdown-guests.js-form-elements__dropdown-guests
       .form-elements__item.form-elements__item_margin_large
         .form-elements__item-info
           .form-elements__item-name= "masked text field"
@@ -64,21 +64,21 @@ block content
       .form-elements__item.form-elements__item_size_medium
         .form-elements__item-info
           .form-elements__item-name= "subscription text field"
-        +input({type:'email', placeholder:'Email', arrow: true, size:'medium' })
+        +input({type:'email', placeholder:'Email', icon:'arrow', size:'medium' })
 
-    .form-elements__grid-item.form-elements__grid-column-1
+    .form-elements__grid-item.form-elements__grid-item_column_1
       .form-elements__item.form-elements__item_size_medium
         .form-elements__item-info
           .form-elements__item-name= "dropdown"
           .form-elements__item-state= "default"
         //- create container for dropdown, set properties in index.js
-        .js-form-elements__dropdown-room-amenity
-      .form-elements__item.form-elements__item_size_medium
+        .form-elements__dropdown-room-amenity.js-form-elements__dropdown-room-amenity
+      .form-elements__item.form-elements__item_margin_largest.form-elements__item_size_medium
         .form-elements__item-info
           .form-elements__item-name= "dropdown"
           .form-elements__item-state= "expanded"
         //- create container for dropdown, set properties in index.js
-        .js-form-elements__dropdown-room-amenity-expanded
+        .form-elements__dropdown-room-amenity-expanded.js-form-elements__dropdown-room-amenity-expanded
       .form-elements__item.form-elements__item_size_medium
         -
           const checkboxListItems = [
@@ -93,7 +93,7 @@ block content
       .form-elements__item.form-elements__item_size_medium
         +checkbox-list({ name: 'expandable checkbox list', expandable: true, expanded: true, items: checkboxListItems })
 
-    .form-elements__grid-item.form-elements__grid-column-1
+    .form-elements__grid-item.form-elements__grid-item_column_1
       .form-elements__item
         -
           const roomAdvantagesItems = [
@@ -102,7 +102,7 @@ block content
           ]
         +room-advantages({items: roomAdvantagesItems})
 
-    .form-elements__grid-item.form-elements__grid-column-2
+    .form-elements__grid-item.form-elements__grid-item_column_2
       .form-elements__item.form-elements__item_margin_large
         -
           const checkboxButtonsItems = [
@@ -111,21 +111,24 @@ block content
             { text: 'Можно пригласить гостей<br> (до 10 человек)', checked:true },
           ]
         +checkbox-list({name:'checkbox buttons', expandable:false, items:checkboxButtonsItems})
-      .form-elements__item.form-elements__item_margin_large
-        fieldset.form-elements__fieldset.form-elements__fieldset_row
+      .form-elements__item.form-elements__item_margin_medium
+        fieldset.form-elements__fieldset
           legend.form-elements__fieldset-legend= "radio buttons"
-          +input-radio({text:'Мужчина', value:'мужчина', name:'gender', checked:true})
-          +input-radio({text:'Женщина', value:'женщина', name:'gender'})
+          .form-elements__fieldset-row.form-elements__fieldset-row_gap_medium
+            +input-radio({text:'Мужчина', value:'мужчина', name:'gender', checked:true})
+            +input-radio({text:'Женщина', value:'женщина', name:'gender'})
       .form-elements__item.form-elements__item_margin_large
         fieldset.form-elements__fieldset
           legend.form-elements__fieldset-legend= "toggle"
-          +input-toggle({text:'Получать спецпредложения', checked:true})
-          +input-toggle({text:'Получать спецпредложения'})
+          .form-elements__fieldset-column.form-elements__fieldset-column_gap_small
+            +input-toggle({text:'Получать спецпредложения', checked:true})
+            +input-toggle({text:'Получать спецпредложения'})
       .form-elements__item.form-elements__item_margin_large
-        fieldset.form-elements__fieldset.form-elements__fieldset_row
+        fieldset.form-elements__fieldset
           legend.form-elements__fieldset-legend= "like button"
-          +button-like({likesNumber:2})
-          +button-like({likesNumber:12 , isPressed:true})
+          .form-elements__fieldset-row.form-elements__fieldset-row_gap_small
+            +button-like({likesNumber:2})
+            +button-like({likesNumber:12 , isPressed:true})
       .form-elements__item.form-elements__item_margin_large
         .form-elements__item-info.form-elements__item-info_margin_large
           .form-elements__item-name= "rate button"
@@ -133,10 +136,10 @@ block content
           +button-rate({name:'rating', score:4})
           +button-rate({name:'rating-second', score:5})
 
-    .form-elements__grid-item.form-elements__grid-column-2
+    .form-elements__grid-item.form-elements__grid-item_column_2
       .form-elements__item.form-elements__item_margin_extra-large
         //- create container for dropdown, set properties in index.js
-        .js-form-elements__dropdown-guests_with-controls
+        .form-elements__dropdown-guests_with-controls.js-form-elements__dropdown-guests_with-controls
       .form-elements__item
         -
           const richCheckboxItems = [
@@ -147,10 +150,10 @@ block content
           ]
         +checkbox-list({name: 'rich Checkbox Buttons', expandable:false, items: richCheckboxItems})
 
-    .form-elements__grid-item.form-elements__grid-column-2-3
+    .form-elements__grid-item.form-elements__grid-item_column_2-3
       -
         const reviewProps = {
-          avatar: require('/public/images/users/murad-sarafanov.png'),
+          avatar: require('/src/assets/images/users/murad-sarafanov.png'),
           name: 'Мурад Сарафанов',
           date:'5 дней назад',
           text: `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.<br> И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто<br> не жаловался из соседей.`,
@@ -158,47 +161,48 @@ block content
         }
       +review(reviewProps) 
 
-    .form-elements__grid-item.form-elements__grid-column-3
-      .form-elements__item.form-elements__item_margin_large.form-elements__item_size_medium
+    .form-elements__grid-item.form-elements__grid-item_column_3
+      .form-elements__item.form-elements__item_size_medium
         -
           const rangeSliderProps = {
             className: 'js-form-elements__range-slider',
             label: 'range slider',
             priceRange: '5 000₽ - 10 000₽',
           }
-
-        +range-slider(rangeSliderProps)
+        .form-elements__slider
+          +range-slider(rangeSliderProps)
       .form-elements__item.form-elements__item_margin_medium
         fieldset.form-elements__fieldset
           legend.form-elements__fieldset-legend= "buttons"
-          .form-elements__fieldset-row
-            +button({style:'filled', width: 'small', text: 'click me'})
-            +button({style:'filled', width: 'small', text: 'click me'}).button_hover
-          .form-elements__fieldset-row
-            +button({width: 'small', text: 'click me'})
-            +button({width: 'small', text: 'click me'}).button_hover
-          .form-elements__fieldset-row
-            +button({style:'borderless', text: 'click me'})
-            +button({style:'borderless', text: 'click me'}).button_hover
-          .form-elements__fieldset-row
-            -
-              const buttonPaymentProps = {
-                style: 'filled',
-                width: 'full',
-                arrow: true,
-                text: 'перейти к оплате',
-                href: '/mock-address.html'
-              }
-            +button(buttonPaymentProps)
+          .form-elements__fieldset-column.form-elements__fieldset-column_gap_large
+            .form-elements__fieldset-row.form-elements__fieldset-row_gap_medium
+              +button({style:'filled', width: 'small', text: 'click me'})
+              +button({style:'filled', width: 'small', text: 'click me'}).button_hovered
+            .form-elements__fieldset-row.form-elements__fieldset-row_gap_medium
+              +button({width: 'small', text: 'click me'})
+              +button({width: 'small', text: 'click me'}).button_hovered
+            .form-elements__fieldset-row.form-elements__fieldset-row_gap_medium
+              +button({style:'borderless', text: 'click me'})
+              +button({style:'borderless', text: 'click me'}).button_hovered
+            .form-elements__fieldset-row
+              -
+                const buttonPaymentProps = {
+                  style: 'filled',
+                  width: 'full',
+                  arrow: true,
+                  text: 'перейти к оплате',
+                  href: '/mock-address.html'
+                }
+              +button(buttonPaymentProps)
       .form-elements__item
         .form-elements__item-info.form-elements__item-info_margin_large
           .form-elements__item-name= "pagination"
         +pagination({currentPage:1, pagesCount:15, itemsPerPage:12})
 
-    .form-elements__grid-item.form-elements__grid-column-3
+    .form-elements__grid-item.form-elements__grid-item_column_3
       .form-elements__item.form-elements__item_margin_extra-large
         //- create container for dropdown, set properties in index.js
-        .js-form-elements__dropdown-guests_with-controls-and-values
+        .form-elements__dropdown-guests_with-controls-and-values.js-form-elements__dropdown-guests_with-controls-and-values
       .form-elements__item
         .form-elements__item-info
           .form-elements__item-name= "bullet list"

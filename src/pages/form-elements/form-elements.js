@@ -1,10 +1,9 @@
-import createCalendar from '@/components/calendar/calendar';
+import Calendar from '@/components/calendar/Calendar';
+import createRangeSlider from '@/components/range-slider/range-slider.js';
 import {
   createDropdownGuests,
   createDropdownRoomAmenity,
 } from '@/components/dropdown/create-dropdown';
-import createRangeSlider from '@/components/range-slider/range-slider.js';
-
 import '@/components/logo/logo.js';
 import '@/components/input/input.js';
 import '@/components/date-dropdown/date-dropdown.js';
@@ -19,7 +18,8 @@ import '@/components/room-advantages/room-advantages.js';
 import '@/components/pagination/pagination.js';
 import '@/components/bullet-list/bullet-list.js';
 import '@/components/review/review.js';
-import '@/styles/_common.scss';
+import '@/assets/styles/_common.scss';
+
 import './form-elements.scss';
 
 const dropdownGuests = document.querySelector('.js-form-elements__dropdown-guests');
@@ -48,21 +48,23 @@ if (dropdownGuestsWithControlsAndValues) {
     label: 'dropdown',
   });
 }
-
-createCalendar({
+const twoInputCalendar = new Calendar({
   firstInputSelector: '.js-form-elements__dropdown-arrival',
   secondInputSelector: '.js-form-elements__dropdown-departure',
   defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 19)],
-  today: 8,
+  today: new Date(2019, 7, 8),
   minDate: new Date(2019, 7, 8),
 });
 
-createCalendar({
+twoInputCalendar.render();
+
+const singleInputCalendar = new Calendar({
   singleInputSelector: '.js-form-elements__dropdown-single',
   defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 23)],
-  today: 8,
+  today: new Date(2019, 7, 8),
   minDate: new Date(2019, 7, 8),
 });
+singleInputCalendar.render();
 
 const dropdownRoomAmenity = document.querySelector('.js-form-elements__dropdown-room-amenity');
 

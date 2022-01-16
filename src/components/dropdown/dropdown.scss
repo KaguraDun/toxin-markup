@@ -36,10 +36,8 @@
     }
   }
 
-  &__button-icon {
-    @include button-icon;
-
-    @include expand-icon;
+  &__button-icon_style_expand-more {
+    @include icon-expand-more;
   }
 
   &__items {
@@ -97,58 +95,58 @@
   &:active {
     border-color: $dark50;
   }
-}
 
-.button-plus,
-.button-minus {
-  width: rem(30px);
-  height: rem(30px);
-  color: $dark50;
-  background: transparent;
-  border: 1px solid $dark25;
-  border-radius: 50%;
-  cursor: pointer;
-
-  @include font-montserrat(rem(18px), rem(22px));
-
-  &:disabled {
-    opacity: .38;
-  }
-
-  &:hover {
-    border: 1px solid $dark50;
-  }
-}
-
-.button_hidden {
-  visibility: hidden;
-}
-
-.button-plus {
-
-  &::after {
-    content: '+';
-  }
-}
-
-.button-minus {
-
-  &::after {
-    content: '-';
-  }
-}
-
-.button-widget {
-  padding: 0;
-  color: $purple;
-  text-transform: uppercase;
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-
-  @include font-montserrat(rem(12px), rem(15px), bold);
-
-  &:hover {
+  &__button-plus,
+  &__button-minus {
+    width: rem(30px);
+    height: rem(30px);
     color: $dark50;
+    background: transparent;
+    border: 1px solid $dark25;
+    border-radius: 50%;
+    cursor: pointer;
+
+    @include font-montserrat(rem(18px), rem(22px));
+
+    &:disabled {
+      opacity: .38;
+    }
+
+    &:hover {
+      border: 1px solid $dark50;
+    }
+  }
+
+  &__button-plus {
+
+    &::after {
+      content: '+';
+    }
+  }
+
+  &__button-minus {
+
+    &::after {
+      content: '-';
+    }
+  }
+
+  &__button_hidden {
+    visibility: hidden;
+  }
+
+  &__button-widget {
+    padding: 0;
+    color: $purple;
+    text-transform: uppercase;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+
+    @include font-montserrat(rem(12px), rem(15px), bold);
+
+    &:hover {
+      color: $dark50;
+    }
   }
 }

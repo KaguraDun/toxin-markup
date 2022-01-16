@@ -12,19 +12,29 @@
 include /components/input-checkbox/input-checkbox.pug
 
 mixin checkbox-list({ name, expandable=false, expanded=true, items })
-  - const expandModifier = "checkbox-list__items_expand";
-  - const rotateModifier = "checkbox-list__icon_rotate";
-  - const itemsStyles = `checkbox-list__items ${expanded ? expandModifier : ""}`;
-  - const iconStyles = `checkbox-list__icon ${expanded ? rotateModifier : ""}`;
+  -
+    const itemClassNames = {
+      'checkbox-list__items':true,
+      'js-checkbox-list__items':true,
+      'checkbox-list__items_expanded':expanded,
 
-  .checkbox-list
+    }
+  -
+    const iconClassNames = {
+      'checkbox-list__icon' : true,
+      'js-checkbox-list__icon' : true,
+      'checkbox-list__icon_style_expand' : (expanded ? false: true),
+      'checkbox-list__icon_style_expand-less' : (expanded ? true : false),
+    }
+
+  .checkbox-list.js-checkbox-list
     if expandable
-      button.checkbox-list__button(type='button')
+      button.checkbox-list__button.js-checkbox-list__button(type='button')
         span.checkbox-list__name!= name
-        span(class=iconStyles)
+        span(class=iconClassNames)
     else
       .checkbox-list__name!= name
 
-    fieldset(class=itemsStyles)
+    fieldset(class=itemClassNames)
       each item in items
         +input-checkbox(item)

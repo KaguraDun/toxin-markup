@@ -20,13 +20,13 @@
   &__number {
     color: $dark100;
 
-    &_compact {
+    &_size_compact {
       margin-right: rem(8px);
 
       @include font-montserrat(rem(19px), rem(23px), bold);
     }
 
-    &_normal {
+    &_size_normal {
       margin-right: rem(8px);
 
       @include font-montserrat-h1;

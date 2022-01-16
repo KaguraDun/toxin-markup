@@ -16,8 +16,7 @@ mixin book-room({roomInfo, priceList, totalSum})
         }
     .book-room__date-dropdown
       +date-dropdown(dateDropdownProps)
-    .book-room__dropdown-guests
-      .js-book-room__dropdown-guests
+    .book-room__dropdown-guests.js-book-room__dropdown-guests
     ul.book-room__price-list
       each item in priceList
         li.book-room__item
@@ -26,7 +25,7 @@ mixin book-room({roomInfo, priceList, totalSum})
             -
               const itemNameClassNames = {
                 "book-room__item-name": true,
-                "book-room__item-name_multiline": hasNewLines,
+                "book-room__item-name_style_multiline": hasNewLines,
               }
             span(class=itemNameClassNames)!= item.name
             if item.about

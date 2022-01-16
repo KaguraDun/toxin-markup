@@ -1,0 +1,21 @@
+//- available properties:
+  url: string;
+  text: string;
+  innerItems { url: string, text: string }[];
+  fontSize: normal | big
+
+mixin link({url, text, selected=false, innerItems=[], fontSize = 'normal'})
+  -
+    const linkFontSizes = {
+      normal: 'link_font-size_normal',
+      big: 'link_font-size_big',
+    }
+  - const isExpandable = innerItems.length > 0;
+    if innerItems.length > 0
+      .link__dropdown #{ text }
+        ul.link__items
+          each item in innerItems
+            li.link__item
+              a.link(href=item.url) #{ item.text }
+    else
+      a(class={ link: true, link_selected: selected, [linkFontSizes[fontSize]]: true }, href=url) #{ text }

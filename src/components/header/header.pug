@@ -1,19 +1,74 @@
 include /components/logo/logo.pug
-include /components/header-nav/header-nav.pug
+include /components/link/link.pug
 include /components/button/button.pug
 
 mixin header({isLogged=false})
-  header.header
+  header.header.js-header
     .header__container
       .header__left-col
         h1.header__logo
           +logo({style:'colored'})
-      button.header__burger
-        span.header__burger-line.header__burger-line-1
-        span.header__burger-line.header__burger-line-2
-        span.header__burger-line.header__burger-line-3
+      button.header__burger.js-header__burger
+        span.header__burger-line.header__burger-line_position_1
+        span.header__burger-line.header__burger-line_position_2
+        span.header__burger-line.header__burger-line_position_3
       .header__right-col
-        +header-nav
+        -
+          const navItems = [
+            {
+              url: '/mock-address.html',
+              text: 'О наc',
+            },
+            {
+              url: '/mock-address.html',
+              text: 'Услуги',
+              innerItems: [
+                {
+                  url: '/mock-address.html',
+                  text: 'Услуга 1',
+                },
+                {
+                  url: '/mock-address.html',
+                  text: 'Услуга 2',
+                },
+                {
+                  url: '/mock-address.html',
+                  text: 'Услуга 3',
+                },
+              ],
+            },
+            {
+              url: '/mock-address.html',
+              text: 'Вакансии',
+            },
+            {
+              url: '/mock-address.html',
+              text: 'Новости',
+            },
+            {
+              url: '/mock-address.html',
+              text: 'Соглашения',
+              innerItems: [
+                {
+                  url: '/mock-address.html',
+                  text: 'Соглашение 1',
+                },
+                {
+                  url: '/mock-address.html',
+                  text: 'Соглашение 2',
+                },
+                {
+                  url: '/mock-address.html',
+                  text: 'Соглашение 3',
+                },
+              ],
+            },
+          ]
+        nav.header__nav
+          ul.header__nav-list
+            each item in navItems
+              li.header__nav-item
+                +link(item)
 
         if isLogged
           .header__vertical-line

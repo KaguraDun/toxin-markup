@@ -1,6 +1,6 @@
 import noUiSlider from 'nouislider';
-
 import 'nouislider/dist/nouislider.css';
+
 import './range-slider.scss';
 
 function createRangeSlider(sliderName) {

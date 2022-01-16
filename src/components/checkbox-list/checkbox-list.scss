@@ -17,27 +17,27 @@
     @include font-montserrat-h3();
   }
 
-  &__button > &__name {
+  &__button &__name {
     margin: 2px 0 0;
   }
 
-  &__icon {
-    @include button-icon;
+  &__icon_style_expand {
+    @include icon-expand-more;
+  }
 
-    @include expand-icon;
+  &__icon_style_expand-less {
+    @include icon-expand-less;
   }
 
   &__items {
     display: none;
 
     @include fieldset;
-
-    & > .input-checkbox__label {
-      margin-bottom: rem(10px);
-    }
   }
 
-  &__items_expand {
-    display: block;
+  &__items_expanded {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10px);
   }
 }

@@ -2,7 +2,7 @@
   background-color: $white;
 
   &__logo {
-    max-width: $desktop;
+    max-width: rem($desktop-large);
     margin: 0 auto;
   }
 
@@ -26,21 +26,21 @@
     width: 100%;
   }
 
-  &__grid-column {
+  &__grid-item_column {
 
-    &-1 {
+    &_1 {
       grid-column: 1;
     }
 
-    &-2 {
+    &_2 {
       grid-column: 3;
     }
 
-    &-2-3 {
+    &_2-3 {
       grid-column: 3/6;
     }
 
-    &-3 {
+    &_3 {
       grid-column: 5;
     }
   }
@@ -57,7 +57,7 @@
     }
 
     &_margin_largest {
-      margin-bottom: rem(100px);
+      margin-bottom: rem(150px);
     }
 
     &_margin_extra-large {
@@ -91,10 +91,7 @@
 
     &-wrapper {
       display: flex;
-    }
-
-    &-wrapper > .button-rate__fieldset:first-child {
-      margin-right: rem(20px);
+      gap: 20px;
     }
 
     &_size_medium {
@@ -105,37 +102,33 @@
   &__fieldset {
     @include fieldset;
 
+    &-column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-column_gap_small {
+      gap: rem(10px);
+    }
+
+    &-column_gap_large {
+      gap: rem(30px);
+    }
+
     &-row {
       display: flex;
     }
 
-    &-row:not(:last-of-type) {
-      margin-bottom: rem(30px);
+    &-row_gap_small {
+      gap: rem(10px);
     }
 
-    &-row > .button:not(:last-of-type) {
-      margin-right: rem(19px);
+    &-row_gap_medium {
+      gap: rem(20px);
     }
 
-    & > .input-checkbox__label,
-    & > .input-toggle__label {
-      margin-bottom: rem(10px);
+    &__slider {
+      padding: 10px;
     }
-
-    &_row {
-      display: flex;
-    }
-
-    &_row > .input-radio__label:not(:last-of-type) {
-      margin-right: rem(20px);
-    }
-
-    &_row > .button-like:not(:last-of-type) {
-      margin-right: rem(10px);
-    }
-  }
-
-  .slider {
-    padding: 10px;
   }
 }
