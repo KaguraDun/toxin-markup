@@ -16,8 +16,7 @@ mixin book-room({roomInfo, priceList, totalSum})
         }
     .book-room__date-dropdown
       +date-dropdown(dateDropdownProps)
-    .book-room__dropdown-guests
-      .js-book-room__dropdown-guests
+    .book-room__dropdown-guests.js-book-room__dropdown-guests
     ul.book-room__price-list
       each item in priceList
         li.book-room__item

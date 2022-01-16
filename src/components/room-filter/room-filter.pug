@@ -11,8 +11,7 @@ mixin room-filter
           dropdownClass: 'js-room-filter__date-dropdown',
         }
       +date-dropdown(dateDropdownProps)
-    .room-filter__dropdown-guests
-      .js-room-filter__dropdown-guests
+    .room-filter__dropdown-guests.js-room-filter__dropdown-guests
     .room-filter__range-slider
       -
         const rangeSliderProps = {
@@ -46,8 +45,7 @@ mixin room-filter
           ]
         }
       +checkbox-list(richCheckboxListProps)
-    .room-filter__dropdown-room-amenity
-      .js-room-filter__dropdown-room-amenity
+    .room-filter__dropdown-room-amenity.js-room-filter__dropdown-room-amenity
     .room-filter__expandable-checkbox-list
       -
         const expandableCheckboxListProps = {
