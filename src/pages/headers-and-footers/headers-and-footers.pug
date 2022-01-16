@@ -7,17 +7,25 @@ block baseVariables
 include /components/logo/logo.pug
 include /components/header/header.pug
 include /components/footer/footer.pug
+include /components/copyright/copyright.pug
+include /components/socials/socials.pug
 
 block content
   .headers-and-footers__logo
     .headers-and-footers__logo-icon
       +logo({style:'gray'})
   .headers-and-footers__header-first
-    - isLogged = false;
     +header({isLogged:false})
   .headers-and-footers__header-second
     +header({isLogged:true})
   .headers-and-footers__footer
     +footer
-  .headers-and-footers__footer-creative
-    +footer
+  .headers-and-footers__footer-creative-wrapper
+    footer.headers-and-footers__footer-creative
+      .headers-and-footers__footer-creative__copyright
+        .headers-and-footers__footer-creative__copyright-logo
+          +logo({style:'colored'})
+        .headers-and-footers__footer-creative__copyright-text
+          +copyright
+        +socials
+
