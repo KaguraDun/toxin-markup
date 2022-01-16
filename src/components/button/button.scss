@@ -50,7 +50,7 @@
     background: $primary-gradient;
 
     &.button:hover,
-    &.button_hover {
+    &.button_hovered {
       background: $primary-gradient_hover;
     }
   }
@@ -78,7 +78,7 @@
     }
 
     &.button:hover,
-    &.button_hover {
+    &.button_hovered {
       color: $dark50;
     }
   }
@@ -111,7 +111,7 @@
     }
 
     &.button:hover,
-    &.button_hover {
+    &.button_hovered {
       background: $secondary-gradient_hover;
     }
   }
