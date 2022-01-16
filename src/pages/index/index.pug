@@ -5,29 +5,53 @@ block baseVariables
   - const bodyClass = "pages";
 
 include /components/logo/logo.pug
+include /components/link/link.pug
 
 block content
   section.pages__container
     .pages__logo
       .pages__logo-icon
-        +logo({style:'colored'}) 
+        +logo({style:'colored'})
+    -
+      const citePages = [
+        {
+          url: 'landing-page.html',
+          text: 'Landing page',
+        },
+        {
+          url: 'search-room.html',
+          text: 'Search room',
+        },
+        {
+          url: 'room-details.html',
+          text: 'Room details',
+        },
+        {
+          url: 'sign-in.html',
+          text: 'Sign-in',
+        },
+        {
+          url: 'registration.html',
+          text: 'Registration',
+        },
+        {
+          url: 'colors-and-type.html',
+          text: 'Colors and type',
+        },
+        {
+          url: 'cards.html',
+          text: 'Form elements',
+        },
+        {
+          url: 'form-elements.html',
+          text: 'Cards',
+        },
+        {
+          url: 'headers-and-footers.html',
+          text: 'Headers and footers',
+        },
+      ]
 
     ul.pages__list
-      li.pages__item
-        a.pages__link(href='landing-page.html')= "Landing page"
-      li.pages__item
-        a.pages__link(href='search-room.html')= "Search room"
-      li.pages__item
-        a.pages__link(href='room-details.html')= "Room details"
-      li.pages__item
-        a.pages__link(href='sign-in.html')= "Sign-in"
-      li.pages__item
-        a.pages__link(href='registration.html')= "Registration"
-      li.pages__item
-        a.pages__link(href='colors-and-type.html')= "Colors and type"
-      li.pages__item
-        a.pages__link(href='form-elements.html')= "Form elements"
-      li.pages__item
-        a.pages__link(href='cards.html')= "Cards"
-      li.pages__item
-        a.pages__link(href='headers-and-footers.html')= "Headers and footers"
+      each item in citePages
+        +link({url: item.url, text: item.text, fontSize: 'big'})
