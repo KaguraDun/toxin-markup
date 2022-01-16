@@ -16,5 +16,6 @@ mixin review({ avatar, name, date, text, likesNumber, isLikePressed=true })
         p.review__name= name
         p.review__date= date
     .review__info
-      +button-like({likesNumber, isPressed:isLikePressed})
+      .review__button-like
+        +button-like({likesNumber, isPressed:isLikePressed})
       p.review__text!= text
