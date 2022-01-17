@@ -1,4 +1,4 @@
-import createChart from '@/components/room-impressions/room-impressions.js';
+import ChartPlugin from '@/components/chart-plugin/ChartPlugin';
 import '@/components/header/header.js';
 import '@/components/room-advantages/room-advantages.js';
 import '@/components/book-room/book-room.js';
@@ -10,8 +10,11 @@ import '@/assets/styles/_common.scss';
 import './room-details.scss';
 
 (() => {
-  createChart({
-    selector: '.js-room-details-page__room-impressions',
+  const chartContainer = document.querySelector('.js-room-details-page__chart');
+
+  const chart = new ChartPlugin({
+    container: chartContainer,
     values: [0, 65, 65, 130],
   });
+  chart.render();
 })();

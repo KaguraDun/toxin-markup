@@ -6,7 +6,7 @@ block baseVariables
 
 include /components/header/header.pug
 include /components/room-advantages/room-advantages.pug
-include /components/room-impressions/room-impressions.pug
+include /components/chart-plugin/chart-plugin.pug
 include /components/book-room/book-room.pug
 include /components/review-list/review-list.pug
 include /components/bullet-list/bullet-list.pug
@@ -40,8 +40,8 @@ block content
             { info: 'cosiness', underline: false },
           ]
         +room-advantages({items: roomAdvantagesProps})
-      .room-details-page__room-impressions
-        +room-impressions({className: 'js-room-details-page__room-impressions'})
+      .room-details-page__chart.js-room-details-page__chart
+        +chart-plugin
       .room-details-page__book-room
         -
           const bookRoomProps = {
