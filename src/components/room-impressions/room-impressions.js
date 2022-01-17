@@ -82,22 +82,6 @@ function createChart({ selector, values }) {
           display: false,
         },
       },
-      scales: {
-        xAxes: [
-          {
-            gridLines: {
-              display: false,
-            },
-          },
-        ],
-        yAxes: [
-          {
-            gridLines: {
-              display: false,
-            },
-          },
-        ],
-      },
       cutout: '90%',
       responsive: true,
       maintainAspectRatio: false,
