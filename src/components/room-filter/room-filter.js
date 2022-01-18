@@ -35,6 +35,7 @@ import './room-filter.scss';
       element: dropdownRoomAmenity,
       label: 'удобства номера',
       values: [2, 2, 1],
+      controls: false,
     });
   }
 
