@@ -1,6 +1,7 @@
 include /components/logo/logo.pug
 include /components/link/link.pug
 include /components/button/button.pug
+include /components/button-burger/button-burger.pug
 
 mixin header({isLogged=false})
   header.header.js-header
@@ -8,10 +9,8 @@ mixin header({isLogged=false})
       .header__left-col
         h1.header__logo
           +logo({style:'colored'})
-      button.header__burger.js-header__burger
-        span.header__burger-line.header__burger-line_position_1
-        span.header__burger-line.header__burger-line_position_2
-        span.header__burger-line.header__burger-line_position_3
+      .header__burger.js-header__burger
+        +button-burger
       .header__right-col
         -
           const navItems = [

@@ -1,0 +1,53 @@
+.button-burger {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  padding: rem(20px);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+
+  @media (max-width: $tablet) {
+    display: flex;
+  }
+
+  &__line {
+    width: rem(35px);
+    height: 2px;
+    background: $purple;
+    transition: transform .75s ease, opacity .75s ease;
+  }
+
+  &__line_position_1 {
+    transform: rotate(0);
+    transform-origin: top left;
+  }
+
+  &__line_position_2 {
+    opacity: 1;
+  }
+
+  &__line_position_3 {
+    transform: rotate(0);
+    transform-origin: bottom left;
+  }
+
+  &_open {
+    position: fixed;
+
+    .button-burger__line_position_1 {
+      transform: rotate(45deg);
+      transform-origin: top left;
+    }
+
+    .button-burger__line_position_2 {
+      opacity: 0;
+    }
+
+    .button-burger__line_position_3 {
+      transform: rotate(-45deg);
+      transform-origin: bottom left;
+    }
+  }
+}

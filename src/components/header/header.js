@@ -1,3 +1,4 @@
+import ButtonBurger from '@/components/button-burger/ButtonBurger';
 import '@/components/logo/logo.js';
 import '@/components/link/link.js';
 import '@/components/button/button.js';
@@ -5,17 +6,11 @@ import '@/components/button/button.js';
 import './header.scss';
 
 (() => {
-  const burgerMenu = document.querySelector('.js-header__burger');
+  const burgerMenuElement = document.querySelector('.js-header__burger');
+  const header = document.querySelector('.js-header');
 
-  function handleBurgerMenuClick() {
-    const openModifier = 'header__burger_open';
-    const header = document.querySelector('.js-header');
+  if (!burgerMenuElement || !header) return;
 
-    header.classList.toggle(openModifier);
-    burgerMenu.classList.toggle(openModifier);
-  }
-
-  if (burgerMenu) {
-    burgerMenu.addEventListener('click', handleBurgerMenuClick);
-  }
+  const burgerMenu = new ButtonBurger(burgerMenuElement, header);
+  burgerMenu.addEventListener();
 })();
