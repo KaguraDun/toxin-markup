@@ -50,9 +50,8 @@ class Calendar {
       onOpen(dateObj, dateStr, instance) {
         Calendar.hideExternalNextMonthDays(instance);
       },
-      onReady(dateObj, dateStr, instance) {
+      onReady: (dateObj, dateStr, instance) => {
         const isTodayValidDate = this.today && this.today instanceof Date;
-
         if (isTodayValidDate) {
           instance.now = this.today;
           instance.redraw();

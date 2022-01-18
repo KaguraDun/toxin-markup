@@ -1,11 +1,11 @@
 import Calendar from '@/components/calendar/Calendar';
-import createRangeSlider from '@/components/range-slider/range-slider.js';
+import RangeSlider from '@/components/range-slider/RangeSlider';
+import CheckboxList from '@/components/checkbox-list/CheckboxList';
 import {
   createDropdownGuests,
   createDropdownRoomAmenity,
 } from '@/components/dropdown/create-dropdown';
 import '@/components/date-dropdown/date-dropdown.js';
-import '@/components/checkbox-list/checkbox-list.js';
 
 import './room-filter.scss';
 
@@ -19,20 +19,31 @@ import './room-filter.scss';
   calendar.render();
 
   const dropdownGuests = document.querySelector('.js-room-filter__dropdown-guests');
-
   if (dropdownGuests) {
     createDropdownGuests({ element: dropdownGuests, label: 'гости', values: [3, 0, 1] });
   }
 
-  createRangeSlider('js-room-filter__range-slider');
+  const sliderContainer = document.querySelector('.js-room-filter__range-slider');
+  if (sliderContainer) {
+    const rangeSlider = new RangeSlider(sliderContainer);
+    rangeSlider.create();
+  }
 
   const dropdownRoomAmenity = document.querySelector('.js-room-filter__dropdown-room-amenity');
-
   if (dropdownRoomAmenity) {
     createDropdownRoomAmenity({
       element: dropdownRoomAmenity,
       label: 'удобства номера',
       values: [2, 2, 1],
+      controls: false,
+    });
+  }
+
+  const checkboxLists = document.querySelectorAll('.js-room-filter__checkbox-list');
+  if (checkboxLists.length > 0) {
+    checkboxLists.forEach((container) => {
+      const checkboxList = new CheckboxList(container);
+      checkboxList.addEventListener();
     });
   }
 })();

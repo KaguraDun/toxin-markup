@@ -39,7 +39,7 @@
 
   &__container {
     display: grid;
-    grid-template-areas: 'advantages impressions book-room'
+    grid-template-areas: 'advantages chart book-room'
       'reviews reviews book-room'
       'rules cancel-text .';
     grid-template-rows: repeat(3, auto);
@@ -65,8 +65,8 @@
     @include font-montserrat-h2;
   }
 
-  &__room-impressions {
-    grid-area: impressions;
+  &__chart {
+    grid-area: chart;
   }
 
   &__book-room {
@@ -97,7 +97,7 @@
 
     &__container {
       grid-template-areas: 'advantages book-room'
-        'impressions book-room'
+        'chart book-room'
         'reviews reviews'
         'rules cancel-text';
       grid-template-rows: repeat(4, auto);
@@ -110,7 +110,7 @@
 
     &__container {
       grid-template-areas: 'advantages'
-        'impressions'
+        'chart'
         'book-room'
         'reviews'
         'rules'

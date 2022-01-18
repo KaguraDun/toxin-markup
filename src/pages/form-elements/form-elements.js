@@ -1,5 +1,6 @@
 import Calendar from '@/components/calendar/Calendar';
-import createRangeSlider from '@/components/range-slider/range-slider.js';
+import RangeSlider from '@/components/range-slider/RangeSlider';
+import CheckboxList from '@/components/checkbox-list/CheckboxList';
 import {
   createDropdownGuests,
   createDropdownRoomAmenity,
@@ -13,7 +14,6 @@ import '@/components/input-toggle/input-toggle.js';
 import '@/components/button/button.js';
 import '@/components/button-like/button-like.js';
 import '@/components/button-rate/button-rate.js';
-import '@/components/checkbox-list/checkbox-list.js';
 import '@/components/room-advantages/room-advantages.js';
 import '@/components/pagination/pagination.js';
 import '@/components/bullet-list/bullet-list.js';
@@ -48,6 +48,7 @@ if (dropdownGuestsWithControlsAndValues) {
     label: 'dropdown',
   });
 }
+
 const twoInputCalendar = new Calendar({
   firstInputSelector: '.js-form-elements__dropdown-arrival',
   secondInputSelector: '.js-form-elements__dropdown-departure',
@@ -55,7 +56,6 @@ const twoInputCalendar = new Calendar({
   today: new Date(2019, 7, 8),
   minDate: new Date(2019, 7, 8),
 });
-
 twoInputCalendar.render();
 
 const singleInputCalendar = new Calendar({
@@ -85,4 +85,16 @@ if (dropdownRoomAmenityExpanded) {
   });
 }
 
-createRangeSlider('js-form-elements__range-slider');
+const sliderContainer = document.querySelector('.js-form-elements__range-slider');
+if (sliderContainer) {
+  const rangeSlider = new RangeSlider(sliderContainer);
+  rangeSlider.create();
+}
+
+const checkboxLists = document.querySelectorAll('.js-form-elements__checkbox-list');
+if (checkboxLists.length > 0) {
+  checkboxLists.forEach((element) => {
+    const checkboxList = new CheckboxList(element);
+    checkboxList.addEventListener();
+  });
+}
