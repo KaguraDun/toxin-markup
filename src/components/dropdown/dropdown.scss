@@ -27,6 +27,8 @@
     background: $white;
     border: 1px solid $dark25;
     border-radius: 2px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
     cursor: pointer;
 
     @include font-montserrat-body();
@@ -51,6 +53,7 @@
     list-style-type: none;
     background: $white;
     border: 1px solid $dark50;
+    border-top: 0;
     border-bottom-right-radius: 2px;
     border-bottom-left-radius: 2px;
     box-shadow: 0px 10px 20px 0px $dark5;
