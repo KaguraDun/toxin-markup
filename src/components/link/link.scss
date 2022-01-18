@@ -22,35 +22,46 @@
     position: relative;
     border-radius: 4px;
     cursor: pointer;
+  }
+
+  &__dropdown-button {
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
 
     &::after {
       @include font-material-icons('expand_more');
     }
+
+    &-icon_expanded-less::after {
+      @include font-material-icons('expand_less');
+    }
   }
 
-  &__items {
+  &__dropdown-items {
     position: absolute;
     top: rem(25px);
     right: 0;
     display: none;
+    display: none;
+    flex-direction: column;
+    align-items: center;
     width: 110%;
-    -webkit-text-stroke: 0;
     background: $white;
+    -webkit-text-stroke: 0;
 
     @include clear-ul-style;
+
+    &_visible {
+      display: flex;
+    }
   }
 
   &__dropdown:hover {
     -webkit-text-stroke: 1px $dark75;
-
-    .link__items {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-
-  &__dropdown:hover.link__dropdown::after {
-    @include font-material-icons('expand_less');
   }
 }
