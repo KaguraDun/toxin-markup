@@ -1,5 +1,5 @@
 import Calendar from '@/components/calendar/Calendar';
-import createRangeSlider from '@/components/range-slider/range-slider.js';
+import RangeSlider from '@/components/range-slider/RangeSlider';
 import {
   createDropdownGuests,
   createDropdownRoomAmenity,
@@ -19,15 +19,17 @@ import './room-filter.scss';
   calendar.render();
 
   const dropdownGuests = document.querySelector('.js-room-filter__dropdown-guests');
-
   if (dropdownGuests) {
     createDropdownGuests({ element: dropdownGuests, label: 'гости', values: [3, 0, 1] });
   }
 
-  createRangeSlider('js-room-filter__range-slider');
+  const sliderContainer = document.querySelector('.js-room-filter__range-slider');
+  if (sliderContainer) {
+    const rangeSlider = new RangeSlider(sliderContainer);
+    rangeSlider.create();
+  }
 
   const dropdownRoomAmenity = document.querySelector('.js-room-filter__dropdown-room-amenity');
-
   if (dropdownRoomAmenity) {
     createDropdownRoomAmenity({
       element: dropdownRoomAmenity,

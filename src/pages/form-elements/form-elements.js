@@ -1,5 +1,5 @@
 import Calendar from '@/components/calendar/Calendar';
-import createRangeSlider from '@/components/range-slider/range-slider.js';
+import RangeSlider from '@/components/range-slider/RangeSlider';
 import {
   createDropdownGuests,
   createDropdownRoomAmenity,
@@ -48,6 +48,7 @@ if (dropdownGuestsWithControlsAndValues) {
     label: 'dropdown',
   });
 }
+
 const twoInputCalendar = new Calendar({
   firstInputSelector: '.js-form-elements__dropdown-arrival',
   secondInputSelector: '.js-form-elements__dropdown-departure',
@@ -55,7 +56,6 @@ const twoInputCalendar = new Calendar({
   today: new Date(2019, 7, 8),
   minDate: new Date(2019, 7, 8),
 });
-
 twoInputCalendar.render();
 
 const singleInputCalendar = new Calendar({
@@ -85,4 +85,8 @@ if (dropdownRoomAmenityExpanded) {
   });
 }
 
-createRangeSlider('js-form-elements__range-slider');
+const sliderContainer = document.querySelector('.js-form-elements__range-slider');
+if (sliderContainer) {
+  const rangeSlider = new RangeSlider(sliderContainer);
+  rangeSlider.create();
+}
