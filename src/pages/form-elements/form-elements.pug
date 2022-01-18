@@ -89,9 +89,11 @@ block content
             { text: "Телевизор", checked: false },
             { text: "Шампунь", checked: false },
           ]
-        +checkbox-list({ name: 'expandable checkbox list', expandable: true, expanded: false, items: checkboxListItems })
+        .form-elements__checkbox-list.js-form-elements__checkbox-list
+          +checkbox-list({ name: 'expandable checkbox list', expandable: true, expanded: false, items: checkboxListItems })
       .form-elements__item.form-elements__item_size_medium
-        +checkbox-list({ name: 'expandable checkbox list', expandable: true, expanded: true, items: checkboxListItems })
+        .form-elements__checkbox-list.js-form-elements__checkbox-list
+          +checkbox-list({ name: 'expandable checkbox list', expandable: true, expanded: true, items: checkboxListItems })
 
     .form-elements__grid-item.form-elements__grid-item_column_1
       .form-elements__item
@@ -110,7 +112,8 @@ block content
             { text: 'Можно с питомцами', checked:true },
             { text: 'Можно пригласить гостей<br> (до 10 человек)', checked:true },
           ]
-        +checkbox-list({name:'checkbox buttons', expandable:false, items:checkboxButtonsItems})
+        .form-elements__checkbox-list.js-form-elements__checkbox-list
+          +checkbox-list({name:'checkbox buttons', expandable:false, items:checkboxButtonsItems})
       .form-elements__item.form-elements__item_margin_medium
         fieldset.form-elements__fieldset
           legend.form-elements__fieldset-legend= "radio buttons"
@@ -148,7 +151,8 @@ block content
              info:'На 1 этаже вас встретит специалист<br>  и проводит до номера.'
             },
           ]
-        +checkbox-list({name: 'rich Checkbox Buttons', expandable:false, items: richCheckboxItems})
+        .form-elements__checkbox-list.js-form-elements__checkbox-list
+          +checkbox-list({name: 'rich Checkbox Buttons', expandable:false, items: richCheckboxItems})
 
     .form-elements__grid-item.form-elements__grid-item_column_2-3
       -

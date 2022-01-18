@@ -1,5 +1,6 @@
 import Calendar from '@/components/calendar/Calendar';
 import RangeSlider from '@/components/range-slider/RangeSlider';
+import CheckboxList from '@/components/checkbox-list/CheckboxList';
 import {
   createDropdownGuests,
   createDropdownRoomAmenity,
@@ -13,7 +14,6 @@ import '@/components/input-toggle/input-toggle.js';
 import '@/components/button/button.js';
 import '@/components/button-like/button-like.js';
 import '@/components/button-rate/button-rate.js';
-import '@/components/checkbox-list/checkbox-list.js';
 import '@/components/room-advantages/room-advantages.js';
 import '@/components/pagination/pagination.js';
 import '@/components/bullet-list/bullet-list.js';
@@ -89,4 +89,12 @@ const sliderContainer = document.querySelector('.js-form-elements__range-slider'
 if (sliderContainer) {
   const rangeSlider = new RangeSlider(sliderContainer);
   rangeSlider.create();
+}
+
+const checkboxLists = document.querySelectorAll('.js-form-elements__checkbox-list');
+if (checkboxLists.length > 0) {
+  checkboxLists.forEach((element) => {
+    const checkboxList = new CheckboxList(element);
+    checkboxList.addEventListener();
+  });
 }

@@ -1,11 +1,11 @@
 import Calendar from '@/components/calendar/Calendar';
 import RangeSlider from '@/components/range-slider/RangeSlider';
+import CheckboxList from '@/components/checkbox-list/CheckboxList';
 import {
   createDropdownGuests,
   createDropdownRoomAmenity,
 } from '@/components/dropdown/create-dropdown';
 import '@/components/date-dropdown/date-dropdown.js';
-import '@/components/checkbox-list/checkbox-list.js';
 
 import './room-filter.scss';
 
@@ -35,6 +35,14 @@ import './room-filter.scss';
       element: dropdownRoomAmenity,
       label: 'удобства номера',
       values: [2, 2, 1],
+    });
+  }
+
+  const checkboxLists = document.querySelectorAll('.js-room-filter__checkbox-list');
+  if (checkboxLists.length > 0) {
+    checkboxLists.forEach((container) => {
+      const checkboxList = new CheckboxList(container);
+      checkboxList.addEventListener();
     });
   }
 })();
