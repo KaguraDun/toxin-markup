@@ -155,7 +155,6 @@ module.exports = {
     modules: [paths.src, 'node_modules'],
     extensions: ['.pug', '.js', '.json'],
     alias: {
-      '@': paths.src,
       '@/assets': paths.assets,
       '@/components': `${paths.src}/components`,
       '@/helpers': `${paths.src}/helpers`,

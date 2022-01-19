@@ -18,7 +18,7 @@ import '@/components/room-advantages/room-advantages.js';
 import '@/components/pagination/pagination.js';
 import '@/components/bullet-list/bullet-list.js';
 import '@/components/review/review.js';
-import '@/assets/styles/_common.scss';
+import '@/styles/_common.scss';
 
 import './form-elements.scss';
 

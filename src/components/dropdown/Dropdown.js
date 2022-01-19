@@ -1,4 +1,4 @@
-import getDeclension from '@/assets/helpers/get-declension';
+import getDeclension from '@/helpers/get-declension';
 
 import './dropdown.scss';
 
