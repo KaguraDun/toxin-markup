@@ -15,7 +15,7 @@ module.exports = merge(common, {
   // Spin up a server for quick development
   devServer: {
     historyApiFallback: true,
-    static: [paths.public, paths.src],
+    static: [paths.assets, paths.src],
     open: true,
     compress: true,
     hot: true,
