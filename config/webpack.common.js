@@ -59,7 +59,7 @@ module.exports = {
     ...PAGE_FOLDERS.map(
       (page) =>
         new HtmlWebpackPlugin({
-          favicon: `${paths.public}/images/favicon-32x32.png`,
+          favicon: `${paths.assets}/images/favicon-32x32.png`,
           chunks: [page],
           template: `${PAGES_DIR}/${page}/${page}`,
           filename: `${page}.html`,
@@ -156,16 +156,11 @@ module.exports = {
     extensions: ['.pug', '.js', '.json'],
     alias: {
       '@': paths.src,
+      '@/assets': paths.assets,
       '@/components': `${paths.src}/components`,
       '@/helpers': `${paths.src}/helpers`,
-      '@/features': `${paths.src}/features`,
-      '@/icons': `${paths.src}/icons`,
-      '@/images': `${paths.src}/images`,
-      '@/models': `${paths.src}/models`,
       '@/layouts': `${paths.src}/layouts`,
       '@/pages': `${paths.src}/pages`,
-      '@/public': paths.public,
-      '@/services': `${paths.src}/services`,
       '@/styles': `${paths.src}/styles`,
     },
   },
