@@ -1,9 +1,11 @@
 @import 'sass-rem';
-$rem-baseline: 14px;
+
 @import './mixins/fieldset';
 @import './mixins/icons';
 @import './mixins/container';
 @import './mixins/form';
+
+$rem-baseline: 14px;
 
 @mixin font-montserrat($font-size, $line-height, $font-weight: normal) {
   font-weight: $font-weight;
