@@ -12,13 +12,13 @@
   }
 
   &__number-symbol {
-    color: $dark100;
+    color: $text-primary-darkest;
 
     @include font-montserrat(rem(14px), rem(17px), bold);
   }
 
   &__number {
-    color: $dark100;
+    color: $text-primary-darkest;
 
     &_size_compact {
       margin-right: rem(8px);
@@ -34,20 +34,20 @@
   }
 
   &__type {
-    color: $purple;
+    color: $text-tertiary;
     text-transform: uppercase;
 
     @include font-montserrat(rem(12px), rem(15px), bold);
   }
 
   &__price {
-    color: $dark50;
+    color: $text-primary-medium;
 
     @include font-montserrat(rem(14px), rem(18px), bold);
   }
 
   &__price-text {
-    color: $dark50;
+    color: $text-primary-medium;
 
     @include font-montserrat(rem(12px), rem(18px));
   }

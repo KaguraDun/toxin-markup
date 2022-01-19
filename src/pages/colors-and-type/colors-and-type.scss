@@ -1,5 +1,5 @@
 .colors-and-type {
-  background-color: $white;
+  background-color: $bg-primary;
 
   &__logo {
     max-width: rem(1440px);
@@ -67,14 +67,14 @@
     &-tag {
       min-width: rem(37px);
       margin: 0 rem(30px) 0 0;
-      color: $dark25;
+      color: $text-primary-light;
       font-weight: normal;
       text-align: right;
     }
 
     &-text {
       margin: 0;
-      color: $dark100;
+      color: $text-primary-darkest;
       white-space: break-spaces;
     }
 
@@ -83,7 +83,7 @@
     }
 
     &-text_style_body {
-      color: $dark75;
+      color: $text-primary-dark;
     }
   }
 }

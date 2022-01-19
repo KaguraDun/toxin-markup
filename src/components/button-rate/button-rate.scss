@@ -15,7 +15,7 @@
     background-size: rem(24px) auto;
 
     &:focus-within {
-      outline: 1px solid $purple;
+      outline: 1px solid $border-tertiary;
       outline-offset: 4px;
     }
   }

@@ -8,7 +8,7 @@
 
   &__heading {
     margin: 4px 0 rem(21px);
-    color: $dark100;
+    color: $text-primary-darkest;
     text-transform: uppercase;
 
     @include font-montserrat(rem(12px), rem(15px), bold);

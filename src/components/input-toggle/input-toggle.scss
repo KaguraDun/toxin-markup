@@ -16,7 +16,7 @@
     width: rem(40px);
     height: rem(18px);
     margin-right: rem(10px);
-    border: 1px solid $dark25;
+    border: 1px solid $border-primary-light;
     border-radius: rem(10px);
     cursor: pointer;
     transition: .4s;
@@ -27,7 +27,7 @@
       left: 10%;
       width: rem(12px);
       height: rem(12px);
-      background: $dark25;
+      background: $bg-secondary;
       border-radius: 50%;
       transform: translate(-10%, -50%);
       transition: .4s;
@@ -36,23 +36,23 @@
   }
 
   &:checked + &__icon {
-    border: 1px solid $purple;
+    border: 1px solid $border-tertiary;
   }
 
   &:checked + &__icon::before {
-    background: $primary-gradient;
+    background: $gradient-primary;
     transform: translate(180%, -50%);
   }
 
   &:focus + &__icon {
-    box-shadow: 0 0 0 2px $purple;
+    box-shadow: 0 0 0 2px $border-tertiary;
   }
 
   &:disabled + &__icon {
-    border: 1px solid $dark25;
+    border: 1px solid $border-primary-light;
   }
 
   &:disabled + &__icon::before {
-    background: $dark25;
+    background: $bg-secondary;
   }
 }

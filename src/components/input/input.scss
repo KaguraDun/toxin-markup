@@ -4,9 +4,9 @@
   max-height: rem(44px);
   margin: 0 auto;
   padding: rem(10px) rem(15px);
-  color: $dark25;
-  background: $white;
-  border: 1px solid $dark25;
+  color: $text-primary-light;
+  background: $bg-primary;
+  border: 1px solid $border-primary-light;
   border-radius: rem(4px);
 
   @include font-montserrat-body();
@@ -16,7 +16,7 @@
   }
 
   &__icon_style_arrow {
-    @include icon-arrow($purple);
+    @include icon-arrow($border-tertiary);
   }
 
   &__icon_style_expand-more {
@@ -45,16 +45,16 @@
 
   &::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: $dark25;
+    color: $text-primary-light;
     opacity: 1; /* Firefox */
   }
 
   &:hover,
   &_hovered {
-    border-color: $dark50;
+    border-color: $border-primary-medium;
 
     &::placeholder {
-      color: $dark75;
+      color: $text-primary-dark;
     }
   }
 }

@@ -1,5 +1,5 @@
 .headers-and-footers {
-  background: $gray;
+  background: $bg-quaternary;
 
   &__logo {
     max-width: rem($desktop-large);
@@ -14,7 +14,7 @@
   &__header-second,
   &__footer {
     margin-bottom: rem(40px);
-    box-shadow: 0 rem(10px) rem(20px) $dark5;
+    box-shadow: 0 rem(10px) rem(20px) $shadow-primary-lightest;
   }
 
   &__footer-creative {
@@ -31,8 +31,8 @@
       width: $tablet;
       margin: 0 auto;
       margin-bottom: rem(140px);
-      background: $white;
-      box-shadow: 0 rem(10px) rem(20px) $dark5;
+      background: $bg-primary;
+      box-shadow: 0 rem(10px) rem(20px) $shadow-primary-lightest;
     }
 
     &__copyright {

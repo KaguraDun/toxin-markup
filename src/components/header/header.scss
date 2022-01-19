@@ -2,7 +2,7 @@
   display: flex;
   width: 100%;
   max-height: rem(70px);
-  background-color: $main-bg-color;
+  background-color: $bg-primary;
 
   &__container {
     display: flex;
@@ -36,7 +36,7 @@
       flex-direction: column-reverse;
       justify-content: flex-end;
       padding: rem(70px 10px 0);
-      background: $white;
+      background: $bg-primary;
       transform: translateX(-1000px);
       opacity: 0;
       transition: transform .75s ease, opacity .75s ease;
@@ -86,11 +86,11 @@
   &__vertical-line {
     width: 1px;
     height: rem(30px);
-    border-right: 1px solid $dark10;
+    border-right: 1px solid $border-primary-lighter;
   }
 
   &__username {
-    color: $dark50;
+    color: $text-primary-medium;
     cursor: pointer;
 
     @include font-montserrat(rem(14px), rem(17px));

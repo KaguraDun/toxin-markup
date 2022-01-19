@@ -34,39 +34,39 @@ $rem-baseline: 14px;
 }
 
 @mixin font-montserrat-h1 {
-  color: $dark100;
+  color: $text-primary-darkest;
 
   @include font-montserrat(rem(24px), rem(29px), bold);
 }
 
 @mixin font-montserrat-h2 {
-  color: $dark100;
+  color: $text-primary-darkest;
 
   @include font-montserrat(rem(19px), rem(23px), bold);
 }
 
 @mixin font-montserrat-h3 {
-  color: $dark100;
+  color: $text-primary-darkest;
   text-transform: uppercase;
 
   @include font-montserrat(rem(12px), rem(15px), bold);
 }
 
 @mixin font-montserrat-h3-light {
-  color: $dark75;
+  color: $text-primary-dark;
   text-transform: uppercase;
 
   @include font-montserrat(rem(12px), rem(15px));
 }
 
 @mixin font-montserrat-body {
-  color: $dark75;
+  color: $text-primary-dark;
 
   @include font-montserrat(rem(14px), rem(24px));
 }
 
 @mixin font-montserrat-link {
-  color: $dark50;
+  color: $text-primary-medium;
 
   @include font-montserrat(rem(14px), rem(17px));
 }

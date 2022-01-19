@@ -14,7 +14,7 @@
   }
 
   &__price-range {
-    color: $dark50;
+    color: $text-primary-medium;
 
     @include font-montserrat(rem(12px), rem(15px));
   }
@@ -24,7 +24,7 @@
   }
 
   &__additional-text {
-    color: $dark50;
+    color: $text-primary-medium;
 
     @include font-montserrat(rem(12px), rem(14px));
   }
@@ -41,8 +41,8 @@
 }
 
 .noUi-handle {
-  background: $secondary-gradient;
-  border: 2px solid $white;
+  background: $gradient-secondary;
+  border: 2px solid $border-secondary;
   border-radius: 50%;
   box-shadow: none;
   cursor: pointer;
@@ -55,12 +55,12 @@
 }
 
 .noUi-connect {
-  background: $secondary-gradient;
+  background: $gradient-secondary;
 }
 
 .noUi-target {
-  background: $white;
-  border: 1px solid $dark25;
+  background: $bg-primary;
+  border: 1px solid $border-primary-light;
   border-radius: 3px;
   box-shadow: none;
 }

@@ -1,6 +1,6 @@
 .room-card {
   max-width: rem(270px);
-  background: $white;
+  background: $bg-primary;
   border-radius: 4px;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, .05);
 
@@ -25,7 +25,7 @@
       position: absolute;
       top: 40%;
       display: inline-block;
-      color: $white;
+      color: $text-secondary;
       transform: rotate(90deg);
 
       @include font-material-icons('expand_more');
@@ -63,12 +63,12 @@
   &__slider-button {
     width: rem(5px);
     height: rem(5px);
-    border: 1px solid $white;
+    border: 1px solid $border-secondary;
     border-radius: 50%;
-    filter: drop-shadow(0px 5px 5px $dark30);
+    filter: drop-shadow(0px 5px 5px $shadow-primary-medium-light);
 
     &_selected {
-      background: $white;
+      background: $bg-primary;
     }
   }
 
@@ -81,7 +81,7 @@
   }
 
   &__delimiter {
-    border: 1px solid $dark10;
+    border: 1px solid $border-primary-lighter;
   }
 
   &__rating {
@@ -98,13 +98,13 @@
   }
 
   &__reviews-number {
-    color: $dark50;
+    color: $text-primary-medium;
 
     @include font-montserrat(rem(14px), rem(18px), bold);
   }
 
   &__reviews-text {
-    color: $dark50;
+    color: $text-primary-medium;
 
     @include font-montserrat(rem(14px), rem(18px));
   }

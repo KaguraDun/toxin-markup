@@ -2,7 +2,7 @@
 
   &__text {
     margin: 0;
-    color: $dark75;
+    color: $text-primary-dark;
 
     @include font-montserrat(rem(14px), rem(17px));
   }

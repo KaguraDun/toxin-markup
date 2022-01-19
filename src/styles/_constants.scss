@@ -1,40 +1,54 @@
-/* colors */
-$dark100: #1f2041;
-$dark75: rgba(31, 32, 65, .75);
-$dark50: rgba(31, 32, 65, .5);
-$dark30: rgba(31, 32, 65, .3);
-$dark25: rgba(31, 32, 65, .25);
-$dark10: rgba(31, 32, 65, .1);
-$dark5: rgba(31, 32, 65, .05);
-$purple: rgba(188, 156, 255, 1);
-$purple50: rgba(188, 156, 255, .5);
-$gray: #f4f4f6;
-$white: #fff;
-$black: #000;
+/* font colors */
+$text-primary-pure-dark: black;
+$text-primary-darkest: rgba(31, 33, 65, 1);
+$text-primary-dark: rgba(31, 32, 65, .75);
+$text-primary-medium: rgba(31, 32, 65, .5);
+$text-primary-light: rgba(31, 32, 65, .25);
+
+$text-secondary: #fff;
+
+$text-tertiary: rgba(188, 156, 255, 1);
+$text-tertiary-medium: rgba(188, 156, 255, .5);
+
+/* borders */
+$border-primary-medium: rgba(31, 32, 65, .5);
+$border-primary-light: rgba(31, 32, 65, .25);
+$border-primary-lighter: rgba(31, 32, 65, .1);
+
+$border-secondary: white;
+
+$border-tertiary: rgba(188, 156, 255, 1);
+
+/* shadows */
+$shadow-primary-medium-light: rgba(31, 32, 65, .3);
+$shadow-primary-lighter: rgba(31, 32, 65, .1);
+$shadow-primary-lightest: rgba(31, 32, 65, .05);
 
 /* gradients */
-$primary-gradient: linear-gradient(180deg, rgba(188, 156, 255, 1) 0%, rgba(139, 164, 249, 1) 100%);
-$primary-gradient_hover: linear-gradient(
+$gradient-primary: linear-gradient(180deg, rgba(188, 156, 255, 1) 0%, rgba(139, 164, 249, 1) 100%);
+$gradient-primary-hover: linear-gradient(
   180deg,
   rgba(188, 156, 255, .5) 0%,
   rgba(139, 164, 249, .5) 100%
 );
-$secondary-gradient: linear-gradient(
+$gradient-secondary: linear-gradient(
   180deg,
   rgba(111, 207, 151, 1) 0%,
   rgba(102, 210, 234, 1) 100%
 );
-$secondary-gradient_hover: linear-gradient(
+$gradient-secondary-hover: linear-gradient(
   180deg,
   rgba(111, 207, 151, .5) 0%,
   rgba(102, 210, 234, .5) 100%
 );
-
-$orange-gradient: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
-$black-gradient: linear-gradient(180deg, #919191 0%, #3d4975 100%);
+$gradient-tertiary: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
+$gradient-quaternary: linear-gradient(180deg, #919191 0%, #3d4975 100%);
 
 /* backgrounds */
-$main-bg-color: white;
+$bg-primary: white;
+$bg-secondary: rgba(31, 32, 65, .25);
+$bg-tertiary: rgba(188, 156, 255, 1);
+$bg-quaternary: rgb(244, 244, 246);
 
 /* media */
 $desktop-large: 1440px;
