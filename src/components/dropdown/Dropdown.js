@@ -116,18 +116,14 @@ class Dropdown {
 
     if (e.target === buttonMinus) {
       this.store[value].count -= 1;
-
-      if (this.store[value].count <= 0) buttonMinus.disabled = true;
-
-      valueElement.innerText = this.store[value].count;
     }
 
     if (e.target === buttonPlus) {
       this.store[value].count += 1;
-
-      if (this.store[value].count > 0) buttonMinus.disabled = false;
-      valueElement.innerText = this.store[value].count;
     }
+
+    Dropdown.toggleButtonMinusDisable(buttonMinus, this.store[value].count);
+    valueElement.innerText = this.store[value].count;
 
     this.dropdownInput.value = this.concatStoreValues();
 
@@ -184,6 +180,11 @@ class Dropdown {
     if (countAsText !== '') storeValues.unshift(countAsText);
 
     return storeValues.join(', ');
+  }
+
+  static toggleButtonMinusDisable(buttonMinus, value) {
+    if (value > 0) buttonMinus.disabled = false;
+    if (value <= 0) buttonMinus.disabled = true;
   }
 }
 
