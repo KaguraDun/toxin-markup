@@ -2,7 +2,7 @@ import LinkDropdown from './LinkDropdown';
 import './link.scss';
 
 (() => {
-  const dropdownElements = document.querySelectorAll('.js-link__dropdown');
+  const dropdownElements = document.querySelectorAll('.js-link-dropdown');
 
   if (dropdownElements.length > 0) {
     dropdownElements.forEach((element) => {

@@ -6,8 +6,8 @@ class LinkDropdown {
   }
 
   init() {
-    this.itemList = this.element.querySelector('.js-link__dropdown-items');
-    this.button = this.element.querySelector('.js-link__dropdown-button');
+    this.itemList = this.element.querySelector('.js-link-dropdown-items');
+    this.button = this.element.querySelector('.js-link-dropdown-button');
 
     const isElementsExist = this.itemList && this.button;
     if (!isElementsExist) return;
@@ -16,7 +16,7 @@ class LinkDropdown {
   }
 
   handleDropdownOpen = (event) => {
-    const target = event.target.closest('.link__dropdown-button');
+    const target = event.target.closest('.js-link-dropdown-button');
 
     if (!target) return;
 
@@ -31,7 +31,7 @@ class LinkDropdown {
   };
 
   handleDropdownClose = (event) => {
-    const target = event.target.closest('.link__dropdown-button');
+    const target = event.target.closest('.js-link-dropdown-button');
 
     if (target === this.button) return;
 

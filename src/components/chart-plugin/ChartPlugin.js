@@ -9,9 +9,7 @@ class ChartPlugin {
   }
 
   render() {
-    const chartContainer = this.container
-      .querySelector('.js-chart-plugin__canvas')
-      .getContext('2d');
+    const chartContainer = this.container.querySelector('.js-chart-plugin-canvas').getContext('2d');
 
     if (!chartContainer) return;
     const gradients = ChartPlugin.getGradients(chartContainer);

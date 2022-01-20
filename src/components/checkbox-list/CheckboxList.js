@@ -18,11 +18,11 @@ class CheckboxList {
   }
 
   handleCheckboxListExpand = (e) => {
-    const target = e.target.closest('.js-checkbox-list__button');
+    const target = e.target.closest('.js-checkbox-list-button');
     if (!target) return;
 
-    const items = this.element.querySelector('.js-checkbox-list__items');
-    const buttonIcon = this.element.querySelector('.js-checkbox-list__icon');
+    const items = this.element.querySelector('.js-checkbox-list-items');
+    const buttonIcon = this.element.querySelector('.js-checkbox-list-icon');
 
     if (items) {
       const isExpanded = items.classList.toggle('checkbox-list__items_expanded');

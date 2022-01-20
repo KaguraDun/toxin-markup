@@ -22,14 +22,14 @@ import '@/styles/_common.scss';
 
 import './form-elements.scss';
 
-const dropdownGuests = document.querySelector('.js-form-elements__dropdown-guests');
+const dropdownGuests = document.querySelector('.js-form-elements-dropdown-guests');
 
 if (dropdownGuests) {
   createDropdownGuests({ element: dropdownGuests, label: 'dropdown' });
 }
 
 const dropdownGuestsWithControls = document.querySelector(
-  '.js-form-elements__dropdown-guests_with-controls',
+  '.js-form-elements-dropdown-guests-with-controls',
 );
 
 if (dropdownGuestsWithControls) {
@@ -37,7 +37,7 @@ if (dropdownGuestsWithControls) {
 }
 
 const dropdownGuestsWithControlsAndValues = document.querySelector(
-  '.js-form-elements__dropdown-guests_with-controls-and-values',
+  '.js-form-elements-dropdown-guests-with-controls-and-values',
 );
 
 if (dropdownGuestsWithControlsAndValues) {
@@ -50,8 +50,8 @@ if (dropdownGuestsWithControlsAndValues) {
 }
 
 const twoInputCalendar = new Calendar({
-  firstInputSelector: '.js-form-elements__dropdown-arrival',
-  secondInputSelector: '.js-form-elements__dropdown-departure',
+  firstInputSelector: '.js-form-elements-dropdown-arrival',
+  secondInputSelector: '.js-form-elements-dropdown-departure',
   defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 19)],
   today: new Date(2019, 7, 8),
   minDate: new Date(2019, 7, 8),
@@ -59,21 +59,21 @@ const twoInputCalendar = new Calendar({
 twoInputCalendar.render();
 
 const singleInputCalendar = new Calendar({
-  singleInputSelector: '.js-form-elements__dropdown-single',
+  singleInputSelector: '.js-form-elements-dropdown-single',
   defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 23)],
   today: new Date(2019, 7, 8),
   minDate: new Date(2019, 7, 8),
 });
 singleInputCalendar.render();
 
-const dropdownRoomAmenity = document.querySelector('.js-form-elements__dropdown-room-amenity');
+const dropdownRoomAmenity = document.querySelector('.js-form-elements-dropdown-room-amenity');
 
 if (dropdownRoomAmenity) {
   createDropdownRoomAmenity({ element: dropdownRoomAmenity, values: [2, 2, 1] });
 }
 
 const dropdownRoomAmenityExpanded = document.querySelector(
-  '.js-form-elements__dropdown-room-amenity-expanded',
+  '.js-form-elements-dropdown-room-amenity-expanded',
 );
 
 if (dropdownRoomAmenityExpanded) {
@@ -85,13 +85,13 @@ if (dropdownRoomAmenityExpanded) {
   });
 }
 
-const sliderContainer = document.querySelector('.js-form-elements__range-slider');
+const sliderContainer = document.querySelector('.js-form-elements-range-slider');
 if (sliderContainer) {
   const rangeSlider = new RangeSlider(sliderContainer);
   rangeSlider.create();
 }
 
-const checkboxLists = document.querySelectorAll('.js-form-elements__checkbox-list');
+const checkboxLists = document.querySelectorAll('.js-form-elements-checkbox-list');
 if (checkboxLists.length > 0) {
   checkboxLists.forEach((element) => {
     const checkboxList = new CheckboxList(element);

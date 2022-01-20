@@ -11,12 +11,12 @@ mixin book-room({roomInfo, priceList, totalSum})
         const dateDropdownProps = {
           arrivalLabel:'прибытие',
           departureLabel:'выезд',
-          dropdownArrivalClass: 'js-book-room__date-dropdown-arrival',
-          dropdownDepartureClass: 'js-book-room__date-dropdown-departure',
+          dropdownArrivalClass: 'js-book-room-date-dropdown-arrival',
+          dropdownDepartureClass: 'js-book-room-date-dropdown-departure',
         }
     .book-room__date-dropdown
       +date-dropdown(dateDropdownProps)
-    .book-room__dropdown-guests.js-book-room__dropdown-guests
+    .book-room__dropdown-guests.js-book-room-dropdown-guests
     ul.book-room__price-list
       each item in priceList
         li.book-room__item

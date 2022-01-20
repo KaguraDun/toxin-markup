@@ -10,7 +10,7 @@ import '@/styles/_common.scss';
 import './room-details.scss';
 
 (() => {
-  const chartContainer = document.querySelector('.js-room-details-page__chart');
+  const chartContainer = document.querySelector('.js-room-details-page-chart');
 
   const chart = new ChartPlugin({
     container: chartContainer,

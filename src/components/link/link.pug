@@ -12,9 +12,9 @@ mixin link({url, text, selected=false, innerItems=[], fontSize = 'normal'})
     }
   - const isExpandable = innerItems.length > 0;
     if innerItems.length > 0
-      .link__dropdown.js-link__dropdown
-        button.link__dropdown-button.js-link__dropdown-button(type='button') #{ text }
-        ul.link__dropdown-items.js-link__dropdown-items
+      .link__dropdown.js-link-dropdown
+        button.link__dropdown-button.js-link-dropdown-button(type='button') #{ text }
+        ul.link__dropdown-items.js-link-dropdown-items
           each item in innerItems
             li.link__dropdown-item
               a.link(href=item.url) #{ item.text }

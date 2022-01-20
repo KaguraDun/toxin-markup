@@ -38,7 +38,7 @@ block content
         +input({type:'text', value:'This is pretty awesome', size:'large'}).input_hovered
       .form-elements__item
         //- create container for dropdown, set properties in index.js
-        .form-elements__dropdown-guests.js-form-elements__dropdown-guests
+        .form-elements__dropdown-guests.js-form-elements-dropdown-guests
       .form-elements__item.form-elements__item_margin_large
         .form-elements__item-info
           .form-elements__item-name= "masked text field"
@@ -48,8 +48,8 @@ block content
           const dateDropdownProps = {
             arrivalLabel:'date dropdown',
             departureLabel:'date dropdown',
-            dropdownArrivalClass: 'js-form-elements__dropdown-arrival',
-            dropdownDepartureClass: 'js-form-elements__dropdown-departure',
+            dropdownArrivalClass: 'js-form-elements-dropdown-arrival',
+            dropdownDepartureClass: 'js-form-elements-dropdown-departure',
           }
 
         +date-dropdown(dateDropdownProps)
@@ -58,7 +58,7 @@ block content
           const dateDropdownSingleProps = {
             dropdownLabel: 'filter date dropdown',
             size:'medium',
-            dropdownClass: 'js-form-elements__dropdown-single',
+            dropdownClass: 'js-form-elements-dropdown-single',
           }
         +date-dropdown(dateDropdownSingleProps)
       .form-elements__item.form-elements__item_size_medium
@@ -72,13 +72,13 @@ block content
           .form-elements__item-name= "dropdown"
           .form-elements__item-state= "default"
         //- create container for dropdown, set properties in index.js
-        .form-elements__dropdown-room-amenity.js-form-elements__dropdown-room-amenity
+        .form-elements__dropdown-room-amenity.js-form-elements-dropdown-room-amenity
       .form-elements__item.form-elements__item_margin_largest.form-elements__item_size_medium
         .form-elements__item-info
           .form-elements__item-name= "dropdown"
           .form-elements__item-state= "expanded"
         //- create container for dropdown, set properties in index.js
-        .form-elements__dropdown-room-amenity-expanded.js-form-elements__dropdown-room-amenity-expanded
+        .form-elements__dropdown-room-amenity-expanded.js-form-elements-dropdown-room-amenity-expanded
       .form-elements__item.form-elements__item_size_medium
         -
           const checkboxListItems = [
@@ -89,10 +89,10 @@ block content
             { text: "Телевизор", checked: false },
             { text: "Шампунь", checked: false },
           ]
-        .form-elements__checkbox-list.js-form-elements__checkbox-list
+        .form-elements__checkbox-list.js-form-elements-checkbox-list
           +checkbox-list({ name: 'expandable checkbox list', expandable: true, expanded: false, items: checkboxListItems })
       .form-elements__item.form-elements__item_size_medium
-        .form-elements__checkbox-list.js-form-elements__checkbox-list
+        .form-elements__checkbox-list.js-form-elements-checkbox-list
           +checkbox-list({ name: 'expandable checkbox list', expandable: true, expanded: true, items: checkboxListItems })
 
     .form-elements__grid-item.form-elements__grid-item_column_1
@@ -112,7 +112,7 @@ block content
             { text: 'Можно с питомцами', checked:true },
             { text: 'Можно пригласить гостей<br> (до 10 человек)', checked:true },
           ]
-        .form-elements__checkbox-list.js-form-elements__checkbox-list
+        .form-elements__checkbox-list.js-form-elements-checkbox-list
           +checkbox-list({name:'checkbox buttons', expandable:false, items:checkboxButtonsItems})
       .form-elements__item.form-elements__item_margin_medium
         fieldset.form-elements__fieldset
@@ -142,7 +142,7 @@ block content
     .form-elements__grid-item.form-elements__grid-item_column_2
       .form-elements__item.form-elements__item_margin_extra-large
         //- create container for dropdown, set properties in index.js
-        .form-elements__dropdown-guests_with-controls.js-form-elements__dropdown-guests_with-controls
+        .form-elements__dropdown-guests_with-controls.js-form-elements-dropdown-guests-with-controls
       .form-elements__item
         -
           const richCheckboxItems = [
@@ -151,7 +151,7 @@ block content
              info:'На 1 этаже вас встретит специалист<br>  и проводит до номера.'
             },
           ]
-        .form-elements__checkbox-list.js-form-elements__checkbox-list
+        .form-elements__checkbox-list.js-form-elements-checkbox-list
           +checkbox-list({name: 'rich Checkbox Buttons', expandable:false, items: richCheckboxItems})
 
     .form-elements__grid-item.form-elements__grid-item_column_2-3
@@ -169,7 +169,7 @@ block content
       .form-elements__item.form-elements__item_size_medium
         -
           const rangeSliderProps = {
-            className: 'js-form-elements__range-slider',
+            className: 'js-form-elements-range-slider',
             label: 'range slider',
             priceRange: '5 000₽ - 10 000₽',
           }
@@ -206,7 +206,7 @@ block content
     .form-elements__grid-item.form-elements__grid-item_column_3
       .form-elements__item.form-elements__item_margin_extra-large
         //- create container for dropdown, set properties in index.js
-        .form-elements__dropdown-guests_with-controls-and-values.js-form-elements__dropdown-guests_with-controls-and-values
+        .form-elements__dropdown-guests_with-controls-and-values.js-form-elements-dropdown-guests-with-controls-and-values
       .form-elements__item
         .form-elements__item-info
           .form-elements__item-name= "bullet list"
