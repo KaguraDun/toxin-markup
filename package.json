@@ -8,7 +8,7 @@
     "lint:fix": "eslint --fix --ext .js .",
     "stlint": "stylelint **/*{.css,.scss}",
     "stlint:fix": "stylelint **/*{.css,.scss} --fix",
-    "pug-prettify": "npx prettier --write **/*.pug"
+    "pug:fix": "npx prettier --write **/*.pug"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
