@@ -52,6 +52,10 @@
       margin-bottom: rem(30px);
     }
 
+    &_margin_medium-large {
+      margin-bottom: rem(35px);
+    }
+
     &_margin_large {
       margin-bottom: rem(40px);
     }
@@ -75,6 +79,10 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 5px;
+    }
+
+    &-info_margin_none {
+      margin-bottom: 0;
     }
 
     &-info_margin_large {
@@ -126,9 +134,13 @@
     &-row_gap_medium {
       gap: rem(20px);
     }
+  }
 
-    &__slider {
-      padding: 10px;
-    }
+  &__room-advantages {
+    margin-top: rem(10px);
+  }
+
+  &__review {
+    margin-top: rem(15px);
   }
 }
