@@ -36,6 +36,19 @@
     &_expanded {
       border: 1px solid $border-primary-medium;
     }
+
+    &:focus-visible,
+    &:hover {
+      border-color: $border-primary-medium;
+
+      &::placeholder {
+        color: $text-primary-dark;
+      }
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
   }
 
   &__button-icon_style_expand-more {
