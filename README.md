@@ -37,7 +37,7 @@ npm run stlint:fix
 ```
 ### Prettify pug files
 ```bash
-npm run pug-prettify
+npm run pug:fix
 ```
 
 ## Dependencies
@@ -46,3 +46,4 @@ npm run pug-prettify
 * jquery: 3.6.0
 * jquery-mask-plugin: 1.14.16
 * nouislider: 15.5.0
+* swiper: 7.4.1
