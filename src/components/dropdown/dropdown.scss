@@ -40,10 +40,10 @@
     &:focus-visible,
     &:hover {
       border-color: $border-primary-medium;
+    }
 
-      &::placeholder {
-        color: $text-primary-dark;
-      }
+    &:hover &::placeholder {
+      color: $text-primary-dark;
     }
 
     &:focus-visible {
