@@ -5,9 +5,9 @@
   &__label {
     display: flex;
     align-items: center;
+    width: max-content;
     color: $text-primary-medium;
-    text-transform: none;
-
+    cursor: pointer;
     @include font-montserrat(rem(14px), rem(24px));
   }
 
@@ -48,7 +48,7 @@
     background: $gradient-primary;
   }
 
-  &:focus + &__icon {
+  &:focus-visible + &__icon {
     box-shadow: 0 0 0 2px $border-tertiary;
   }
 
