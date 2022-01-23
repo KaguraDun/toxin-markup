@@ -15,7 +15,7 @@ mixin date-dropdown({dropdownLabel,size,arrivalLabel,departureLabel,dropdownClas
     const inputPropsBase = {
       type:'text',
       placeholder:'ДД.ММ.ГГГГ',
-      icon: 'expand-more',
+      button:'expand-more',
       readonly:true,
     }
 
@@ -26,7 +26,7 @@ mixin date-dropdown({dropdownLabel,size,arrivalLabel,departureLabel,dropdownClas
         -
           const inputPropsSingle = Object.assign({}, inputPropsBase, {
             size: size,
-            placeholder:'ДД МM - ДД МM'
+            placeholder:'ДД МM - ДД МM',
           })
 
         +input(inputPropsSingle)(class=dropdownClass)

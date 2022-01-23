@@ -3,12 +3,23 @@
   placeholder: string;
   value: string | number;
   size: small | medium | large | full;
-  icon: none | arrow | expand-more | expand-less
+  button: none | arrow | expand-more | expand-less
   mask: date;
   readonly: boolean;
   required: boolean;
 
-mixin input({type='text', placeholder=false, value=false, icon='none', size='full', mask=false, readonly=false, required=false})
+mixin input(options)
+  -
+    const {
+      type='text',
+      placeholder=false,
+      value=false,
+      button='none',
+      size='full',
+      mask=false,
+      readonly=false,
+      required=false
+    } = options
   -
     const maskList = {
       date: {
@@ -36,16 +47,13 @@ mixin input({type='text', placeholder=false, value=false, icon='none', size='ful
       required=required
     )&attributes(attributes)
 
-    if icon !== 'none'
+    if button !== 'none'
       -
         const icons = {
-          arrow: 'input__icon_style_arrow',
-          'expand-more': 'input__icon_style_expand-more',
-          'expand-less': 'input__icon_style_expand-less',
-        }
-        const iconClassNames = {
-          'input__icon': true,
-          ...({[icons[icon]]: true}),
+          arrow: 'input__button-icon_style_arrow',
+          'expand-more': 'input__button-icon_style_expand-more',
+          'expand-less': 'input__button-icon_style_expand-less',
         }
 
-      span(class=iconClassNames)
+      button.input__button(type='submit')
+        span(class=`input__button-icon ${icons[button]}`)

@@ -15,32 +15,49 @@
     position: relative;
   }
 
-  &__icon_style_arrow {
-    @include icon-arrow($border-tertiary);
+  &__button {
+    position: absolute;
+    right: 0;
+    width: rem(44px);
+    height: 100%;
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
   }
 
-  &__icon_style_expand-more {
-    @include icon-expand-more;
+  &__button-icon {
+
+    &_style_arrow {
+      @include icon-arrow($border-tertiary);
+    }
+
+    &_style_expand-more {
+      @include icon-expand-more;
+    }
+
+    &_style_expand_less {
+      @include icon-expand-less;
+    }
   }
 
-  &__icon_style_expand_less {
-    @include icon-expand-less;
-  }
+  &_size {
 
-  &_size_small {
-    max-width: rem(150px);
-  }
+    &_small {
+      max-width: rem(150px);
+    }
 
-  &_size_medium {
-    max-width: rem(266px);
-  }
+    &_medium {
+      max-width: rem(266px);
+    }
 
-  &_size_large {
-    max-width: rem(360px);
-  }
+    &_large {
+      max-width: rem(360px);
+    }
 
-  &_size_full {
-    max-width: 100%;
+    &_full {
+      max-width: 100%;
+    }
   }
 
   &::placeholder {
