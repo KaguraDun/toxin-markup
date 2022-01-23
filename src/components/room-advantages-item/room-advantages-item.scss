@@ -5,11 +5,11 @@
 
   &_underlined {
     padding-bottom: rem(17px);
-    border-bottom: 1px solid $dark10;
+    border-bottom: 1px solid $border-primary-lighter;
   }
 
   &__icon {
-    color: $purple;
+    color: $text-tertiary;
 
     &_style_comfort::after {
       @include font-material-icons('insert_emoticon', rem(48px), rem(41px));

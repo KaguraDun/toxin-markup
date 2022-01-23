@@ -31,7 +31,7 @@ block content
           },
           priceList: [{
             name: "9 990₽ х 4 суток",
-            price: "39 960₽",
+            total: "39 960₽",
             about: false,
             },
             {
@@ -52,11 +52,17 @@ block content
 
     .cards__column
       .cards__calendar-wrapper
-        .cards__calendar.js-cards__calendar
+        .cards__calendar.js-cards-calendar
+
       .cards__room-card
         -
           const roomCard888Props = {
-            sliderContent: require('/src/assets/images/rooms/room-888.jpg'),
+            sliderContent: [
+              require('/assets/images/rooms/room-888.jpg'),
+              require('/assets/images/rooms/room-888.jpg'),
+              require('/assets/images/rooms/room-888.jpg'),
+              require('/assets/images/rooms/room-888.jpg')
+              ],
             number: 888,
             price: 9990,
             type: 'люкс',
@@ -64,10 +70,16 @@ block content
             reviewsNumber: 145
           }
         +room-card(roomCard888Props)
+
       .cards__room-card
         -
           const roomCard840Props = {
-            sliderContent: require('/src/assets/images/rooms/room-840.jpg'),
+            sliderContent: [
+              require('/assets/images/rooms/room-840.jpg'),
+              require('/assets/images/rooms/room-840.jpg'),
+              require('/assets/images/rooms/room-840.jpg'),
+              require('/assets/images/rooms/room-840.jpg')
+              ],
             number: 840,
             price: 9990,
             score: 4,

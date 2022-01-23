@@ -10,8 +10,8 @@
   &__items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(rem(270px), 1fr));
-    gap: rem(20px 12px);
-    margin-bottom: rem(33px);
+    gap: rem(19px 12px);
+    margin-bottom: rem(35px);
   }
 
   &__controls {

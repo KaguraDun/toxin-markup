@@ -18,6 +18,7 @@ class Calendar {
     mode = 'range',
     defaultDate = null,
     today = null,
+    wrap = true,
   }) {
     this.firstInputSelector = firstInputSelector;
     this.secondInputSelector = secondInputSelector;
@@ -27,6 +28,7 @@ class Calendar {
     this.mode = mode;
     this.defaultDate = defaultDate;
     this.today = today;
+    this.wrap = wrap;
   }
 
   render() {
@@ -39,6 +41,8 @@ class Calendar {
       inline: this.isOpen,
       locale: Russian,
       monthSelectorType: 'static',
+      wrap: this.wrap,
+      static: true,
       onChange(dateObj, dateStr, instance) {
         instance.open();
         Calendar.hideExternalNextMonthDays(instance);
@@ -105,9 +109,20 @@ class Calendar {
         Calendar.hideExternalNextMonthDays(flatpickrInstance);
       });
 
+      const secondInputButton = secondInput.querySelector('[data-toggle]');
+      secondInputButton.addEventListener('click', () => {
+        Calendar.handleOpenByButtonClick(flatpickrInstance);
+      });
+
       firstInput.readOnly = true;
       secondInput.readOnly = true;
     }
+  }
+
+  static handleOpenByButtonClick(instance) {
+    if (instance.isOpen) return;
+
+    instance.open();
   }
 
   static hideExternalNextMonthDays(instance) {
@@ -123,6 +138,7 @@ class Calendar {
 
   static changeDefaultDateDelimiter(dateStr, instance) {
     instance.element.value = dateStr.replace('—', '-');
+    instance.redraw();
   }
 }
 

@@ -4,7 +4,7 @@
   align-items: center;
   width: 100%;
   margin-top: auto;
-  background-color: $main-bg-color;
+  background-color: $bg-primary;
 
   &__container {
     @include container;
@@ -13,7 +13,7 @@
   &__widgets {
     width: 100%;
     min-height: rem(372px);
-    box-shadow: 0 1px 0 $dark10;
+    box-shadow: 0 1px 0 $shadow-primary-lighter;
   }
 
   &__grid {
@@ -34,14 +34,14 @@
 
   &__text {
     margin: 0;
-    color: $dark75;
+    color: $text-primary-dark;
 
     @include font-montserrat(rem(14px), rem(24px));
   }
 
   &__item-heading {
     margin: 4px 0 rem(21px);
-    color: $dark100;
+    color: $text-primary-darkest;
     text-transform: uppercase;
 
     @include font-montserrat(rem(12px), rem(15px), bold);
@@ -69,7 +69,7 @@
   @media (max-width: $tablet) {
     margin: 0 auto;
     padding: rem(120px 0);
-    box-shadow: 0 rem(10px) rem(20px) $dark5;
+    box-shadow: 0 rem(10px) rem(20px) $shadow-primary-lightest;
 
     .container {
       box-sizing: border-box;

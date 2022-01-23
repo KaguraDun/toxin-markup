@@ -5,12 +5,12 @@ import '@/components/book-room/book-room.js';
 import '@/components/review-list/review-list.js';
 import '@/components/bullet-list/bullet-list.js';
 import '@/components/footer/footer.js';
-import '@/assets/styles/_common.scss';
+import '@/styles/_common.scss';
 
 import './room-details.scss';
 
 (() => {
-  const chartContainer = document.querySelector('.js-room-details-page__chart');
+  const chartContainer = document.querySelector('.js-room-details-page-chart');
 
   const chart = new ChartPlugin({
     container: chartContainer,

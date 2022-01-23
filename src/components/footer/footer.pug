@@ -84,8 +84,8 @@ mixin footer
           .footer__grid-column
             h3.footer__item-heading= "Подписка"
             p.footer__text= "Получайте специальные предложения и новости сервиса"
-            .footer__input-email
-              +input({type:'email', placeholder:'Email', icon: 'arrow' })
+            form.footer__input-email
+              +input({type:'email', placeholder:'Email', button: 'arrow' })
     .footer__copyright
       .footer__container
         .footer__copyright-wrapper

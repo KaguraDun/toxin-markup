@@ -8,7 +8,7 @@
     "lint:fix": "eslint --fix --ext .js .",
     "stlint": "stylelint **/*{.css,.scss}",
     "stlint:fix": "stylelint **/*{.css,.scss} --fix",
-    "pug-prettify": "npx prettier --write **/*.pug"
+    "pug:fix": "npx prettier --write **/*.pug"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -67,6 +67,7 @@
     "flatpickr": "^4.6.9",
     "jquery": "^3.6.0",
     "jquery-mask-plugin": "^1.14.16",
-    "nouislider": "^15.5.0"
+    "nouislider": "^15.5.0",
+    "swiper": "^7.4.1"
   }
 }

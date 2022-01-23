@@ -35,19 +35,19 @@
     }
 
     &_style_great::before {
-      background: $orange-gradient;
+      background: $gradient-tertiary;
     }
 
     &_style_good::before {
-      background: $secondary-gradient;
+      background: $gradient-secondary;
     }
 
     &_style_passably::before {
-      background: $primary-gradient;
+      background: $gradient-primary;
     }
 
     &_style_disappointed::before {
-      background: $black-gradient;
+      background: $gradient-quaternary;
     }
   }
 

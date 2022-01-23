@@ -33,8 +33,8 @@
 
   &__background {
     width: 100%;
-    background: $white;
-    border-bottom: 1px solid $dark10;
+    background: $bg-primary;
+    border-bottom: 1px solid $border-primary-lighter;
   }
 
   &__container {
@@ -50,8 +50,7 @@
     @include container;
 
     & {
-      margin-top: rem(70px);
-      margin-bottom: 60px;
+      margin: rem(70px) auto;
     }
   }
 

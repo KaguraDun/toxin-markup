@@ -5,7 +5,7 @@
   height: 100vh;
 
   &__error-message {
-    color: $dark100;
+    color: $text-primary-darkest;
 
     @include font-montserrat(rem(60px), rem(60px));
   }

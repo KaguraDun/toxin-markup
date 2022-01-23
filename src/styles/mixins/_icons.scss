@@ -9,7 +9,7 @@
   @include icon-base();
 
   &::after {
-    color: $dark75;
+    color: $text-primary-dark;
 
     @include font-material-icons('expand_more');
   }
@@ -19,7 +19,7 @@
   @include icon-base();
 
   &::after {
-    color: $dark75;
+    color: $text-primary-dark;
 
     @include font-material-icons('expand_less');
   }

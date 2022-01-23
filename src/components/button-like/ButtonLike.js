@@ -6,7 +6,7 @@ class ButtonLike {
   }
 
   addEventListener() {
-    this.likesNumberElement = this.element.querySelector('.js-button-like__likes-number');
+    this.likesNumberElement = this.element.querySelector('.js-button-like-likes-number');
     this.likesNumber = Number(this.likesNumberElement.innerText);
 
     this.element.addEventListener('click', this.handleLikeButtonClick);

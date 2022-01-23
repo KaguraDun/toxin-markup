@@ -7,13 +7,16 @@
   }
 
   &__items {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10px);
+
     @include clear-ul-style;
   }
 
   &__item {
     display: flex;
     align-items: baseline;
-    margin: rem(0 0 10px);
     white-space: pre-line;
 
     &-text {
@@ -26,7 +29,7 @@
       width: 10px;
       height: 10px;
       margin-right: 10px;
-      background: $dark25;
+      background: $bg-secondary;
       border-radius: 50%;
       content: '';
     }

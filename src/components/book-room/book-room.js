@@ -8,15 +8,15 @@ import './book-room.scss';
 
 (() => {
   const calendar = new Calendar({
-    firstInputSelector: '.js-book-room__date-dropdown-arrival',
-    secondInputSelector: '.js-book-room__date-dropdown-departure',
+    firstInputSelector: '.js-book-room-date-dropdown-arrival',
+    secondInputSelector: '.js-book-room-date-dropdown-departure',
     defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 23)],
     today: new Date(2019, 7, 8),
     minDate: new Date(2019, 7, 8),
   });
   calendar.render();
 
-  const dropdownGuests = document.querySelector('.js-book-room__dropdown-guests');
+  const dropdownGuests = document.querySelector('.js-book-room-dropdown-guests');
 
   if (dropdownGuests) {
     createDropdownGuests({ element: dropdownGuests, label: 'гости', values: [3, 0, 0] });

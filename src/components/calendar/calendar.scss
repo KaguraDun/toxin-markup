@@ -1,7 +1,7 @@
 .flatpickr-calendar {
   width: rem(320px);
   padding: rem(20px);
-  background: $white;
+  background: $bg-primary;
   border: 1px solid #1f204140;
 
   @include font-montserrat-body;
@@ -31,15 +31,15 @@
   max-width: rem(40px);
   height: rem(40px);
   margin: 0;
-  color: $dark50;
+  color: $text-primary-medium;
   border: 0;
 
   @include font-montserrat(rem(12px), rem(40px), normal);
 
   &:hover {
-    color: $white;
+    color: $text-secondary;
     font-weight: bold;
-    background: $primary-gradient;
+    background: $gradient-primary;
   }
 }
 
@@ -48,28 +48,29 @@
 }
 
 .flatpickr-day.today {
-  color: $white;
+  color: $text-secondary;
   font-weight: bold;
-  background: $secondary-gradient;
+  background: $gradient-secondary;
   border: 0;
   border-radius: 50%;
 
   &:hover {
-    background: $secondary-gradient_hover;
+    background: $gradient-secondary-hover;
   }
 }
 
 .flatpickr-day.inRange,
 .flatpickr-day.nextMonthDay.inRange,
 .flatpickr-day.prevMonthDay.inRange {
-  background: $purple50;
+  background: $bg-tertiary-light;
 }
 
 .flatpickr-day.inRange {
   box-shadow: none;
 
   &:hover {
-    background: $purple50;
+    background: $gradient-primary;
+    border-radius: 50%;
 
     &::before {
       position: absolute;
@@ -77,9 +78,8 @@
       display: block;
       width: 100%;
       height: 100%;
-      color: $white;
-      background: $primary-gradient;
-      border-radius: 50%;
+      color: $text-secondary;
+      background: $bg-tertiary-light;
       content: '';
     }
   }
@@ -88,7 +88,7 @@
 .flatpickr-day.prevMonthDay,
 .flatpickr-day.nextMonthDay,
 .flatpickr-day.prevMonthDay.flatpickr-disabled {
-  color: $dark25;
+  color: $text-primary-light;
 
   @include font-montserrat(rem(12px), rem(40px), normal);
 }
@@ -98,15 +98,15 @@
 .flatpickr-day.selected.nextMonthDay {
 
   &:hover {
-    color: $white;
+    color: $text-secondary;
     font-weight: bold;
-    background: $primary-gradient;
+    background: $gradient-primary;
   }
 }
 
 .flatpickr-day.flatpickr-disabled,
 .flatpickr-day.flatpickr-disabled:hover {
-  color: $dark50;
+  color: $text-primary-medium;
   font-weight: normal;
   background: transparent;
 }
@@ -121,9 +121,9 @@
 .flatpickr-day.endRange,
 .flatpickr-day.selected.startRange,
 .flatpickr-day.selected.endRange {
-  color: $white;
+  color: $text-secondary;
   font-weight: bold;
-  background: $primary-gradient;
+  background: $gradient-primary;
   border: 0;
   border-radius: 50%;
 
@@ -133,13 +133,13 @@
     display: block;
     width: rem(20px);
     height: 100%;
-    color: $white;
-    background: $purple50;
+    color: $text-secondary;
+    background: $bg-tertiary-light;
     content: '';
   }
 
   &:hover {
-    background: $primary-gradient;
+    background: $gradient-primary;
   }
 }
 
@@ -180,20 +180,20 @@
   left: rem(10px);
 
   &::before {
-    color: $purple;
+    color: $text-tertiary;
 
     @include font-material-icons('arrow_back', rem(24px), rem(20px));
   }
 
   &:hover::before {
-    color: $purple50;
+    color: $text-tertiary-medium;
   }
 }
 
 .flatpickr-months .flatpickr-month,
 .flatpickr-weekdays,
 .flatpickr-weekdaycontainer .flatpickr-weekday {
-  background: $white;
+  background: $bg-primary;
 }
 
 .flatpickr-weekdays {
@@ -209,7 +209,7 @@
 }
 
 .flatpickr-weekdaycontainer .flatpickr-weekday {
-  color: $purple;
+  color: $text-tertiary;
 
   @include font-montserrat(rem(12px), rem(15px), bold);
 }
@@ -220,25 +220,25 @@
   right: rem(10px);
 
   &::before {
-    color: $purple;
+    color: $text-tertiary;
 
     @include font-material-icons('arrow_forward', rem(24px), rem(20px));
   }
 
   &:hover::before {
-    color: $purple50;
+    color: $text-tertiary-medium;
   }
 }
 
 .flatpickr-innerContainer {
+  margin-bottom: rem(17px);
   border: 0;
 }
 
 .flatpickr__buttons {
   display: flex;
   justify-content: space-between;
-  padding-top: rem(20px);
-  background: $white;
+  background: $bg-primary;
   border: 0;
 }
 
@@ -250,4 +250,8 @@
 
 .flatpickr-day_hidden {
   display: none;
+}
+
+.flatpickr-wrapper {
+  width: 100%;
 }

@@ -15,7 +15,7 @@
   }
 
   &__number {
-    color: $dark50;
+    color: $text-primary-medium;
 
     @include font-montserrat(rem(14px), rem(14px));
   }

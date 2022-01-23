@@ -11,25 +11,25 @@ import './room-filter.scss';
 
 (() => {
   const calendar = new Calendar({
-    singleInputSelector: '.js-room-filter__date-dropdown',
+    singleInputSelector: '.js-room-filter-date-dropdown',
     defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 23)],
     today: new Date(2019, 7, 8),
     minDate: new Date(2019, 7, 8),
   });
   calendar.render();
 
-  const dropdownGuests = document.querySelector('.js-room-filter__dropdown-guests');
+  const dropdownGuests = document.querySelector('.js-room-filter-dropdown-guests');
   if (dropdownGuests) {
     createDropdownGuests({ element: dropdownGuests, label: 'гости', values: [3, 0, 1] });
   }
 
-  const sliderContainer = document.querySelector('.js-room-filter__range-slider');
+  const sliderContainer = document.querySelector('.js-room-filter-range-slider');
   if (sliderContainer) {
     const rangeSlider = new RangeSlider(sliderContainer);
     rangeSlider.create();
   }
 
-  const dropdownRoomAmenity = document.querySelector('.js-room-filter__dropdown-room-amenity');
+  const dropdownRoomAmenity = document.querySelector('.js-room-filter-dropdown-room-amenity');
   if (dropdownRoomAmenity) {
     createDropdownRoomAmenity({
       element: dropdownRoomAmenity,
@@ -39,7 +39,7 @@ import './room-filter.scss';
     });
   }
 
-  const checkboxLists = document.querySelectorAll('.js-room-filter__checkbox-list');
+  const checkboxLists = document.querySelectorAll('.js-room-filter-checkbox-list');
   if (checkboxLists.length > 0) {
     checkboxLists.forEach((container) => {
       const checkboxList = new CheckboxList(container);

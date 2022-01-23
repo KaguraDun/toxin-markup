@@ -5,7 +5,7 @@
   &__background {
     width: 100%;
     min-height: rem(830px);
-    background: url('/src/assets/images/backgrounds/background-3.jpg') no-repeat;
+    background: url('/assets/images/backgrounds/background-3.jpg') no-repeat;
     background-size: cover;
   }
 
@@ -28,8 +28,10 @@
   }
 
   &__text {
+    position: relative;
+    left: rem(5px);
     align-self: flex-end;
-    margin-bottom: rem(17px);
+    margin-bottom: rem(20px);
     white-space: pre-line;
     text-align: right;
   }

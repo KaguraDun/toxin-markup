@@ -1,0 +1,72 @@
+.swiper {
+  height: 100%;
+
+  &-button-prev,
+  &-button-next {
+    position: absolute;
+    top: 15%;
+    width: rem(50px);
+    height: 100%;
+    background: $shadow-slider;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .2s ease-out;
+
+    &::after {
+      position: absolute;
+      color: $text-secondary;
+      transform: rotate(90deg);
+      @include font-material-icons('expand_more');
+    }
+  }
+
+  &:hover &-button-prev,
+  &:hover &-button-next {
+    opacity: 1;
+  }
+
+  &-button-prev {
+    left: 0;
+
+    &::after {
+      left: rem(10px);
+    }
+  }
+
+  &-button-next {
+    right: 0;
+    transform: rotate(180deg);
+
+    &::after {
+      right: rem(10px);
+    }
+  }
+
+  &-pagination {
+    display: flex;
+    gap: rem(3.75px);
+  }
+
+  &-pagination-bullet {
+    width: rem(5px);
+    height: rem(5px);
+    margin: 0;
+    background: transparent;
+    border: 1px solid $border-secondary;
+    border-radius: 50%;
+    filter: drop-shadow(0px 5px 5px $shadow-primary-medium-light);
+  }
+
+  &-horizontal > &-pagination-bullets {
+    bottom: rem(15px);
+    left: 80%;
+  }
+
+  &-horizontal > &-pagination-bullets &-pagination-bullet {
+    margin: 0;
+  }
+
+  &-pagination-bullet-active {
+    background: $bg-primary;
+  }
+}

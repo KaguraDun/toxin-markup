@@ -15,21 +15,21 @@ mixin checkbox-list({ name, expandable=false, expanded=true, items })
   -
     const itemClassNames = {
       'checkbox-list__items':true,
-      'js-checkbox-list__items':true,
+      'js-checkbox-list-items':true,
       'checkbox-list__items_expanded':expanded,
 
     }
   -
     const iconClassNames = {
       'checkbox-list__icon' : true,
-      'js-checkbox-list__icon' : true,
+      'js-checkbox-list-icon' : true,
       'checkbox-list__icon_style_expand' : (expanded ? false: true),
       'checkbox-list__icon_style_expand-less' : (expanded ? true : false),
     }
 
   .checkbox-list.js-checkbox-list
     if expandable
-      button.checkbox-list__button.js-checkbox-list__button(type='button')
+      button.checkbox-list__button.js-checkbox-list-button(type='button')
         span.checkbox-list__name!= name
         span(class=iconClassNames)
     else

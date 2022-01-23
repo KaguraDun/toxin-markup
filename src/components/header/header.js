@@ -6,10 +6,11 @@ import '@/components/button/button.js';
 import './header.scss';
 
 (() => {
-  const burgerMenuElement = document.querySelector('.js-header__burger');
+  const burgerMenuElement = document.querySelector('.js-header-burger');
   const header = document.querySelector('.js-header');
 
-  if (!burgerMenuElement || !header) return;
+  const isElementsExist = burgerMenuElement && header;
+  if (!isElementsExist) return;
 
   const burgerMenu = new ButtonBurger(burgerMenuElement, header);
   burgerMenu.addEventListener();

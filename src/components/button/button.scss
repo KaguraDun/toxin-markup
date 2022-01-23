@@ -24,11 +24,11 @@
     @include icon-arrow();
   }
 
-  &_size_small .button__text {
+  &_size_small &__text {
     padding: rem(8px 18px);
   }
 
-  &_size_medium .button__text {
+  &_size_medium &__text {
     padding: rem(13px 18px);
   }
 
@@ -47,39 +47,40 @@
   &_style_filled,
   &_style_border,
   &_style_page-selected {
-    background: $primary-gradient;
+    background: $gradient-primary;
 
     &.button:hover,
     &.button_hovered {
-      background: $primary-gradient_hover;
+      background: $gradient-primary-hover;
     }
   }
 
   &_style_filled,
   &_style_page-selected {
-    color: $white;
+    color: $text-secondary;
   }
 
   &_style_border {
-    color: $purple;
+    color: $text-tertiary;
 
     .button__text {
-      background: $white;
+      background: $bg-primary;
     }
   }
 
   &_style_borderless {
     padding: 0;
-    color: $purple;
+    color: $text-tertiary;
     background: none;
 
     .button__text {
+      margin: 0;
       padding: 0;
     }
 
     &.button:hover,
     &.button_hovered {
-      color: $dark50;
+      color: $text-primary-medium;
     }
   }
 
@@ -96,13 +97,13 @@
   }
 
   &_style_page {
-    color: $dark50;
+    color: $text-primary-medium;
     background: none;
   }
 
   &_style_page-next {
-    color: $white;
-    background: $secondary-gradient;
+    color: $text-secondary;
+    background: $gradient-secondary;
 
     .button__icon {
       right: 0;
@@ -112,7 +113,7 @@
 
     &.button:hover,
     &.button_hovered {
-      background: $secondary-gradient_hover;
+      background: $gradient-secondary-hover;
     }
   }
 }

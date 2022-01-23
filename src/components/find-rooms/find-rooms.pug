@@ -8,12 +8,12 @@ mixin find-rooms
       const dateDropdownProps = {
         arrivalLabel:'прибытие',
         departureLabel:'выезд',
-        dropdownArrivalClass: 'js-find-rooms__dropdown-arrival',
-        dropdownDepartureClass: 'js-find-rooms__dropdown-departure',
+        dropdownArrivalClass: 'js-find-rooms-dropdown-arrival',
+        dropdownDepartureClass: 'js-find-rooms-dropdown-departure',
       }
     .find-rooms__date-dropdown
       +date-dropdown(dateDropdownProps)
-    .find-rooms__dropdown-guests.js-find-rooms__dropdown-guests
+    .find-rooms__dropdown-guests.js-find-rooms-dropdown-guests
     .find-rooms__button
       -
         const buttonProps = {
