@@ -17,7 +17,157 @@ block content
       aside.search-room-page__filter
         +room-filter
       .search-room-page__room-cards-list
-        +room-cards-list
+        -
+          const cardsList = [
+            {
+              sliderContent: [
+                  require('/assets/images/rooms/room-888.jpg'),
+                  require('/assets/images/rooms/room-840.jpg'),
+                  require('/assets/images/rooms/room-980.jpg'),
+                  require('/assets/images/rooms/room-856.jpg'),
+                ],
+              number: 888,
+              price: 9990,
+              type: 'люкс',
+              score: 5,
+              reviewsNumber: 145,
+            },
+            {
+              sliderContent: [
+                  require('/assets/images/rooms/room-840.jpg'),
+                  require('/assets/images/rooms/room-980.jpg'),
+                  require('/assets/images/rooms/room-856.jpg'),
+                  require('/assets/images/rooms/room-740.jpg'),
+                ],
+              number: 840,
+              price: 9990,
+              score: 4,
+              reviewsNumber: 65,
+            },
+            {
+              sliderContent: [
+                  require('/assets/images/rooms/room-980.jpg'),
+                  require('/assets/images/rooms/room-856.jpg'),
+                  require('/assets/images/rooms/room-740.jpg'),
+                  require('/assets/images/rooms/room-982.jpg'),
+                ],
+              number: 980,
+              price: 8500,
+              type: 'люкс',
+              score: 3,
+              reviewsNumber: 35,
+            },
+            {
+              sliderContent: [
+                  require('/assets/images/rooms/room-856.jpg'),
+                  require('/assets/images/rooms/room-740.jpg'),
+                  require('/assets/images/rooms/room-982.jpg'),
+                  require('/assets/images/rooms/room-678.jpg'),
+                ],
+              number: 856,
+              price: 7300,
+              score: 5,
+              reviewsNumber: 19,
+            },
+            {
+              sliderContent: [
+                  require('/assets/images/rooms/room-740.jpg'),
+                  require('/assets/images/rooms/room-982.jpg'),
+                  require('/assets/images/rooms/room-678.jpg'),
+                  require('/assets/images/rooms/room-450.jpg'),
+                ],
+              number: 740,
+              price: 6000,
+              score: 4,
+              reviewsNumber: 44,
+            },
+            {
+              sliderContent: [
+                  require('/assets/images/rooms/room-982.jpg'),
+                  require('/assets/images/rooms/room-678.jpg'),
+                  require('/assets/images/rooms/room-450.jpg'),
+                  require('/assets/images/rooms/room-350.jpg'),
+                ],
+              number: 982,
+              price: 5800,
+              score: 3,
+              reviewsNumber: 56, 
+            },
+            {
+              sliderContent: [
+                  require('/assets/images/rooms/room-678.jpg'),
+                  require('/assets/images/rooms/room-450.jpg'),
+                  require('/assets/images/rooms/room-350.jpg'),
+                  require('/assets/images/rooms/room-666.jpg'),
+                ],
+              number: 678,
+              price: 5500,
+              score: 5,
+              reviewsNumber: 45,
+            },
+            {
+              sliderContent: [
+                  require('/assets/images/rooms/room-450.jpg'),
+                  require('/assets/images/rooms/room-350.jpg'),
+                  require('/assets/images/rooms/room-666.jpg'),
+                  require('/assets/images/rooms/room-444.jpg'),
+                ],
+              number: 450,
+              price: 5300,
+              score: 4,
+              reviewsNumber: 39,
+            },
+            {
+              sliderContent: [
+                  require('/assets/images/rooms/room-350.jpg'),
+                  require('/assets/images/rooms/room-666.jpg'),
+                  require('/assets/images/rooms/room-444.jpg'),
+                  require('/assets/images/rooms/room-352.jpg'),
+                ],
+              number: 350,
+              price: 5000,
+              score: 3,
+              reviewsNumber: 77,
+            },
+            {
+              sliderContent: [
+                  require('/assets/images/rooms/room-666.jpg'),
+                  require('/assets/images/rooms/room-444.jpg'),
+                  require('/assets/images/rooms/room-352.jpg'),
+                  require('/assets/images/rooms/room-888.jpg'),
+                ],
+              number: 666,
+              price: 5000,
+              score: 5,
+              reviewsNumber: 25,
+            },
+            {
+              sliderContent: [
+                  require('/assets/images/rooms/room-444.jpg'),
+                  require('/assets/images/rooms/room-352.jpg'),
+                  require('/assets/images/rooms/room-888.jpg'),
+                  require('/assets/images/rooms/room-840.jpg'),
+                ],
+              number: 444,
+              price: 5000,
+              score: 3,
+              reviewsNumber: 15,
+            },
+            {
+              sliderContent: [
+                  require('/assets/images/rooms/room-352.jpg'),
+                  require('/assets/images/rooms/room-888.jpg'),
+                  require('/assets/images/rooms/room-840.jpg'),
+                  require('/assets/images/rooms/room-980.jpg'),
+                ],
+              number: 352,
+              price: 5000,
+              score: 3,
+              reviewsNumber: 55,
+            },
+          ]
+
+        +room-cards-list(cardsList)
 
 block footer
   +footer
