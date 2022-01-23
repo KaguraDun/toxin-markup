@@ -28,8 +28,10 @@
   }
 
   &__text {
+    position: relative;
+    left: rem(5px);
     align-self: flex-end;
-    margin-bottom: rem(17px);
+    margin-bottom: rem(20px);
     white-space: pre-line;
     text-align: right;
   }
