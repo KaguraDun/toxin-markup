@@ -1,6 +1,5 @@
 @import 'sass-rem';
 
-@import './mixins/fieldset';
 @import './mixins/icons';
 @import './mixins/container';
 @import './mixins/form';
@@ -86,4 +85,10 @@ $rem-baseline: 14px;
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+@mixin clear-fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
 }

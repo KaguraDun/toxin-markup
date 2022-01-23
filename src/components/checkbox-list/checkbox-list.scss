@@ -32,7 +32,7 @@
   &__items {
     display: none;
 
-    @include fieldset;
+    @include clear-fieldset;
   }
 
   &__items_expanded {

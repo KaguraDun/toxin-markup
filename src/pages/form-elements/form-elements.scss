@@ -108,7 +108,13 @@
   }
 
   &__fieldset {
-    @include fieldset;
+    @include clear-fieldset;
+
+    &-legend {
+      @include font-montserrat-h3;
+      margin: 0 0 rem(16px);
+      padding: 0;
+    }
 
     &-column {
       display: flex;
