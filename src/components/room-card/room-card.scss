@@ -5,75 +5,12 @@
   box-shadow: 0px 10px 20px rgba(31, 32, 65, .05);
 
   &__slider {
-    position: relative;
-    max-height: rem(270px);
+    height: rem(150px);
     border-radius: 4px;
   }
 
-  &__slider-content {
-    width: 100%;
-  }
-
-  &__slider-button-left,
-  &__slider-button-right {
-    position: absolute;
-    width: rem(50px);
-    height: 100%;
-    cursor: pointer;
-
-    &::before {
-      position: absolute;
-      top: 40%;
-      display: inline-block;
-      color: $text-secondary;
-      transform: rotate(90deg);
-
-      @include font-material-icons('expand_more');
-    }
-  }
-
-  &__slider-button-left {
-    top: 0;
-    left: 0;
-
-    &::before {
-      left: rem(10px);
-      transform: rotate(90deg);
-    }
-  }
-
-  &__slider-button-right {
-    top: 0;
-    right: 0;
-
-    &::before {
-      right: rem(10px);
-      transform: rotate(-90deg);
-    }
-  }
-
-  &__slider-buttons {
-    position: absolute;
-    right: rem(15px);
-    bottom: rem(20px);
-    display: flex;
-    gap: rem(3.75px);
-  }
-
-  &__slider-button {
-    width: rem(5px);
-    height: rem(5px);
-    border: 1px solid $border-secondary;
-    border-radius: 50%;
-    filter: drop-shadow(0px 5px 5px $shadow-primary-medium-light);
-
-    &_selected {
-      background: $bg-primary;
-    }
-  }
-
   &__content {
-    padding: rem(15px 20px 20px);
+    padding: rem(20px);
   }
 
   &__room-info {

@@ -8,18 +8,12 @@
 
 include /components/room-info/room-info.pug
 include /components/button-rate/button-rate.pug
+include /components/slider/slider.pug
 
 mixin room-card({sliderContent, number, price, type, score, reviewsNumber })
   .room-card
     .room-card__slider
-      .room-card__slider-button-left
-      img.room-card__slider-content(src=sliderContent, alt=`room №${number}`)
-      .room-card__slider-button-right
-      .room-card__slider-buttons
-        .room-card__slider-button.room-card__slider-button_selected
-        .room-card__slider-button
-        .room-card__slider-button
-        .room-card__slider-button
+      +slider(sliderContent)
     .room-card__content
       .room-card__room-info
         +room-info({numberStyle: 'compact', number, price, type})
