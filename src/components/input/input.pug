@@ -7,6 +7,7 @@
   mask: date;
   readonly: boolean;
   required: boolean;
+  buttonOpenCalendar: boolean;
 
 mixin input(options)
   -
@@ -18,7 +19,8 @@ mixin input(options)
       size='full',
       mask=false,
       readonly=false,
-      required=false
+      required=false,
+      buttonOpenCalendar=false,
     } = options
   -
     const maskList = {
@@ -52,8 +54,8 @@ mixin input(options)
         const icons = {
           arrow: 'input__button-icon_style_arrow',
           'expand-more': 'input__button-icon_style_expand-more',
-          'expand-less': 'input__button-icon_style_expand-less',
+          'expand-less': 'input__button-icon_style_expand-less', 
         }
 
-      button.input__button(type='submit')
+      button.input__button(type='button', data-toggle=buttonOpenCalendar)
         span(class=`input__button-icon ${icons[button]}`)

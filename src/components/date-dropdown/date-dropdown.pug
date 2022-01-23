@@ -10,31 +10,42 @@
 
 include /components/input/input.pug
 
-mixin date-dropdown({dropdownLabel,size,arrivalLabel,departureLabel,dropdownClass,dropdownArrivalClass,dropdownDepartureClass})
+mixin date-dropdown(options)
+  -
+    const {
+      dropdownLabel,
+      size,
+      arrivalLabel,
+      departureLabel,
+      dropdownClass,
+      dropdownArrivalClass,
+      dropdownDepartureClass,
+    } = options
   -
     const inputPropsBase = {
       type:'text',
       placeholder:'ДД.ММ.ГГГГ',
       button:'expand-more',
+      buttonOpenCalendar: true,
       readonly:true,
+      size: size,
     }
 
-  if dropdownLabel
+  if dropdownClass
     .date-dropdown
-      .date-dropdown__input-filter
-        p.date-dropdown__label= dropdownLabel || false
+      .date-dropdown__input-filter(class=dropdownClass)
+        p.date-dropdown__label= dropdownLabel || ""
         -
-          const inputPropsSingle = Object.assign({}, inputPropsBase, {
-            size: size,
+          const inputPropsSingle = Object.assign({}, inputPropsBase, {   
             placeholder:'ДД МM - ДД МM',
           })
 
-        +input(inputPropsSingle)(class=dropdownClass)
+        +input(inputPropsSingle)(data-input)
   else
     .date-dropdown
-      .date-dropdown__input
-        p.date-dropdown__label= arrivalLabel || false
-        +input(inputPropsBase)(class=dropdownArrivalClass)
-      .date-dropdown__input
-        p.date-dropdown__label= departureLabel || false
-        +input(inputPropsBase)(class=dropdownDepartureClass)
+      .date-dropdown__input(class=dropdownArrivalClass)
+        p.date-dropdown__label= arrivalLabel || ""
+        +input(inputPropsBase)(data-input)
+      .date-dropdown__input(class=dropdownDepartureClass)
+        p.date-dropdown__label= departureLabel || ""
+        +input(inputPropsBase)(data-input)

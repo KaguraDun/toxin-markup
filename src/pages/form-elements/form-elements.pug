@@ -51,8 +51,9 @@ block content
       .form-elements__item.form-elements__item_margin_large
         -
           const dateDropdownProps = {
-            arrivalLabel:'date dropdown',
-            departureLabel:'date dropdown',
+            arrivalLabel: 'date dropdown',
+            departureLabel: 'date dropdown',
+            size: 'small',
             dropdownArrivalClass: 'js-form-elements-dropdown-arrival',
             dropdownDepartureClass: 'js-form-elements-dropdown-departure',
           }
@@ -63,7 +64,7 @@ block content
         -
           const dateDropdownSingleProps = {
             dropdownLabel: 'filter date dropdown',
-            size:'medium',
+            size: 'medium',
             dropdownClass: 'js-form-elements-dropdown-single',
           }
         +date-dropdown(dateDropdownSingleProps)

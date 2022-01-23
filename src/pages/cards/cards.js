@@ -16,6 +16,7 @@ const calendar = new Calendar({
   defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 23)],
   today: new Date(2019, 7, 8),
   minDate: new Date(2019, 7, 8),
+  wrap: false,
 });
 
 calendar.render();
