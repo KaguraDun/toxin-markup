@@ -37,7 +37,15 @@
         "warnOnUnassignedImports": true
       }
     ],
-    "import/newline-after-import": "error"
+    "import/newline-after-import": "error",
+    "import/extensions": [
+      "warn",
+      "ignorePackages",
+      {
+        "js": "never",
+        "pug": "never"
+      }
+   ]
   },
   "settings": {
     "import/resolver": { "webpack": { "config": "./config/webpack.common.js" } }
