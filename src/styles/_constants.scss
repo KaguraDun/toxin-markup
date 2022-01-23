@@ -24,6 +24,13 @@ $shadow-primary-medium-light: rgba(31, 32, 65, .3);
 $shadow-primary-lighter: rgba(31, 32, 65, .1);
 $shadow-primary-lightest: rgba(31, 32, 65, .05);
 
+$shadow-slider: linear-gradient(
+  90deg,
+  rgba(0, 0, 0, .5) 0%,
+  rgba(0, 0, 0, 0) 99.99%,
+  rgba(255, 255, 255, 0) 100%
+);
+
 /* gradients */
 $gradient-primary: linear-gradient(180deg, rgba(188, 156, 255, 1) 0%, rgba(139, 164, 249, 1) 100%);
 $gradient-primary-hover: linear-gradient(
