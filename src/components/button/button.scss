@@ -24,11 +24,11 @@
     @include icon-arrow();
   }
 
-  &_size_small .button__text {
+  &_size_small &__text {
     padding: rem(8px 18px);
   }
 
-  &_size_medium .button__text {
+  &_size_medium &__text {
     padding: rem(13px 18px);
   }
 
@@ -74,6 +74,7 @@
     background: none;
 
     .button__text {
+      margin: 0;
       padding: 0;
     }
 

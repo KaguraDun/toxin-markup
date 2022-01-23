@@ -50,8 +50,7 @@
     @include container;
 
     & {
-      margin-top: rem(70px);
-      margin-bottom: 60px;
+      margin: rem(70px) auto;
     }
   }
 
