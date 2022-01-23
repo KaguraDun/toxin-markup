@@ -49,6 +49,7 @@
     opacity: 1; /* Firefox */
   }
 
+  &:focus-visible,
   &:hover,
   &_hovered {
     border-color: $border-primary-medium;
@@ -56,5 +57,9 @@
     &::placeholder {
       color: $text-primary-dark;
     }
+  }
+
+  &:focus-visible {
+    outline: none;
   }
 }
