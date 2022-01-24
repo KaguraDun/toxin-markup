@@ -125,7 +125,12 @@
     @include font-montserrat(rem(18px), rem(22px));
 
     &:disabled {
+      cursor: default;
       opacity: .38;
+    }
+
+    &:disabled:hover {
+      border: 1px solid $border-primary-light;
     }
 
     &:hover {
