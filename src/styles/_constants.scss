@@ -19,10 +19,14 @@ $border-secondary: white;
 
 $border-tertiary: rgba(188, 156, 255, 1);
 
+$border-form: rgba(0, 0, 0, .12);
+
 /* shadows */
 $shadow-primary-medium-light: rgba(31, 32, 65, .3);
 $shadow-primary-lighter: rgba(31, 32, 65, .1);
 $shadow-primary-lightest: rgba(31, 32, 65, .05);
+
+$shadow-form: rgba(0, 0, 0, .2);
 
 $shadow-slider: linear-gradient(
   90deg,
@@ -38,6 +42,7 @@ $gradient-primary-hover: linear-gradient(
   rgba(188, 156, 255, .5) 0%,
   rgba(139, 164, 249, .5) 100%
 );
+
 $gradient-secondary: linear-gradient(
   180deg,
   rgba(111, 207, 151, 1) 0%,
@@ -48,14 +53,19 @@ $gradient-secondary-hover: linear-gradient(
   rgba(111, 207, 151, .5) 0%,
   rgba(102, 210, 234, .5) 100%
 );
+
 $gradient-tertiary: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
+
 $gradient-quaternary: linear-gradient(180deg, #919191 0%, #3d4975 100%);
 
 /* backgrounds */
 $bg-primary: white;
+
 $bg-secondary: rgba(31, 32, 65, .25);
+
 $bg-tertiary: rgba(188, 156, 255, 1);
 $bg-tertiary-light: rgba(188, 156, 255, .25);
+
 $bg-quaternary: rgb(244, 244, 246);
 
 /* media */

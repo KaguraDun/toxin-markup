@@ -2,7 +2,7 @@
   width: rem(320px);
   padding: rem(20px);
   background: $bg-primary;
-  border: 1px solid #1f204140;
+  border: 1px solid $border-primary-light;
 
   @include font-montserrat-body;
 }
