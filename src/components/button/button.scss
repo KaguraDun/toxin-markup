@@ -116,4 +116,13 @@
       background: $gradient-secondary-hover;
     }
   }
+
+  &:disabled {
+    background: $bg-quaternary;
+    cursor: default;
+  }
+
+  &:disabled:hover {
+    background: $bg-quaternary;
+  }
 }
