@@ -4,6 +4,10 @@
     margin: 0;
     padding: 0;
     border: 0;
+
+    &:disabled {
+      pointer-events: none;
+    }
   }
 
   &__input-group {
