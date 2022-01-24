@@ -5,6 +5,7 @@
   &-button-next {
     position: absolute;
     top: 15%;
+    z-index: $z-index-slider-buttons;
     width: rem(50px);
     height: 100%;
     background: $shadow-slider;
@@ -43,8 +44,10 @@
   }
 
   &-pagination {
+    z-index: $z-index-slider-pagination;
     display: flex;
     gap: rem(3.75px);
+    padding: rem(10px 0);
   }
 
   &-pagination-bullet {
@@ -58,7 +61,7 @@
   }
 
   &-horizontal > &-pagination-bullets {
-    bottom: rem(15px);
+    bottom: rem(5px);
     left: 80%;
   }
 

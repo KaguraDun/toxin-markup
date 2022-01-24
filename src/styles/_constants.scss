@@ -69,9 +69,14 @@ $mobile-s: 320px;
 $container-default: 1160px;
 
 /* z-indexes */
-$z-index-header: 1;
 $z-index-header-logo: 10;
+$z-index-header-nav: 9;
+$z-index-header: 1;
+
 $z-index-burger-button: 10;
 $z-index-burger-bg: 8;
-$z-index-header-nav: 9;
+
+$z-index-slider-pagination: 7;
+$z-index-slider-buttons: 6;
+
 $z-index-dropdown: 5;
