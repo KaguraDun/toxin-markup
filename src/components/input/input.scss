@@ -67,7 +67,7 @@
   }
 
   &:focus-visible,
-  &:hover,
+  &__wrapper:hover &,
   &_hovered {
     border-color: $border-primary-medium;
 
@@ -78,5 +78,9 @@
 
   &:focus-visible {
     outline: none;
+  }
+
+  &[data-input] {
+    cursor: pointer;
   }
 }
