@@ -11,18 +11,13 @@
     @include font-montserrat-h3();
   }
 
-  &__input-wrapper {
-    position: relative;
-    cursor: pointer;
-  }
-
   &__input {
     box-sizing: border-box;
     width: 100%;
     max-height: rem(44px);
     margin: 0 auto;
     padding: rem(10px 32% 10px 15px);
-    color: $text-primary-light;
+    color: $text-primary-dark;
     text-overflow: ellipsis;
     background: $bg-primary;
     border: 1px solid $border-primary-light;
@@ -33,17 +28,16 @@
 
     @include font-montserrat-body();
 
-    &_expanded {
-      border: 1px solid $border-primary-medium;
+    &-wrapper {
+      position: relative;
+      cursor: pointer;
     }
 
+    &-wrapper:hover &,
     &:focus-visible,
+    &_expanded,
     &:hover {
       border-color: $border-primary-medium;
-    }
-
-    &:hover &::placeholder {
-      color: $text-primary-dark;
     }
 
     &:focus-visible {
