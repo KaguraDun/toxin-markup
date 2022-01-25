@@ -49,6 +49,17 @@ class Calendar {
     }
   }
 
+  getNumberOfSelectedDays() {
+    const [firstDate, secondDate] = this.instance.selectedDates;
+    const DAY_MS = 1000 * 60 * 60 * 24;
+
+    let selectedDays = Math.abs((firstDate - secondDate) / DAY_MS);
+
+    if (Number.isNaN(selectedDays)) selectedDays = 0;
+
+    return selectedDays;
+  }
+
   static hideExternalNextMonthDays(instance) {
     const nextDays = Array.from(instance.days.querySelectorAll('.nextMonthDay'));
     const daysInWeek = 7;
