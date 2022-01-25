@@ -50,8 +50,8 @@ if (dropdownGuestsWithControlsAndValues) {
 }
 
 const twoInputCalendar = new Calendar({
-  firstInputSelector: '.js-form-elements-dropdown-arrival',
-  secondInputSelector: '.js-form-elements-dropdown-departure',
+  firstInputContainer: document.querySelector('.js-form-elements-dropdown-arrival'),
+  secondInputContainer: document.querySelector('.js-form-elements-dropdown-departure'),
   defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 19)],
   today: new Date(2019, 7, 8),
   minDate: new Date(2019, 7, 8),
@@ -59,7 +59,7 @@ const twoInputCalendar = new Calendar({
 twoInputCalendar.render();
 
 const singleInputCalendar = new Calendar({
-  singleInputSelector: '.js-form-elements-dropdown-single',
+  singleInputContainer: document.querySelector('.js-form-elements-dropdown-single'),
   defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 23)],
   today: new Date(2019, 7, 8),
   minDate: new Date(2019, 7, 8),
