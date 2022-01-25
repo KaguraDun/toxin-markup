@@ -42,7 +42,7 @@ block content
         +room-advantages({items: roomAdvantagesProps})
       .room-details-page__chart.js-room-details-page-chart
         +chart-plugin
-      .room-details-page__book-room
+      .room-details-page__book-room.js-room-details-page-book-room
         -
           const bookRoomProps = {
             roomInfo: {
@@ -50,23 +50,6 @@ block content
               price: 9990,
               type: 'люкс'
             },
-            priceList: [{
-              name: "9 990₽ х 4 суток",
-              total: "39 960₽",
-              about: false,
-              },
-              {
-                name: "Сбор за услуги: скидка 2 179₽",
-                total: "0₽",
-                about: true,
-              },
-              {
-                name: "Сбор за дополнительные <br> услуги",
-                total: "300₽",
-                about: true,
-              },
-            ],
-            totalSum: "38 081₽",
           }
         +book-room(bookRoomProps)
       .room-details-page__review-list

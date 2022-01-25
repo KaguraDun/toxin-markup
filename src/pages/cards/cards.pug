@@ -22,32 +22,17 @@ block content
       +sign-up({buttonText: 'перейти к оплате'})
 
     .cards__column
-      -
-        const bookRoomProps = {
-          roomInfo: {
-            number: 888,
-            price: 9990,
-            type: 'люкс'
-          },
-          priceList: [{
-            name: "9 990₽ х 4 суток",
-            total: "39 960₽",
-            about: false,
+      .cards__book-room.js-cards-book-room
+        -
+          const bookRoomProps = {
+            roomInfo: {
+              number: 888,
+              price: 9990,
+              type: 'люкс',
             },
-            {
-              name: "Сбор за услуги: скидка 2 179₽",
-              total: "0₽",
-              about: true,
-            },
-            {
-              name: `Сбор за дополнительные <br> услуги`,
-              total: "300₽",
-              about: true,
-            }
-          ],
-          totalSum: "38 081₽"
-        }
-      +book-room(bookRoomProps)
+          }
+        +book-room(bookRoomProps)
+        
       +sign-in
 
     .cards__column
