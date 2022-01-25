@@ -56,6 +56,7 @@ mixin input(options)
           'expand-more': 'input__button-icon_style_expand-more',
           'expand-less': 'input__button-icon_style_expand-less', 
         }
+      - const buttonType = buttonOpenCalendar ? "button" : "submit";
 
-      button.input__button(type='button', data-toggle=buttonOpenCalendar)
+      button.input__button(type=buttonType, data-toggle=buttonOpenCalendar)
         span(class=`input__button-icon ${icons[button]}`)
