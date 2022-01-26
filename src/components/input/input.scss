@@ -7,12 +7,43 @@
     max-height: rem(44px);
     margin: 0 auto;
     padding: rem(10px) rem(15px);
-    color: $text-primary-light;
     background: $bg-primary;
-    border: 1px solid $border-primary-light;
     border-radius: rem(4px);
 
     @include font-montserrat-body();
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &[data-input] {
+      cursor: pointer;
+    }
+
+    &_style_default {
+      color: $text-primary-light;
+      border: 1px solid $border-primary-light;
+    }
+
+    &_style_dropdown {
+      color: $text-primary-dark;
+      text-overflow: ellipsis;
+      border: 1px solid $border-primary-light;
+      border-radius: 2px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      cursor: pointer;
+    }
+  }
+
+  &__input:focus-visible,
+  &:hover &__input,
+  &__input_hovered {
+    border-color: $border-primary-medium;
+
+    &::placeholder {
+      color: $text-primary-dark;
+    }
   }
 
   &__button {
@@ -64,23 +95,5 @@
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: $text-primary-light;
     opacity: 1; /* Firefox */
-  }
-
-  &:focus-visible,
-  &__wrapper:hover &,
-  &_hovered {
-    border-color: $border-primary-medium;
-
-    &::placeholder {
-      color: $text-primary-dark;
-    }
-  }
-
-  &:focus-visible {
-    outline: none;
-  }
-
-  &[data-input] {
-    cursor: pointer;
   }
 }

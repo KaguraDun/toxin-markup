@@ -2,12 +2,13 @@
   type: string;
   placeholder: string;
   value: string | number;
+  style: default | dropdown;
   size: small | medium | large | full;
   button: none | arrow | expand-more | expand-less
   mask: date;
   readonly: boolean;
   required: boolean;
-  buttonOpenCalendar: boolean;
+  openByButton: boolean;
 
 mixin input(options)
   -
@@ -20,7 +21,8 @@ mixin input(options)
       mask = false,
       readonly = false,
       required = false,
-      buttonOpenCalendar = false,
+      openByButton = false,
+      style = 'default',
     } = options
   -
     const maskList = {
@@ -36,9 +38,15 @@ mixin input(options)
       large: 'input_size_large',
       full: 'input_size_full',
     }
+  -
+    const styles = {
+      default: 'input__input_style_default',
+      dropdown: 'input__input_style_dropdown',
+    }
 
   .input(class=sizes[size])
-    input.input__input(
+    input(
+      class=`input__input ${styles[style]}`,
       type=type,
       value=value,
       placeholder=placeholder,
@@ -56,7 +64,7 @@ mixin input(options)
           'expand-more': 'input__button-icon_style_expand-more',
           'expand-less': 'input__button-icon_style_expand-less', 
         }
-      - const buttonType = buttonOpenCalendar ? "button" : "submit";
+      - const buttonType = openByButton ? "button" : "submit";
 
-      button.input__button(type=buttonType, data-toggle=buttonOpenCalendar)
+      button.input__button(type=buttonType, data-toggle=openByButton)
         span(class=`input__button-icon ${icons[button]}`)
