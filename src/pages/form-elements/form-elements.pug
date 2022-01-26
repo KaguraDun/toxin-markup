@@ -3,6 +3,7 @@ extends /layouts/base.pug
 include /components/logo/logo.pug
 include /components/input/input.pug
 include /components/date-dropdown/date-dropdown.pug
+include /components/dropdown/dropdown.pug
 include /components/input-checkbox/input-checkbox.pug
 include /components/input-radio/input-radio.pug
 include /components/input-toggle/input-toggle.pug
@@ -40,8 +41,8 @@ block content
         +input({type:'text', value:'This is pretty awesome', size:'large'}).input_hovered
 
       .form-elements__item
-        //- create container for dropdown, set properties in index.js
         .form-elements__dropdown-guests.js-form-elements-dropdown-guests
+          +dropdown
 
       .form-elements__item.form-elements__item_margin_large
         .form-elements__item-info
@@ -79,15 +80,15 @@ block content
         .form-elements__item-info
           .form-elements__item-name= "dropdown"
           .form-elements__item-state= "default"
-        //- create container for dropdown, set properties in index.js
         .form-elements__dropdown-room-amenity.js-form-elements-dropdown-room-amenity
+          +dropdown
 
       .form-elements__item.form-elements__item_margin_largest.form-elements__item_size_medium
         .form-elements__item-info.form-elements__item-info_margin_none
           .form-elements__item-name= "dropdown"
           .form-elements__item-state= "expanded"
-        //- create container for dropdown, set properties in index.js
         .form-elements__dropdown-room-amenity-expanded.js-form-elements-dropdown-room-amenity-expanded
+          +dropdown
 
       .form-elements__item.form-elements__item_size_medium
         -
@@ -156,8 +157,8 @@ block content
 
     .form-elements__grid-item.form-elements__grid-item_column_2
       .form-elements__item.form-elements__item_margin_extra-large
-        //- create container for dropdown, set properties in index.js
         .form-elements__dropdown-guests_with-controls.js-form-elements-dropdown-guests-with-controls
+          +dropdown
 
       .form-elements__item
         -
@@ -227,9 +228,8 @@ block content
 
     .form-elements__grid-item.form-elements__grid-item_column_3
       .form-elements__item.form-elements__item_margin_extra-large
-        //- create container for dropdown, set properties in index.js
         .form-elements__dropdown-guests_with-controls-and-values.js-form-elements-dropdown-guests-with-controls-and-values
-
+          +dropdown
       .form-elements__item
         .form-elements__item-info
           .form-elements__item-name= "bullet list"

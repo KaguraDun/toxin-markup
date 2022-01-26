@@ -1,4 +1,4 @@
-import Dropdown from './Dropdown';
+import Dropdown from './Dropdown.js';
 
 function createDropdownGuests({ element, expanded = false, controls = true, values = [], label }) {
   const guestsPattern = ['Гость', 'Гостя', 'Гостей'];
@@ -21,6 +21,8 @@ function createDropdownGuests({ element, expanded = false, controls = true, valu
 
   const dropdown = new Dropdown(element, properties);
   dropdown.init();
+
+  return dropdown;
 }
 
 function createDropdownRoomAmenity({
@@ -49,6 +51,8 @@ function createDropdownRoomAmenity({
 
   const dropdown = new Dropdown(element, properties);
   dropdown.init();
+
+  return dropdown;
 }
 
 export { createDropdownGuests, createDropdownRoomAmenity };

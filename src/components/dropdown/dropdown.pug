@@ -1,0 +1,13 @@
+include /components/input/input.pug
+include /components/button/button.pug
+
+mixin dropdown
+  .dropdown.js-dropdown
+    p.dropdown__label.js-dropdown-label
+    .dropdown__input.js-dropdown-input
+      +input({ type: 'text', button: 'expand-more', readonly: true, openByButton: true, style: 'dropdown' })
+    .dropdown__items-wrapper.js-dropdown-items-wrapper(hidden)
+      .dropdown__items.js-dropdown-items
+      .dropdown__button-wrapper.js-dropdown-button-wrapper
+        +button({ style: 'borderless', text: 'очистить' })
+        +button({ style: 'borderless', text: 'применить' })

@@ -1,5 +1,6 @@
 include /components/button/button.pug
 include /components/date-dropdown/date-dropdown.pug
+include /components/dropdown/dropdown.pug
 include /components/room-info/room-info.pug
 
 mixin book-room({roomInfo})
@@ -15,10 +16,10 @@ mixin book-room({roomInfo})
           dropdownArrivalClass: 'js-book-room-date-dropdown-arrival',
           dropdownDepartureClass: 'js-book-room-date-dropdown-departure',
         }
-    .book-room__date-dropdown
       +date-dropdown(dateDropdownProps)
 
     .book-room__dropdown-guests.js-book-room-dropdown-guests
+      +dropdown
 
     .book-room__price-list-wrapper.js-book-room-price-list-wrapper
 
