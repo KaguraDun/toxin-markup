@@ -68,6 +68,26 @@
 
       @include font-montserrat(rem(12px), rem(14px), bold);
     }
+
+    &-text {
+      position: absolute;
+      bottom: 0;
+      display: none;
+      min-width: 100%;
+      max-width: rem(100px);
+      padding: rem(10px);
+      word-wrap: break-word;
+      background: $bg-primary;
+      border: 1px solid $border-primary-light;
+      border-radius: 4px;
+      box-shadow: 0 10px 20px $shadow-primary-lighter;
+      transform: translateX(calc(-50% + 11px));
+      cursor: default;
+    }
+
+    &:hover &-text {
+      display: block;
+    }
   }
 
   &__total {

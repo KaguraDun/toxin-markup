@@ -33,13 +33,13 @@ const priceList = [
     name: 'Сбор за услуги: скидка 2 179₽',
     count: 1,
     price: -2179,
-    about: true,
+    about: 'Скидка',
   },
   {
     name: 'Сбор за дополнительные <br> услуги',
     count: 1,
     price: 300,
-    about: true,
+    about: 'Сбор',
   },
 ];
 
