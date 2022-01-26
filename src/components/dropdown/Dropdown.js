@@ -144,7 +144,9 @@ class Dropdown {
   };
 
   #close = () => {
-    this.#toggleExpand();
+    this.dropdownItemsWrapper.hidden = true;
+    this.dropdownInput.classList.remove('input__input_hovered');
+
     document.removeEventListener('click', this.#handleDropdownClose);
     document.removeEventListener('keydown', this.#handleKeydown);
   };
