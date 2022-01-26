@@ -15,6 +15,7 @@ class BookRoom {
     this.totalSumElement = null;
     this.dropdownGuests = null;
     this.calendar = null;
+    this.submitButton = null;
   }
 
   init() {
@@ -39,13 +40,13 @@ class BookRoom {
 
     this.totalSumElement = this.element.querySelector('.js-book-room-total-sum');
     this.priceListContainer = this.element.querySelector('.js-book-room-price-list-wrapper');
-
-    this.#renderPriceList();
-    this.#setTotalSum();
+    this.submitButton = this.element.querySelector('.js-book-room-button-book > button');
 
     this.calendar.inputList.forEach((input) => {
       input.addEventListener('change', this.#handleCalendarUpdate);
     });
+
+    this.#handleCalendarUpdate();
   }
 
   #handleCalendarUpdate = () => {
@@ -56,6 +57,9 @@ class BookRoom {
 
     this.#renderPriceList();
     this.#setTotalSum();
+
+    const isRangeSelected = count > 0;
+    this.submitButton.disabled = !isRangeSelected;
   };
 
   #renderPriceList() {
@@ -91,7 +95,10 @@ class BookRoom {
   }
 
   #setTotalSum() {
-    const totalSum = this.priceList.reduce((sum, curr) => sum + curr.price * curr.count, 0);
+    let totalSum = this.priceList.reduce((sum, curr) => sum + curr.price * curr.count, 0);
+
+    if (totalSum < 0) totalSum = 0;
+
     this.totalSumElement.innerHTML = getFormattedPrice(totalSum);
   }
 }
