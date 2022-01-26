@@ -106,6 +106,10 @@
     background: none;
   }
 
+  &_hidden {
+    visibility: hidden;
+  }
+
   &_style_page-next {
     color: $text-secondary;
     background: $gradient-secondary;
