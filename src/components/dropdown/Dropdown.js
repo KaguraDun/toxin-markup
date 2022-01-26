@@ -33,6 +33,8 @@ class Dropdown {
     if (this.properties.isExpanded) {
       this.#handleExpand();
     }
+
+    document.addEventListener('keydown', Dropdown.#handleInputSubmit);
   }
 
   #setLabel() {
@@ -118,6 +120,12 @@ class Dropdown {
 
     this.buttonClear.classList.toggle('button_hidden', isHidden);
   }
+
+  static #handleInputSubmit = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+    }
+  };
 
   #handleKeydown = (event) => {
     if (event.key === 'Escape') {
