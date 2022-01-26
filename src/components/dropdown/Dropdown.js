@@ -10,6 +10,7 @@ class Dropdown {
     this.properties = properties;
     this.store = properties.options;
 
+    this.dropdown = null;
     this.dropdownInput = null;
     this.dropdownItemsWrapper = null;
     this.dropdownItems = null;
@@ -35,6 +36,8 @@ class Dropdown {
     }
 
     document.addEventListener('keydown', Dropdown.#handleInputSubmit);
+
+    this.dropdown = this.element.querySelector('.js-dropdown');
   }
 
   #setLabel() {
@@ -77,7 +80,7 @@ class Dropdown {
     this.buttonApply = buttonApply;
 
     this.buttonClear?.addEventListener('click', this.#handleStoreValuesReset);
-    this.buttonApply?.addEventListener('click', this.#handleExpand);
+    this.buttonApply?.addEventListener('click', this.#close);
   }
 
   #createDropdownItems() {
@@ -129,9 +132,21 @@ class Dropdown {
 
   #handleKeydown = (event) => {
     if (event.key === 'Escape') {
-      this.#toggleExpand();
-      document.removeEventListener('keydown', this.#handleKeydown);
+      this.#close();
     }
+  };
+
+  #handleDropdownClose = (event) => {
+    const target = event.target.closest('.js-dropdown');
+    if (target === this.dropdown) return;
+
+    this.#close();
+  };
+
+  #close = () => {
+    this.#toggleExpand();
+    document.removeEventListener('click', this.#handleDropdownClose);
+    document.removeEventListener('keydown', this.#handleKeydown);
   };
 
   #handleStoreValueChange = (e) => {
@@ -187,6 +202,7 @@ class Dropdown {
     this.#toggleExpand();
 
     document.addEventListener('keydown', this.#handleKeydown);
+    document.addEventListener('click', this.#handleDropdownClose);
   };
 
   #toggleExpand() {
