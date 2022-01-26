@@ -11,7 +11,7 @@
 
 include /components/input-checkbox/input-checkbox.pug
 
-mixin checkbox-list({ name, expandable=false, expanded=true, items })
+mixin checkbox-list({ name, items, expandable = false, expanded = true})
   -
     const itemClassNames = {
       'checkbox-list__items':true,

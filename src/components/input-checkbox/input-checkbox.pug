@@ -3,12 +3,12 @@
   text: string;
   info: string;
 
-mixin input-checkbox({checked, text, info})
-  label.input-checkbox__label
-    input.input-checkbox(type='checkbox', checked=checked || false)
-    span.input-checkbox__icon
+mixin input-checkbox({ text, info, checked = false })
+  label.input-checkbox
+    input.input-checkbox__input(type='checkbox', checked=checked)
+    span.input-checkbox__input-icon
     if info
-      span.input-checkbox__wrapper
+      span.input-checkbox__text-wrapper
         span.input-checkbox__text!= text
         span.input-checkbox__info!= info
     else

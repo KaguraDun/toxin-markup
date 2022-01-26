@@ -5,9 +5,10 @@
   }
 include /components/link/link.pug
 
-mixin footer-item-list({heading, items})
-  h3.footer-item-list__heading #{ heading }
-  ul.footer-item-list
-    each item in items
-      li.footer-item-list__item
-        +link({url: item.link, text: item.text})
+mixin footer-item-list({ heading, items })
+  .footer-item-list
+    h3.footer-item-list__heading #{ heading }
+    ul.footer-item-list__items
+      each item in items
+        li.footer-item-list__item
+          +link({ url: item.link, text: item.text })

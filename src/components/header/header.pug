@@ -3,12 +3,12 @@ include /components/link/link.pug
 include /components/button/button.pug
 include /components/button-burger/button-burger.pug
 
-mixin header({isLogged=false})
+mixin header({ isLogged = false })
   header.header.js-header
     .header__container
       .header__left-col
         h1.header__logo
-          +logo({style:'colored'})
+          +logo({ style:'colored' })
       .header__burger.js-header-burger
         +button-burger
       .header__right-col
@@ -73,5 +73,5 @@ mixin header({isLogged=false})
           .header__vertical-line
           .header__username= "Юлий Цезарь"
         else
-          +button({size:'small', href:'/sign-in.html', text:'войти'})
-          +button({size:'small', href:'/registration.html', text:'зарегистрироваться', style:'filled'})
+          +button({ size: 'small', href: '/sign-in.html', text: 'войти' })
+          +button({ size: 'small', href: '/registration.html', text: 'зарегистрироваться', style: 'filled' })

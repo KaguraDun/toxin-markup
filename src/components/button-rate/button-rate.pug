@@ -3,8 +3,8 @@
   name: string;
   disabled: boolean
 
-mixin button-rate({ score, name, disabled=true })
-  fieldset.button-rate__fieldset(disabled=disabled)
+mixin button-rate({ score, name, disabled = true })
+  fieldset.button-rate(disabled=disabled)
     .button-rate__input-group
       - const rateValues = ["Ужасно", "Сносно", "Нормально", "Хорошо", "Отлично"];
       each val, i in rateValues

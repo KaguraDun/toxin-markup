@@ -1,18 +1,18 @@
 .input {
-  box-sizing: border-box;
-  width: 100%;
-  max-height: rem(44px);
-  margin: 0 auto;
-  padding: rem(10px) rem(15px);
-  color: $text-primary-light;
-  background: $bg-primary;
-  border: 1px solid $border-primary-light;
-  border-radius: rem(4px);
+  position: relative;
 
-  @include font-montserrat-body();
+  &__input {
+    box-sizing: border-box;
+    width: 100%;
+    max-height: rem(44px);
+    margin: 0 auto;
+    padding: rem(10px) rem(15px);
+    color: $text-primary-light;
+    background: $bg-primary;
+    border: 1px solid $border-primary-light;
+    border-radius: rem(4px);
 
-  &__wrapper {
-    position: relative;
+    @include font-montserrat-body();
   }
 
   &__button {

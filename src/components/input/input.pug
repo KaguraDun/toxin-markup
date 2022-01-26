@@ -12,15 +12,15 @@
 mixin input(options)
   -
     const {
-      type='text',
-      placeholder=false,
-      value=false,
-      button='none',
-      size='full',
-      mask=false,
-      readonly=false,
-      required=false,
-      buttonOpenCalendar=false,
+      type = 'text',
+      placeholder = false,
+      value = false,
+      button = 'none',
+      size = 'full',
+      mask = false,
+      readonly = false,
+      required = false,
+      buttonOpenCalendar = false,
     } = options
   -
     const maskList = {
@@ -37,8 +37,8 @@ mixin input(options)
       full: 'input_size_full',
     }
 
-  .input__wrapper(class=sizes[size])
-    input.input(
+  .input(class=sizes[size])
+    input.input__input(
       type=type,
       value=value,
       placeholder=placeholder,

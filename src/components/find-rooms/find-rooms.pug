@@ -6,8 +6,8 @@ mixin find-rooms
     h2.find-rooms__heading!= "Найдём номера под <br> ваши пожелания"
     -
       const dateDropdownProps = {
-        arrivalLabel:'прибытие',
-        departureLabel:'выезд',
+        arrivalLabel: 'прибытие',
+        departureLabel: 'выезд',
         dropdownArrivalClass: 'js-find-rooms-dropdown-arrival',
         dropdownDepartureClass: 'js-find-rooms-dropdown-departure',
       }
@@ -17,10 +17,10 @@ mixin find-rooms
     .find-rooms__button
       -
         const buttonProps = {
-          type:'submit',
-          width:'full',
+          type: 'submit',
+          width: 'full',
           style: 'filled',
-          arrow:true,
-          text:'подобрать номер',
+          arrow: true,
+          text: 'подобрать номер',
         }
       +button(buttonProps)

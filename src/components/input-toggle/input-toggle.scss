@@ -1,28 +1,28 @@
 .input-toggle {
-  margin: 0;
-  appearance: none;
+  display: flex;
+  align-items: center;
+  max-width: max-content;
+  cursor: pointer;
 
-  &__label {
-    display: flex;
-    align-items: center;
-    max-width: max-content;
-    cursor: pointer;
+  @include font-montserrat-body;
 
-    @include font-montserrat-body;
-  }
+  &__input {
+    margin: 0;
+    appearance: none;
 
-  &__icon {
-    position: relative;
-    display: inline-block;
-    width: rem(40px);
-    height: rem(18px);
-    margin-right: rem(10px);
-    border: 1px solid $border-primary-light;
-    border-radius: rem(10px);
-    cursor: pointer;
-    transition: .4s;
+    &-icon {
+      position: relative;
+      display: inline-block;
+      width: rem(40px);
+      height: rem(18px);
+      margin-right: rem(10px);
+      border: 1px solid $border-primary-light;
+      border-radius: rem(10px);
+      cursor: pointer;
+      transition: .4s;
+    }
 
-    &::before {
+    &-icon::before {
       position: absolute;
       top: 50%;
       left: 10%;
@@ -34,26 +34,26 @@
       transition: .4s;
       content: '';
     }
-  }
 
-  &:checked + &__icon {
-    border: 1px solid $border-tertiary;
-  }
+    &:checked + &-icon {
+      border: 1px solid $border-tertiary;
+    }
 
-  &:checked + &__icon::before {
-    background: $gradient-primary;
-    transform: translate(180%, -50%);
-  }
+    &:checked + &-icon::before {
+      background: $gradient-primary;
+      transform: translate(180%, -50%);
+    }
 
-  &:focus-visible + &__icon {
-    box-shadow: 0 0 0 2px $border-tertiary;
-  }
+    &:focus-visible + &-icon {
+      box-shadow: 0 0 0 2px $border-tertiary;
+    }
 
-  &:disabled + &__icon {
-    border: 1px solid $border-primary-light;
-  }
+    &:disabled + &-icon {
+      border: 1px solid $border-primary-light;
+    }
 
-  &:disabled + &__icon::before {
-    background: $bg-secondary;
+    &:disabled + &-icon::before {
+      background: $bg-secondary;
+    }
   }
 }
