@@ -8,9 +8,11 @@ import '@/components/room-info/room-info.js';
 import './book-room.scss';
 
 class BookRoom {
-  constructor(element, priceList) {
+  constructor({ element, priceList, calendarOptions = null, dropdownOptions = null }) {
     this.element = element;
     this.priceList = [...priceList];
+    this.calendarOptions = calendarOptions;
+    this.dropdownOptions = dropdownOptions;
     this.priceListContainer = null;
     this.totalSumElement = null;
     this.dropdownGuests = null;
@@ -22,9 +24,7 @@ class BookRoom {
     this.calendar = new Calendar({
       firstInputContainer: this.element.querySelector('.js-book-room-date-dropdown-arrival'),
       secondInputContainer: this.element.querySelector('.js-book-room-date-dropdown-departure'),
-      defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 23)],
-      today: new Date(2019, 7, 8),
-      minDate: new Date(2019, 7, 8),
+      ...this.calendarOptions,
     });
     this.calendar.render();
 
@@ -33,8 +33,7 @@ class BookRoom {
     if (dropdownGuests) {
       this.dropdownGuests = createDropdownGuests({
         element: dropdownGuests,
-        label: 'гости',
-        values: [3, 0, 0],
+        ...this.dropdownOptions,
       });
     }
 

@@ -40,6 +40,18 @@ const priceList = [
 ];
 
 if (bookRoomContainer) {
-  const bookRoom = new BookRoom(bookRoomContainer, priceList);
+  const bookRoom = new BookRoom({
+    element: bookRoomContainer,
+    priceList,
+    calendarOptions: {
+      defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 23)],
+      today: new Date(2019, 7, 8),
+      minDate: new Date(2019, 7, 8),
+    },
+    dropdownOptions: {
+      label: 'гости',
+      values: [3, 0, 0],
+    },
+  });
   bookRoom.init();
 }
