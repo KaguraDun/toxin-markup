@@ -21,8 +21,12 @@
     }
 
     &_style_default {
-      color: $text-primary-light;
+      color: $text-primary-dark;
       border: 1px solid $border-primary-light;
+    }
+
+    &_style_default::placeholder {
+      color: $text-primary-light;
     }
 
     &_style_dropdown {
