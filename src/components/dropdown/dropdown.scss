@@ -11,51 +11,7 @@
     @include font-montserrat-h3();
   }
 
-  &__input-wrapper {
-    position: relative;
-    cursor: pointer;
-  }
-
-  &__input {
-    box-sizing: border-box;
-    width: 100%;
-    max-height: rem(44px);
-    margin: 0 auto;
-    padding: rem(10px 32% 10px 15px);
-    color: $text-primary-light;
-    text-overflow: ellipsis;
-    background: $bg-primary;
-    border: 1px solid $border-primary-light;
-    border-radius: 2px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-    cursor: pointer;
-
-    @include font-montserrat-body();
-
-    &_expanded {
-      border: 1px solid $border-primary-medium;
-    }
-
-    &:focus-visible,
-    &:hover {
-      border-color: $border-primary-medium;
-    }
-
-    &:hover &::placeholder {
-      color: $text-primary-dark;
-    }
-
-    &:focus-visible {
-      outline: none;
-    }
-  }
-
-  &__button-icon_style_expand-more {
-    @include icon-expand-more;
-  }
-
-  &__items {
+  &__items-wrapper {
     position: absolute;
     top: 100%;
     right: 0;
@@ -70,6 +26,10 @@
     border-bottom-right-radius: 2px;
     border-bottom-left-radius: 2px;
     box-shadow: 0px 10px 20px 0px $shadow-primary-lightest;
+  }
+
+  &__items {
+    @include clear-ul-style;
   }
 
   &__item {
@@ -108,7 +68,8 @@
   }
 
   &:hover,
-  &:active {
+  &:active,
+  &_expanded {
     border-color: $border-primary-medium;
   }
 
@@ -125,7 +86,12 @@
     @include font-montserrat(rem(18px), rem(22px));
 
     &:disabled {
+      cursor: default;
       opacity: .38;
+    }
+
+    &:disabled:hover {
+      border: 1px solid $border-primary-light;
     }
 
     &:hover {
@@ -149,20 +115,5 @@
 
   &__button_hidden {
     visibility: hidden;
-  }
-
-  &__button-widget {
-    padding: 0;
-    color: $text-tertiary;
-    text-transform: uppercase;
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-
-    @include font-montserrat(rem(12px), rem(15px), bold);
-
-    &:hover {
-      color: $text-primary-medium;
-    }
   }
 }

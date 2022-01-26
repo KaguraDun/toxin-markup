@@ -8,7 +8,7 @@
 
 include /components/button-like/button-like.pug
 
-mixin review({ avatar, name, date, text, likesNumber, isLikePressed=true })
+mixin review({ avatar, name, date, text, likesNumber, isLikePressed = true })
   .review
     .review__author
       img.review__avatar(src=avatar, alt=name)
@@ -17,5 +17,5 @@ mixin review({ avatar, name, date, text, likesNumber, isLikePressed=true })
         p.review__date= date
     .review__info
       .review__button-like
-        +button-like({likesNumber, isPressed:isLikePressed})
+        +button-like({ likesNumber, isPressed: isLikePressed })
       p.review__text!= text

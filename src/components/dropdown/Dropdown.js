@@ -1,4 +1,6 @@
 import getDeclension from '@/helpers/get-declension';
+import '@/components/button/button.scss';
+import '@/components/input/input.scss';
 
 import './dropdown.scss';
 
@@ -8,19 +10,88 @@ class Dropdown {
     this.properties = properties;
     this.store = properties.options;
 
+    this.dropdown = null;
     this.dropdownInput = null;
+    this.dropdownItemsWrapper = null;
     this.dropdownItems = null;
     this.buttonClear = null;
     this.buttonApply = null;
-
-    this.handleStoreValueChange = this.handleStoreValueChange.bind(this);
-    this.handleStoreValuesReset = this.handleStoreValuesReset.bind(this);
-    this.handleDropdownExpand = this.handleDropdownExpand.bind(this);
   }
 
-  #DROPDOWN_EXPANDED_CLASS = 'dropdown__input_expanded';
+  getValues() {
+    return this.store;
+  }
 
-  createItems() {
+  init() {
+    this.#setLabel();
+    this.#setInput();
+    this.#setDropdownItems();
+    this.#setControlButtons();
+
+    const isButtonClearHidden = this.#getStoreSum() === 0;
+    this.#hideButtonClear(isButtonClearHidden);
+
+    if (this.properties.isExpanded) {
+      this.#handleExpand();
+    }
+
+    document.addEventListener('keydown', Dropdown.#handleInputSubmit);
+
+    this.dropdown = this.element.querySelector('.js-dropdown');
+  }
+
+  #setLabel() {
+    const label = this.element.querySelector('.js-dropdown-label');
+
+    if (!label) return;
+    if (this.properties.label) label.innerText = this.properties.label;
+  }
+
+  #setInput() {
+    this.dropdownInput = this.element.querySelector('.js-dropdown-input input');
+
+    this.dropdownInput.value = this.#concatStoreValues();
+    this.dropdownInput.placeholder = this.properties.placeholder;
+
+    const dropdownInputWrapper = this.element.querySelector('.js-dropdown-input');
+    dropdownInputWrapper.addEventListener('click', this.#handleExpand);
+  }
+
+  #setDropdownItems() {
+    const dropdownItemsContent = this.#createDropdownItems();
+
+    this.dropdownItemsWrapper = this.element.querySelector('.js-dropdown-items-wrapper');
+    this.dropdownItems = this.element.querySelector('.js-dropdown-items');
+    this.dropdownItems.innerHTML = dropdownItemsContent;
+
+    this.dropdownItems.addEventListener('click', this.#handleStoreValueChange);
+  }
+
+  #setControlButtons() {
+    const buttonWrapper = this.element.querySelector('.js-dropdown-button-wrapper');
+    if (this.properties.controlButtons === false) {
+      buttonWrapper.remove();
+      return;
+    }
+
+    const [buttonClear, buttonApply] = buttonWrapper.children;
+
+    this.buttonClear = buttonClear;
+    this.buttonApply = buttonApply;
+
+    this.buttonClear?.addEventListener('click', this.#handleStoreValuesReset);
+    this.buttonApply?.addEventListener('click', this.#close);
+  }
+
+  #createDropdownItems() {
+    return `
+      <ul class="dropdown__items js-dropdown-items"}>
+        ${this.#createItems()}
+      </ul>
+    `;
+  }
+
+  #createItems() {
     let items = '';
 
     Object.keys(this.properties.options).forEach((key) => {
@@ -43,68 +114,44 @@ class Dropdown {
     return items;
   }
 
-  getStoreSum() {
+  #getStoreSum() {
     return Object.values(this.store).reduce((acc, option) => acc + Number(option.count), 0);
   }
 
-  static createControlButtons() {
-    return `
-    <div class="dropdown__button-wrapper">
-      <button type="button" class="dropdown__button-widget js-dropdown-button-clear">
-        Очистить
-      </button>
-      <button type="button" class="dropdown__button-widget js-dropdown-button-apply">
-        Применить
-      </button>
-    </div>`;
-  }
-
-  createDropdown() {
-    const { isExpanded, placeholder } = this.properties;
-    const expandedClass = isExpanded ? this.#DROPDOWN_EXPANDED_CLASS : '';
-    const dropdownInputClass = `dropdown__input js-dropdown-input ${expandedClass}`;
-
-    return `
-    <div class="dropdown">
-      <p class="dropdown__label">${this.properties.label ?? ''}</p>
-      <div class="dropdown__input-wrapper js-dropdown-input-wrapper">
-        <input type="text" class="${dropdownInputClass}" placeholder="${placeholder}" readonly>
-        <span class="dropdown__button-icon_style_expand-more"></span>
-      </div>
-      <ul class="dropdown__items js-dropdown-items" ${isExpanded ? '' : 'hidden'}>
-        ${this.createItems()}
-        ${this.properties.controlButtons ? Dropdown.createControlButtons() : ''}
-      </ul>
-    </div>`;
-  }
-
-  hideButtonClear(isHidden) {
+  #hideButtonClear(isHidden) {
     if (!this.buttonClear) return;
 
-    const modifier = 'dropdown__button_hidden';
-    this.buttonClear.classList.toggle(modifier, isHidden);
+    this.buttonClear.classList.toggle('button_hidden', isHidden);
   }
 
-  init() {
-    this.element.innerHTML = this.createDropdown();
-    this.dropdownInput = this.element.querySelector('.js-dropdown-input');
-    this.dropdownInput.value = this.concatStoreValues();
-    this.dropdownItems = this.element.querySelector('.js-dropdown-items');
+  static #handleInputSubmit = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+    }
+  };
 
-    const dropdownInputWrapper = this.element.querySelector('.js-dropdown-input-wrapper');
-    this.buttonClear = this.element.querySelector('.js-dropdown-button-clear');
-    this.buttonApply = this.element.querySelector('.js-dropdown-button-apply');
+  #handleKeydown = (event) => {
+    if (event.key === 'Escape') {
+      this.#close();
+    }
+  };
 
-    dropdownInputWrapper.addEventListener('click', this.handleDropdownExpand);
-    this.dropdownItems.addEventListener('click', this.handleStoreValueChange);
-    this.buttonClear?.addEventListener('click', this.handleStoreValuesReset);
-    this.buttonApply?.addEventListener('click', this.handleDropdownExpand);
+  #handleDropdownClose = (event) => {
+    const target = event.target.closest('.js-dropdown');
+    if (target === this.dropdown) return;
 
-    const isButtonClearHidden = this.getStoreSum() === 0;
-    this.hideButtonClear(isButtonClearHidden);
-  }
+    this.#close();
+  };
 
-  handleStoreValueChange(e) {
+  #close = () => {
+    this.dropdownItemsWrapper.hidden = true;
+    this.dropdownInput.classList.remove('input__input_hovered');
+
+    document.removeEventListener('click', this.#handleDropdownClose);
+    document.removeEventListener('keydown', this.#handleKeydown);
+  };
+
+  #handleStoreValueChange = (e) => {
     const parent = e.target.parentElement;
 
     if (parent.className !== 'dropdown__item-buttons') return;
@@ -122,16 +169,16 @@ class Dropdown {
       this.store[value].count += 1;
     }
 
-    Dropdown.toggleButtonMinusDisable(buttonMinus, this.store[value].count);
+    Dropdown.#toggleButtonMinusDisable(buttonMinus, this.store[value].count);
     valueElement.innerText = this.store[value].count;
 
-    this.dropdownInput.value = this.concatStoreValues();
+    this.dropdownInput.value = this.#concatStoreValues();
 
-    const isStoreSumEqualsZero = this.getStoreSum() === 0;
-    this.hideButtonClear(isStoreSumEqualsZero);
-  }
+    const isStoreSumEqualsZero = this.#getStoreSum() === 0;
+    this.#hideButtonClear(isStoreSumEqualsZero);
+  };
 
-  handleStoreValuesReset() {
+  #handleStoreValuesReset = () => {
     Object.keys(this.store).forEach((key) => {
       this.store[key].count = 0;
     });
@@ -150,15 +197,22 @@ class Dropdown {
     this.dropdownInput.value = null;
     this.dropdownInput.placeholder = this.properties.placeholder;
 
-    this.hideButtonClear(true);
+    this.#hideButtonClear(true);
+  };
+
+  #handleExpand = () => {
+    this.#toggleExpand();
+
+    document.addEventListener('keydown', this.#handleKeydown);
+    document.addEventListener('click', this.#handleDropdownClose);
+  };
+
+  #toggleExpand() {
+    this.dropdownItemsWrapper.hidden = !this.dropdownItemsWrapper.hidden;
+    this.dropdownInput.classList.toggle('input__input_hovered');
   }
 
-  handleDropdownExpand() {
-    this.dropdownItems.hidden = !this.dropdownItems.hidden;
-    this.dropdownInput.classList.toggle(this.#DROPDOWN_EXPANDED_CLASS);
-  }
-
-  concatStoreValues() {
+  #concatStoreValues() {
     const storeValues = [];
     let countAsText = '';
     let countAsSum = 0;
@@ -182,7 +236,7 @@ class Dropdown {
     return storeValues.join(', ');
   }
 
-  static toggleButtonMinusDisable(buttonMinus, value) {
+  static #toggleButtonMinusDisable(buttonMinus, value) {
     if (value > 0) buttonMinus.disabled = false;
     if (value <= 0) buttonMinus.disabled = true;
   }

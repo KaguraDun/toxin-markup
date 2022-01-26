@@ -1,8 +1,8 @@
 //- available properties:
   style: colored | gray;
 
-mixin logo({style})
-  a.logo__link(href='/')
+mixin logo({ style })
+  a.logo(href='/')
     case style
       when 'gray'
         span.logo__icon

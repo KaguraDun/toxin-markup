@@ -1,11 +1,7 @@
 .logo {
   display: flex;
-
-  &__link {
-    display: flex;
-    align-items: center;
-    width: max-content;
-  }
+  align-items: center;
+  width: max-content;
 
   &__icon {
     display: flex;

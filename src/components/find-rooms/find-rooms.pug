@@ -1,26 +1,30 @@
 include /components/date-dropdown/date-dropdown.pug
+include /components/dropdown/dropdown.pug
 include /components/button/button.pug
 
 mixin find-rooms
   form.find-rooms
     h2.find-rooms__heading!= "Найдём номера под <br> ваши пожелания"
-    -
-      const dateDropdownProps = {
-        arrivalLabel:'прибытие',
-        departureLabel:'выезд',
-        dropdownArrivalClass: 'js-find-rooms-dropdown-arrival',
-        dropdownDepartureClass: 'js-find-rooms-dropdown-departure',
-      }
     .find-rooms__date-dropdown
+      -
+        const dateDropdownProps = {
+          arrivalLabel: 'прибытие',
+          departureLabel: 'выезд',
+          dropdownArrivalClass: 'js-find-rooms-dropdown-arrival',
+          dropdownDepartureClass: 'js-find-rooms-dropdown-departure',
+        }
       +date-dropdown(dateDropdownProps)
+
     .find-rooms__dropdown-guests.js-find-rooms-dropdown-guests
+      +dropdown
+
     .find-rooms__button
       -
         const buttonProps = {
-          type:'submit',
-          width:'full',
+          type: 'submit',
+          width: 'full',
           style: 'filled',
-          arrow:true,
-          text:'подобрать номер',
+          arrow: true,
+          text: 'подобрать номер',
         }
       +button(buttonProps)

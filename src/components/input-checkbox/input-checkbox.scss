@@ -1,44 +1,44 @@
 .input-checkbox {
-  margin: 0;
-  appearance: none;
+  display: flex;
+  align-items: flex-start;
+  width: max-content;
+  color: $text-primary-medium;
+  white-space: pre-line;
+  cursor: pointer;
 
-  &__label {
-    display: flex;
-    align-items: flex-start;
-    width: max-content;
-    color: $text-primary-medium;
-    white-space: pre-line;
-    cursor: pointer;
+  @include font-montserrat(rem(14px), rem(18px));
 
-    @include font-montserrat(rem(14px), rem(18px));
+  &__input {
+    margin: 0;
+    appearance: none;
+
+    &-icon {
+      display: block;
+      min-width: rem(18px);
+      min-height: rem(18px);
+      margin-right: rem(10px);
+      border: 1px solid $border-primary-light;
+      border-radius: rem(4px);
+    }
+
+    &:checked + &-icon {
+      background-image: url('./svg/check-mark.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: rem(10px);
+      border: 1px solid $border-tertiary;
+    }
+
+    &:focus-visible + &-icon {
+      outline: 2px solid $border-tertiary;
+    }
+
+    &:disabled + &-icon {
+      border: 1px solid $border-primary-light;
+    }
   }
 
-  &__icon {
-    display: block;
-    min-width: rem(18px);
-    min-height: rem(18px);
-    margin-right: rem(10px);
-    border: 1px solid $border-primary-light;
-    border-radius: rem(4px);
-  }
-
-  &:checked + &__icon {
-    background-image: url('./svg/check-mark.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: rem(10px);
-    border: 1px solid $border-tertiary;
-  }
-
-  &:focus-visible + &__icon {
-    outline: 2px solid $border-tertiary;
-  }
-
-  &:disabled + &__icon {
-    border: 1px solid $border-primary-light;
-  }
-
-  &__wrapper {
+  &__text-wrapper {
     display: flex;
     flex-direction: column;
   }

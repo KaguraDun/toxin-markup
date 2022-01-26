@@ -8,7 +8,19 @@
   href: string;
   disabled: boolean;
 
-mixin button({type='button', size='medium', width='auto', style='border', arrow=false, text="", disabled=false, href=null })
+mixin button(options)
+  -
+    const {
+      type = 'button',
+      size = 'medium',
+      width = 'auto',
+      style = 'border',
+      arrow = false,
+      text = "",
+      disabled = false,
+      href = null
+    } = options
+
   -
     const classListStyle = {
       borderless: 'button_style_borderless',

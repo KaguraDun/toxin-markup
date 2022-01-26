@@ -1,10 +1,4 @@
 .footer-item-list {
-  display: flex;
-  flex-direction: column;
-  gap: rem(20px);
-  line-height: rem(18px);
-
-  @include clear-ul-style;
 
   &__heading {
     margin: 4px 0 rem(21px);
@@ -12,5 +6,14 @@
     text-transform: uppercase;
 
     @include font-montserrat(rem(12px), rem(15px), bold);
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20px);
+    line-height: rem(18px);
+
+    @include clear-ul-style;
   }
 }

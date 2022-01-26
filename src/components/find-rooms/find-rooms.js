@@ -7,8 +7,8 @@ import './find-rooms.scss';
 
 (() => {
   const calendar = new Calendar({
-    firstInputSelector: '.js-find-rooms-dropdown-arrival',
-    secondInputSelector: '.js-find-rooms-dropdown-departure',
+    firstInputContainer: document.querySelector('.js-find-rooms-dropdown-arrival'),
+    secondInputContainer: document.querySelector('.js-find-rooms-dropdown-departure'),
   });
   calendar.render();
 

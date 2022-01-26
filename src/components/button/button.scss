@@ -56,7 +56,8 @@
   }
 
   &_style_filled,
-  &_style_page-selected {
+  &_style_page-selected,
+  &_style_page:hover {
     color: $text-secondary;
   }
 
@@ -96,9 +97,17 @@
     }
   }
 
+  &_style_page:hover {
+    background: $gradient-primary;
+  }
+
   &_style_page {
     color: $text-primary-medium;
     background: none;
+  }
+
+  &_hidden {
+    visibility: hidden;
   }
 
   &_style_page-next {
@@ -115,5 +124,14 @@
     &.button_hovered {
       background: $gradient-secondary-hover;
     }
+  }
+
+  &:disabled {
+    background: $bg-quaternary;
+    cursor: default;
+  }
+
+  &:disabled:hover {
+    background: $bg-quaternary;
   }
 }

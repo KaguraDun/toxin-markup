@@ -13,14 +13,11 @@
   @include font-montserrat(10px, 12px);
 
   &__icon {
+    margin-right: rem(5px);
 
     &::after {
       @include font-material-icons('favorite_border', rem(10px), rem(9px));
     }
-  }
-
-  &__likes-number {
-    flex: 1;
   }
 
   &_pressed {

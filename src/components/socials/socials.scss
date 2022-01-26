@@ -9,5 +9,9 @@
     align-items: flex-end;
     width: 24px;
     height: 24px;
+
+    &:hover {
+      opacity: .5;
+    }
   }
 }

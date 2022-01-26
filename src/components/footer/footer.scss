@@ -69,7 +69,7 @@
   @media (max-width: $tablet) {
     margin: 0 auto;
     padding: rem(120px 0);
-    box-shadow: 0 rem(10px) rem(20px) $shadow-primary-lightest;
+    box-shadow: 0 10px 20px $shadow-primary-lightest;
 
     .container {
       box-sizing: border-box;
