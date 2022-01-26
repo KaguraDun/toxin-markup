@@ -31,7 +31,7 @@ class Dropdown {
     this.#hideButtonClear(isButtonClearHidden);
 
     if (this.properties.isExpanded) {
-      this.#handleDropdownExpand();
+      this.#handleExpand();
     }
   }
 
@@ -49,7 +49,7 @@ class Dropdown {
     this.dropdownInput.placeholder = this.properties.placeholder;
 
     const dropdownInputWrapper = this.element.querySelector('.js-dropdown-input');
-    dropdownInputWrapper.addEventListener('click', this.#handleDropdownExpand);
+    dropdownInputWrapper.addEventListener('click', this.#handleExpand);
   }
 
   #setDropdownItems() {
@@ -75,7 +75,7 @@ class Dropdown {
     this.buttonApply = buttonApply;
 
     this.buttonClear?.addEventListener('click', this.#handleStoreValuesReset);
-    this.buttonApply?.addEventListener('click', this.#handleDropdownExpand);
+    this.buttonApply?.addEventListener('click', this.#handleExpand);
   }
 
   #createDropdownItems() {
@@ -118,6 +118,13 @@ class Dropdown {
 
     this.buttonClear.classList.toggle('button_hidden', isHidden);
   }
+
+  #handleKeydown = (event) => {
+    if (event.key === 'Escape') {
+      this.#toggleExpand();
+      document.removeEventListener('keydown', this.#handleKeydown);
+    }
+  };
 
   #handleStoreValueChange = (e) => {
     const parent = e.target.parentElement;
@@ -168,10 +175,16 @@ class Dropdown {
     this.#hideButtonClear(true);
   };
 
-  #handleDropdownExpand = () => {
+  #handleExpand = () => {
+    this.#toggleExpand();
+
+    document.addEventListener('keydown', this.#handleKeydown);
+  };
+
+  #toggleExpand() {
     this.dropdownItemsWrapper.hidden = !this.dropdownItemsWrapper.hidden;
     this.dropdownInput.classList.toggle('input__input_hovered');
-  };
+  }
 
   #concatStoreValues() {
     const storeValues = [];
