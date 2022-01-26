@@ -79,7 +79,9 @@ class BookRoom {
     if (hasNewLines) itemNameClassNames += ' book-room__item-name_style_multiline';
 
     const itemAbout = item.about ? '<span class="book-room__item-about"></span>' : '';
-    const name = item.name.replace('[template]', item.count);
+    const name = item.name
+      .replace('[price]', getFormattedPrice(item.price))
+      .replace('[count]', item.count);
     const itemSum = item.price * item.count;
 
     return `

@@ -20,7 +20,7 @@ chart.render();
 const bookRoomContainer = document.querySelector('.js-room-details-page-book-room');
 const priceList = [
   {
-    name: '9 990₽ х [template] суток',
+    name: '[price] х [count] суток',
     count: 4,
     price: 9990,
     about: false,
