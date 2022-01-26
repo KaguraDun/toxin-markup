@@ -26,6 +26,7 @@
     }
 
     &_style_dropdown {
+      padding-right: rem(85px);
       color: $text-primary-dark;
       text-overflow: ellipsis;
       border: 1px solid $border-primary-light;
@@ -37,8 +38,8 @@
   }
 
   &__input:focus-visible,
-  &:hover &__input,
-  &__input_hovered {
+  &__input_hovered,
+  &:hover &__input {
     border-color: $border-primary-medium;
 
     &::placeholder {
