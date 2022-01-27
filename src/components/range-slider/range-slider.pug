@@ -4,10 +4,10 @@
   priceRange: string
   additionalText: string
 
-mixin range-slider({className, label, priceRange, additionalText=null})
-  .range-slider
+mixin range-slider({ label, additionalText=null})
+  .range-slider.js-range-slider
     .range-slider__info
       .range-slider__name= label
-      .range-slider__price-range= priceRange
-    .range-slider__container(class=className)
+      .range-slider__price-range.js-range-slider-price-range
+    .range-slider__container.js-range-slider-container
     .range-slider__additional-text= additionalText

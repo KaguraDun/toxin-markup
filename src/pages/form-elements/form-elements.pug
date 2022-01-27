@@ -185,14 +185,8 @@ block content
 
     .form-elements__grid-item.form-elements__grid-item_column_3
       .form-elements__item.form-elements__item_size_medium
-        -
-          const rangeSliderProps = {
-            className: 'js-form-elements-range-slider',
-            label: 'range slider',
-            priceRange: '5 000₽ - 10 000₽',
-          }
-        .form-elements__slider
-          +range-slider(rangeSliderProps)
+        .form-elements__range-slider.js-form-elements-range-slider
+          +range-slider({ label: 'range slider' })
 
       .form-elements__item.form-elements__item_margin_large
         fieldset.form-elements__fieldset

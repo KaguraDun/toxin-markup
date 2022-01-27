@@ -16,12 +16,10 @@ mixin room-filter
     .room-filter__dropdown-guests.js-room-filter-dropdown-guests
       +dropdown
 
-    .room-filter__range-slider
+    .room-filter__range-slider.js-room-filter-range-slider
       -
         const rangeSliderProps = {
-          className: 'js-room-filter-range-slider',
           label: 'диапазон цены',
-          priceRange: '5 000₽ - 10 000₽',
           additionalText:'Стоимость за сутки пребывания в номере',
         }
       +range-slider(rangeSliderProps)
