@@ -1,16 +1,25 @@
 import noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
 
+import getFormattedPrice from '@/helpers/get-formatted-price';
+
 import './range-slider.scss';
 
 class RangeSlider {
   constructor(container, options) {
     this.container = container;
     this.options = options || RangeSlider.defaultOptions;
+    this.instance = null;
+    this.priceElement = null;
+    this.sliderContainer = null;
   }
 
   create() {
-    noUiSlider.create(this.container, this.options);
+    this.priceElement = this.container.querySelector('.js-range-slider-price-range');
+    this.sliderContainer = this.container.querySelector('.js-range-slider-container');
+
+    this.instance = noUiSlider.create(this.sliderContainer, this.options);
+    this.instance.on('update', this.#handleValuesUpdate);
   }
 
   static defaultOptions = {
@@ -21,6 +30,12 @@ class RangeSlider {
       min: 0,
       max: 15000,
     },
+  };
+
+  #handleValuesUpdate = () => {
+    const [from, to] = this.instance.get();
+
+    this.priceElement.innerHTML = `${getFormattedPrice(from)} - ${getFormattedPrice(to)}`;
   };
 }
 
