@@ -37,14 +37,15 @@ class Calendar {
     if (this.singleInputContainer) {
       this.#createSingle();
 
-      this.inputList = this.singleInputContainer.querySelector('input');
+      const singleInput = this.singleInputContainer.querySelector('.js-input-input');
+      this.inputList.push(singleInput);
       return;
     }
     if (this.firstInputContainer && this.secondInputContainer) {
       this.#createRange();
 
-      const firstInput = this.firstInputContainer.querySelector('input');
-      const secondInput = this.secondInputContainer.querySelector('input');
+      const firstInput = this.firstInputContainer.querySelector('.js-input-input');
+      const secondInput = this.secondInputContainer.querySelector('.js-input-input');
       this.inputList = [firstInput, secondInput];
     }
   }
@@ -60,7 +61,7 @@ class Calendar {
     return selectedDays;
   }
 
-  static hideExternalNextMonthDays(instance) {
+  static #hideExternalNextMonthDays(instance) {
     const nextDays = Array.from(instance.days.querySelectorAll('.nextMonthDay'));
     const daysInWeek = 7;
 
@@ -71,9 +72,10 @@ class Calendar {
     }
   }
 
-  static changeDefaultDateDelimiter(dateStr, instance) {
-    instance.element.value = dateStr.replace('—', '-');
-    instance.redraw();
+  #changeDefaultDateDelimiter(dateStr, instance) {
+    if (!this.singleInputContainer) return;
+
+    instance.input.value = dateStr.replace('—', '-');
   }
 
   #createSingle() {
@@ -119,16 +121,19 @@ class Calendar {
       monthSelectorType: 'static',
       wrap: this.wrap,
       static: true,
-      onChange(dateObj, dateStr, instance) {
+      onChange: (dateObj, dateStr, instance) => {
         instance.open();
-        Calendar.hideExternalNextMonthDays(instance);
-        Calendar.changeDefaultDateDelimiter(dateStr, instance);
+        Calendar.#hideExternalNextMonthDays(instance);
+        this.#changeDefaultDateDelimiter(dateStr, instance);
       },
       onMonthChange(dateObj, dateStr, instance) {
-        Calendar.hideExternalNextMonthDays(instance);
+        Calendar.#hideExternalNextMonthDays(instance);
+      },
+      onYearChange(dateObj, dateStr, instance) {
+        Calendar.#hideExternalNextMonthDays(instance);
       },
       onOpen(dateObj, dateStr, instance) {
-        Calendar.hideExternalNextMonthDays(instance);
+        Calendar.#hideExternalNextMonthDays(instance);
       },
       onReady: (dateObj, dateStr, instance) => {
         const isTodayValidDate = this.today && this.today instanceof Date;
@@ -136,9 +141,6 @@ class Calendar {
           instance.now = this.today;
           instance.redraw();
         }
-
-        Calendar.hideExternalNextMonthDays(instance);
-        Calendar.changeDefaultDateDelimiter(dateStr, instance);
 
         const $buttonContainer = $('<div class="flatpickr__buttons"></div>').appendTo(
           $(instance.calendarContainer),
@@ -159,6 +161,9 @@ class Calendar {
             instance.close();
           })
           .appendTo($buttonContainer);
+
+        Calendar.#hideExternalNextMonthDays(instance);
+        this.#changeDefaultDateDelimiter(dateStr, instance);
       },
     };
   }
