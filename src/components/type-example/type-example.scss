@@ -1,0 +1,44 @@
+.type-example {
+  display: flex;
+  align-items: flex-start;
+
+  &_style_h1 {
+    @include font-montserrat(rem(24px), rem(29px), bold);
+  }
+
+  &_style_h2 {
+    @include font-montserrat(rem(19px), rem(23px), bold);
+  }
+
+  &_style_h3 {
+    @include font-montserrat(rem(12px), rem(15px), bold);
+
+    .type-example__text {
+      text-transform: uppercase;
+    }
+  }
+
+  &_style_body {
+    margin-bottom: 0;
+
+    @include font-montserrat(rem(14px), rem(24px));
+
+    .type-example__text {
+      color: $text-primary-dark;
+    }
+  }
+
+  &__name {
+    min-width: rem(37px);
+    margin: 0 rem(30px) 0 0;
+    color: $text-primary-light;
+    font-weight: normal;
+    text-align: right;
+  }
+
+  &__text {
+    margin: 0;
+    color: $text-primary-darkest;
+    white-space: break-spaces;
+  }
+}

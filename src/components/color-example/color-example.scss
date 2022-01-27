@@ -2,9 +2,9 @@
   display: flex;
 
   &__box {
-    width: 70px;
-    height: 70px;
-    margin-right: 40px;
+    width: rem(70px);
+    height: rem(70px);
+    margin-right: rem(40px);
     border-radius: 6px;
   }
 

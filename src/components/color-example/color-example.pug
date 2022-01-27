@@ -1,11 +1,11 @@
 //- available properties:
-  colorRGBA: string;
-  colorCode: string;
-  colorName: string;
+  color: string;
+  hex: string;
+  name: string;
 
-mixin color-example(colorRGBA, colorCode, colorName)
+mixin color-example({ color, hex, name })
   .color-example
-    .color-example__box(style=`background:${colorRGBA}`)
+    .color-example__box(style=`background:${color}`)
     .color-example__info
-      p.color-example__name #{ colorName }
-      p.color-example__code #{ colorCode }
+      p.color-example__name #{ name }
+      p.color-example__code #{ hex }
