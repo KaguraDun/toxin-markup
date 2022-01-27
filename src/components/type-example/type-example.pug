@@ -1,0 +1,17 @@
+//- available properties:
+  name: string;
+  text: string;
+  style: string;
+
+mixin type-example({ name, text, style })
+  -
+    styles = {
+      h1 : 'type-example_style_h1',
+      h2 : 'type-example_style_h2',
+      h3 : 'type-example_style_h3',
+      body : 'type-example_style_body',
+    }
+
+  .type-example(class=`${styles[style]}`)
+    p.type-example__name!= name
+    p.type-example__text!= text
