@@ -41,49 +41,7 @@
     @include clear-ul-style();
 
     &-item {
-      display: flex;
-      align-items: flex-start;
       margin-bottom: rem(51px);
-    }
-
-    &-item_style_h1 {
-      @include font-montserrat(rem(24px), rem(29px), bold);
-    }
-
-    &-item_style_h2 {
-      @include font-montserrat(rem(19px), rem(23px), bold);
-    }
-
-    &-item_style_h3 {
-      @include font-montserrat(rem(12px), rem(15px), bold);
-    }
-
-    &-item_style_body {
-      margin-bottom: 0;
-
-      @include font-montserrat(rem(14px), rem(24px));
-    }
-
-    &-tag {
-      min-width: rem(37px);
-      margin: 0 rem(30px) 0 0;
-      color: $text-primary-light;
-      font-weight: normal;
-      text-align: right;
-    }
-
-    &-text {
-      margin: 0;
-      color: $text-primary-darkest;
-      white-space: break-spaces;
-    }
-
-    &-text_style_h3 {
-      text-transform: uppercase;
-    }
-
-    &-text_style_body {
-      color: $text-primary-dark;
     }
   }
 }
