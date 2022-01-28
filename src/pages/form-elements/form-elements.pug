@@ -117,12 +117,12 @@ block content
         +room-advantages({items: roomAdvantagesItems})
 
     .form-elements__grid-item.form-elements__grid-item_column_2
-      .form-elements__item.form-elements__item_margin_large
+      .form-elements__item.form-elements__item_margin_large.form-elements__item_size_medium
         -
           const checkboxButtonsItems = [
             { text: 'Можно курить' },
             { text: 'Можно с питомцами', checked:true },
-            { text: 'Можно пригласить гостей<br> (до 10 человек)', checked:true },
+            { text: 'Можно пригласить гостей (до&nbsp;10&nbsp;человек)', checked:true },
           ]
         .form-elements__checkbox-list.js-form-elements-checkbox-list
           +checkbox-list({name:'checkbox buttons', expandable:false, items:checkboxButtonsItems})
@@ -160,12 +160,12 @@ block content
         .form-elements__dropdown-guests_with-controls.js-form-elements-dropdown-guests-with-controls
           +dropdown
 
-      .form-elements__item
+      .form-elements__item.form-elements__item_size_medium
         -
           const richCheckboxItems = [
-            { text: 'Широкий коридор', info:'Ширина коридоров в номере<br> не менее 91 см.'},
+            { text: 'Широкий коридор', info:'Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см.'},
             { text: 'Помощник для инвалидов',
-             info:'На 1 этаже вас встретит специалист<br>  и проводит до номера.'
+             info:'На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера.'
             },
           ]
         .form-elements__checkbox-list.js-form-elements-checkbox-list
@@ -178,7 +178,7 @@ block content
             avatar: require('/assets/images/users/murad-sarafanov.png'),
             name: 'Мурад Сарафанов',
             date:'5 дней назад',
-            text: `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.<br> И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто<br> не жаловался из соседей.`,
+            text: `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.`,
             likesNumber: 12,
           }
         +review(reviewProps) 
@@ -224,13 +224,13 @@ block content
       .form-elements__item.form-elements__item_margin_extra-large
         .form-elements__dropdown-guests_with-controls-and-values.js-form-elements-dropdown-guests-with-controls-and-values
           +dropdown
-      .form-elements__item
+      .form-elements__item.form-elements__item_size_medium
         .form-elements__item-info
           .form-elements__item-name= "bullet list"
         -
           const bulletListItems = [
             'Нельзя с питомцами',
             'Без вечеринок и мероприятий',
-            'Время прибытия — после 13:00,<br> а выезд до 12:00'
+            'Время прибытия&nbsp;&mdash; после 13:00, а&nbsp;выезд до&nbsp;12:00'
           ]
         +bullet-list({items: bulletListItems})

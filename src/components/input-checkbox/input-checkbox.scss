@@ -1,12 +1,8 @@
 .input-checkbox {
   display: flex;
   align-items: flex-start;
-  width: max-content;
-  color: $text-primary-medium;
-  white-space: pre-line;
+  max-width: max-content;
   cursor: pointer;
-
-  @include font-montserrat(rem(14px), rem(18px));
 
   &__input {
     margin: 0;
@@ -41,9 +37,16 @@
   &__text-wrapper {
     display: flex;
     flex-direction: column;
+    max-width: max-content;
   }
 
   &__text {
+    color: $text-primary-medium;
+
+    @include font-montserrat(rem(14px), rem(18px));
+  }
+
+  &__heading {
     margin-bottom: 5px;
     color: $text-primary-dark;
     font-weight: bold;
@@ -52,6 +55,8 @@
   }
 
   &__info {
+    color: $text-primary-medium;
+
     @include font-montserrat(rem(12px), rem(14px));
   }
 }

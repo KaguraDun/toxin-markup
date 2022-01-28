@@ -31,7 +31,7 @@ mixin room-filter
           items: [
             { text: 'Можно курить' },
             { text: 'Можно с питомцами', checked:true },
-            { text: 'Можно пригласить гостей <br> (до 10 человек)', checked:true },
+            { text: 'Можно пригласить гостей (до&nbsp;10&nbsp;человек)', checked:true },
           ]
         }
       +checkbox-list(checkboxListProps)
@@ -41,9 +41,9 @@ mixin room-filter
         const richCheckboxListProps = {
           name: 'доступность',
           items: [
-            { text: 'Широкий коридор', info: 'Ширина коридоров в номере<br> не менее 91 см.' },
+            { text: 'Широкий коридор', info: 'Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см.' },
             { text: 'Помощник для инвалидов',
-              info: 'На 1 этаже вас встретит специалист<br> и проводит до номера.'
+              info: 'На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера.'
             },
           ]
         }
