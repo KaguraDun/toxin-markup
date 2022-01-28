@@ -146,6 +146,7 @@ class Dropdown {
   #close = () => {
     this.dropdownItemsWrapper.hidden = true;
     this.dropdownInput.classList.remove('input__input_hovered');
+    this.dropdownInput.classList.remove('input__input_style_dropdown-opened');
 
     document.removeEventListener('click', this.#handleDropdownClose);
     document.removeEventListener('keydown', this.#handleKeydown);
@@ -210,6 +211,7 @@ class Dropdown {
   #toggleExpand() {
     this.dropdownItemsWrapper.hidden = !this.dropdownItemsWrapper.hidden;
     this.dropdownInput.classList.toggle('input__input_hovered');
+    this.dropdownInput.classList.toggle('input__input_style_dropdown-opened');
   }
 
   #concatStoreValues() {

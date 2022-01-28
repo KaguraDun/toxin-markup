@@ -9,6 +9,7 @@
   readonly: boolean;
   required: boolean;
   openByButton: boolean;
+  overflowEllipsis: boolean;
 
 mixin input(options)
   -
@@ -23,6 +24,7 @@ mixin input(options)
       required = false,
       openByButton = false,
       style = 'default',
+      overflowEllipsis = false,
     } = options
   -
     const maskList = {
@@ -43,10 +45,17 @@ mixin input(options)
       default: 'input__input_style_default',
       dropdown: 'input__input_style_dropdown',
     }
+  -
+    const inputClassNames = {
+      'input__input': true,
+      'js-input-input': true,
+      [styles[style]]: true,
+      'input__input_overflow_ellipsis': overflowEllipsis,
+    }
 
   .input(class=sizes[size])
     input(
-      class=`input__input js-input-input ${styles[style]}`,
+      class=inputClassNames,
       type=type,
       value=value,
       placeholder=placeholder,
