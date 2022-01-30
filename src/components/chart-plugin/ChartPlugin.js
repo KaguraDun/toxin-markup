@@ -89,7 +89,7 @@ class ChartPlugin {
       const firstLabel = ChartPlugin.getTotal(chart);
       const textX = Math.round(width / 2);
       const textY = height / 2;
-      const firstLabelYOffset = 15;
+      const firstLabelYOffset = 10;
 
       ctx.fillText(firstLabel, textX, textY - firstLabelYOffset);
       ctx.font = `bold ${12}px Montserrat`;
