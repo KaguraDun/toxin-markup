@@ -10,9 +10,9 @@ class CheckboxList {
 
   addEventListener() {
     this.element = this.container.querySelector('.js-checkbox-list');
-    const isExpandable = this.element.firstElementChild.tagName === 'BUTTON';
+    const button = this.container.querySelector('.js-checkbox-list-button');
 
-    if (isExpandable) {
+    if (button) {
       this.element.addEventListener('click', this.handleCheckboxListExpand);
     }
   }
@@ -21,12 +21,10 @@ class CheckboxList {
     const target = e.target.closest('.js-checkbox-list-button');
     if (!target) return;
 
-    const items = this.element.querySelector('.js-checkbox-list-items');
+    const isExpanded = this.element.classList.toggle('checkbox-list_expanded');
     const buttonIcon = this.element.querySelector('.js-checkbox-list-icon');
 
-    if (items) {
-      const isExpanded = items.classList.toggle('checkbox-list__items_expanded');
-
+    if (buttonIcon) {
       buttonIcon.classList.toggle('checkbox-list__icon_style_expand-less', isExpanded);
       buttonIcon.classList.toggle('checkbox-list__icon_style_expand', !isExpanded);
     }

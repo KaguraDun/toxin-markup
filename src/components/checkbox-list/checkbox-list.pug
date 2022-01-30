@@ -14,27 +14,28 @@ include /components/input-checkbox/input-checkbox.pug
 mixin checkbox-list({ name, items, expandable = false, expanded = true})
   -
     const itemClassNames = {
-      'checkbox-list__items':true,
-      'js-checkbox-list-items':true,
-      'checkbox-list__items_expanded':expanded,
-
+      'checkbox-list': true,
+      'js-checkbox-list': true,
+      'checkbox-list_expanded': expanded,
     }
   -
     const iconClassNames = {
-      'checkbox-list__icon' : true,
-      'js-checkbox-list-icon' : true,
-      'checkbox-list__icon_style_expand' : (expanded ? false: true),
-      'checkbox-list__icon_style_expand-less' : (expanded ? true : false),
+      'checkbox-list__icon': true,
+      'js-checkbox-list-icon': true,
+      'checkbox-list__icon_style_expand': (expanded ? false : true),
+      'checkbox-list__icon_style_expand-less': (expanded ? true : false),
     }
 
-  .checkbox-list.js-checkbox-list
+  fieldset(class=itemClassNames)
     if expandable
-      button.checkbox-list__button.js-checkbox-list-button(type='button')
-        span.checkbox-list__name!= name
-        span(class=iconClassNames)
+      legend.checkbox-list__legend.checkbox-list__legend_expandable
+        button.checkbox-list__button.js-checkbox-list-button(type='button')
+          span.checkbox-list__name!= name
+          span(class=iconClassNames)
     else
-      .checkbox-list__name!= name
+      legend.checkbox-list__legend!= name
 
-    fieldset(class=itemClassNames)
+    ul.checkbox-list__items.js-checkbox-list-items
       each item in items
-        +input-checkbox(item)
+        li.checkbox-list__item
+          +input-checkbox(item)

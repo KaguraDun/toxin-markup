@@ -1,24 +1,31 @@
 .checkbox-list {
+  @include clear-fieldset;
 
   &__button {
     position: relative;
     display: flex;
     width: 100%;
-    padding: rem(15px) 0;
+    padding: rem(17px 0);
     background: transparent;
     border: 0;
     cursor: pointer;
   }
 
-  &__name {
+  &__legend {
+    width: 100%;
     margin: rem(0 0 17px 0);
+    padding: 0;
+
+    &_expandable {
+      margin: 0;
+    }
+  }
+
+  &__legend,
+  &__name {
     text-align: left;
 
     @include font-montserrat-h3();
-  }
-
-  &__button &__name {
-    margin: 2px 0 0;
   }
 
   &__icon_style_expand {
@@ -32,12 +39,15 @@
   &__items {
     display: none;
 
-    @include clear-fieldset;
+    @include clear-ul-style;
   }
 
-  &__items_expanded {
-    display: flex;
-    flex-direction: column;
-    gap: rem(10px);
+  &_expanded {
+
+    .checkbox-list__items {
+      display: flex;
+      flex-direction: column;
+      gap: rem(10px);
+    }
   }
 }
