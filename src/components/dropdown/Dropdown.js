@@ -35,7 +35,7 @@ class Dropdown {
       this.#handleExpand();
     }
 
-    document.addEventListener('keydown', Dropdown.#handleInputSubmit);
+    this.dropdownInput.addEventListener('keydown', Dropdown.#handleInputSubmit);
 
     this.dropdown = this.element.querySelector('.js-dropdown');
   }
