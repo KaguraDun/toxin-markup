@@ -10,12 +10,14 @@ include /components/room-cards-list/room-cards-list.pug
 include /components/footer/footer.pug
 
 block header
-  +header({isLogged:false})
+  +header({ isLogged: false })
+
 block content
   .search-room-page__background
-    section.search-room-page__container
+    .search-room-page__container
       aside.search-room-page__filter
         +room-filter
+      
       .search-room-page__room-cards-list
         -
           const cardsList = [

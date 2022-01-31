@@ -4,7 +4,7 @@ include /components/range-slider/range-slider.pug
 include /components/checkbox-list/checkbox-list.pug
 
 mixin room-filter
-  .room-filter
+  form.room-filter
     .room-filter__date-dropdown
       -
         const dateDropdownProps = {
@@ -30,8 +30,8 @@ mixin room-filter
           name: 'правила дома',
           items: [
             { text: 'Можно курить' },
-            { text: 'Можно с питомцами', checked:true },
-            { text: 'Можно пригласить гостей (до&nbsp;10&nbsp;человек)', checked:true },
+            { text: 'Можно с питомцами', checked: true },
+            { text: 'Можно пригласить гостей (до&nbsp;10&nbsp;человек)', checked: true },
           ]
         }
       +checkbox-list(checkboxListProps)

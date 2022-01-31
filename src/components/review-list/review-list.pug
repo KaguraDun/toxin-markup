@@ -14,10 +14,10 @@ include /components/review/review.pug
 mixin review-list({ items })
   - const reviewNumber = `${items.length} отзыва`;
 
-  .review-list
+  section.review-list
     .review-list__info
-      .review-list__heading= "Отзывы посетителей номера"
-      .review-list__number= reviewNumber
+      h3.review-list__heading= "Отзывы посетителей номера"
+      span.review-list__number= reviewNumber
     .review-list__items
       each item in items
         +review(item)

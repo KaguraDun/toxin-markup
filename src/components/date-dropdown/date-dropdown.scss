@@ -2,6 +2,7 @@
   display: flex;
   gap: rem(20px);
   justify-content: space-between;
+  @include clear-fieldset;
 
   &__labels {
     display: flex;
@@ -9,7 +10,9 @@
   }
 
   &__label {
-    margin: 0 0 5px;
+    display: flex;
+    flex-direction: column;
+    gap: rem(5px);
 
     @include font-montserrat-h3;
   }

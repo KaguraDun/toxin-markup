@@ -75,11 +75,11 @@ class BookRoom {
 
   static #createAbout(text) {
     return `
-    <span class="book-room__item-about">
+    <div class="book-room__item-about">
       <span class="book-room__item-about-text">
         ${text}
       </span>
-    </span>
+    </div>
   `;
   }
 

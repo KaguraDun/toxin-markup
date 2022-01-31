@@ -8,10 +8,10 @@ include /components/logo/logo.pug
 include /components/link/link.pug
 
 block content
-  section.pages__container
+  .pages__container
     .pages__logo
       .pages__logo-icon
-        +logo({style:'colored'})
+        +logo({ style:'colored' })
     -
       const citePages = [
         {
@@ -54,4 +54,4 @@ block content
 
     ul.pages__list
       each item in citePages
-        +link({url: item.url, text: item.text, fontSize: 'big'})
+        +link({ url: item.url, text: item.text, fontSize: 'big' })

@@ -9,11 +9,13 @@ include /components/sign-in/sign-in.pug
 include /components/footer/footer.pug
 
 block header
-  +header({isLogged:false})
+  +header({ isLogged: false })
+
 block content
   .sign-in-page__background
-    section.sign-in-page__container
+    .sign-in-page__container
       .sign-in-page__sign-in
         +sign-in
+
 block footer
   +footer

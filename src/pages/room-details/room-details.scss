@@ -44,7 +44,7 @@
       'rules cancel-text .';
     grid-template-rows: repeat(3, auto);
     grid-template-columns: repeat(3, auto);
-    gap: rem(35px 69px);
+    gap: rem(33px 69px);
     justify-content: space-between;
 
     @include container;
@@ -59,7 +59,7 @@
   }
 
   &__room-advantages-heading {
-    margin-bottom: rem(23px);
+    margin: rem(0 0 23px 0);
 
     @include font-montserrat-h2;
   }
@@ -87,7 +87,7 @@
   }
 
   &__cancel-heading {
-    margin-bottom: rem(20px);
+    margin: rem(0 0 20px);
 
     @include font-montserrat-h2;
   }

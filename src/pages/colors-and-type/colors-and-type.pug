@@ -11,7 +11,7 @@ block baseVariables
 block content
   .colors-and-type__logo
     .colors-and-type__logo-icon
-      +logo({style:'gray'})
+      +logo({ style: 'gray' })
   .colors-and-type__container
     -
       const colors = [
@@ -76,11 +76,11 @@ block content
         {
           name: 'Body',
           style: 'body',
-          text: 'This is the body text which is used for most<br> of the design, like paragraphs, lists, etc.',
+          text: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.',
         },
       ] 
 
     ul.colors-and-type__type
       each item in types
         li.colors-and-type__type-item
-          +type-example({name: item.name, text: item.text, style: item.style })
+          +type-example({ name: item.name, text: item.text, style: item.style })

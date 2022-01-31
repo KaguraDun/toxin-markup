@@ -6,7 +6,7 @@
   &__label {
     display: flex;
     flex-direction: column;
-    margin: 0 0 5px;
+    gap: rem(5px);
 
     @include font-montserrat-h3();
   }

@@ -5,7 +5,7 @@
 mixin range-slider({ label, additionalText = null})
   .range-slider.js-range-slider
     .range-slider__info
-      .range-slider__name= label
-      .range-slider__price-range.js-range-slider-price-range
+      span.range-slider__name= label
+      span.range-slider__price-range.js-range-slider-price-range
     .range-slider__container.js-range-slider-container
-    .range-slider__additional-text= additionalText
+    p.range-slider__additional-text= additionalText

@@ -2,10 +2,9 @@
   heading: string;
   items: string[];
 
-mixin bullet-list({heading, items})
-  .bullet-list
-    .bullet-list__heading= heading
+mixin bullet-list({ heading, items })
+  section.bullet-list
+    h3.bullet-list__heading= heading
     ul.bullet-list__items
       each item in items
-        li.bullet-list__item
-          p.bullet-list__item-text!= item
+        li.bullet-list__item!= item

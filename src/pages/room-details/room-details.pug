@@ -13,7 +13,8 @@ include /components/bullet-list/bullet-list.pug
 include /components/footer/footer.pug
 
 block header
-  +header({isLogged:false}) 
+  +header({ isLogged: false })
+
 block content
   .room-details-page__room-photos
     img.room-details-page__room-photo-1(
@@ -29,19 +30,21 @@ block content
       alt='room photo 3'
     )
 
-  .room-details-page__background
-    section.room-details-page__container
-      .room-details-page__room-advantages
-        .room-details-page__room-advantages-heading= "Cведения о номере"
+  main.room-details-page__background
+    .room-details-page__container
+      section.room-details-page__room-advantages
+        h3.room-details-page__room-advantages-heading= "Cведения о номере"
         -
           const roomAdvantagesProps = [
             { info: 'comfort', underline: true },
             { info: 'convenience', underline: true },
             { info: 'cosiness', underline: false },
           ]
-        +room-advantages({items: roomAdvantagesProps})
+        +room-advantages({ items: roomAdvantagesProps })
+
       .room-details-page__chart.js-room-details-page-chart
         +chart-plugin
+
       .room-details-page__book-room.js-room-details-page-book-room
         -
           const bookRoomProps = {
@@ -52,6 +55,7 @@ block content
             },
           }
         +book-room(bookRoomProps)
+
       .room-details-page__review-list
         -
           const reviewListProps = {
@@ -74,6 +78,7 @@ block content
             ]
           }
         +review-list(reviewListProps)
+
       .room-details-page__rules
         -
           const rulesProps = {
@@ -85,9 +90,10 @@ block content
               ]
           }
         +bullet-list(rulesProps)
-      .room-details-page__cancel
-        .room-details-page__cancel-heading= "Отмена"
-        .room-details-page__cancel-text
+        
+      section.room-details-page__cancel
+        h3.room-details-page__cancel-heading= "Отмена"
+        p.room-details-page__cancel-text
           | Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн.
           | до прибытия вы получите полный возврат за вычетом сбора за услуги.
 

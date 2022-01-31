@@ -35,18 +35,18 @@ mixin date-dropdown(options)
   if dropdownClass
     .date-dropdown
       .date-dropdown__input-filter(class=dropdownClass)
-        p.date-dropdown__label= dropdownLabel || ""
-        -
-          const inputPropsSingle = Object.assign({}, inputPropsBase, {   
-            placeholder:'ДД МM - ДД МM',
-          })
+        label.date-dropdown__label= dropdownLabel || ""
+          -
+            const inputPropsSingle = Object.assign({}, inputPropsBase, {   
+              placeholder:'ДД МM - ДД МM',
+            })
 
-        +input(inputPropsSingle)(data-input)
+          +input(inputPropsSingle)(data-input)
   else
-    .date-dropdown
+    fieldset.date-dropdown
       .date-dropdown__input(class=dropdownArrivalClass)
-        p.date-dropdown__label= arrivalLabel || ""
-        +input(inputPropsBase)(data-input)
+        label.date-dropdown__label= arrivalLabel || ""
+          +input(inputPropsBase)(data-input)
       .date-dropdown__input(class=dropdownDepartureClass)
-        p.date-dropdown__label= departureLabel || ""
-        +input(inputPropsBase)(data-input)
+        label.date-dropdown__label= departureLabel || ""
+          +input(inputPropsBase)(data-input)

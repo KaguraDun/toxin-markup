@@ -10,8 +10,9 @@
 
     &-icon {
       display: block;
-      min-width: rem(18px);
-      min-height: rem(18px);
+      box-sizing: border-box;
+      min-width: rem(20px);
+      min-height: rem(20px);
       margin-right: rem(10px);
       border: 1px solid $border-primary-light;
       border-radius: rem(4px);

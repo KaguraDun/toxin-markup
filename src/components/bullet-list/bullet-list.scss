@@ -19,11 +19,6 @@
     align-items: baseline;
     white-space: pre-line;
 
-    &-text {
-      margin: 0;
-      padding: 0;
-    }
-
     &::before {
       display: inline-block;
       width: rem(10px);

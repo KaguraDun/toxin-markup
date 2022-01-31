@@ -9,7 +9,7 @@
   }
 
   &__heading {
-    margin-bottom: rem(20px);
+    margin: rem(0 0 20px 0);
 
     @include font-montserrat-h2;
   }
