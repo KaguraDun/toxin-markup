@@ -1,5 +1,6 @@
 //- available properties:
   sliderContent: string;
+  link: string;
   number: number;
   price: number;
   type: люкс;
@@ -10,13 +11,14 @@ include /components/room-info/room-info.pug
 include /components/button-rate/button-rate.pug
 include /components/slider/slider.pug
 
-mixin room-card({ sliderContent, number, price, type, score, reviewsNumber })
-  .room-card
+mixin room-card({ sliderContent, link, number, price, type, score, reviewsNumber })
+  article.room-card
     .room-card__slider
       +slider(sliderContent)
     .room-card__content
-      .room-card__room-info
-        +room-info({ numberStyle: 'compact', number, price, type })
+      a.room-card__room-link(href=link)
+        h3.room-card__room-info
+            +room-info({ numberStyle: 'compact', number, price, type })
       hr.room-card__delimiter
       .room-card__rating
         .room-card__button-rate

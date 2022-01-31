@@ -13,8 +13,18 @@
     padding: rem(20px);
   }
 
+  &__room-link {
+    display: block;
+    @include clear-link-style;
+
+    &:focus-visible {
+      outline: 2px solid $border-tertiary;
+      outline-offset: 4px;
+    }
+  }
+
   &__room-info {
-    margin-bottom: rem(10px);
+    margin: rem(0 0 10px 0);
   }
 
   &__delimiter {
