@@ -10,6 +10,7 @@
   required: boolean;
   openByButton: boolean;
   overflowEllipsis: boolean;
+  onHover: boolean;
 
 mixin input(options)
   -
@@ -25,6 +26,7 @@ mixin input(options)
       openByButton = false,
       style = 'default',
       overflowEllipsis = false,
+      onHover = false,
     } = options
   -
     const maskList = {
@@ -51,6 +53,7 @@ mixin input(options)
       'js-input-input': true,
       [styles[style]]: true,
       'input__input_overflow_ellipsis': overflowEllipsis,
+      'input__input_hovered': onHover,
     }
 
   .input(class=sizes[size])
@@ -64,7 +67,7 @@ mixin input(options)
       title=mask ? "Введите дату в формате ДД.ММ.ГГГГ" : false,
       readonly=readonly,
       required=required
-    )&attributes(attributes)
+    )
 
     if button !== 'none'
       -
