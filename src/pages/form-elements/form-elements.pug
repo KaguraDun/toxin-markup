@@ -73,7 +73,7 @@ block content
       .form-elements__item.form-elements__item_size_medium
         .form-elements__item-info
           span.form-elements__item-name= "subscription text field"
-        +input({type:'email', placeholder:'Email', button:'arrow', size:'medium' })
+        +input({ type: 'email', placeholder: 'Email', button: 'arrow', size: 'medium' })
 
     .form-elements__grid-item.form-elements__grid-item_column_1
       .form-elements__item.form-elements__item_size_medium
@@ -195,22 +195,22 @@ block content
           .form-elements__fieldset-column.form-elements__fieldset-column_gap_large
             .form-elements__fieldset-row.form-elements__fieldset-row_gap_medium
               +button({ style: 'filled', width: 'small', text: 'click me' })
-              +button({ style: 'filled', width: 'small', text: 'click me' }).button_hovered
+              +button({ style: 'filled', width: 'small', text: 'click me', isHovered: true })
 
             .form-elements__fieldset-row.form-elements__fieldset-row_gap_medium
               +button({ width: 'small', text: 'click me' })
-              +button({ width: 'small', text: 'click me' }).button_hovered
+              +button({ width: 'small', text: 'click me', isHovered: true })
 
             .form-elements__fieldset-row.form-elements__fieldset-row_gap_medium
               +button({ style: 'borderless', text: 'click me' })
-              +button({ style: 'borderless', text: 'click me' }).button_hovered
+              +button({ style: 'borderless', text: 'click me', isHovered: true })
 
             .form-elements__fieldset-row
               -
                 const buttonPaymentProps = {
                   style: 'filled',
                   width: 'full',
-                  arrow: true,
+                  withArrow: true,
                   text: 'перейти к оплате',
                   href: '/mock-address.html'
                 }
