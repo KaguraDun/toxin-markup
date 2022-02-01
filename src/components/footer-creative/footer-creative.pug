@@ -1,0 +1,17 @@
+include /components/logo/logo.pug
+include /components/copyright/copyright.pug
+include /components/socials/socials.pug
+
+mixin footer-creative
+  .footer-creative
+    .footer-creative__wrapper
+      footer.footer-creative__footer
+        .footer-creative__copyright
+          .footer-creative__copyright-logo
+            +logo({ style:'colored' })
+
+          .footer-creative__copyright-text
+            +copyright
+
+          .footer-creative__socials
+            +socials
