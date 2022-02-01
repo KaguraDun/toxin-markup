@@ -11,6 +11,7 @@
   openByButton: boolean;
   overflowEllipsis: boolean;
   onHover: boolean;
+  data : string[];
 
 mixin input(options)
   -
@@ -27,33 +28,46 @@ mixin input(options)
       style = 'default',
       overflowEllipsis = false,
       onHover = false,
+      data = [],
     } = options
-  -
+
+    const dataAttributes = {};
+
+    data.forEach((attribute) => {
+      dataAttributes[attribute] = true;
+    })
+
     const maskList = {
       date: {
         mask: "00.00.0000",
           pattern: "(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}"
         }
       };
-  -
+
     const sizes = {
       small: 'input_size_small',
       medium: 'input_size_medium',
       large: 'input_size_large',
       full: 'input_size_full',
     }
-  -
+
     const styles = {
       default: 'input__input_style_default',
       dropdown: 'input__input_style_dropdown',
     }
-  -
+
     const inputClassNames = {
       'input__input': true,
       'js-input-input': true,
       [styles[style]]: true,
       'input__input_overflow_ellipsis': overflowEllipsis,
       'input__input_hovered': onHover,
+    }
+
+    const icons = {
+      arrow: 'input__button-icon_style_arrow',
+      'expand-more': 'input__button-icon_style_expand-more',
+      'expand-less': 'input__button-icon_style_expand-less', 
     }
 
   .input(class=sizes[size])
@@ -67,15 +81,9 @@ mixin input(options)
       title=mask ? "Введите дату в формате ДД.ММ.ГГГГ" : false,
       readonly=readonly,
       required=required
-    )
+    )&attributes(dataAttributes)
 
     if button !== 'none'
-      -
-        const icons = {
-          arrow: 'input__button-icon_style_arrow',
-          'expand-more': 'input__button-icon_style_expand-more',
-          'expand-less': 'input__button-icon_style_expand-less', 
-        }
       - const buttonType = openByButton ? "button" : "submit";
 
       button.input__button(type=buttonType, data-toggle=openByButton)

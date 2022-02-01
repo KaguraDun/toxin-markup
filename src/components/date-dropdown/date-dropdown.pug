@@ -30,6 +30,7 @@ mixin date-dropdown(options)
       openByButton: true,
       readonly: true,
       size: size,
+      data: ['data-input'],
     }
 
   if dropdownClass
@@ -41,12 +42,12 @@ mixin date-dropdown(options)
               placeholder:'ДД МM - ДД МM',
             })
 
-          +input(inputPropsSingle)(data-input)
+          +input(inputPropsSingle)
   else
     fieldset.date-dropdown
       .date-dropdown__input(class=dropdownArrivalClass)
         label.date-dropdown__label= arrivalLabel || ""
-          +input(inputPropsBase)(data-input)
+          +input(inputPropsBase)
       .date-dropdown__input(class=dropdownDepartureClass)
         label.date-dropdown__label= departureLabel || ""
-          +input(inputPropsBase)(data-input)
+          +input(inputPropsBase)
