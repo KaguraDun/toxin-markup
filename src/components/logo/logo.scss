@@ -9,16 +9,13 @@
     &:first-child {
       margin-right: rem(12.5px);
     }
+
+    @media (max-width: $tablet) {
+      transform: scale(.7);
+    }
   }
 
   &__icon-text {
     display: flex;
-  }
-
-  @media (max-width: $tablet) {
-
-    &__icon {
-      transform: scale(.7);
-    }
   }
 }
