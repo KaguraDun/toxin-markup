@@ -13,8 +13,11 @@
     margin-bottom: rem(15px);
   }
 
+  &__checkbox-list {
+    margin-bottom: rem(30px);
+  }
+
   &__range-slider,
-  &__checkbox-list,
   &__rich-checkbox-list,
   &__dropdown-guests {
     margin-bottom: rem(30px);

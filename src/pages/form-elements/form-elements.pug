@@ -77,7 +77,7 @@ block content
 
     .form-elements__grid-item.form-elements__grid-item_column_1
       .form-elements__item.form-elements__item_size_medium
-        .form-elements__item-info
+        .form-elements__item-info.form-elements__item-info_margin_none
           span.form-elements__item-name= "dropdown"
           span.form-elements__item-state= "default"
         .form-elements__dropdown-room-amenity.js-form-elements-dropdown-room-amenity
@@ -141,7 +141,7 @@ block content
             +input-toggle({ text:'Получать спецпредложения', checked: true })
             +input-toggle({ text:'Получать спецпредложения' })
 
-      .form-elements__item.form-elements__item_margin_large
+      .form-elements__item.form-elements__item_margin_larger
         fieldset.form-elements__fieldset
           legend.form-elements__fieldset-legend= "like button"
           .form-elements__fieldset-row.form-elements__fieldset-row_gap_small
@@ -226,7 +226,7 @@ block content
         .form-elements__dropdown-guests_with-controls-and-values.js-form-elements-dropdown-guests-with-controls-and-values
           +dropdown
       .form-elements__item.form-elements__item_size_medium
-        .form-elements__item-info
+        .form-elements__item-info.form-elements__item-info_margin_medium
           span.form-elements__item-name= "bullet list"
         -
           const bulletListItems = [

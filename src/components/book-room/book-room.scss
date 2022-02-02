@@ -1,10 +1,7 @@
 .book-room {
   @include form;
 
-  &__room-info {
-    margin-bottom: rem(16px);
-  }
-
+  &__room-info,
   &__date-dropdown,
   &__dropdown-guests {
     margin-bottom: rem(20px);

@@ -15,7 +15,7 @@
     grid-auto-flow: column;
     grid-template-rows: repeat(3, auto);
     grid-template-columns: rem(320px) rem(126px) rem(320px) rem(72px) rem(320px);
-    row-gap: rem(100px);
+    row-gap: rem(104px);
 
     @include container();
   }
@@ -53,11 +53,15 @@
     }
 
     &_margin_medium-large {
-      margin-bottom: rem(35px);
+      margin-bottom: rem(36px);
     }
 
     &_margin_large {
       margin-bottom: rem(40px);
+    }
+
+    &_margin_larger {
+      margin-bottom: rem(45px);
     }
 
     &_margin_largest {
@@ -85,8 +89,12 @@
       margin-bottom: 0;
     }
 
+    &-info_margin_medium {
+      margin-bottom: rem(10px);
+    }
+
     &-info_margin_large {
-      margin-bottom: rem(20px);
+      margin-bottom: rem(15px);
     }
 
     &-name {
@@ -142,11 +150,7 @@
     }
   }
 
-  &__room-advantages {
-    margin-top: rem(10px);
-  }
-
   &__review {
-    margin-top: rem(15px);
+    margin-top: rem(10px);
   }
 }

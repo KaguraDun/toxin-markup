@@ -10,13 +10,14 @@
   }
 
   &__label {
-    margin-bottom: rem(5px);
-
     @include font-montserrat-h3;
   }
 
   &__input,
   &__input-filter {
+    display: flex;
+    flex-direction: column;
+    gap: rem(5px);
     width: 100%;
   }
 }
