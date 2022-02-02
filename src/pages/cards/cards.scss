@@ -23,4 +23,7 @@
     flex-direction: column;
     gap: rem(40px);
   }
+  &__room-card {
+    max-width: rem(270px);
+  }
 }
