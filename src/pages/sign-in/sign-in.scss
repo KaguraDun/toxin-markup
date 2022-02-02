@@ -7,6 +7,14 @@
     min-height: rem(702px);
     background: url('/assets/images/backgrounds/background-4.jpg') no-repeat;
     background-size: cover;
+
+    @media (max-width: $tablet) {
+      min-height: rem(602px);
+    }
+
+    @media (max-width: $mobile) {
+      min-height: rem(502px);
+    }
   }
 
   &__container {
@@ -18,5 +26,13 @@
 
   &__sign-in {
     margin-top: rem(172px);
+
+    @media (max-width: $tablet) {
+      margin-top: rem(107px);
+    }
+
+    @media (max-width: $mobile) {
+      margin-top: rem(72px);
+    }
   }
 }
