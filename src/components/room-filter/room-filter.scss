@@ -1,4 +1,9 @@
 .room-filter {
+  @media (max-width: $tablet) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(300px), 1fr));
+    gap: rem(0 25px);
+  }
 
   &__date-dropdown {
     margin-bottom: rem(20px);

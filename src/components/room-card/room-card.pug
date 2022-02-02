@@ -15,14 +15,17 @@ mixin room-card({ sliderContent, link, number, price, type, score, reviewsNumber
   article.room-card
     .room-card__slider
       +slider(sliderContent)
+
     .room-card__content
       a.room-card__room-link(href=link)
         h3.room-card__room-info
-            +room-info({ numberStyle: 'compact', number, price, type })
+          +room-info({ numberStyle: 'compact', number, price, type })
+
       hr.room-card__delimiter
       .room-card__rating
         .room-card__button-rate
           +button-rate({ score, name: `room-card-${number}` })
+
         .room-card__reviews-wrapper
           span.room-card__reviews-number= reviewsNumber
           span.room-card__reviews-text= " Отзывов"
