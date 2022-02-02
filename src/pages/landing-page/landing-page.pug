@@ -9,16 +9,16 @@ include /components/find-rooms/find-rooms.pug
 include /components/footer/footer.pug
 
 block header
-  +header({isLogged:false})
+  +header({ isLogged: false })
+
 block content
-  .landing-page__background
-    section.landing-page__container
+  main.landing-page__background
+    .landing-page__container
       .landing-page__find-rooms
         +find-rooms
-      .landing-page__text
+      p.landing-page__text
         | Лучшие номера для вашей работы,
-        br
-        | отдыха и просто вдохновения
+        | отдыха и&nbsp;просто вдохновения
 
 block footer
   +footer

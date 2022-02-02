@@ -18,11 +18,11 @@ mixin room-info({ number, price, numberStyle = 'normal', type = '' })
       minimumFractionDigits: 0,
     }).format(price).replace(/\s(?=[^.]$)/, '');
 
-  .room-info 
-    .room-info__room-number-wrapper
+  span.room-info 
+    span.room-info__room-number-wrapper
       span.room-info__number-symbol= "№ "
       span(class=numberClasses)= number
       span.room-info__type= type
-    .room-info__price-wrapper
-      .room-info__price= formatPrice
-      .room-info__price-text!= "&nbsp; в сутки"
+    span.room-info__price-wrapper
+      span.room-info__price= formatPrice
+      span.room-info__price-text!= "&nbsp; в сутки"

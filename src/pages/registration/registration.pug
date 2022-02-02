@@ -9,11 +9,13 @@ include /components/sign-up/sign-up.pug
 include /components/footer/footer.pug
 
 block header
-  +header({isLogged:false})
+  +header({ isLogged: false })
+
 block content
-  .registration-page__background
-    section.registration-page__container
+  main.registration-page__background
+    .registration-page__container
       .registration-page__sign-up
-        +sign-up({buttonText: 'зарегистрироваться'})
+        +sign-up({ buttonText: 'зарегистрироваться' })
+
 block footer
   +footer

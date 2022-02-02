@@ -4,9 +4,7 @@
   flex-direction: column;
 
   &__label {
-    display: flex;
-    flex-direction: column;
-    margin: 0 0 5px;
+    margin-bottom: rem(5px);
 
     @include font-montserrat-h3();
   }

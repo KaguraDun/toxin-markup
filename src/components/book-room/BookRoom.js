@@ -75,19 +75,15 @@ class BookRoom {
 
   static #createAbout(text) {
     return `
-    <span class="book-room__item-about">
+    <div class="book-room__item-about">
       <span class="book-room__item-about-text">
         ${text}
       </span>
-    </span>
+    </div>
   `;
   }
 
   static #createPriceListItem(item) {
-    const hasNewLines = item.name.includes('<br>');
-    let itemNameClassNames = 'book-room__item-name';
-    if (hasNewLines) itemNameClassNames += ' book-room__item-name_style_multiline';
-
     const name = item.name
       .replace('[price]', getFormattedPrice(item.price))
       .replace('[count]', item.count);
@@ -98,7 +94,7 @@ class BookRoom {
     return `
       <li class="book-room__item">
         <div class="book-room__item-name-wrapper">
-          <span class="${itemNameClassNames}">${name}</span>
+          <span class="book-room__item-name">${name}</span>
           ${item.about ? itemAbout : ''}
         </div>
         <span class="book-room__item-sum">${getFormattedPrice(itemSum)}</span>

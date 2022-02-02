@@ -1,4 +1,9 @@
 .room-filter {
+  @media (max-width: $tablet) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(300px), 1fr));
+    gap: rem(0 25px);
+  }
 
   &__date-dropdown {
     margin-bottom: rem(20px);
@@ -8,8 +13,11 @@
     margin-bottom: rem(15px);
   }
 
+  &__checkbox-list {
+    margin-bottom: rem(30px);
+  }
+
   &__range-slider,
-  &__checkbox-list,
   &__rich-checkbox-list,
   &__dropdown-guests {
     margin-bottom: rem(30px);

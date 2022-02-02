@@ -3,10 +3,11 @@
   size: small | medium
   width: small | full | auto;
   style: filled | border | borderless | page | page_selected | page_next;
-  arrow: boolean;
   text: string;
   href: string;
+  withArrow: boolean;
   disabled: boolean;
+  isHovered: boolean;
 
 mixin button(options)
   -
@@ -15,10 +16,11 @@ mixin button(options)
       size = 'medium',
       width = 'auto',
       style = 'border',
-      arrow = false,
       text = "",
+      href = null,
+      withArrow = false,
       disabled = false,
-      href = null
+      isHovered = false,
     } = options
 
   -
@@ -41,15 +43,22 @@ mixin button(options)
       full: 'button_width_full',
       auto: 'button_width_auto',
     }
-  - const buttonClassNames = `button ${classListStyle[style]} ${classListSize[size]} ${classListWidth[width]}`;
+  -
+    const buttonClassNames = {
+      'button' : true,
+      [classListStyle[style]] : true,
+      [classListSize[size]]: true,
+      [classListWidth[width]]: true,
+      'button_hovered' : isHovered,
+    }
 
   if href
-    a(class=buttonClassNames, href=href)&attributes(attributes)
+    a(class=buttonClassNames, href=href)
       span.button__text= text
-      if (arrow)
+      if (withArrow)
         span.button__icon.button__icon_with-arrow
   else
-    button(type=type, class=buttonClassNames, disabled=disabled)&attributes(attributes)
+    button(type=type, class=buttonClassNames, disabled=disabled)
       span.button__text= text
-      if (arrow)
+      if (withArrow)
         span.button__icon.button__icon_with-arrow 

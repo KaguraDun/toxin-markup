@@ -1,7 +1,7 @@
 .chart-plugin {
 
   &__heading {
-    margin-bottom: rem(25px);
+    margin: rem(0 0 25px 0);
 
     @include font-montserrat-h2;
   }
@@ -52,6 +52,6 @@
   }
 
   &__item-text {
-    margin-left: rem(15px);
+    margin: rem(0 0 0 15px);
   }
 }

@@ -7,6 +7,14 @@
     min-height: rem(830px);
     background: url('/assets/images/backgrounds/background-3.jpg') no-repeat;
     background-size: cover;
+
+    @media (max-width: $tablet) {
+      min-height: rem(630px);
+    }
+
+    @media (max-width: $mobile) {
+      min-height: rem(530px);
+    }
   }
 
   &__container {
@@ -31,7 +39,8 @@
     position: relative;
     left: rem(5px);
     align-self: flex-end;
-    margin-bottom: rem(20px);
+    max-width: rem(300px);
+    margin: rem(0 0 20px);
     white-space: pre-line;
     text-align: right;
   }

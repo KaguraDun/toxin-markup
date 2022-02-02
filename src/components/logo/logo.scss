@@ -4,21 +4,12 @@
   width: max-content;
 
   &__icon {
-    display: flex;
-
-    &:first-child {
-      margin-right: rem(12.5px);
-    }
-  }
-
-  &__icon-text {
-    display: flex;
-  }
-
-  @media (max-width: $tablet) {
-
-    &__icon {
+    @media (max-width: $tablet) {
       transform: scale(.7);
+    }
+
+    &-text {
+      margin-left: rem(12.5px);
     }
   }
 }

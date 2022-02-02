@@ -2,11 +2,11 @@ include /components/room-card/room-card.pug
 include /components/pagination/pagination.pug
 
 mixin room-cards-list(cardsList)
-  .room-cards-list
+  section.room-cards-list
     h2.room-cards-list__heading= "Номера, которые мы для вас подобрали"
     .room-cards-list__items
       each item in cardsList
         +room-card(item)
 
     .room-cards-list__controls
-      +pagination({currentPage:1, pagesCount:15, itemsPerPage:12})
+      +pagination({ currentPage: 1, pagesCount: 15, itemsPerPage: 12 })

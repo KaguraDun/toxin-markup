@@ -6,14 +6,31 @@
   margin-top: auto;
   background-color: $bg-primary;
 
+  @media (max-width: $tablet) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    padding: rem(120px 0);
+    box-shadow: 0 10px 20px $shadow-primary-lightest;
+  }
+
   &__container {
     @include container;
+
+    @media (max-width: $tablet) {
+      box-sizing: border-box;
+    }
   }
 
   &__widgets {
     width: 100%;
     min-height: rem(372px);
     box-shadow: 0 1px 0 $shadow-primary-lighter;
+
+    @media (max-width: $tablet) {
+      display: none;
+    }
   }
 
   &__grid {
@@ -57,6 +74,17 @@
 
   &__copyright-logo {
     display: none;
+
+    @media (max-width: $tablet) {
+      display: block;
+      margin-bottom: rem(25px);
+    }
+  }
+
+  &__copyright-text {
+    @media (max-width: $tablet) {
+      margin-bottom: rem(25px);
+    }
   }
 
   &__copyright-wrapper {
@@ -64,37 +92,8 @@
     align-items: center;
     justify-content: space-between;
     min-height: rem(70px);
-  }
 
-  @media (max-width: $tablet) {
-    margin: 0 auto;
-    padding: rem(120px 0);
-    box-shadow: 0 10px 20px $shadow-primary-lightest;
-
-    .container {
-      box-sizing: border-box;
-    }
-
-    & {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    &__widgets {
-      display: none;
-    }
-
-    &__copyright-logo {
-      display: block;
-      margin-bottom: rem(25px);
-    }
-
-    &__copyright-text {
-      margin-bottom: rem(25px);
-    }
-
-    &__copyright-wrapper {
+    @media (max-width: $tablet) {
       flex-direction: column;
     }
   }

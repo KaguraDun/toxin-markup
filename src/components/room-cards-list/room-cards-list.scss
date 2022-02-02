@@ -5,29 +5,26 @@
     margin: rem(0 0 20px);
 
     @include font-montserrat-h1;
+
+    @media (max-width: $tablet) {
+      text-align: center;
+    }
   }
 
   &__items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(rem(270px), 1fr));
     gap: rem(19px 12px);
-    margin-bottom: rem(35px);
+    margin-bottom: rem(40px);
+
+    @media (max-width: $tablet) {
+      justify-items: center;
+    }
   }
 
   &__controls {
     display: flex;
     justify-content: center;
     margin-right: rem(15px);
-  }
-
-  @media (max-width: $tablet) {
-
-    &__heading {
-      text-align: center;
-    }
-
-    &__items {
-      justify-items: center;
-    }
   }
 }

@@ -24,6 +24,7 @@
   }
 
   &__additional-text {
+    margin: 0;
     color: $text-primary-medium;
 
     @include font-montserrat(rem(12px), rem(14px));

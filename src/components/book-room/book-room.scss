@@ -1,10 +1,7 @@
 .book-room {
   @include form;
 
-  &__room-info {
-    margin-bottom: rem(23px);
-  }
-
+  &__room-info,
   &__date-dropdown,
   &__dropdown-guests {
     margin-bottom: rem(20px);
@@ -35,11 +32,7 @@
   }
 
   &__item-name {
-    line-height: rem(24px);
-
-    &_style_multiline {
-      line-height: rem(18px);
-    }
+    line-height: rem(18px);
   }
 
   &__item-about {
