@@ -41,7 +41,7 @@ class Dropdown {
   }
 
   #setLabel() {
-    const label = this.element.querySelector('.js-dropdown-label-text');
+    const label = this.element.querySelector('.js-dropdown-label');
 
     if (!label) return;
     if (this.properties.label) label.innerText = this.properties.label;

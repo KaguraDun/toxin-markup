@@ -5,10 +5,7 @@ mixin logo({ style })
   a.logo(href='/')
     case style
       when 'gray'
-        span.logo__icon
-          include ./svg/logo-icon-gray.svg
+        img.logo__icon(src = require('/src/components/logo/icons/logo-icon-gray.svg') alt='logo')
       when 'colored'
-        span.logo__icon
-          include ./svg/logo-icon.svg
-        span.logo__icon-text
-          include ./svg/logo-text.svg
+        img.logo__icon(src = require('/src/components/logo/icons/logo-icon.svg') alt='logo')
+        img.logo__icon-text(src = require('/src/components/logo/icons/logo-text.svg') alt='logo-text')

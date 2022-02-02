@@ -3,19 +3,18 @@ include /components/button/button.pug
 
 mixin dropdown
   .dropdown.js-dropdown
-    label.dropdown__label
-      span.dropdown__label-text.js-dropdown-label-text
-      .dropdown__input.js-dropdown-input
-        -
-          const inputProps = {
-            type: 'text',
-            button: 'expand-more',
-            readonly: true,
-            openByButton: true,
-            style: 'dropdown',
-            overflowEllipsis: true,
-          }
-        +input(inputProps)
+    span.dropdown__label.js-dropdown-label
+    .dropdown__input.js-dropdown-input
+      -
+        const inputProps = {
+          type: 'text',
+          button: 'expand-more',
+          readonly: true,
+          openByButton: true,
+          style: 'dropdown',
+          overflowEllipsis: true,
+        }
+      +input(inputProps)
     .dropdown__items-wrapper.js-dropdown-items-wrapper(hidden)
       .dropdown__items.js-dropdown-items
       .dropdown__button-wrapper.js-dropdown-button-wrapper

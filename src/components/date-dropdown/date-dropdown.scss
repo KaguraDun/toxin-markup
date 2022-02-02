@@ -10,9 +10,7 @@
   }
 
   &__label {
-    display: flex;
-    flex-direction: column;
-    gap: rem(5px);
+    margin-bottom: rem(5px);
 
     @include font-montserrat-h3;
   }
