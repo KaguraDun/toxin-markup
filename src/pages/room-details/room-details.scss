@@ -9,6 +9,14 @@
     grid-template-rows: repeat(2, auto);
     grid-template-columns: repeat(2, auto);
     margin: 0 auto;
+
+    @media (max-width: $mobile) {
+      grid-template-areas: 'photo-1'
+        'photo-2'
+        'photo-3';
+      grid-template-rows: repeat(3, auto);
+      grid-template-columns: auto;
+    }
   }
 
   &__room-photo-1,
