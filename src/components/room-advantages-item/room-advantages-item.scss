@@ -9,17 +9,19 @@
   }
 
   &__icon {
-    color: $text-tertiary;
+    color: transparent;
+    background: $gradient-primary;
+    background-clip: text;
 
-    &_style_comfort::after {
+    &_style_comfort::before {
       @include font-material-icons('insert_emoticon', rem(48px), rem(41px));
     }
 
-    &_style_convenience::after {
+    &_style_convenience::before {
       @include font-material-icons('location_city', rem(48px), rem(41px));
     }
 
-    &_style_cosiness::after {
+    &_style_cosiness::before {
       @include font-material-icons('whatshot', rem(48px), rem(41px));
     }
   }
