@@ -5,7 +5,7 @@
 mixin bullet-list({ heading, items })
   section.bullet-list
     if heading
-      h3.bullet-list__heading= heading
+      h2.bullet-list__heading= heading
     ul.bullet-list__items
       each item in items
         li.bullet-list__item!= item
