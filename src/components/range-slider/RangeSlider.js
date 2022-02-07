@@ -1,15 +1,13 @@
-import noUiSlider from 'nouislider';
-import 'nouislider/dist/nouislider.css';
-
 import getFormattedPrice from '@/helpers/get-formatted-price';
+import RangeSliderPlugin from '@/libs/range-slider-plugin/RangeSliderPlugin';
 
 import './range-slider.scss';
 
 class RangeSlider {
   constructor(container, options) {
     this.container = container;
-    this.options = options || RangeSlider.defaultOptions;
-    this.instance = null;
+    this.options = options || RangeSlider.#defaultOptions;
+    this.rangeSlider = null;
     this.priceElement = null;
     this.sliderContainer = null;
   }
@@ -18,11 +16,12 @@ class RangeSlider {
     this.priceElement = this.container.querySelector('.js-range-slider-price-range');
     this.sliderContainer = this.container.querySelector('.js-range-slider-container');
 
-    this.instance = noUiSlider.create(this.sliderContainer, this.options);
-    this.instance.on('update', this.#handleValuesUpdate);
+    this.rangeSlider = new RangeSliderPlugin(this.sliderContainer, this.options);
+    this.rangeSlider.init();
+    this.rangeSlider.addEvent('update', this.#handleValuesUpdate);
   }
 
-  static defaultOptions = {
+  static #defaultOptions = {
     start: [5000, 10000],
     connect: true,
     step: 500,
@@ -33,7 +32,7 @@ class RangeSlider {
   };
 
   #handleValuesUpdate = () => {
-    const [from, to] = this.instance.get();
+    const [from, to] = this.rangeSlider.getValues();
 
     this.priceElement.innerHTML = `${getFormattedPrice(from)} - ${getFormattedPrice(to)}`;
   };

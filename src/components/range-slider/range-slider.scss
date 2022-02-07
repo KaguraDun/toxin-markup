@@ -30,38 +30,3 @@
     @include font-montserrat(rem(12px), rem(14px));
   }
 }
-
-.noUi-horizontal {
-  height: rem(6px);
-}
-
-.noUi-horizontal .noUi-handle {
-  right: rem(-8px);
-  width: rem(16px);
-  height: rem(16px);
-}
-
-.noUi-handle {
-  background: $gradient-secondary;
-  border: 2px solid $border-secondary;
-  border-radius: 50%;
-  box-shadow: none;
-  cursor: pointer;
-}
-
-.noUi-handle::before,
-.noUi-handle::after {
-  width: 0;
-  height: 0;
-}
-
-.noUi-connect {
-  background: $gradient-secondary;
-}
-
-.noUi-target {
-  background: $bg-primary;
-  border: 1px solid $border-primary-light;
-  border-radius: 3px;
-  box-shadow: none;
-}
