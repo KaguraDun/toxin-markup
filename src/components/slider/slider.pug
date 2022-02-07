@@ -1,8 +1,8 @@
-mixin slider(images)
-  .swiper.js-swiper
-    .swiper-wrapper
-      each image in images
-        .swiper-slide(style=`background: url('${image}')`)
-    .swiper-pagination
-    .swiper-button-prev
-    .swiper-button-next
+//- available properties:
+  numberStyle: compact | normal;
+
+include /libs/swiper/swiper.pug
+
+mixin slider(options)
+  +swiper(options)
+
