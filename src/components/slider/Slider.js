@@ -1,4 +1,4 @@
-import Swiper from '@/libs/swiper/Swiper.js';
+import SliderPlugin from '@/libs/slider-plugin/SliderPlugin';
 
 class Slider {
   constructor(container, options) {
@@ -7,8 +7,8 @@ class Slider {
   }
 
   init() {
-    const swiper = new Swiper(this.container, this.options);
-    swiper.init();
+    const slider = new SliderPlugin(this.container, this.options);
+    slider.init();
   }
 
   static #defaultOptions = {

@@ -1,4 +1,4 @@
-const swiperOptions = {
+const sliderPluginOptions = {
   pagination: {
     pagination: {
       el: '.swiper-pagination',
@@ -14,4 +14,4 @@ const swiperOptions = {
   loop: { loop: true },
 };
 
-export default swiperOptions;
+export default sliderPluginOptions;
