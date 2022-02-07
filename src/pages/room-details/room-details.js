@@ -1,5 +1,5 @@
+import Chart from '@/components/chart/Chart.js';
 import BookRoom from '@/components/book-room/BookRoom';
-import ChartPlugin from '@/components/chart-plugin/ChartPlugin';
 import '@/components/header/header.js';
 import '@/components/room-advantages/room-advantages.js';
 import '@/components/review-list/review-list.js';
@@ -11,9 +11,13 @@ import './room-details.scss';
 
 const chartContainer = document.querySelector('.js-room-details-page-chart');
 
-const chart = new ChartPlugin({
+const chart = new Chart({
   container: chartContainer,
-  values: [0, 65, 65, 130],
+  options: {
+    values: [0, 65, 65, 130],
+    valuesColors: ['black', 'purple', 'green', 'orange'],
+    labels: ['Разочарован', 'Удов.', 'Хорошо', 'Великолепно'],
+  },
 });
 chart.render();
 

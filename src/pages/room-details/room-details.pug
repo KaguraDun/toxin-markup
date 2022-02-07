@@ -6,7 +6,7 @@ block baseVariables
 
 include /components/header/header.pug
 include /components/room-advantages/room-advantages.pug
-include /components/chart-plugin/chart-plugin.pug
+include /components/chart/chart.pug
 include /components/book-room/book-room.pug
 include /components/review-list/review-list.pug
 include /components/bullet-list/bullet-list.pug
@@ -43,7 +43,12 @@ block content
         +room-advantages({ items: roomAdvantagesProps })
 
       .room-details-page__chart.js-room-details-page-chart
-        +chart-plugin
+        -
+          const chartOptions = {
+            heading: 'Впечатления от номера',
+            legendItems: ['great', 'good', 'passably', 'disappointed'],
+          }
+        +chart(chartOptions)
 
       .room-details-page__book-room.js-room-details-page-book-room
         -
