@@ -1,0 +1,37 @@
+.noUi {
+
+  &-horizontal {
+    height: rem(6px);
+  }
+
+  &-horizontal &-handle {
+    right: rem(-8px);
+    width: rem(16px);
+    height: rem(16px);
+  }
+
+  &-handle {
+    background: $gradient-secondary;
+    border: 2px solid $border-secondary;
+    border-radius: 50%;
+    box-shadow: none;
+    cursor: pointer;
+  }
+
+  &-handle::before,
+  &-handle::after {
+    width: 0;
+    height: 0;
+  }
+
+  &-connect {
+    background: $gradient-secondary;
+  }
+
+  &-target {
+    background: $bg-primary;
+    border: 1px solid $border-primary-light;
+    border-radius: 3px;
+    box-shadow: none;
+  }
+}

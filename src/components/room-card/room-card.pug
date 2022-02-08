@@ -14,7 +14,7 @@ include /components/slider/slider.pug
 mixin room-card({ sliderContent, link, number, price, type, score, reviewsNumber })
   article.room-card
     .room-card__slider
-      +slider(sliderContent)
+      +slider({ images: sliderContent })
 
     .room-card__content
       a.room-card__room-link(href=link)

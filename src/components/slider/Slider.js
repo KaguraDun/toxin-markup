@@ -1,9 +1,4 @@
-import Swiper, { Navigation, Pagination } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
-import './slider.scss';
+import SliderPlugin from '@/libs/slider-plugin/SliderPlugin';
 
 class Slider {
   constructor(container, options) {
@@ -12,22 +7,14 @@ class Slider {
   }
 
   init() {
-    Swiper.use([Navigation, Pagination]);
-    // eslint-disable-next-line no-new
-    new Swiper(this.container, this.options);
+    const slider = new SliderPlugin(this.container, this.options);
+    slider.init();
   }
 
   static #defaultOptions = {
-    direction: 'horizontal',
+    pagination: true,
+    navigation: true,
     loop: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
   };
 }
 export default Slider;

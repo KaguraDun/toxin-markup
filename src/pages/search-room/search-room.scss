@@ -33,7 +33,8 @@
     max-width: rem(266px);
 
     @media (max-width: $tablet) {
-      max-width: 100%;
+      max-width: rem(400px);
+      margin: 0 auto;
     }
   }
 

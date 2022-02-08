@@ -159,6 +159,7 @@ module.exports = {
       '@/components': `${paths.src}/components`,
       '@/helpers': `${paths.src}/helpers`,
       '@/layouts': `${paths.src}/layouts`,
+      '@/libs': `${paths.src}/libs`,
       '@/pages': `${paths.src}/pages`,
       '@/styles': `${paths.src}/styles`,
     },

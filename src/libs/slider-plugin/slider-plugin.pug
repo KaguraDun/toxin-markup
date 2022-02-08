@@ -1,0 +1,16 @@
+//- available properties:
+  images: string[];
+  pagination: boolean;
+  controls: boolean;
+
+mixin slider-plugin({ images, pagination = true, navigation = true })
+  // .js-slider class needs to be independent in plugin choose
+  .swiper.js-slider
+    .swiper-wrapper
+      each image in images
+        .swiper-slide(style=`background: url('${image}')`)
+    if pagination
+      .swiper-pagination
+    if navigation
+      .swiper-button-prev
+      .swiper-button-next

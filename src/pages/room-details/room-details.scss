@@ -73,14 +73,15 @@
     }
 
     @media (max-width: $mobile) {
-      grid-template-areas: 'advantages'
+      grid-template-areas: 'book-room'
+        'advantages'
         'chart'
-        'book-room'
         'reviews'
         'rules'
         'cancel-text';
       grid-template-rows: auto;
       grid-template-columns: auto;
+      margin: rem(30px) auto;
     }
   }
 
