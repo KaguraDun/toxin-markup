@@ -21,9 +21,13 @@ class BookRoom {
   }
 
   init() {
+    const firstInputContainer = this.element.querySelector('.js-book-room-date-dropdown-arrival');
+    const secondInputContainer = this.element.querySelector(
+      '.js-book-room-date-dropdown-departure',
+    );
+
     this.calendar = new Calendar({
-      firstInputContainer: this.element.querySelector('.js-book-room-date-dropdown-arrival'),
-      secondInputContainer: this.element.querySelector('.js-book-room-date-dropdown-departure'),
+      inputContainers: [firstInputContainer, secondInputContainer],
       ...this.calendarOptions,
     });
     this.calendar.render();

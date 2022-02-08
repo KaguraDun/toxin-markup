@@ -10,8 +10,9 @@ import '@/components/date-dropdown/date-dropdown.js';
 import './room-filter.scss';
 
 (() => {
+  const singleInputContainer = document.querySelector('.js-room-filter-date-dropdown');
   const calendar = new Calendar({
-    singleInputContainer: document.querySelector('.js-room-filter-date-dropdown'),
+    inputContainers: [singleInputContainer],
     defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 23)],
     today: new Date(2019, 7, 8),
     minDate: new Date(2019, 7, 8),

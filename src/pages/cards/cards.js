@@ -10,13 +10,14 @@ import '@/styles/_common.scss';
 
 import './cards.scss';
 
+const singleInputContainer = document.querySelector('.js-cards-calendar');
+
 const calendar = new Calendar({
-  singleInputContainer: document.querySelector('.js-cards-calendar'),
+  inputContainers: [singleInputContainer],
   isOpen: true,
   defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 23)],
   today: new Date(2019, 7, 8),
   minDate: new Date(2019, 7, 8),
-  wrap: false,
 });
 
 calendar.render();

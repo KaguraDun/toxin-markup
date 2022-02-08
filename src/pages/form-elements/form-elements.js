@@ -49,17 +49,20 @@ if (dropdownGuestsWithControlsAndValues) {
   });
 }
 
+const firstInputContainer = document.querySelector('.js-form-elements-dropdown-arrival');
+const secondInputContainer = document.querySelector('.js-form-elements-dropdown-departure');
+
 const twoInputCalendar = new Calendar({
-  firstInputContainer: document.querySelector('.js-form-elements-dropdown-arrival'),
-  secondInputContainer: document.querySelector('.js-form-elements-dropdown-departure'),
+  inputContainers: [firstInputContainer, secondInputContainer],
   defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 19)],
   today: new Date(2019, 7, 8),
   minDate: new Date(2019, 7, 8),
 });
 twoInputCalendar.render();
 
+const singleInputContainer = document.querySelector('.js-form-elements-dropdown-single');
 const singleInputCalendar = new Calendar({
-  singleInputContainer: document.querySelector('.js-form-elements-dropdown-single'),
+  inputContainers: [singleInputContainer],
   defaultDate: [new Date(2019, 7, 19), new Date(2019, 7, 23)],
   today: new Date(2019, 7, 8),
   minDate: new Date(2019, 7, 8),

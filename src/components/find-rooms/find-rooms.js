@@ -6,9 +6,11 @@ import '@/components/button/button.js';
 import './find-rooms.scss';
 
 (() => {
+  const firstInputContainer = document.querySelector('.js-find-rooms-dropdown-arrival');
+  const secondInputContainer = document.querySelector('.js-find-rooms-dropdown-departure');
+
   const calendar = new Calendar({
-    firstInputContainer: document.querySelector('.js-find-rooms-dropdown-arrival'),
-    secondInputContainer: document.querySelector('.js-find-rooms-dropdown-departure'),
+    inputContainers: [firstInputContainer, secondInputContainer],
   });
   calendar.render();
 
