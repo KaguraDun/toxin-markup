@@ -1,10 +1,12 @@
 //- available properties:
+  text: string;
+  name: string;
   checked: boolean;
   value: string;
-  name: string;
-  text: string
 
-mixin input-radio({ text, checked = false, value = false, name = false })
+
+
+mixin input-radio({ text, name, checked = false, value = false, })
   label.input-radio
     input.input-radio__input(type='radio', checked=checked, value=value, name=name)
     span.input-radio__input-icon

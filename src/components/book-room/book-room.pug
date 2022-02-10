@@ -20,7 +20,7 @@ mixin book-room({ roomInfo })
       text: 'забронировать'
     }
 
-  form.book-room.js-book-room
+  form.book-room.js-book-room(name="bookRoom")
     .book-room__room-info
       +room-info(roomInfo)
 
@@ -28,7 +28,7 @@ mixin book-room({ roomInfo })
       +date-dropdown(dateDropdownProps)
 
     .book-room__dropdown-guests.js-book-room-dropdown-guests
-      +dropdown
+      +dropdown({ name: 'dropdownGuests' })
 
     .book-room__price-list-wrapper.js-book-room-price-list-wrapper
 

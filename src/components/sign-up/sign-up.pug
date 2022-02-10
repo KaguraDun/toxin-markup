@@ -22,31 +22,31 @@ mixin sign-up({ buttonText = 'зарегистрироваться' })
       href: '/sign-in.html'
     }
 
-  form.sign-up
+  form.sign-up(name="signUp")
     h2.sign-up__heading= "Регистрация аккаунта"
 
     .sign-up__name
-      +input({ placeholder: 'Имя' })
+      +input({ placeholder: 'Имя', name: 'name' })
 
     .sign-up__surname
-      +input({ placeholder: 'Фамилия' })
+      +input({ placeholder: 'Фамилия', name: 'surname' })
 
     .sign-up__gender
-      fieldset.sign-up__gender-fieldset
+      fieldset.sign-up__gender-fieldset(name='genderSelect')
         +input-radio({ checked: true, name : 'gender', value: 'male', text: 'Мужчина' })
         +input-radio({ name : 'gender', value: 'female', text: 'Женщина' })
 
     .sign-up__birth-date
       fieldset.sign-up__birth-date-fieldset
         legend.sign-up__birth-date-legend= "дата рождения"
-        +input({ type: 'text', placeholder: 'ДД.ММ.ГГГГ', size: 'large', mask: 'date' })
+        +input({ type: 'text', name:'birthDate', placeholder: 'ДД.ММ.ГГГГ', size: 'large', mask: 'date' })
 
     .sign-up__entry-data
-      fieldset.sign-up__entry-data-fieldset
+      fieldset.sign-up__entry-data-fieldset(name='entryData')
         legend.sign-up__entry-data-legend= "данные для входа в сервис"
-        +input({ type: 'email', placeholder: 'Email', size: 'large' }) 
-        +input({ type: 'password', placeholder: 'Пароль', size: 'large' })
-        +input-toggle({ text: 'Получать спецпредложения' })
+        +input({ type: 'email', name: 'email', placeholder: 'Email', size: 'large' }) 
+        +input({ type: 'password', name: 'password', placeholder: 'Пароль', size: 'large' })
+        +input-toggle({ text: 'Получать спецпредложения', name: 'subscribe' })
 
     .sign-up__button-payment
       +button(buttonPaymentProps)

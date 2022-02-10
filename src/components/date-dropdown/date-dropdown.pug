@@ -34,7 +34,8 @@ mixin date-dropdown(options)
     }
 
     const inputPropsSingle = {
-      ...inputPropsBase, 
+      ...inputPropsBase,
+      name: 'date',
       placeholder: 'ДД МM - ДД МM',
     }
 
@@ -44,10 +45,10 @@ mixin date-dropdown(options)
         span.date-dropdown__label= dropdownLabel || ""
         +input(inputPropsSingle)
   else
-    fieldset.date-dropdown
+    fieldset.date-dropdown(name='dateRange')
       .date-dropdown__input(class=dropdownArrivalClass)
         span.date-dropdown__label= arrivalLabel || ""
-        +input(inputPropsBase)
+        +input({ ...inputPropsBase, name: 'dateArrival' })
       .date-dropdown__input(class=dropdownDepartureClass)
         span.date-dropdown__label= departureLabel || ""
-        +input(inputPropsBase)
+        +input({ ...inputPropsBase, name: 'dateDeparture' })

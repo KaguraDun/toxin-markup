@@ -1,4 +1,5 @@
 //- available properties:
+  legend: string;
   name: string;
   expandable: boolean;
   expanded: boolean;
@@ -11,7 +12,7 @@
 
 include /components/input-checkbox/input-checkbox.pug
 
-mixin checkbox-list({ name, items, expandable = false, expanded = true})
+mixin checkbox-list({ legend, name, items, expandable = false, expanded = true})
   -
     const itemClassNames = {
       'checkbox-list': true,
@@ -26,14 +27,14 @@ mixin checkbox-list({ name, items, expandable = false, expanded = true})
       'checkbox-list__icon_style_expand-less': (expanded ? true : false),
     }
 
-  fieldset(class=itemClassNames)
+  fieldset(class=itemClassNames, name=name)
     if expandable
       legend.checkbox-list__legend.checkbox-list__legend_expandable
         button.checkbox-list__button.js-checkbox-list-button(type='button')
-          span.checkbox-list__name!= name
+          span.checkbox-list__name!= legend
           span(class=iconClassNames)
     else
-      legend.checkbox-list__legend!= name
+      legend.checkbox-list__legend!= legend
 
     ul.checkbox-list__items.js-checkbox-list-items
       each item in items

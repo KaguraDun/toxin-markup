@@ -1,11 +1,12 @@
 //- available properties:
-  checked: boolean;
   text: string;
+  name: string;
   info: string;
+  checked: boolean;
 
-mixin input-checkbox({ text, info, checked = false })
+mixin input-checkbox({ text, name, info, checked = false })
   label.input-checkbox
-    input.input-checkbox__input(type='checkbox', checked=checked)
+    input.input-checkbox__input(type='checkbox', checked=checked, name=name)
     span.input-checkbox__input-icon
     if info
       span.input-checkbox__text-wrapper

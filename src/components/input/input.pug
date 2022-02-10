@@ -1,4 +1,5 @@
 //- available properties:
+  name: string;
   type: string;
   placeholder: string;
   value: string | number;
@@ -16,6 +17,7 @@
 mixin input(options)
   -
     const {
+      name,
       type = 'text',
       placeholder = false,
       value = false,
@@ -73,6 +75,7 @@ mixin input(options)
   .input(class=sizes[size])
     input(
       class=inputClassNames,
+      name=name,
       type=type,
       value=value,
       placeholder=placeholder,

@@ -3,16 +3,16 @@
   name: string;
   disabled: boolean
 
-mixin button-rate({ score, name, disabled = true })
+mixin button-rate({ score, name, inputName, disabled = true })
   - const rateValues = ["Ужасно", "Сносно", "Нормально", "Хорошо", "Отлично"];
 
-  fieldset.button-rate(disabled=disabled)
+  fieldset.button-rate(disabled=disabled, name=name)
     .button-rate__input-group
       each val, i in rateValues
         - const isChecked = i < score;
         input.button-rate__star(
           type='radio',
-          name=name,
+          name=inputName,
           value=val,
           aria-label=val,
           checked=isChecked

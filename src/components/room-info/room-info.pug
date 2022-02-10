@@ -12,7 +12,7 @@ mixin room-info({ number, price, numberStyle = 'normal', type = '' })
     }
 
     const numberClasses = `room-info__number ${numberStyles[numberStyle]}`;
-    
+
     const formatPrice = new Intl.NumberFormat('ru-RU', {
       style: 'currency',
       currency: 'RUB',
