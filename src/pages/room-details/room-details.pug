@@ -16,6 +16,55 @@ block header
   +header({ isLogged: false })
 
 block content
+  -
+    const roomAdvantagesProps = [
+      { info: 'comfort', underline: true },
+      { info: 'convenience', underline: true },
+      { info: 'cosiness', underline: false },
+    ]
+
+    const chartOptions = {
+      heading: 'Впечатления от номера',
+      legendItems: ['great', 'good', 'passably', 'disappointed'],
+    }
+
+    const bookRoomProps = {
+      roomInfo: {
+        number: 888,
+        price: 9990,
+        type: 'люкс'
+      },
+    }
+
+    const reviewListProps = {
+      items: [
+        {
+          avatar: require('/assets/images/users/murad-sarafanov.png'),
+          name: 'Мурад Сарафанов',
+          date:'5 дней назад',
+          text: `Великолепный матрас на&nbsp;кровати в&nbsp;основной спальне! А&nbsp;пуфик вообще потрясающий. И&nbsp;стены, действительно, шумоподавляющие. Выкрикивал комплименты повару&nbsp;&mdash; никто не&nbsp;жаловался из&nbsp;соседей.`,
+          likesNumber: 12,
+        },
+        {
+          avatar: require('/assets/images/users/patrisija-stjoklyshkova.png'),
+          name: 'Патрисия Стёклышкова',
+          date:'Неделю назад',
+          text: `Обслуживание на&nbsp;высоте! Всё аккуратно, чисто. Завтраки в&nbsp;номер советую заказать, каждый день новое блюдо и&nbsp;десерт как комплимент`,
+          likesNumber: 2,
+          isLikePressed: false,
+        }
+      ]
+    }
+
+    const rulesProps = {
+      heading: 'Правила',
+      items: [
+        'Нельзя с питомцами',
+        'Без вечеринок и мероприятий',
+        'Время прибытия&nbsp;&mdash; после 13:00, а&nbsp;выезд до&nbsp;12:00'
+        ]
+    }
+
   .room-details-page__room-photos
     img.room-details-page__room-photo-1(
       src=require("./images/room-photo-1.jpg"),
@@ -34,66 +83,18 @@ block content
     .room-details-page__container
       section.room-details-page__room-advantages
         h2.room-details-page__room-advantages-heading= "Cведения о номере"
-        -
-          const roomAdvantagesProps = [
-            { info: 'comfort', underline: true },
-            { info: 'convenience', underline: true },
-            { info: 'cosiness', underline: false },
-          ]
         +room-advantages({ items: roomAdvantagesProps })
 
       .room-details-page__chart.js-room-details-page-chart
-        -
-          const chartOptions = {
-            heading: 'Впечатления от номера',
-            legendItems: ['great', 'good', 'passably', 'disappointed'],
-          }
         +chart(chartOptions)
 
       .room-details-page__book-room.js-room-details-page-book-room
-        -
-          const bookRoomProps = {
-            roomInfo: {
-              number: 888,
-              price: 9990,
-              type: 'люкс'
-            },
-          }
         +book-room(bookRoomProps)
 
       .room-details-page__review-list
-        -
-          const reviewListProps = {
-            items: [
-              {
-                avatar: require('/assets/images/users/murad-sarafanov.png'),
-                name: 'Мурад Сарафанов',
-                date:'5 дней назад',
-                text: `Великолепный матрас на&nbsp;кровати в&nbsp;основной спальне! А&nbsp;пуфик вообще потрясающий. И&nbsp;стены, действительно, шумоподавляющие. Выкрикивал комплименты повару&nbsp;&mdash; никто не&nbsp;жаловался из&nbsp;соседей.`,
-                likesNumber: 12,
-              },
-              {
-                avatar: require('/assets/images/users/patrisija-stjoklyshkova.png'),
-                name: 'Патрисия Стёклышкова',
-                date:'Неделю назад',
-                text: `Обслуживание на&nbsp;высоте! Всё аккуратно, чисто. Завтраки в&nbsp;номер советую заказать, каждый день новое блюдо и&nbsp;десерт как комплимент`,
-                likesNumber: 2,
-                isLikePressed: false,
-              }
-            ]
-          }
         +review-list(reviewListProps)
 
       .room-details-page__rules
-        -
-          const rulesProps = {
-            heading: 'Правила',
-            items: [
-              'Нельзя с питомцами',
-              'Без вечеринок и мероприятий',
-              'Время прибытия&nbsp;&mdash; после 13:00, а&nbsp;выезд до&nbsp;12:00'
-              ]
-          }
         +bullet-list(rulesProps)
 
       .room-details-page__cancel-wrapper

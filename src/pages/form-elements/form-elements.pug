@@ -22,6 +22,77 @@ block baseVariables
   - const bodyClass = "form-elements";
 
 block content
+  -
+    const dateDropdownProps = {
+      arrivalLabel: 'date dropdown',
+      departureLabel: 'date dropdown',
+      size: 'small',
+      dropdownArrivalClass: 'js-form-elements-dropdown-arrival',
+      dropdownDepartureClass: 'js-form-elements-dropdown-departure',
+    }
+
+    const dateDropdownSingleProps = {
+      dropdownLabel: 'filter date dropdown',
+      size: 'medium',
+      dropdownClass: 'js-form-elements-dropdown-single',
+    }
+
+    const checkboxListItems = [
+      { text: "Завтрак", checked: false },
+      { text: "Письменный стол", checked: true },
+      { text: "Стул для кормления", checked: true },
+      { text: "Кроватка", checked: true },
+      { text: "Телевизор", checked: false },
+      { text: "Шампунь", checked: false },
+    ]
+
+    const checkboxListBase = {
+      name: 'expandable checkbox list',
+      expandable: true,
+      items: checkboxListItems,
+    }
+
+    const roomAdvantagesItems = [
+      { info: 'comfort', underline: true },
+      { info: 'convenience', underline: true },
+    ]
+
+    const checkboxButtonsItems = [
+      { text: 'Можно курить' },
+      { text: 'Можно с питомцами', checked: true },
+      { text: 'Можно пригласить гостей (до&nbsp;10&nbsp;человек)', checked: true },
+    ]
+
+    const richCheckboxItems = [
+      { text: 'Широкий коридор', info: 'Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см.' },
+      {
+        text: 'Помощник для инвалидов',
+        info: 'На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера.'
+      },
+    ]
+
+    const reviewProps = {
+      avatar: require('/assets/images/users/murad-sarafanov.png'),
+      name: 'Мурад Сарафанов',
+      date: '5 дней назад',
+      text: `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.`,
+      likesNumber: 12,
+    }
+
+    const buttonPaymentProps = {
+      style: 'filled',
+      width: 'full',
+      withArrow: true,
+      text: 'перейти к оплате',
+      href: '/mock-address.html'
+    }
+
+    const bulletListItems = [
+      'Нельзя с питомцами',
+      'Без вечеринок и мероприятий',
+      'Время прибытия&nbsp;&mdash; после 13:00, а&nbsp;выезд до&nbsp;12:00'
+    ]
+
   .form-elements__logo
     .form-elements__logo-icon
       +logo({ style: 'gray' })
@@ -50,24 +121,9 @@ block content
         +input({ type: 'text', placeholder: 'ДД.ММ.ГГГГ', size: 'large', mask: 'date' })
 
       .form-elements__item.form-elements__item_margin_large
-        -
-          const dateDropdownProps = {
-            arrivalLabel: 'date dropdown',
-            departureLabel: 'date dropdown',
-            size: 'small',
-            dropdownArrivalClass: 'js-form-elements-dropdown-arrival',
-            dropdownDepartureClass: 'js-form-elements-dropdown-departure',
-          }
-
         +date-dropdown(dateDropdownProps)
 
       .form-elements__item.form-elements__item_size_medium.form-elements__item_margin_large
-        -
-          const dateDropdownSingleProps = {
-            dropdownLabel: 'filter date dropdown',
-            size: 'medium',
-            dropdownClass: 'js-form-elements-dropdown-single',
-          }
         +date-dropdown(dateDropdownSingleProps)
 
       .form-elements__item.form-elements__item_size_medium
@@ -91,39 +147,19 @@ block content
           +dropdown
 
       .form-elements__item.form-elements__item_size_medium
-        -
-          const checkboxListItems = [
-            { text: "Завтрак", checked: false },
-            { text: "Письменный стол", checked: true },
-            { text: "Стул для кормления", checked: true },
-            { text: "Кроватка", checked: true },
-            { text: "Телевизор", checked: false },
-            { text: "Шампунь", checked: false },
-          ]
         .form-elements__checkbox-list.js-form-elements-checkbox-list
-          +checkbox-list({ name: 'expandable checkbox list', expandable: true, expanded: false, items: checkboxListItems })
+          +checkbox-list({ ...checkboxListBase, expanded: false })
 
       .form-elements__item.form-elements__item_size_medium
         .form-elements__checkbox-list.js-form-elements-checkbox-list
-          +checkbox-list({ name: 'expandable checkbox list', expandable: true, expanded: true, items: checkboxListItems })
+          +checkbox-list({ ...checkboxListBase, expanded: true })
 
     .form-elements__grid-item.form-elements__grid-item_column_1
       .form-elements__room-advantages
-        -
-          const roomAdvantagesItems = [
-            { info: 'comfort', underline: true },
-            { info: 'convenience', underline: true },
-          ]
         +room-advantages({ items: roomAdvantagesItems })
 
     .form-elements__grid-item.form-elements__grid-item_column_2
       .form-elements__item.form-elements__item_margin_large.form-elements__item_size_medium
-        -
-          const checkboxButtonsItems = [
-            { text: 'Можно курить' },
-            { text: 'Можно с питомцами', checked: true },
-            { text: 'Можно пригласить гостей (до&nbsp;10&nbsp;человек)', checked: true },
-          ]
         .form-elements__checkbox-list.js-form-elements-checkbox-list
           +checkbox-list({ name:'checkbox buttons', expandable: false, items:checkboxButtonsItems })
 
@@ -161,27 +197,11 @@ block content
           +dropdown
 
       .form-elements__item.form-elements__item_size_medium
-        -
-          const richCheckboxItems = [
-            { text: 'Широкий коридор', info: 'Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см.' },
-            {
-             text: 'Помощник для инвалидов',
-             info: 'На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера.'
-            },
-          ]
         .form-elements__checkbox-list.js-form-elements-checkbox-list
           +checkbox-list({ name: 'rich Checkbox Buttons', expandable: false, items: richCheckboxItems })
 
     .form-elements__grid-item.form-elements__grid-item_column_2-3
       .form-elements__review
-        -
-          const reviewProps = {
-            avatar: require('/assets/images/users/murad-sarafanov.png'),
-            name: 'Мурад Сарафанов',
-            date: '5 дней назад',
-            text: `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.`,
-            likesNumber: 12,
-          }
         +review(reviewProps) 
 
     .form-elements__grid-item.form-elements__grid-item_column_3
@@ -206,14 +226,6 @@ block content
               +button({ style: 'borderless', text: 'click me', isHovered: true })
 
             .form-elements__fieldset-row
-              -
-                const buttonPaymentProps = {
-                  style: 'filled',
-                  width: 'full',
-                  withArrow: true,
-                  text: 'перейти к оплате',
-                  href: '/mock-address.html'
-                }
               +button(buttonPaymentProps)
 
       .form-elements__item
@@ -225,13 +237,8 @@ block content
       .form-elements__item.form-elements__item_margin_extra-large
         .form-elements__dropdown-guests_with-controls-and-values.js-form-elements-dropdown-guests-with-controls-and-values
           +dropdown
+
       .form-elements__item.form-elements__item_size_medium
         .form-elements__item-info.form-elements__item-info_margin_medium
           span.form-elements__item-name= "bullet list"
-        -
-          const bulletListItems = [
-            'Нельзя с питомцами',
-            'Без вечеринок и мероприятий',
-            'Время прибытия&nbsp;&mdash; после 13:00, а&nbsp;выезд до&nbsp;12:00'
-          ]
         +bullet-list({ items: bulletListItems })

@@ -4,67 +4,68 @@ include /components/range-slider/range-slider.pug
 include /components/checkbox-list/checkbox-list.pug
 
 mixin room-filter
+  -
+    const dateDropdownProps = {
+      dropdownLabel:'даты пребывания в отеле',
+      dropdownClass: 'js-room-filter-date-dropdown',
+    }
+
+    const rangeSliderProps = {
+      label: 'диапазон цены',
+      additionalText:'Стоимость за сутки пребывания в номере',
+    }
+
+    const checkboxListProps = {
+      name: 'правила дома',
+      items: [
+        { text: 'Можно курить' },
+        { text: 'Можно с питомцами', checked: true },
+        { text: 'Можно пригласить гостей (до&nbsp;10&nbsp;человек)', checked: true },
+      ]
+    }
+    
+    const richCheckboxListProps = {
+      name: 'доступность',
+      items: [
+        { text: 'Широкий коридор', info: 'Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см.' },
+        { text: 'Помощник для инвалидов',
+          info: 'На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера.'
+        },
+      ]
+    }
+
+    const expandableCheckboxListProps = {
+      name: 'дополнительные удобства',
+      expandable: true,
+      expanded: false,
+      items: [
+        { text: "Завтрак", checked: false },
+        { text: "Письменный стол", checked: true },
+        { text: "Стул для кормления", checked: true },
+        { text: "Кроватка", checked: true },
+        { text: "Телевизор", checked: false },
+        { text: "Шампунь", checked: false },
+      ]
+    }
+
   form.room-filter
     .room-filter__date-dropdown
-      -
-        const dateDropdownProps = {
-          dropdownLabel:'даты пребывания в отеле',
-          dropdownClass: 'js-room-filter-date-dropdown',
-        }
       +date-dropdown(dateDropdownProps)
 
     .room-filter__dropdown-guests.js-room-filter-dropdown-guests
       +dropdown
 
     .room-filter__range-slider.js-room-filter-range-slider
-      -
-        const rangeSliderProps = {
-          label: 'диапазон цены',
-          additionalText:'Стоимость за сутки пребывания в номере',
-        }
       +range-slider(rangeSliderProps)
 
     .room-filter__checkbox-list
-      -
-        const checkboxListProps = {
-          name: 'правила дома',
-          items: [
-            { text: 'Можно курить' },
-            { text: 'Можно с питомцами', checked: true },
-            { text: 'Можно пригласить гостей (до&nbsp;10&nbsp;человек)', checked: true },
-          ]
-        }
       +checkbox-list(checkboxListProps)
 
     .room-filter__rich-checkbox-list
-      -
-        const richCheckboxListProps = {
-          name: 'доступность',
-          items: [
-            { text: 'Широкий коридор', info: 'Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см.' },
-            { text: 'Помощник для инвалидов',
-              info: 'На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера.'
-            },
-          ]
-        }
       +checkbox-list(richCheckboxListProps)
 
     .room-filter__dropdown-room-amenity.js-room-filter-dropdown-room-amenity
       +dropdown
 
     .room-filter__expandable-checkbox-list.js-room-filter-checkbox-list
-      -
-        const expandableCheckboxListProps = {
-          name: 'дополнительные удобства',
-          expandable: true,
-          expanded: false,
-          items: [
-            { text: "Завтрак", checked: false },
-            { text: "Письменный стол", checked: true },
-            { text: "Стул для кормления", checked: true },
-            { text: "Кроватка", checked: true },
-            { text: "Телевизор", checked: false },
-            { text: "Шампунь", checked: false },
-          ]
-        }
       +checkbox-list(expandableCheckboxListProps)

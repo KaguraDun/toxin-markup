@@ -4,65 +4,68 @@ include /components/button/button.pug
 include /components/button-burger/button-burger.pug
 
 mixin header({ isLogged = false })
+  -
+    const navItems = [
+      {
+        url: '/mock-address.html',
+        text: 'О наc',
+      },
+      {
+        url: '/mock-address.html',
+        text: 'Услуги',
+        innerItems: [
+          {
+            url: '/mock-address.html',
+            text: 'Услуга 1',
+          },
+          {
+            url: '/mock-address.html',
+            text: 'Услуга 2',
+          },
+          {
+            url: '/mock-address.html',
+            text: 'Услуга 3',
+          },
+        ],
+      },
+      {
+        url: '/mock-address.html',
+        text: 'Вакансии',
+      },
+      {
+        url: '/mock-address.html',
+        text: 'Новости',
+      },
+      {
+        url: '/mock-address.html',
+        text: 'Соглашения',
+        innerItems: [
+          {
+            url: '/mock-address.html',
+            text: 'Соглашение 1',
+          },
+          {
+            url: '/mock-address.html',
+            text: 'Соглашение 2',
+          },
+          {
+            url: '/mock-address.html',
+            text: 'Соглашение 3',
+          },
+        ],
+      },
+    ]
+
   header.header.js-header
     .header__container
       .header__left-col
         h1.header__logo
-          +logo({ style:'colored' })
+          +logo({ style: 'colored' })
+
       .header__burger.js-header-burger
         +button-burger
+
       .header__right-col
-        -
-          const navItems = [
-            {
-              url: '/mock-address.html',
-              text: 'О наc',
-            },
-            {
-              url: '/mock-address.html',
-              text: 'Услуги',
-              innerItems: [
-                {
-                  url: '/mock-address.html',
-                  text: 'Услуга 1',
-                },
-                {
-                  url: '/mock-address.html',
-                  text: 'Услуга 2',
-                },
-                {
-                  url: '/mock-address.html',
-                  text: 'Услуга 3',
-                },
-              ],
-            },
-            {
-              url: '/mock-address.html',
-              text: 'Вакансии',
-            },
-            {
-              url: '/mock-address.html',
-              text: 'Новости',
-            },
-            {
-              url: '/mock-address.html',
-              text: 'Соглашения',
-              innerItems: [
-                {
-                  url: '/mock-address.html',
-                  text: 'Соглашение 1',
-                },
-                {
-                  url: '/mock-address.html',
-                  text: 'Соглашение 2',
-                },
-                {
-                  url: '/mock-address.html',
-                  text: 'Соглашение 3',
-                },
-              ],
-            },
-          ]
         nav.header__nav
           ul.header__nav-list
             each item in navItems

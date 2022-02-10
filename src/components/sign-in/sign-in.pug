@@ -2,6 +2,21 @@ include /components/input/input.pug
 include /components/button/button.pug
 
 mixin sign-in
+  -
+    const buttonEnterProps = {
+      type: 'submit',
+      width:'full',
+      style: 'filled',
+      withArrow: true,
+      text: 'войти'
+    }
+
+    const buttonSignUpProps = {
+      width: 'small',
+      text: 'создать',
+      href: '/registration.html'
+    }
+
   form.sign-in
     h2.sign-in__heading= "Войти"
     .sign-in__entry-data
@@ -10,22 +25,8 @@ mixin sign-in
         +input({ type: 'password', placeholder: 'Пароль', size: 'large' })
 
     .sign-in__button-enter
-      -
-        const buttonEnterProps = {
-          type: 'submit',
-          width:'full',
-          style: 'filled',
-          withArrow: true,
-          text: 'войти'
-        }
       +button(buttonEnterProps)
 
     .sign-in__sign-up
       p.sign-in__sign-up-text= "Нет аккаунта на Toxin?"
-      -
-        const buttonSignUpProps = {
-          width: 'small',
-          text: 'создать',
-          href: '/registration.html'
-        }
       +button(buttonSignUpProps)

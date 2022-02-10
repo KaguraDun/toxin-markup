@@ -10,13 +10,15 @@ mixin link({ url, text, selected = false, innerItems = [], fontSize = 'normal' }
       normal: 'link_font-size_normal',
       big: 'link_font-size_big',
     }
-  - const isExpandable = innerItems.length > 0;
-    if isExpandable
-      .link__dropdown.js-link-dropdown
-        button.link__dropdown-button.js-link-dropdown-button(type='button') #{ text }
-        ul.link__dropdown-items.js-link-dropdown-items
-          each item in innerItems
-            li.link__dropdown-item
-              a.link(href=item.url) #{ item.text }
-    else
-      a(class={ link: true, link_selected: selected, [linkFontSizes[fontSize]]: true }, href=url) #{ text }
+    
+    const isExpandable = innerItems.length > 0;
+
+  if isExpandable
+    .link__dropdown.js-link-dropdown
+      button.link__dropdown-button.js-link-dropdown-button(type='button') #{ text }
+      ul.link__dropdown-items.js-link-dropdown-items
+        each item in innerItems
+          li.link__dropdown-item
+            a.link(href=item.url) #{ item.text }
+  else
+    a(class={ link: true, link_selected: selected, [linkFontSizes[fontSize]]: true }, href=url) #{ text }

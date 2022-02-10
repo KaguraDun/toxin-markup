@@ -12,6 +12,42 @@ block baseVariables
   - const bodyClass = "cards";
 
 block content
+  -
+    const bookRoomProps = {
+      roomInfo: {
+        number: 888,
+        price: 9990,
+        type: 'люкс',
+      },
+    }
+
+    const roomCard888Props = {
+      sliderContent: [
+        require('/assets/images/rooms/room-888.jpg'),
+        require('/assets/images/rooms/room-888.jpg'),
+        require('/assets/images/rooms/room-888.jpg'),
+        require('/assets/images/rooms/room-888.jpg')
+        ],
+      number: 888,
+      price: 9990,
+      type: 'люкс',
+      score: 5,
+      reviewsNumber: 145
+    }
+
+    const roomCard840Props = {
+      sliderContent: [
+        require('/assets/images/rooms/room-840.jpg'),
+        require('/assets/images/rooms/room-840.jpg'),
+        require('/assets/images/rooms/room-840.jpg'),
+        require('/assets/images/rooms/room-840.jpg')
+        ],
+      number: 840,
+      price: 9990,
+      score: 4,
+      reviewsNumber: 65
+    }
+
   .cards__logo
     .cards__logo-icon 
       +logo({ style: 'gray' })
@@ -23,14 +59,6 @@ block content
 
     .cards__column
       .cards__book-room.js-cards-book-room
-        -
-          const bookRoomProps = {
-            roomInfo: {
-              number: 888,
-              price: 9990,
-              type: 'люкс',
-            },
-          }
         +book-room(bookRoomProps)
 
       +sign-in
@@ -40,34 +68,7 @@ block content
         .cards__calendar.js-cards-calendar
 
       .cards__room-card
-        -
-          const roomCard888Props = {
-            sliderContent: [
-              require('/assets/images/rooms/room-888.jpg'),
-              require('/assets/images/rooms/room-888.jpg'),
-              require('/assets/images/rooms/room-888.jpg'),
-              require('/assets/images/rooms/room-888.jpg')
-              ],
-            number: 888,
-            price: 9990,
-            type: 'люкс',
-            score: 5,
-            reviewsNumber: 145
-          }
         +room-card(roomCard888Props)
 
       .cards__room-card
-        -
-          const roomCard840Props = {
-            sliderContent: [
-              require('/assets/images/rooms/room-840.jpg'),
-              require('/assets/images/rooms/room-840.jpg'),
-              require('/assets/images/rooms/room-840.jpg'),
-              require('/assets/images/rooms/room-840.jpg')
-              ],
-            number: 840,
-            price: 9990,
-            score: 4,
-            reviewsNumber: 65
-          }
         +room-card(roomCard840Props)

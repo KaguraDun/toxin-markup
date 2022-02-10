@@ -7,6 +7,21 @@ include /components/input-toggle/input-toggle.pug
 include /components/button/button.pug
 
 mixin sign-up({ buttonText = 'зарегистрироваться' })
+  -
+    const buttonPaymentProps = {
+      type: 'submit',
+      width:'full',
+      style: 'filled',
+      withArrow: true,
+      text: buttonText
+    }
+
+    const buttonSignInProps = {
+      width: 'small',
+      text: 'войти',
+      href: '/sign-in.html'
+    }
+
   form.sign-up
     h2.sign-up__heading= "Регистрация аккаунта"
 
@@ -34,22 +49,8 @@ mixin sign-up({ buttonText = 'зарегистрироваться' })
         +input-toggle({ text: 'Получать спецпредложения' })
 
     .sign-up__button-payment
-      -
-        const buttonPaymentProps = {
-          type: 'submit',
-          width:'full',
-          style: 'filled',
-          withArrow: true,
-          text: buttonText
-        }
       +button(buttonPaymentProps)
 
     .sign-up__sign-in
       p.sign-up__sign-in-text= "Уже есть аккаунт на Toxin"
-      -
-        const buttonSignInProps = {
-          width: 'small',
-          text: 'войти',
-          href: '/sign-in.html'
-        }
       +button(buttonSignInProps)

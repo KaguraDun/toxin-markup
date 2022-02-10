@@ -4,18 +4,27 @@ include /components/dropdown/dropdown.pug
 include /components/room-info/room-info.pug
 
 mixin book-room({ roomInfo })
+  -
+    const dateDropdownProps = {
+      arrivalLabel:'прибытие',
+      departureLabel:'выезд',
+      dropdownArrivalClass: 'js-book-room-date-dropdown-arrival',
+      dropdownDepartureClass: 'js-book-room-date-dropdown-departure',
+    }
+
+    const buttonBookProps = {
+      type: 'submit',
+      width:'full',
+      style: 'filled',
+      withArrow: true,
+      text: 'забронировать'
+    }
+
   form.book-room.js-book-room
     .book-room__room-info
       +room-info(roomInfo)
 
     .book-room__date-dropdown
-      -
-        const dateDropdownProps = {
-          arrivalLabel:'прибытие',
-          departureLabel:'выезд',
-          dropdownArrivalClass: 'js-book-room-date-dropdown-arrival',
-          dropdownDepartureClass: 'js-book-room-date-dropdown-departure',
-        }
       +date-dropdown(dateDropdownProps)
 
     .book-room__dropdown-guests.js-book-room-dropdown-guests
@@ -29,12 +38,4 @@ mixin book-room({ roomInfo })
       output.book-room__total-sum.js-book-room-total-sum(name='total-sum')
 
     .book-room__button-book.js-book-room-button-book
-      -
-        const buttonBookProps = {
-          type: 'submit',
-          width:'full',
-          style: 'filled',
-          withArrow: true,
-          text: 'забронировать'
-        }
       +button(buttonBookProps)
