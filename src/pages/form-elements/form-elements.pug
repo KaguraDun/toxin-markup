@@ -18,8 +18,8 @@ include /components/review/review.pug
 include /components/range-slider/range-slider.pug
 
 block baseVariables
-  - const title = "Form elements";
-  - const bodyClass = "form-elements";
+  - const title = 'Form elements';
+  - const bodyClass = 'form-elements';
 
 block content
   -
@@ -107,14 +107,14 @@ block content
     .form-elements__grid-item.form-elements__grid-item_column_1
       .form-elements__item
         .form-elements__item-info
-          span.form-elements__item-name= "text field"
-          span.form-elements__item-state= "default"
+          span.form-elements__item-name= 'text field'
+          span.form-elements__item-state= 'default'
         +input({ type: 'text', name: 'textField', placeholder: 'Email', size: 'large' })
 
       .form-elements__item
         .form-elements__item-info
-          span.form-elements__item-name= "text field"
-          span.form-elements__item-state= "hover / focus"
+          span.form-elements__item-name= 'text field'
+          span.form-elements__item-state= 'hover / focus'
         +input({ type: 'text', name:'textFieldWithHover', value: 'This is pretty awesome', size: 'large', onHover: true })
 
       .form-elements__item
@@ -123,7 +123,7 @@ block content
 
       .form-elements__item.form-elements__item_margin_large
         .form-elements__item-info
-          span.form-elements__item-name= "masked text field"
+          span.form-elements__item-name= 'masked text field'
         +input({ type: 'text', name: 'maskedTextField', placeholder: 'ДД.ММ.ГГГГ', size: 'large', mask: 'date' })
 
       .form-elements__item.form-elements__item_margin_large
@@ -134,21 +134,21 @@ block content
 
       .form-elements__item.form-elements__item_size_medium
         .form-elements__item-info
-          span.form-elements__item-name= "subscription text field"
+          span.form-elements__item-name= 'subscription text field'
         +input({ type: 'email', name: 'email', placeholder: 'Email', button: 'arrow', size: 'medium' })
 
     .form-elements__grid-item.form-elements__grid-item_column_1
       .form-elements__item.form-elements__item_size_medium
         .form-elements__item-info.form-elements__item-info_margin_none
-          span.form-elements__item-name= "dropdown"
-          span.form-elements__item-state= "default"
+          span.form-elements__item-name= 'dropdown'
+          span.form-elements__item-state= 'default'
         .form-elements__dropdown-room-amenity.js-form-elements-dropdown-room-amenity
           +dropdown({ name: 'dropdownRoomAmenity' })
 
       .form-elements__item.form-elements__item_margin_largest.form-elements__item_size_medium
         .form-elements__item-info.form-elements__item-info_margin_none
-          span.form-elements__item-name= "dropdown"
-          span.form-elements__item-state= "expanded"
+          span.form-elements__item-name= 'dropdown'
+          span.form-elements__item-state= 'expanded'
         .form-elements__dropdown-room-amenity-expanded.js-form-elements-dropdown-room-amenity-expanded
           +dropdown({ name: 'dropdownRoomAmenityExpanded' })
 
@@ -171,28 +171,28 @@ block content
 
       .form-elements__item.form-elements__item_margin_medium-large
         fieldset.form-elements__fieldset(name='genderSelect')
-          legend.form-elements__fieldset-legend= "radio buttons"
+          legend.form-elements__fieldset-legend= 'radio buttons'
           .form-elements__fieldset-row.form-elements__fieldset-row_gap_medium
             +input-radio({ text: 'Мужчина', value: 'мужчина', name: 'gender', checked: true })
             +input-radio({ text: 'Женщина', value: 'женщина', name: 'gender' })
 
       .form-elements__item.form-elements__item_margin_large
         fieldset.form-elements__fieldset(name='subscribeToggle')
-          legend.form-elements__fieldset-legend= "toggle"
+          legend.form-elements__fieldset-legend= 'toggle'
           .form-elements__fieldset-column.form-elements__fieldset-column_gap_small
             +input-toggle({ text: 'Получать спецпредложения', name: 'getSpecialOffers', checked: true })
             +input-toggle({ text: 'Получать спецпредложения', name: 'getSpecialOffers' })
 
       .form-elements__item.form-elements__item_margin_larger
-        fieldset.form-elements__fieldset(name="likes")
-          legend.form-elements__fieldset-legend= "like button"
+        fieldset.form-elements__fieldset(name='likes')
+          legend.form-elements__fieldset-legend= 'like button'
           .form-elements__fieldset-row.form-elements__fieldset-row_gap_small
             +button-like({ likesNumber: 2 })
             +button-like({ likesNumber: 12 , isPressed: true })
 
       .form-elements__item.form-elements__item_margin_large
         .form-elements__item-info.form-elements__item-info_margin_large
-          span.form-elements__item-name= "rate button"
+          span.form-elements__item-name= 'rate button'
         .form-elements__item-wrapper
           +button-rate({ name: 'roomRating', inputName: 'rating', score: 4 })
           +button-rate({ name: 'roomRating', inputName: 'rating-second', score: 5 })
@@ -217,7 +217,7 @@ block content
 
       .form-elements__item.form-elements__item_margin_large
         fieldset.form-elements__fieldset(name='buttons')
-          legend.form-elements__fieldset-legend= "buttons"
+          legend.form-elements__fieldset-legend= 'buttons'
           .form-elements__fieldset-column.form-elements__fieldset-column_gap_large
             .form-elements__fieldset-row.form-elements__fieldset-row_gap_medium
               +button({ style: 'filled', width: 'small', text: 'click me' })
@@ -236,7 +236,7 @@ block content
 
       .form-elements__item
         .form-elements__item-info.form-elements__item-info_margin_large
-          span.form-elements__item-name= "pagination"
+          span.form-elements__item-name= 'pagination'
         +pagination({ currentPage: 1, pagesCount: 15, itemsPerPage: 12 })
 
     .form-elements__grid-item.form-elements__grid-item_column_3
@@ -246,5 +246,5 @@ block content
 
       .form-elements__item.form-elements__item_size_medium
         .form-elements__item-info.form-elements__item-info_margin_medium
-          span.form-elements__item-name= "bullet list"
+          span.form-elements__item-name= 'bullet list'
         +bullet-list({ items: bulletListItems })

@@ -8,6 +8,6 @@
 
 mixin input-radio({ text, name, checked = false, value = false, })
   label.input-radio
-    input.input-radio__input(type='radio', checked=checked, value=value, name=name)
+    input.input-radio__input(checked=checked, name=name, type='radio', value=value)
     span.input-radio__input-icon
     span.input-radio__input-label-text= text

@@ -6,7 +6,7 @@
 
 mixin input-checkbox({ text, name, info, checked = false })
   label.input-checkbox
-    input.input-checkbox__input(type='checkbox', checked=checked, name=name)
+    input.input-checkbox__input(checked=checked, name=name, type='checkbox')
     span.input-checkbox__input-icon
     if info
       span.input-checkbox__text-wrapper

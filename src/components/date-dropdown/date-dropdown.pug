@@ -42,13 +42,13 @@ mixin date-dropdown(options)
   if dropdownClass
     .date-dropdown
       .date-dropdown__input-filter(class=dropdownClass)
-        span.date-dropdown__label= dropdownLabel || ""
+        span.date-dropdown__label= dropdownLabel || ''
         +input(inputPropsSingle)
   else
     fieldset.date-dropdown(name='dateRange')
       .date-dropdown__input(class=dropdownArrivalClass)
-        span.date-dropdown__label= arrivalLabel || ""
+        span.date-dropdown__label= arrivalLabel || ''
         +input({ ...inputPropsBase, name: 'dateArrival' })
       .date-dropdown__input(class=dropdownDepartureClass)
-        span.date-dropdown__label= departureLabel || ""
+        span.date-dropdown__label= departureLabel || ''
         +input({ ...inputPropsBase, name: 'dateDeparture' })

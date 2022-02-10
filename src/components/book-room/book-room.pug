@@ -20,7 +20,7 @@ mixin book-room({ roomInfo })
       text: 'забронировать'
     }
 
-  form.book-room.js-book-room(name="bookRoom")
+  form.book-room.js-book-room(name='bookRoom')
     .book-room__room-info
       +room-info(roomInfo)
 
@@ -33,7 +33,7 @@ mixin book-room({ roomInfo })
     .book-room__price-list-wrapper.js-book-room-price-list-wrapper
 
     .book-room__total
-      span.book-room__total-text= "Итого"
+      span.book-room__total-text= 'Итого'
       .book-room__total-filler
       output.book-room__total-sum.js-book-room-total-sum(name='total-sum')
 

@@ -57,7 +57,7 @@ mixin button(options)
       if (withArrow)
         span.button__icon.button__icon_with-arrow
   else
-    button(type=type, class=buttonClassNames, disabled=disabled)
+    button(class=buttonClassNames, disabled=disabled, type=type)
       span.button__text= text
       if (withArrow)
         span.button__icon.button__icon_with-arrow 

@@ -3,7 +3,7 @@ include /components/pagination/pagination.pug
 
 mixin room-cards-list(cardsList)
   section.room-cards-list
-    h2.room-cards-list__heading= "Номера, которые мы для вас подобрали"
+    h2.room-cards-list__heading= 'Номера, которые мы для вас подобрали'
     .room-cards-list__items
       each item in cardsList
         +room-card(item)

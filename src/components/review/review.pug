@@ -11,7 +11,7 @@ include /components/button-like/button-like.pug
 mixin review({ avatar, name, date, text, likesNumber, isLikePressed = true })
   section.review
     .review__author
-      img.review__avatar(src=avatar, alt=name)
+      img.review__avatar(alt=name, src=avatar)
       .review_author-wrapper
         h4.review__name= name
         span.review__date= date

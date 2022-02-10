@@ -21,9 +21,9 @@ mixin room-info({ number, price, numberStyle = 'normal', type = '' })
 
   span.room-info 
     span.room-info__room-number-wrapper
-      span.room-info__number-symbol= "№ "
+      span.room-info__number-symbol= '№ '
       span(class=numberClasses)= number
       span.room-info__type= type
     span.room-info__price-wrapper
       span.room-info__price= formatPrice
-      span.room-info__price-text!= "&nbsp; в сутки"
+      span.room-info__price-text!= '&nbsp; в сутки'

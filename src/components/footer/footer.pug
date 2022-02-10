@@ -75,7 +75,7 @@ mixin footer
           .footer__grid-column
             .footer__logo
               +logo({ style: 'colored' })
-            p.footer__text= "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+            p.footer__text= 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»'
 
           .footer__grid-column
             +footer-item-list(firstColumnItems)
@@ -87,8 +87,8 @@ mixin footer
             +footer-item-list(thirdColumnItems)
 
           .footer__grid-column
-            h3.footer__item-heading= "Подписка"
-            p.footer__text= "Получайте специальные предложения и новости сервиса"
+            h3.footer__item-heading= 'Подписка'
+            p.footer__text= 'Получайте специальные предложения и новости сервиса'
             form.footer__input-email(name='subscribe')
               +input({ type: 'email', name: 'email', placeholder: 'Email', button: 'arrow' })
 

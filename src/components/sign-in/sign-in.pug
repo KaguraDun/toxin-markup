@@ -18,7 +18,7 @@ mixin sign-in
     }
 
   form.sign-in(name='signIn')
-    h2.sign-in__heading= "Войти"
+    h2.sign-in__heading= 'Войти'
     .sign-in__entry-data
       fieldset.sign-in__entry-data-fieldset(name='entryData')
         +input({ type: 'email', name: 'email', placeholder: 'Email', size: 'large' }) 
@@ -28,5 +28,5 @@ mixin sign-in
       +button(buttonEnterProps)
 
     .sign-in__sign-up
-      p.sign-in__sign-up-text= "Нет аккаунта на Toxin?"
+      p.sign-in__sign-up-text= 'Нет аккаунта на Toxin?'
       +button(buttonSignUpProps)

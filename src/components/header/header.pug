@@ -74,7 +74,7 @@ mixin header({ isLogged = false })
 
         if isLogged
           .header__vertical-line
-          p.header__username= "Юлий Цезарь"
+          p.header__username= 'Юлий Цезарь'
         else
           +button({ size: 'small', href: '/sign-in.html', text: 'войти' })
           +button({ size: 'small', href: '/registration.html', text: 'зарегистрироваться', style: 'filled' })

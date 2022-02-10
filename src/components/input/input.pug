@@ -75,19 +75,19 @@ mixin input(options)
   .input(class=sizes[size])
     input(
       class=inputClassNames,
-      name=name,
-      type=type,
-      value=value,
-      placeholder=placeholder,
       data-mask=mask ? maskList[mask].mask : false,
+      name=name,
       pattern=mask ? maskList[mask].pattern : false,
-      title=mask ? "Введите дату в формате ДД.ММ.ГГГГ" : false,
+      placeholder=placeholder,
       readonly=readonly,
-      required=required
+      required=required,
+      title=mask ? 'Введите дату в формате ДД.ММ.ГГГГ' : false,
+      type=type,
+      value=value
     )&attributes(dataAttributes)
 
     if button !== 'none'
-      - const buttonType = openByButton ? "button" : "submit";
+      - const buttonType = openByButton ? 'button' : 'submit';
 
-      button.input__button(type=buttonType, data-toggle=openByButton)
+      button.input__button(data-toggle=openByButton, type=buttonType)
         span(class=`input__button-icon ${icons[button]}`)
