@@ -8,49 +8,50 @@ include /components/logo/logo.pug
 include /components/link/link.pug
 
 block content
+  -
+    const citePages = [
+      {
+        url: 'landing-page.html',
+        text: 'Landing page',
+      },
+      {
+        url: 'search-room.html',
+        text: 'Search room',
+      },
+      {
+        url: 'room-details.html',
+        text: 'Room details',
+      },
+      {
+        url: 'sign-in.html',
+        text: 'Sign-in',
+      },
+      {
+        url: 'registration.html',
+        text: 'Registration',
+      },
+      {
+        url: 'colors-and-type.html',
+        text: 'Colors and type',
+      },
+      {
+        url: 'cards.html',
+        text: 'Cards',
+      },
+      {
+        url: 'form-elements.html',
+        text: 'Form elements',
+      },
+      {
+        url: 'headers-and-footers.html',
+        text: 'Headers and footers',
+      },
+    ]
+
   .pages__container
     .pages__logo
       .pages__logo-icon
         +logo({ style:'colored' })
-    -
-      const citePages = [
-        {
-          url: 'landing-page.html',
-          text: 'Landing page',
-        },
-        {
-          url: 'search-room.html',
-          text: 'Search room',
-        },
-        {
-          url: 'room-details.html',
-          text: 'Room details',
-        },
-        {
-          url: 'sign-in.html',
-          text: 'Sign-in',
-        },
-        {
-          url: 'registration.html',
-          text: 'Registration',
-        },
-        {
-          url: 'colors-and-type.html',
-          text: 'Colors and type',
-        },
-        {
-          url: 'cards.html',
-          text: 'Cards',
-        },
-        {
-          url: 'form-elements.html',
-          text: 'Form elements',
-        },
-        {
-          url: 'headers-and-footers.html',
-          text: 'Headers and footers',
-        },
-      ]
 
     ul.pages__list
       each item in citePages

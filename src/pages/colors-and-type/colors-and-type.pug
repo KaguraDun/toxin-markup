@@ -9,76 +9,77 @@ block baseVariables
   - const bodyClass = "colors-and-type";
 
 block content
+  -
+    const colors = [
+      {
+        color: 'rgba(31, 32, 65, 1)',
+        hex: '#1F2041',
+        name: 'Dark Shade 100%',
+      },
+      {
+        color: 'rgba(31, 32, 65, 0.75)',
+        hex: '#1F2041',
+        name: 'Dark Shade 75%',
+      },
+      {
+        color: 'rgba(31, 32, 65, 0.5)',
+        hex: '#1F2041',
+        name: 'Dark Shade 50%',
+      },
+      {
+        color: 'rgba(31, 32, 65, 0.25)',
+        hex: '#1F2041',
+        name: 'Dark Shade 25%',
+      },
+      {
+        color: 'rgba(31, 32, 65, 0.05)',
+        hex: '#1F2041',
+        name: 'Dark Shade 5%',
+      },
+      {
+        color: 'rgba(188, 156, 255, 1)',
+        hex: '#BC9CFF',
+        name: 'Purple',
+      },
+      {
+        color: 'rgba(111, 207, 151, 1)',
+        hex: '#6FCF97',
+        name: 'Green',
+      },
+    ]
+
+    const types = [
+      {
+        name: 'H1',
+        style: 'h1',
+        text: 'This one is the sub-section or widget title',
+      },
+      {
+        name: 'H2',
+        style: 'h2',
+        text: 'Next one is the item title inside widgets',
+      },
+      {
+        name: 'H3',
+        style: 'h3',
+        text: 'This is a label or CTA text',
+      },
+      {
+        name: 'Body',
+        style: 'body',
+        text: 'This is&nbsp;the body text which is&nbsp;used for most of&nbsp;the&nbsp;design, like paragraphs, lists, etc.',
+      },
+    ]
+
   .colors-and-type__logo
     .colors-and-type__logo-icon
       +logo({ style: 'gray' })
-  .colors-and-type__container
-    -
-      const colors = [
-        {
-          color: 'rgba(31, 32, 65, 1)',
-          hex: '#1F2041',
-          name: 'Dark Shade 100%',
-        },
-        {
-          color: 'rgba(31, 32, 65, 0.75)',
-          hex: '#1F2041',
-          name: 'Dark Shade 75%',
-        },
-        {
-          color: 'rgba(31, 32, 65, 0.5)',
-          hex: '#1F2041',
-          name: 'Dark Shade 50%',
-        },
-        {
-          color: 'rgba(31, 32, 65, 0.25)',
-          hex: '#1F2041',
-          name: 'Dark Shade 25%',
-        },
-        {
-          color: 'rgba(31, 32, 65, 0.05)',
-          hex: '#1F2041',
-          name: 'Dark Shade 5%',
-        },
-        {
-          color: 'rgba(188, 156, 255, 1)',
-          hex: '#BC9CFF',
-          name: 'Purple',
-        },
-        {
-          color: 'rgba(111, 207, 151, 1)',
-          hex: '#6FCF97',
-          name: 'Green',
-        },
-      ]
 
+  .colors-and-type__container
     ul.colors-and-type__colors 
       each item in colors
         li.colors-and-type__colors-item
           +color-example({ color: item.color, hex: item.hex, name: item.name })
-    -
-      const types = [
-        {
-          name: 'H1',
-          style: 'h1',
-          text: 'This one is the sub-section or widget title',
-        },
-        {
-          name: 'H2',
-          style: 'h2',
-          text: 'Next one is the item title inside widgets',
-        },
-        {
-          name: 'H3',
-          style: 'h3',
-          text: 'This is a label or CTA text',
-        },
-        {
-          name: 'Body',
-          style: 'body',
-          text: 'This is&nbsp;the body text which is&nbsp;used for most of&nbsp;the&nbsp;design, like paragraphs, lists, etc.',
-        },
-      ] 
 
     ul.colors-and-type__type
       each item in types

@@ -23,7 +23,6 @@ mixin button(options)
       isHovered = false,
     } = options
 
-  -
     const classListStyle = {
       borderless: 'button_style_borderless',
       border: 'button_style_border',
@@ -32,18 +31,18 @@ mixin button(options)
       page_selected: 'button_style_page-selected',
       page_next: 'button_style_page-next',
     }
-  -
+
     const classListSize = {
       small: 'button_size_small',
       medium: 'button_size_medium',
     }
-  -
+
     const classListWidth = {
       small: 'button_width_small',
       full: 'button_width_full',
       auto: 'button_width_auto',
     }
-  -
+
     const buttonClassNames = {
       'button' : true,
       [classListStyle[style]] : true,

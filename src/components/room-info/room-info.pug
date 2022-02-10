@@ -10,8 +10,9 @@ mixin room-info({ number, price, numberStyle = 'normal', type = '' })
       compact: 'room-info__number_size_compact',
       normal: 'room-info__number_size_normal',
     }
-  -
+
     const numberClasses = `room-info__number ${numberStyles[numberStyle]}`;
+    
     const formatPrice = new Intl.NumberFormat('ru-RU', {
       style: 'currency',
       currency: 'RUB',

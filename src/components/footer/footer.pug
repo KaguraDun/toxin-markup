@@ -5,87 +5,93 @@ include /components/socials/socials.pug
 include /components/footer-item-list/footer-item-list.pug
 
 mixin footer
+  -
+    const firstColumnItems = {
+      heading: 'Навигация',
+      items: [
+        {
+          link: '/mock-address.html' ,
+          text: 'О нас'
+        },
+        {
+          link: '/mock-address.html' ,
+          text: 'Новости'
+        },
+        {
+          link: '/mock-address.html' ,
+          text: 'Служба поддержки'
+        },
+        {
+          link: '/mock-address.html' ,
+          text: 'Услуги'
+        },
+      ],
+    }
+
+    const secondColumnItems = {
+      heading: 'О нас',
+      items: [
+        {
+          link: '/mock-address.html' ,
+          text: 'О сервисе'
+        },
+        {
+          link: '/mock-address.html' ,
+          text: 'Наша команда'
+        },
+        {
+          link: '/mock-address.html' ,
+          text: 'Вакансии'
+        },
+        {
+          link: '/mock-address.html' ,
+          text: 'Инвесторы'
+        },
+      ],
+    }
+
+    const thirdColumnItems = {
+      heading: 'Служба поддержки',
+      items: [
+        {
+          link: '/mock-address.html' ,
+          text: 'Соглашения'
+        },
+        {
+          link: '/mock-address.html' ,
+          text: 'Сообщества' 
+        },
+        {
+          link: '/mock-address.html' ,
+          text: 'Связь с нами'
+        },
+      ],
+    }
+
   footer.footer
     .footer__widgets
       .footer__container
         .footer__grid
           .footer__grid-column
             .footer__logo
-              +logo({style:'colored'})
+              +logo({ style: 'colored' })
             p.footer__text= "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+          
           .footer__grid-column
-            -
-              const firstColumnItems = {
-                heading: 'Навигация',
-                items: [
-                  {
-                    link: '/mock-address.html' ,
-                    text: 'О нас'
-                  },
-                  {
-                    link: '/mock-address.html' ,
-                    text: 'Новости'
-                  },
-                  {
-                    link: '/mock-address.html' ,
-                    text: 'Служба поддержки'
-                  },
-                  {
-                    link: '/mock-address.html' ,
-                    text: 'Услуги'
-                  },
-                ],
-              }
             +footer-item-list(firstColumnItems)
+
           .footer__grid-column
-            -
-              const secondColumnItems = {
-                heading: 'О нас',
-                items: [
-                  {
-                    link: '/mock-address.html' ,
-                    text: 'О сервисе'
-                  },
-                  {
-                    link: '/mock-address.html' ,
-                    text: 'Наша команда'
-                  },
-                  {
-                    link: '/mock-address.html' ,
-                    text: 'Вакансии'
-                  },
-                  {
-                    link: '/mock-address.html' ,
-                    text: 'Инвесторы'
-                  },
-                ],
-              }
             +footer-item-list(secondColumnItems)
+
           .footer__grid-column
-            -
-              const thirdColumnItems = {
-                heading: 'Служба поддержки',
-                items: [
-                  {
-                    link: '/mock-address.html' ,
-                    text: 'Соглашения'
-                  },
-                  {
-                    link: '/mock-address.html' ,
-                    text: 'Сообщества' 
-                  },
-                  {
-                    link: '/mock-address.html' ,
-                    text: 'Связь с нами'
-                  },
-                ],
-              }
             +footer-item-list(thirdColumnItems)
+
           .footer__grid-column
             h3.footer__item-heading= "Подписка"
             p.footer__text= "Получайте специальные предложения и новости сервиса"
             form.footer__input-email
               +input({ type: 'email', placeholder: 'Email', button: 'arrow' })
+
     .footer__copyright
       .footer__container
         .footer__copyright-wrapper

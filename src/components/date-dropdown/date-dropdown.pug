@@ -21,7 +21,7 @@ mixin date-dropdown(options)
       dropdownArrivalClass,
       dropdownDepartureClass,
     } = options
-  -
+
     const inputPropsBase = {
       type: 'text',
       placeholder: 'ДД.ММ.ГГГГ',
@@ -33,15 +33,15 @@ mixin date-dropdown(options)
       data: ['data-input'],
     }
 
+    const inputPropsSingle = {
+      ...inputPropsBase, 
+      placeholder: 'ДД МM - ДД МM',
+    }
+
   if dropdownClass
     .date-dropdown
       .date-dropdown__input-filter(class=dropdownClass)
         span.date-dropdown__label= dropdownLabel || ""
-          -
-            const inputPropsSingle = Object.assign({}, inputPropsBase, {   
-              placeholder:'ДД МM - ДД МM',
-            })
-
         +input(inputPropsSingle)
   else
     fieldset.date-dropdown
