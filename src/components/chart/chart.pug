@@ -7,7 +7,7 @@ mixin chart({ heading, legendItems })
     h2.chart__heading #{ heading }
     .chart__wrapper
       .chart__container
-        canvas.chart__canvas.js-chart-canvas(width='120', height='120')
+        canvas.chart__canvas.js-chart-canvas(height='120', width='120')
 
       if legendItems.length > 0
         ul.chart__legend-items
@@ -15,13 +15,13 @@ mixin chart({ heading, legendItems })
             case item
               when 'great'
                 li.chart__item.chart__item_style_great
-                  span.chart__item-text= "Великолепно"
+                  span.chart__item-text= 'Великолепно'
               when 'good'
                 li.chart__item.chart__item_style_good
-                  span.chart__item-text= "Хорошо"
+                  span.chart__item-text= 'Хорошо'
               when 'passably'
                 li.chart__item.chart__item_style_passably
-                  span.chart__item-text= "Удовлетворительно"
+                  span.chart__item-text= 'Удовлетворительно'
               when 'disappointed'
                 li.chart__item.chart__item_style_disappointed
-                  span.chart__item-text= "Разочарован"
+                  span.chart__item-text= 'Разочарован'

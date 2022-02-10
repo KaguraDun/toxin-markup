@@ -18,8 +18,8 @@ include /components/review/review.pug
 include /components/range-slider/range-slider.pug
 
 block baseVariables
-  - const title = "Form elements";
-  - const bodyClass = "form-elements";
+  - const title = 'Form elements';
+  - const bodyClass = 'form-elements';
 
 block content
   -
@@ -38,16 +38,17 @@ block content
     }
 
     const checkboxListItems = [
-      { text: "Завтрак", checked: false },
-      { text: "Письменный стол", checked: true },
-      { text: "Стул для кормления", checked: true },
-      { text: "Кроватка", checked: true },
-      { text: "Телевизор", checked: false },
-      { text: "Шампунь", checked: false },
+      { text: 'Завтрак', name: 'hasBreakfast', checked: false },
+      { text: 'Письменный стол', name: 'hasDesk', checked: true },
+      { text: 'Стул для кормления', name: 'hasChairForFeeding', checked: true },
+      { text: 'Кроватка', name: 'hasCrib', checked: true },
+      { text: 'Телевизор', name: 'hasTV', checked: false },
+      { text: 'Шампунь', name: 'hasShampoo', checked: false },
     ]
 
     const checkboxListBase = {
-      name: 'expandable checkbox list',
+      legend: 'expandable checkbox list',
+      name: 'expandableCheckboxList',
       expandable: true,
       items: checkboxListItems,
     }
@@ -64,9 +65,14 @@ block content
     ]
 
     const richCheckboxItems = [
-      { text: 'Широкий коридор', info: 'Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см.' },
+      { 
+        text: 'Широкий коридор',
+        name: 'hasLargeHall',
+        info: 'Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см.'
+      },
       {
         text: 'Помощник для инвалидов',
+        name: 'hasHelperForInvalids',
         info: 'На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера.'
       },
     ]
@@ -101,24 +107,24 @@ block content
     .form-elements__grid-item.form-elements__grid-item_column_1
       .form-elements__item
         .form-elements__item-info
-          span.form-elements__item-name= "text field"
-          span.form-elements__item-state= "default"
-        +input({ type: 'text', placeholder: 'Email', size: 'large' })
+          span.form-elements__item-name= 'text field'
+          span.form-elements__item-state= 'default'
+        +input({ type: 'text', name: 'textField', placeholder: 'Email', size: 'large' })
 
       .form-elements__item
         .form-elements__item-info
-          span.form-elements__item-name= "text field"
-          span.form-elements__item-state= "hover / focus"
-        +input({ type: 'text', value: 'This is pretty awesome', size: 'large', onHover: true })
+          span.form-elements__item-name= 'text field'
+          span.form-elements__item-state= 'hover / focus'
+        +input({ type: 'text', name:'textFieldWithHover', value: 'This is pretty awesome', size: 'large', onHover: true })
 
       .form-elements__item
         .form-elements__dropdown-guests.js-form-elements-dropdown-guests
-          +dropdown
+          +dropdown({ name: 'dropdownGuests' })
 
       .form-elements__item.form-elements__item_margin_large
         .form-elements__item-info
-          span.form-elements__item-name= "masked text field"
-        +input({ type: 'text', placeholder: 'ДД.ММ.ГГГГ', size: 'large', mask: 'date' })
+          span.form-elements__item-name= 'masked text field'
+        +input({ type: 'text', name: 'maskedTextField', placeholder: 'ДД.ММ.ГГГГ', size: 'large', mask: 'date' })
 
       .form-elements__item.form-elements__item_margin_large
         +date-dropdown(dateDropdownProps)
@@ -128,23 +134,23 @@ block content
 
       .form-elements__item.form-elements__item_size_medium
         .form-elements__item-info
-          span.form-elements__item-name= "subscription text field"
-        +input({ type: 'email', placeholder: 'Email', button: 'arrow', size: 'medium' })
+          span.form-elements__item-name= 'subscription text field'
+        +input({ type: 'email', name: 'email', placeholder: 'Email', button: 'arrow', size: 'medium' })
 
     .form-elements__grid-item.form-elements__grid-item_column_1
       .form-elements__item.form-elements__item_size_medium
         .form-elements__item-info.form-elements__item-info_margin_none
-          span.form-elements__item-name= "dropdown"
-          span.form-elements__item-state= "default"
+          span.form-elements__item-name= 'dropdown'
+          span.form-elements__item-state= 'default'
         .form-elements__dropdown-room-amenity.js-form-elements-dropdown-room-amenity
-          +dropdown
+          +dropdown({ name: 'dropdownRoomAmenity' })
 
       .form-elements__item.form-elements__item_margin_largest.form-elements__item_size_medium
         .form-elements__item-info.form-elements__item-info_margin_none
-          span.form-elements__item-name= "dropdown"
-          span.form-elements__item-state= "expanded"
+          span.form-elements__item-name= 'dropdown'
+          span.form-elements__item-state= 'expanded'
         .form-elements__dropdown-room-amenity-expanded.js-form-elements-dropdown-room-amenity-expanded
-          +dropdown
+          +dropdown({ name: 'dropdownRoomAmenityExpanded' })
 
       .form-elements__item.form-elements__item_size_medium
         .form-elements__checkbox-list.js-form-elements-checkbox-list
@@ -161,40 +167,40 @@ block content
     .form-elements__grid-item.form-elements__grid-item_column_2
       .form-elements__item.form-elements__item_margin_large.form-elements__item_size_medium
         .form-elements__checkbox-list.js-form-elements-checkbox-list
-          +checkbox-list({ name:'checkbox buttons', expandable: false, items:checkboxButtonsItems })
+          +checkbox-list({ name:'checkbox buttons', expandable: false, items: checkboxButtonsItems })
 
       .form-elements__item.form-elements__item_margin_medium-large
-        fieldset.form-elements__fieldset
-          legend.form-elements__fieldset-legend= "radio buttons"
+        fieldset.form-elements__fieldset(name='genderSelect')
+          legend.form-elements__fieldset-legend= 'radio buttons'
           .form-elements__fieldset-row.form-elements__fieldset-row_gap_medium
             +input-radio({ text: 'Мужчина', value: 'мужчина', name: 'gender', checked: true })
             +input-radio({ text: 'Женщина', value: 'женщина', name: 'gender' })
 
       .form-elements__item.form-elements__item_margin_large
-        fieldset.form-elements__fieldset
-          legend.form-elements__fieldset-legend= "toggle"
+        fieldset.form-elements__fieldset(name='subscribeToggle')
+          legend.form-elements__fieldset-legend= 'toggle'
           .form-elements__fieldset-column.form-elements__fieldset-column_gap_small
-            +input-toggle({ text:'Получать спецпредложения', checked: true })
-            +input-toggle({ text:'Получать спецпредложения' })
+            +input-toggle({ text: 'Получать спецпредложения', name: 'getSpecialOffers', checked: true })
+            +input-toggle({ text: 'Получать спецпредложения', name: 'getSpecialOffers' })
 
       .form-elements__item.form-elements__item_margin_larger
-        fieldset.form-elements__fieldset
-          legend.form-elements__fieldset-legend= "like button"
+        fieldset.form-elements__fieldset(name='likes')
+          legend.form-elements__fieldset-legend= 'like button'
           .form-elements__fieldset-row.form-elements__fieldset-row_gap_small
             +button-like({ likesNumber: 2 })
             +button-like({ likesNumber: 12 , isPressed: true })
 
       .form-elements__item.form-elements__item_margin_large
         .form-elements__item-info.form-elements__item-info_margin_large
-          span.form-elements__item-name= "rate button"
+          span.form-elements__item-name= 'rate button'
         .form-elements__item-wrapper
-          +button-rate({ name: 'rating', score: 4 })
-          +button-rate({ name: 'rating-second', score: 5 })
+          +button-rate({ name: 'roomRating', inputName: 'rating', score: 4 })
+          +button-rate({ name: 'roomRating', inputName: 'rating-second', score: 5 })
 
     .form-elements__grid-item.form-elements__grid-item_column_2
       .form-elements__item.form-elements__item_margin_extra-large
         .form-elements__dropdown-guests_with-controls.js-form-elements-dropdown-guests-with-controls
-          +dropdown
+          +dropdown({ name: 'dropdownGuestsWithControls' })
 
       .form-elements__item.form-elements__item_size_medium
         .form-elements__checkbox-list.js-form-elements-checkbox-list
@@ -210,8 +216,8 @@ block content
           +range-slider({ label: 'range slider' })
 
       .form-elements__item.form-elements__item_margin_large
-        fieldset.form-elements__fieldset
-          legend.form-elements__fieldset-legend= "buttons"
+        fieldset.form-elements__fieldset(name='buttons')
+          legend.form-elements__fieldset-legend= 'buttons'
           .form-elements__fieldset-column.form-elements__fieldset-column_gap_large
             .form-elements__fieldset-row.form-elements__fieldset-row_gap_medium
               +button({ style: 'filled', width: 'small', text: 'click me' })
@@ -230,15 +236,15 @@ block content
 
       .form-elements__item
         .form-elements__item-info.form-elements__item-info_margin_large
-          span.form-elements__item-name= "pagination"
+          span.form-elements__item-name= 'pagination'
         +pagination({ currentPage: 1, pagesCount: 15, itemsPerPage: 12 })
 
     .form-elements__grid-item.form-elements__grid-item_column_3
       .form-elements__item.form-elements__item_margin_extra-large
         .form-elements__dropdown-guests_with-controls-and-values.js-form-elements-dropdown-guests-with-controls-and-values
-          +dropdown
+          +dropdown({ name: 'dropdownGuestsWithControlsAndValues' })
 
       .form-elements__item.form-elements__item_size_medium
         .form-elements__item-info.form-elements__item-info_margin_medium
-          span.form-elements__item-name= "bullet list"
+          span.form-elements__item-name= 'bullet list'
         +bullet-list({ items: bulletListItems })

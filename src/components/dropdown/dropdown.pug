@@ -1,10 +1,14 @@
+//- available properties:
+  name: string;
+
 include /components/input/input.pug
 include /components/button/button.pug
 
-mixin dropdown
+mixin dropdown({ name })
   -
     const inputProps = {
       type: 'text',
+      name,
       button: 'expand-more',
       readonly: true,
       openByButton: true,

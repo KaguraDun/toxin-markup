@@ -19,13 +19,13 @@ mixin find-rooms
       text: 'подобрать номер',
     }
 
-  form.find-rooms
-    h2.find-rooms__heading!= "Найдём номера под ваши пожелания"
+  form.find-rooms(name='findRooms')
+    h2.find-rooms__heading!= 'Найдём номера под ваши пожелания'
     .find-rooms__date-dropdown
       +date-dropdown(dateDropdownProps)
 
     .find-rooms__dropdown-guests.js-find-rooms-dropdown-guests
-      +dropdown
+      +dropdown({ name: 'dropdownGuests' })
 
     .find-rooms__button
       +button(buttonProps)
