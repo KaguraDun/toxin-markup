@@ -81,7 +81,7 @@ block content
       avatar: require('/assets/images/users/murad-sarafanov.png'),
       name: 'Мурад Сарафанов',
       date: '5 дней назад',
-      text: `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.`,
+      text: `Великолепный матрас на&nbsp;кровати в&nbsp;основной спальне! А&nbsp;пуфик вообще потрясающий. И&nbsp;стены, действительно, шумоподавляющие. Выкрикивал комплименты повару&nbsp;&mdash; никто не&nbsp;жаловался из&nbsp;соседей.`,
       likesNumber: 12,
     }
 
@@ -117,7 +117,7 @@ block content
           span.form-elements__item-state= 'hover / focus'
         +input({ type: 'text', name:'textFieldWithHover', value: 'This is pretty awesome', size: 'large', onHover: true })
 
-      .form-elements__item
+      .form-elements__item.form-elements__item_margin_small
         .form-elements__dropdown-guests.js-form-elements-dropdown-guests
           +dropdown({ name: 'dropdownGuests' })
 
@@ -139,20 +139,20 @@ block content
 
     .form-elements__grid-item.form-elements__grid-item_column_1
       .form-elements__item.form-elements__item_size_medium
-        .form-elements__item-info.form-elements__item-info_margin_none
+        .form-elements__item-info.form-elements__item-info_margin_extra-small
           span.form-elements__item-name= 'dropdown'
           span.form-elements__item-state= 'default'
         .form-elements__dropdown-room-amenity.js-form-elements-dropdown-room-amenity
           +dropdown({ name: 'dropdownRoomAmenity' })
 
       .form-elements__item.form-elements__item_margin_largest.form-elements__item_size_medium
-        .form-elements__item-info.form-elements__item-info_margin_none
+        .form-elements__item-info.form-elements__item-info_margin_extra-small
           span.form-elements__item-name= 'dropdown'
           span.form-elements__item-state= 'expanded'
         .form-elements__dropdown-room-amenity-expanded.js-form-elements-dropdown-room-amenity-expanded
           +dropdown({ name: 'dropdownRoomAmenityExpanded' })
 
-      .form-elements__item.form-elements__item_size_medium
+      .form-elements__item.form-elements__item_margin_extra-small.form-elements__item_size_medium  
         .form-elements__checkbox-list.js-form-elements-checkbox-list
           +checkbox-list({ ...checkboxListBase, expanded: false })
 
@@ -167,7 +167,7 @@ block content
     .form-elements__grid-item.form-elements__grid-item_column_2
       .form-elements__item.form-elements__item_margin_large.form-elements__item_size_medium
         .form-elements__checkbox-list.js-form-elements-checkbox-list
-          +checkbox-list({ name:'checkbox buttons', expandable: false, items: checkboxButtonsItems })
+          +checkbox-list({ legend:'checkbox buttons', expandable: false, items: checkboxButtonsItems })
 
       .form-elements__item.form-elements__item_margin_medium-large
         fieldset.form-elements__fieldset(name='genderSelect')
@@ -204,14 +204,14 @@ block content
 
       .form-elements__item.form-elements__item_size_medium
         .form-elements__checkbox-list.js-form-elements-checkbox-list
-          +checkbox-list({ name: 'rich Checkbox Buttons', expandable: false, items: richCheckboxItems })
+          +checkbox-list({ legend: 'rich Checkbox Buttons', expandable: false, items: richCheckboxItems })
 
     .form-elements__grid-item.form-elements__grid-item_column_2-3
       .form-elements__review
         +review(reviewProps) 
 
     .form-elements__grid-item.form-elements__grid-item_column_3
-      .form-elements__item.form-elements__item_size_medium
+      .form-elements__item.form-elements__item_margin_small.form-elements__item_size_medium
         .form-elements__range-slider.js-form-elements-range-slider
           +range-slider({ label: 'range slider' })
 
@@ -245,6 +245,6 @@ block content
           +dropdown({ name: 'dropdownGuestsWithControlsAndValues' })
 
       .form-elements__item.form-elements__item_size_medium
-        .form-elements__item-info.form-elements__item-info_margin_medium
+        .form-elements__item-info.form-elements__item-info_margin_large
           span.form-elements__item-name= 'bullet list'
         +bullet-list({ items: bulletListItems })

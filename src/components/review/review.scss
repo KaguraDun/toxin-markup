@@ -8,7 +8,6 @@
   }
 
   &__avatar {
-    box-sizing: border-box;
     width: rem(48px);
     height: rem(48px);
     margin-right: rem(10px);
@@ -27,6 +26,7 @@
   }
 
   &__text {
+    padding-top: 1px;
     white-space: pre-line;
   }
 

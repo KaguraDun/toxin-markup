@@ -6,7 +6,7 @@
   &__info {
     display: flex;
     justify-content: space-between;
-    margin-bottom: rem(20px);
+    margin-bottom: rem(23px);
   }
 
   &__name {
@@ -14,13 +14,14 @@
   }
 
   &__price-range {
+    margin-right: rem(4px);
     color: $text-primary-medium;
 
     @include font-montserrat(rem(12px), rem(15px));
   }
 
   &__container {
-    margin-bottom: rem(18px);
+    margin-bottom: rem(15px);
   }
 
   &__additional-text {

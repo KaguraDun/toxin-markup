@@ -7,15 +7,15 @@
   }
 
   &__logo-icon {
-    margin: rem(30px) 0 rem(67px) rem(30px);
+    margin: rem(30px) 0 rem(65px) rem(30px);
   }
 
   &__container {
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: repeat(3, auto);
-    grid-template-columns: rem(320px) rem(126px) rem(320px) rem(72px) rem(320px);
-    row-gap: rem(104px);
+    grid-template-columns: rem(320px) rem(127px) rem(320px) rem(72px) rem(320px);
+    row-gap: rem(100px);
 
     @include container();
   }
@@ -48,6 +48,14 @@
   &__item {
     margin-bottom: rem(20px);
 
+    &_margin_extra-small {
+      margin-bottom: rem(15px);
+    }
+
+    &_margin_small {
+      margin-bottom: rem(25px);
+    }
+
     &_margin_medium {
       margin-bottom: rem(30px);
     }
@@ -65,11 +73,11 @@
     }
 
     &_margin_largest {
-      margin-bottom: rem(150px);
+      margin-bottom: rem(155px);
     }
 
     &_margin_extra-large {
-      margin-bottom: rem(256px);
+      margin-bottom: rem(257px);
     }
 
     &:last-of-type {
@@ -82,11 +90,11 @@
     &-info {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 5px;
+      margin-bottom: rem(5px);
     }
 
-    &-info_margin_none {
-      margin-bottom: 0;
+    &-info_margin_extra-small {
+      margin-bottom: rem(2px);
     }
 
     &-info_margin_medium {
@@ -134,7 +142,7 @@
     }
 
     &-column_gap_large {
-      gap: rem(30px);
+      gap: rem(29px);
     }
 
     &-row {
@@ -150,7 +158,11 @@
     }
   }
 
+  &__room-advantages {
+    margin-top: rem(5px);
+  }
+
   &__review {
-    margin-top: rem(10px);
+    margin-top: rem(12px);
   }
 }

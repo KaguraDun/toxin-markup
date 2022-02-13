@@ -76,7 +76,9 @@ $tablet: 768px;
 $mobile: 575px;
 $mobile-s: 320px;
 
-$container-default: 1160px;
+$container-default-width: 1160px;
+$container-padding: 20px;
+$container-padding-tablet: 10px;
 
 /* z-indexes */
 $z-index-header-logo: 10;

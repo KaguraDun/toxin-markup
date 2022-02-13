@@ -10,7 +10,7 @@
   }
 
   &__gender {
-    margin-bottom: rem(20px);
+    margin-bottom: rem(21px);
 
     &-fieldset {
       display: flex;
@@ -39,7 +39,7 @@
     &-fieldset {
       display: flex;
       flex-direction: column;
-      gap: rem(10px);
+      gap: rem(9px);
 
       @include clear-fieldset;
     }
@@ -51,7 +51,7 @@
   }
 
   &__button-payment {
-    margin-bottom: rem(30px);
+    margin-bottom: rem(29px);
   }
 
   &__sign-in {

@@ -10,7 +10,6 @@
 
     &-icon {
       display: block;
-      box-sizing: border-box;
       min-width: rem(20px);
       min-height: rem(20px);
       margin-right: rem(10px);
@@ -44,11 +43,11 @@
   &__text {
     color: $text-primary-medium;
 
-    @include font-montserrat(rem(14px), rem(18px));
+    @include font-montserrat(rem(14px), rem(20px));
   }
 
   &__heading {
-    margin-bottom: 5px;
+    margin-bottom: rem(5px);
     color: $text-primary-dark;
     font-weight: bold;
 

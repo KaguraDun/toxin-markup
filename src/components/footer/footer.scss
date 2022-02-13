@@ -17,10 +17,6 @@
 
   &__container {
     @include container;
-
-    @media (max-width: $tablet) {
-      box-sizing: border-box;
-    }
   }
 
   &__widgets {
@@ -45,8 +41,12 @@
     flex-direction: column;
   }
 
+  &__grid-column &__text {
+    margin-bottom: rem(22px);
+  }
+
   &__logo {
-    margin-bottom: rem(20px);
+    margin-bottom: rem(17px);
   }
 
   &__text {
@@ -57,15 +57,11 @@
   }
 
   &__item-heading {
-    margin: 4px 0 rem(21px);
+    margin: rem(4px 0 18px);
     color: $text-primary-darkest;
     text-transform: uppercase;
 
     @include font-montserrat(rem(12px), rem(15px), bold);
-  }
-
-  &__input-email {
-    margin-top: rem(20px);
   }
 
   &__copyright {
