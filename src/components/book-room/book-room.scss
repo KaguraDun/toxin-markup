@@ -1,16 +1,22 @@
 .book-room {
   @include form;
 
-  &__room-info,
-  &__date-dropdown,
-  &__dropdown-guests {
+  &__room-info {
+    margin-bottom: rem(21px);
+  }
+
+  &__date-dropdown {
     margin-bottom: rem(20px);
+  }
+
+  &__dropdown-guests {
+    margin-bottom: rem(23px);
   }
 
   &__price-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: rem(16px);
 
     @include clear-ul-style;
 
@@ -35,6 +41,10 @@
     line-height: rem(18px);
   }
 
+  &__item-sum {
+    line-height: rem(14px);
+  }
+
   &__item-about {
     position: absolute;
     top: 0;
@@ -51,8 +61,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      min-width: rem(20px);
-      min-height: rem(20px);
+      min-width: rem(17px);
+      min-height: rem(17px);
       color: $text-primary-light;
       text-align: center;
       border: 1px solid $border-primary-light;
@@ -85,14 +95,15 @@
 
   &__total {
     display: flex;
-    margin-bottom: rem(20px);
+    margin-bottom: rem(24px);
   }
 
   &__total-text,
   &__total-sum {
+    color: $text-primary-darkest;
     white-space: nowrap;
 
-    @include font-montserrat-h2;
+    @include font-montserrat(rem(19px), rem(18px), bold);
   }
 
   &__total-filler {

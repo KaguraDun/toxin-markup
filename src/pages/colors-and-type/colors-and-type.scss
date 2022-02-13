@@ -41,7 +41,11 @@
     @include clear-ul-style();
 
     &-item {
-      margin-bottom: rem(51px);
+      margin-bottom: rem(52px);
+    }
+
+    &-item:nth-child(n + 3) {
+      margin-bottom: rem(48px);
     }
   }
 }

@@ -1,15 +1,12 @@
-@mixin container($max-width: $container-default) {
+@mixin container($max-width: $container-default-width) {
   width: 100%;
-  max-width: rem($max-width);
+  max-width: rem(calc(#{$max-width} + (#{$container-padding} * 2)));
   margin: 0 auto;
-  padding: 0 rem(20px);
-
-  @media (max-width: $desktop) {
-    box-sizing: border-box;
-  }
+  padding: 0 rem($container-padding);
 
   @media (max-width: $tablet) {
     max-width: $tablet;
-    padding: 0 rem(10px);
+    max-width: rem(calc(#{$tablet} + (#{$container-padding-tablet} * 2)));
+    padding: 0 rem($container-padding-tablet);
   }
 }

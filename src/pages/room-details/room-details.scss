@@ -58,7 +58,7 @@
     @include container;
 
     & {
-      margin: rem(70px) auto;
+      margin: rem(70px auto 72px);
     }
 
     @media (max-width: $laptop) {
@@ -114,7 +114,7 @@
 
   &__cancel-wrapper {
     grid-area: cancel-text;
-    min-width: rem(345px);
+    min-width: rem(350px);
 
     @media (max-width: $mobile) {
       min-width: rem(292px);
@@ -122,7 +122,7 @@
   }
 
   &__cancel-heading {
-    margin: rem(0 0 20px);
+    margin: rem(0 0 19px);
 
     @include font-montserrat-h2;
   }

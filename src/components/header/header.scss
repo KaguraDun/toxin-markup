@@ -27,7 +27,7 @@
   &__right-col {
     position: relative;
     display: flex;
-    gap: rem(20px);
+    gap: rem(23px);
     align-items: center;
 
     @media (max-width: $tablet) {
@@ -89,7 +89,7 @@
   &__vertical-line {
     width: 1px;
     height: rem(30px);
-    border-right: 1px solid $border-primary-lighter;
+    background: $border-primary-lighter;
   }
 
   &__username {
